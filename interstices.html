@@ -1,1 +1,1711 @@
+<!doctype html>
+<html lang="fr">
 
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Les Interstices : introduction à un univers de jeu de rôle contemporain historique, développé pour le système narratif M.I.S.E."
+>
+
+<title>
+  Les Interstices — Introduction à l'univers
+</title>
+
+<!-- TYPOGRAPHIES -->
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ======================================
+   IDENTITÉ GRAPHIQUE
+   ====================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --violet: #48338a;
+  --rouge: #ad5346;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.6;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* GRAIN DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 20;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+}
+
+/* ======================================
+   BANDEAU
+   ====================================== */
+
+.ruban {
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  padding: 12px 20px;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ======================================
+   FEUILLE PRINCIPALE
+   ====================================== */
+
+.page {
+
+  width: min(
+    940px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    70px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ======================================
+   EN-TÊTE
+   ====================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.7;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.reference {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ======================================
+   TITRE
+   ====================================== */
+
+.titre-page {
+
+  padding: 55px 0 38px;
+
+  text-align: center;
+
+}
+
+.surtitre {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  letter-spacing: .08em;
+
+  color: var(--vert);
+
+  text-transform: uppercase;
+
+}
+
+h1 {
+
+  margin: 20px 0 16px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    48px,
+    8vw,
+    84px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.04em;
+  line-height: 1.05;
+
+}
+
+.sous-titre {
+
+  margin: 0;
+
+  font-size: 23px;
+  font-style: italic;
+
+}
+
+.notice-document {
+
+  margin-top: 28px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #635d51;
+
+}
+
+/* ======================================
+   DOCUMENT BLANC À MARGE ROUGE
+   ====================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 30px 0;
+
+  padding: 31px 33px 31px 46px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 23px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ======================================
+   PROSE
+   ====================================== */
+
+.prose {
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+}
+
+.prose p {
+  margin: 0 0 21px;
+}
+
+.premiere {
+
+  font-size: 25px;
+  line-height: 1.45;
+
+}
+
+.premiere::first-letter {
+
+  float: left;
+
+  font-size: 3.1em;
+  line-height: .8;
+
+  padding: 9px 10px 0 0;
+
+}
+
+.section-title {
+
+  margin: 58px 0 23px;
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  font-weight: normal;
+
+  letter-spacing: .08em;
+  line-height: 1.7;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+/* ======================================
+   EXERGUES
+   ====================================== */
+
+.exergue {
+
+  margin: 49px 0;
+
+  padding: 30px 20px;
+
+  border-top: 1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
+
+  text-align: center;
+
+}
+
+.exergue p {
+
+  margin: 0;
+
+  font-size: clamp(
+    26px,
+    4vw,
+    37px
+  );
+
+  font-style: italic;
+  line-height: 1.4;
+
+}
+
+.exergue small {
+
+  display: block;
+
+  margin-top: 20px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  font-style: normal;
+
+  color: #686052;
+
+}
+
+/* ======================================
+   REPÈRES
+   ====================================== */
+
+.reperes {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin: 30px 0;
+
+}
+
+.repere {
+
+  padding: 24px;
+
+  border: 1px solid var(--trait);
+
+  background:
+    rgba(238,228,201,.62);
+
+}
+
+.repere small {
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: var(--vert);
+
+}
+
+.repere strong {
+
+  display: block;
+
+  font-size: 25px;
+  font-weight: 500;
+
+  line-height: 1.25;
+
+}
+
+.repere p {
+
+  margin: 12px 0 0;
+
+  font-size: 18px;
+  line-height: 1.5;
+
+}
+
+/* ======================================
+   NOTE DOCUMENTAIRE
+   ====================================== */
+
+.note {
+
+  font-family: var(--machine);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+}
+
+.note h3 {
+
+  margin: 0 0 20px;
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  font-weight: normal;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+}
+
+.note p {
+  margin: 0 0 18px;
+}
+
+/* ======================================
+   LIENS DE NAVIGATION
+   ====================================== */
+
+.navigation {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 14px;
+
+  margin-top: 48px;
+
+}
+
+.navigation a {
+
+  display: block;
+
+  padding: 24px;
+
+  border: 1px solid var(--trait);
+
+  background:
+    rgba(238,228,201,.62);
+
+  text-decoration: none;
+
+  transition:
+    transform .16s,
+    background .16s;
+
+}
+
+.navigation a:hover {
+
+  background: var(--blanc);
+
+  transform: translateY(-2px);
+
+}
+
+.navigation small {
+
+  display: block;
+
+  margin-bottom: 12px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #666052;
+
+}
+
+.navigation strong {
+
+  display: block;
+
+  font-size: 25px;
+  font-weight: 500;
+
+  line-height: 1.2;
+
+}
+
+.navigation em {
+
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 17px;
+  line-height: 1.4;
+
+  color: #625e53;
+
+}
+
+/* ======================================
+   RETOUR
+   ====================================== */
+
+.retour {
+
+  display: inline-block;
+
+  margin-top: 42px;
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  text-underline-offset: 4px;
+
+}
+
+/* ======================================
+   PIED DE PAGE
+   ====================================== */
+
+.footer {
+
+  margin-top: 45px;
+
+  padding-top: 22px;
+
+  border-top:
+    2px solid var(--encre);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ======================================
+   MOBILE
+   ====================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .reference {
+
+    text-align: left;
+
+    margin-top: 18px;
+
+  }
+
+  .titre-page {
+    padding-top: 38px;
+  }
+
+  .document {
+
+    padding:
+      24px 20px 24px 35px;
+
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .reperes,
+  .navigation {
+
+    grid-template-columns: 1fr;
+
+  }
+
+  .premiere {
+    font-size: 23px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer p + p {
+    margin-top: 14px;
+  }
+
+}
+
+/* ======================================
+   ACCESSIBILITÉ
+   ====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .navigation a {
+    transition: none;
+  }
+
+}
+
+/* ======================================
+   IMPRESSION
+   ====================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban {
+    display: none;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+  .navigation,
+  .retour {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ======================================
+     BANDEAU
+     ====================================== -->
+
+<div class="ruban">
+
+  Documentation générale ·
+  Consultation libre ·
+  Interprétation laissée au lecteur
+
+</div>
+
+
+<main class="page" id="haut">
+
+
+  <!-- ======================================
+       EN-TÊTE
+       ====================================== -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      Le Bureau des Interstices<br>
+      Documentation générale<br>
+      Présentation de l'univers
+
+    </div>
+
+    <div class="reference">
+
+      PARIS · 1966<br>
+      DOSSIER : INTERSTICES<br>
+      DOCUMENT I-01
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       TITRE
+       ====================================== -->
+
+  <header class="titre-page">
+
+    <div class="surtitre">
+
+      Introduction à l'univers
+
+    </div>
+
+    <h1>
+      Les Interstices
+    </h1>
+
+    <p class="sous-titre">
+
+      De ce qui existe
+      entre les choses connues
+
+    </p>
+
+    <div class="notice-document">
+
+      DOCUMENT I-01 · NOTE D'ORIENTATION GÉNÉRALE
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       INTRODUCTION
+       ====================================== -->
+
+  <section
+    class="document"
+    aria-label="Introduction"
+  >
+
+    <div class="prose">
+
+      <p class="premiere">
+
+        Le monde des Interstices
+        ressemble au nôtre.
+
+      </p>
+
+      <p>
+
+        Les mêmes villes, les mêmes routes,
+        les mêmes administrations.
+
+        Des gouvernements, des conflits,
+        des journaux, des trains,
+        des histoires de famille.
+
+      </p>
+
+      <p>
+
+        Les hommes travaillent,
+        vieillissent, tombent amoureux,
+        commettent des erreurs.
+
+        Ils vivent dans un monde
+        qu'ils croient connaître
+        suffisamment pour y trouver
+        leur place.
+
+      </p>
+
+      <p>
+
+        Et, la plupart du temps,
+        ils ont raison.
+
+      </p>
+
+      <p>
+
+        Mais il arrive que quelque chose
+        échappe aux explications disponibles.
+
+      </p>
+
+      <p>
+
+        Un fait, un événement,
+        une manifestation dont
+        l'existence semble établie,
+        mais dont la nature demeure
+        impossible à déterminer.
+
+      </p>
+
+      <p>
+
+        Alors commence
+        un autre genre d'histoire.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       01 — UN MONDE HISTORIQUE
+       ====================================== -->
+
+  <section
+    class="prose"
+    id="histoire"
+    aria-labelledby="histoire-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="histoire-titre"
+    >
+
+      01 / Un monde historique
+
+    </h2>
+
+    <p>
+
+      Les Interstices est un univers
+      de jeu de rôle contemporain historique,
+      développé pour le système narratif
+      sans dés M.I.S.E.
+      — Maîtrise, Initiative,
+      Synergie, Engagement.
+
+    </p>
+
+    <p>
+
+      Les premières aventures
+      se déroulent dans les années 1960.
+
+    </p>
+
+    <p>
+
+      Le monde dans lequel évoluent
+      les personnages n'est pas
+      une réalité parallèle
+      entièrement réinventée.
+
+      C'est le nôtre,
+      avec son histoire,
+      ses institutions,
+      ses contradictions
+      et ses conditions matérielles.
+
+    </p>
+
+    <p>
+
+      Les évolutions sociales,
+      les conflits politiques,
+      les usages et les techniques
+      doivent respecter, autant
+      que possible, les réalités
+      documentées de l'époque.
+
+    </p>
+
+    <p>
+
+      Les personnages ne disposent
+      ni de connaissances futures
+      ni de solutions miraculeuses.
+
+    </p>
+
+    <p>
+
+      Ils vivent dans leur temps.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       02 — L'INVISIBLE
+       ====================================== -->
+
+  <section
+    class="prose"
+    id="invisible"
+    aria-labelledby="invisible-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="invisible-titre"
+    >
+
+      02 / Ce qui échappe à la compréhension
+
+    </h2>
+
+    <p>
+
+      Certaines manifestations
+      échappent à la compréhension humaine.
+
+    </p>
+
+    <p>
+
+      Elles peuvent être les conséquences
+      de forces extrêmement anciennes,
+      dont l'existence précède parfois
+      l'histoire des sociétés humaines.
+
+    </p>
+
+    <p>
+
+      Ces manifestations sont rares.
+
+      Généralement discrètes,
+      elles sont difficiles
+      à observer et plus encore
+      à interpréter.
+
+    </p>
+
+    <p>
+
+      Elles ne constituent pas
+      un système de magie.
+
+    </p>
+
+    <p>
+
+      Elles ne répondent pas nécessairement
+      à des intentions intelligibles.
+
+    </p>
+
+    <p>
+
+      Elles ne sont pas intrinsèquement
+      bonnes ou mauvaises.
+
+    </p>
+
+    <p>
+
+      Leur existence ne signifie pas
+      que les humains disposent
+      des moyens de les comprendre,
+      de les provoquer ou de les maîtriser.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       EXERGUE
+       ====================================== -->
+
+  <div class="exergue">
+
+    <p>
+
+      L'invisible existe.<br>
+      Les hommes tentent de l'expliquer.<br>
+      Ils se trompent souvent.
+
+    </p>
+
+  </div>
+
+
+  <!-- ======================================
+       03 — TRACES
+       ====================================== -->
+
+  <section
+    class="prose"
+    id="traces"
+    aria-labelledby="traces-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="traces-titre"
+    >
+
+      03 / Les traces de l'invisible
+
+    </h2>
+
+    <p>
+
+      Les êtres humains n'ont pas attendu
+      le XXe siècle pour tenter
+      de donner un sens
+      à ce qu'ils ne comprenaient pas.
+
+    </p>
+
+    <p>
+
+      Les traditions, les religions
+      et les mythologies peuvent
+      conserver des traces déformées
+      de manifestations anciennes.
+
+    </p>
+
+    <p>
+
+      Mais aucune ne possède
+      une connaissance complète
+      de leur nature.
+
+    </p>
+
+    <p>
+
+      Les récits transmis à travers
+      les générations ne constituent
+      donc ni des explications définitives
+      ni des catalogues fiables
+      de phénomènes.
+
+    </p>
+
+    <p>
+
+      Ils témoignent avant tout
+      de la manière dont les hommes
+      ont tenté de comprendre
+      ce qui leur arrivait.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       04 — PERSONNAGES
+       ====================================== -->
+
+  <section
+    class="prose"
+    id="personnages"
+    aria-labelledby="personnages-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="personnages-titre"
+    >
+
+      04 / Des histoires humaines
+
+    </h2>
+
+    <p>
+
+      Les Interstices ne raconte pas
+      d'abord l'histoire
+      de forces mystérieuses.
+
+    </p>
+
+    <p>
+
+      Il raconte celle
+      des personnes qui les rencontrent.
+
+    </p>
+
+    <p>
+
+      Les personnages ont des métiers,
+      des relations, des convictions
+      et des intérêts qui leur appartiennent.
+
+    </p>
+
+    <p>
+
+      Ils peuvent se tromper,
+      se contredire, refuser,
+      abandonner ou poursuivre
+      une enquête pour des raisons
+      qui ne sont pas nécessairement
+      celles de leurs commanditaires.
+
+    </p>
+
+    <p>
+
+      Ce qui importe n'est pas seulement
+      la nature d'un événement inexpliqué,
+      mais ce qu'il provoque
+      dans les existences ordinaires.
+
+    </p>
+
+    <p>
+
+      Les conséquences d'une découverte
+      peuvent être matérielles,
+      affectives, sociales ou politiques.
+
+    </p>
+
+    <p>
+
+      L'étrange ne suspend pas
+      la vie quotidienne.
+
+    </p>
+
+    <p>
+
+      Il s'y introduit.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       05 — TON ET INSPIRATIONS
+       ====================================== -->
+
+  <section
+    class="prose"
+    id="ton"
+    aria-labelledby="ton-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="ton-titre"
+    >
+
+      05 / Ton et inspirations
+
+    </h2>
+
+    <p>
+
+      L'univers privilégie
+      le fantastique discret,
+      les situations humaines
+      et les contradictions
+      qui surgissent lorsqu'un fait
+      extraordinaire rencontre
+      une existence ordinaire.
+
+    </p>
+
+    <p>
+
+      Parmi ses inspirations figurent
+      le cinéma de David Lynch,
+      d'Andreï Tarkovski
+      et de Yasujirō Ozu,
+      ainsi qu'une certaine tradition
+      du roman d'espionnage.
+
+    </p>
+
+    <p>
+
+      Ces références ne constituent
+      pas un modèle unique.
+
+      Elles indiquent plutôt
+      différentes manières
+      de regarder les êtres humains,
+      le temps, le silence
+      et ce qui résiste
+      à l'interprétation.
+
+    </p>
+
+    <p>
+
+      L'humour, l'absurde
+      et la tendresse
+      ont toute leur place
+      dans cet univers.
+
+    </p>
+
+    <p>
+
+      Un événement incompréhensible
+      n'empêche pas les gens
+      de se disputer pour un billet
+      de train, de prendre
+      un mauvais café
+      ou de se préoccuper
+      de leur prochaine échéance.
+
+    </p>
+
+    <p>
+
+      Il arrive même que
+      ces préoccupations
+      soient parfaitement justifiées.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       06 — QUELQUES REPÈRES
+       ====================================== -->
+
+  <section
+    id="reperes"
+    aria-labelledby="reperes-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="reperes-titre"
+    >
+
+      06 / Repères pour le visiteur
+
+    </h2>
+
+    <div class="reperes">
+
+      <div class="repere">
+
+        <small>
+          ÉPOQUE
+        </small>
+
+        <strong>
+          Les années 1960
+        </strong>
+
+        <p>
+          Les premières aventures
+          se déroulent dans un cadre
+          historique documenté.
+        </p>
+
+      </div>
+
+
+      <div class="repere">
+
+        <small>
+          NATURE DES PHÉNOMÈNES
+        </small>
+
+        <strong>
+          Rares et inexpliqués
+        </strong>
+
+        <p>
+          Ils échappent aux catégories
+          ordinaires sans former
+          un système de magie.
+        </p>
+
+      </div>
+
+
+      <div class="repere">
+
+        <small>
+          PERSONNAGES
+        </small>
+
+        <strong>
+          Des êtres humains
+        </strong>
+
+        <p>
+          Ils enquêtent avec leurs
+          connaissances, leurs doutes
+          et leurs contradictions.
+        </p>
+
+      </div>
+
+
+      <div class="repere">
+
+        <small>
+          SYSTÈME DE JEU
+        </small>
+
+        <strong>
+          M.I.S.E.
+        </strong>
+
+        <p>
+          Une grammaire narrative
+          sans dés, fondée sur
+          les choix et l'engagement.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       NOTE FINALE
+       ====================================== -->
+
+  <section
+    aria-labelledby="note-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="note-titre"
+    >
+
+      07 / Note au lecteur
+
+    </h2>
+
+    <div class="document note">
+
+      <h3>
+
+        DOCUMENTATION GÉNÉRALE<br>
+        OBSERVATIONS PRÉLIMINAIRES
+
+      </h3>
+
+      <p>
+
+        Les informations présentées
+        dans cette introduction
+        décrivent l'univers
+        des Interstices.
+
+      </p>
+
+      <p>
+
+        Elles ne constituent pas
+        un inventaire exhaustif
+        des phénomènes
+        susceptibles d'y être observés.
+
+      </p>
+
+      <p>
+
+        Il est rappelé
+        qu'une absence d'explication
+        ne constitue pas une explication.
+
+      </p>
+
+      <p>
+
+        Il est également rappelé
+        qu'une explication satisfaisante
+        n'est pas nécessairement exacte.
+
+      </p>
+
+      <p>
+
+        Le lecteur est invité
+        à conserver ses observations.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       CONCLUSION
+       ====================================== -->
+
+  <div class="exergue">
+
+    <p>
+
+      Le monde est vaste.<br>
+      Nous n'en connaissons<br>
+      peut-être pas toutes les pièces.
+
+    </p>
+
+    <small>
+
+      FIN DU DOCUMENT I-01
+
+    </small>
+
+  </div>
+
+
+  <!-- ======================================
+       NAVIGATION
+       ====================================== -->
+
+  <section
+    aria-labelledby="navigation-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="navigation-titre"
+    >
+
+      08 / Pour poursuivre la consultation
+
+    </h2>
+
+    <nav
+      class="navigation"
+      aria-label="Documents complémentaires"
+    >
+
+      <a href="bureau.html">
+
+        <small>
+          DOCUMENT B-01
+        </small>
+
+        <strong>
+          Le Bureau
+        </strong>
+
+        <em>
+          Origines, histoire,
+          mission et moyens.
+        </em>
+
+      </a>
+
+
+      <a href="personnel.html">
+
+        <small>
+          DOCUMENT P-01
+        </small>
+
+        <strong>
+          Le personnel
+        </strong>
+
+        <em>
+          Les huit membres
+          du service.
+        </em>
+
+      </a>
+
+
+      <a
+        href="https://tolmatchevalexis-prog.github.io/mise-rules/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+
+        <small>
+          DOCUMENTATION EXTÉRIEURE
+        </small>
+
+        <strong>
+          Le système M.I.S.E.
+        </strong>
+
+        <em>
+          Consulter les règles
+          du jeu de rôle.
+        </em>
+
+      </a>
+
+
+      <a href="index.html">
+
+        <small>
+          ACCUEIL DU SERVICE
+        </small>
+
+        <strong>
+          Les archives
+        </strong>
+
+        <em>
+          Retourner au Bureau
+          des Interstices.
+        </em>
+
+      </a>
+
+    </nav>
+
+  </section>
+
+
+  <a
+    class="retour"
+    href="#haut"
+  >
+
+    ↑ Retour au début du document
+
+  </a>
+
+
+  <!-- ======================================
+       PIED DE PAGE
+       ====================================== -->
+
+  <footer class="footer">
+
+    <p>
+
+      LES INTERSTICES<br>
+      Documentation générale<br>
+      Paris, 1966
+
+    </p>
+
+    <p>
+
+      Création : Alexis Tolmatchev<br>
+      Univers développé pour M.I.S.E.
+
+    </p>
+
+  </footer>
+
+
+</main>
+
+</body>
+  </html>
