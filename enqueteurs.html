@@ -1,1 +1,263 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>Les enquêteurs — Bureau des Interstices</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --blanc:#fffaf0;
+  --encre:#292920;
+  --rouge:#ad5346;
+  --trait:#b3a88e;
+  --violet:#48338a;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:20px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.55 "EB Garamond",Georgia,serif;
+}
+
+main {
+  width:min(740px,100%);
+  margin:25px auto;
+  padding:clamp(25px,6vw,60px);
+  background:var(--feuille);
+  box-shadow:6px 8px 0 #c6b99c;
+  border:1px solid var(--trait);
+}
+
+header {
+  border-bottom:2px solid var(--encre);
+  padding-bottom:20px;
+}
+
+h1 {
+  font-size:clamp(38px,7vw,60px);
+  font-weight:500;
+  line-height:1.1;
+}
+
+h2 {
+  font-size:14px;
+  font-weight:normal;
+}
+
+small,h2,label,button,.ref,footer,.notice {
+  font-family:"Special Elite","Courier New",monospace;
+}
+
+small,.ref {
+  font-size:11px;
+}
+
+.document {
+  position:relative;
+  background:var(--blanc);
+  padding:28px 28px 28px 45px;
+  border:1px solid #97856959;
+  margin:30px 0;
+}
+
+.document::before {
+  content:"";
+  position:absolute;
+  left:24px;
+  top:18px;
+  bottom:18px;
+  width:2px;
+  background:var(--rouge);
+}
+
+label {
+  display:block;
+  font-size:13px;
+  margin:18px 0;
+  cursor:pointer;
+}
+
+label input {
+  accent-color:var(--violet);
+  margin-right:12px;
+}
+
+button,.btn {
+  display:inline-block;
+  background:var(--encre);
+  color:#fffaf0;
+  padding:13px 18px;
+  border:0;
+  font:12px "Special Elite",monospace;
+  cursor:pointer;
+  text-decoration:none;
+}
+
+button:hover,.btn:hover {
+  background:var(--violet);
+}
+
+.reponse {
+  margin-top:25px;
+  padding:20px;
+  border:1px dashed var(--violet);
+  font-family:"Special Elite",monospace;
+  font-size:13px;
+}
+
+footer {
+  margin-top:45px;
+  border-top:1px solid var(--trait);
+  padding-top:20px;
+  font-size:12px;
+}
+
+a { color:inherit; }
+
+[hidden] { display:none!important; }
+</style>
+</head>
+
+<body>
+
+<main>
+
+<header>
+
+<small>
+RÉPUBLIQUE FRANÇAISE<br>
+MISSION D'ÉTUDES ET DE LIAISON DOCUMENTAIRE
+</small>
+
+<p class="ref">
+PARIS · 1966<br>
+CHEMISE 04<br>
+CONSULTATION RESTREINTE
+</p>
+
+</header>
+
+<h1>Les enquêteurs</h1>
+
+<p>
+<em>Collaborateurs extérieurs et accréditations</em>
+</p>
+
+<div class="document">
+
+<h2>NOTE DU SERVICE</h2>
+
+<p>
+Le Bureau fait appel à des collaborateurs indépendants.
+Certains sont accrédités ; d'autres peuvent être sollicités ponctuellement.
+</p>
+
+<p>
+Le registre nominatif n'est pas encore communicable.
+</p>
+
+<p>
+La consultation restreinte ne constitue pas
+une interdiction de se présenter.
+</p>
+
+<p>
+Une première déclaration peut néanmoins être déposée :
+</p>
+
+</div>
+
+<form id="demande">
+
+<div class="document">
+
+<h2>
+FORMULAIRE E-04<br>
+DÉCLARATION PRÉALABLE
+</h2>
+
+<label>
+<input type="checkbox" required>
+Je demande à consulter les conditions d'accréditation
+lorsqu'elles seront publiées.
+</label>
+
+<label>
+<input type="checkbox" required>
+Je reconnais que la présente démarche
+ne vaut pas accréditation.
+</label>
+
+<button type="submit">
+DÉPOSER LA DÉCLARATION
+</button>
+
+</div>
+
+</form>
+
+<div class="reponse" id="reponse" hidden>
+
+<p>
+DÉCLARATION REÇUE
+</p>
+
+<p>
+La déclaration est enregistrée
+pour la durée de cette consultation.
+</p>
+
+<p>
+Aucun envoi ni inscription sur un registre central
+n'a été effectué.
+</p>
+
+<p>
+Le Bureau vous remercie
+de votre coopération provisoire.
+</p>
+
+</div>
+
+<footer>
+
+<p>
+<a href="index.html#archives">
+← Retour au répertoire général des archives
+</a>
+</p>
+
+<p>
+M.E.L.D. · DOCUMENT E-04
+</p>
+
+</footer>
+
+</main>
+
+<script>
+const formulaire = document.getElementById("demande");
+const reponse = document.getElementById("reponse");
+
+formulaire.addEventListener("submit",function(event){
+  event.preventDefault();
+
+  if(!formulaire.reportValidity()) return;
+
+  formulaire.hidden = true;
+  reponse.hidden = false;
+});
+</script>
+
+</body>
+  </html>
