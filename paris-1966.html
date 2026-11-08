@@ -1,1 +1,219 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>Paris, 1966 — Bureau des Interstices</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --blanc:#fffaf0;
+  --encre:#292920;
+  --rouge:#ad5346;
+  --trait:#b3a88e;
+  --violet:#48338a;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:20px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.55 "EB Garamond",Georgia,serif;
+}
+
+main {
+  width:min(740px,100%);
+  margin:25px auto;
+  padding:clamp(25px,6vw,60px);
+  background:var(--feuille);
+  box-shadow:6px 8px 0 #c6b99c;
+  border:1px solid var(--trait);
+}
+
+header {
+  border-bottom:2px solid var(--encre);
+  padding-bottom:20px;
+}
+
+h1 {
+  font-size:clamp(38px,7vw,60px);
+  font-weight:500;
+  line-height:1.1;
+}
+
+h2 {
+  font-size:14px;
+  font-weight:normal;
+}
+
+small,h2,.ref,footer,.notice,.btn {
+  font-family:"Special Elite","Courier New",monospace;
+}
+
+small,.ref {
+  font-size:11px;
+}
+
+.document {
+  position:relative;
+  background:var(--blanc);
+  padding:28px 28px 28px 45px;
+  border:1px solid #97856959;
+  margin:30px 0;
+}
+
+.document::before {
+  content:"";
+  position:absolute;
+  left:24px;
+  top:18px;
+  bottom:18px;
+  width:2px;
+  background:var(--rouge);
+}
+
+.btn {
+  display:inline-block;
+  background:var(--encre);
+  color:#fffaf0;
+  padding:13px 18px;
+  border:0;
+  font-size:12px;
+  text-decoration:none;
+}
+
+.btn:hover {
+  background:var(--violet);
+}
+
+.notice {
+  font-size:12px;
+  line-height:1.8;
+  color:#625e53;
+}
+
+footer {
+  margin-top:45px;
+  border-top:1px solid var(--trait);
+  padding-top:20px;
+  font:12px "Special Elite",monospace;
+}
+
+a { color:inherit; }
+</style>
+</head>
+
+<body>
+
+<main>
+
+<header>
+
+<small>
+RÉPUBLIQUE FRANÇAISE<br>
+MISSION D'ÉTUDES ET DE LIAISON DOCUMENTAIRE
+</small>
+
+<p class="ref">
+PARIS · 1966<br>
+CHEMISE 07<br>
+DOCUMENTATION HISTORIQUE
+</p>
+
+</header>
+
+<h1>
+Paris et la France des années soixante
+</h1>
+
+<p>
+<em>Documents, institutions et vie quotidienne</em>
+</p>
+
+<div class="document">
+
+<h2>AVIS DOCUMENTAIRE</h2>
+
+<p>
+La documentation historique
+est en cours de rassemblement.
+</p>
+
+<p>
+L'histoire, les institutions
+et les conditions matérielles
+doivent respecter autant que possible
+les réalités documentées de l'époque.
+</p>
+
+<p>
+Il est rappelé que les événements du passé
+ne deviennent pas fictifs du seul fait
+qu'ils figurent dans les archives du Bureau.
+</p>
+
+<p>
+En attendant, une première pièce audiovisuelle
+de l'INA est consultable à l'accueil du service.
+</p>
+
+</div>
+
+<a
+  class="btn"
+  href="index.html#document-001"
+>
+CONSULTER L'ARCHIVE AUDIOVISUELLE →
+</a>
+
+<div class="document notice">
+
+<p>
+SERVICE DE DOCUMENTATION
+</p>
+
+<p>
+Les pièces historiques seront classées
+selon leur provenance et leur date.
+</p>
+
+<p>
+Les documents fictifs produits pour les besoins
+du Bureau devront être distingués
+des sources historiques authentiques.
+</p>
+
+<p>
+Cette précaution ne garantit pas
+que les documents soient rangés
+dans le bon ordre.
+</p>
+
+</div>
+
+<footer>
+
+<p>
+<a href="index.html#archives">
+← Retour au répertoire général des archives
+</a>
+</p>
+
+<p>
+M.E.L.D. · DOCUMENT H-07
+</p>
+
+</footer>
+
+</main>
+
+</body>
+</html>
