@@ -3,1567 +3,1946 @@
 
 <head>
 
-  <meta charset="utf-8">
+<meta charset="utf-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  >
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
 
-  <meta name="theme-color" content="#ded3b8">
+<meta name="theme-color" content="#ded3b8">
 
-  <meta
-    name="description"
-    content="Le Bureau des Interstices — Paris, 1966. Archives d'un service discret consacré aux phénomènes qui résistent aux classements."
-  >
+<meta
+  name="description"
+  content="Le Bureau des Interstices — Paris, 1966. Archives d'un service discret consacré aux phénomènes qui résistent aux classements."
+>
 
-  <title>
-    Le Bureau des Interstices — Accueil du service
-  </title>
+<title>
+  Le Bureau des Interstices — Accueil du service
+</title>
 
-  <!-- TYPOGRAPHIES -->
+<!-- TYPOGRAPHIES -->
 
-  <link
-    rel="preconnect"
-    href="https://fonts.googleapis.com"
-  >
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
 
-  <link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
-  >
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
-    rel="stylesheet"
-  >
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
 
-  <style>
+<style>
 
-    /* ======================================
-       IDENTITÉ GRAPHIQUE
-       ====================================== */
+/* ==========================================
+   IDENTITÉ GRAPHIQUE
+   ========================================== */
 
-    :root {
+:root {
 
-      --papier: #ded3b8;
-      --feuille: #f3e9cf;
-      --encre: #292920;
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+  --encre: #292920;
 
-      --violet: #48338a;
-      --vert: #4c5546;
+  --violet: #48338a;
+  --rouge: #ad5346;
+  --vert: #4c5546;
 
-      --trait: #b3a88e;
+  --trait: #b3a88e;
 
-      --serif:
-        "EB Garamond",
-        Garamond,
-        Georgia,
-        serif;
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
 
-      --machine:
-        "Special Elite",
-        "Courier New",
-        monospace;
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
 
-    }
+}
 
-    * {
-      box-sizing: border-box;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+html {
+  scroll-behavior: smooth;
+}
 
-    body {
+body {
 
-      margin: 0;
+  margin: 0;
 
-      color: var(--encre);
+  color: var(--encre);
 
-      font-family: var(--serif);
-      font-size: 20px;
-      line-height: 1.55;
+  font-family: var(--serif);
 
-      background-color: var(--papier);
+  font-size: 20px;
+  line-height: 1.55;
 
-      background-image:
-        radial-gradient(
-          ellipse at 15% 12%,
-          rgba(255,255,240,.32),
-          transparent 48%
-        ),
-        radial-gradient(
-          ellipse at 85% 75%,
-          rgba(116,85,40,.10),
-          transparent 52%
-        );
+  background-color: var(--papier);
 
-    }
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
 
-    /*
-      Trame irrégulière du papier.
-    */
+}
 
-    body::before {
+/* TRAME DISCRÈTE */
 
-      content: "";
+body::before {
 
-      position: fixed;
-      inset: 0;
+  content: "";
 
-      pointer-events: none;
-      z-index: 20;
+  position: fixed;
+  inset: 0;
 
-      opacity: .12;
+  pointer-events: none;
 
-      background-image: url(
-        "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
-      );
+  z-index: 20;
 
-    }
+  opacity: .11;
 
-    a {
-      color: inherit;
-    }
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
 
-    a:focus-visible,
-    button:focus-visible {
+}
 
-      outline: 3px solid var(--violet);
-      outline-offset: 4px;
+a {
+  color: inherit;
+}
 
-    }
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
 
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
 
-    /* ======================================
-       BANDEAU
-       ====================================== */
+}
 
-    .ruban {
+[hidden] {
+  display: none !important;
+}
 
-      background: #4a5344;
-      color: #f1eedf;
+/* ==========================================
+   BANDEAU
+   ========================================== */
 
-      padding: 12px 20px;
+.ruban {
 
-      text-align: center;
+  background: #4a5344;
+  color: #f1eedf;
 
-      font-family: var(--machine);
-      font-size: 11px;
+  padding: 12px 20px;
 
-      line-height: 1.6;
-      letter-spacing: .06em;
+  text-align: center;
 
-      text-transform: uppercase;
+  font-family: var(--machine);
+  font-size: 11px;
 
-    }
+  line-height: 1.6;
+  letter-spacing: .06em;
 
+  text-transform: uppercase;
 
-    /* ======================================
-       FEUILLE
-       ====================================== */
+}
 
-    .page {
+/* ==========================================
+   FEUILLE PRINCIPALE
+   ========================================== */
 
-      width: min(940px, calc(100% - 32px));
+.page {
 
-      margin: 34px auto 60px;
+  width: min(
+    940px,
+    calc(100% - 32px)
+  );
 
-      padding: clamp(25px, 6vw, 70px);
+  margin: 34px auto 60px;
 
-      position: relative;
+  padding: clamp(
+    25px,
+    6vw,
+    70px
+  );
 
-      background-color: var(--feuille);
+  position: relative;
 
-      background-image:
-        radial-gradient(
-          ellipse at 10% 9%,
-          rgba(255,255,247,.58),
-          transparent 52%
-        ),
-        radial-gradient(
-          ellipse at 92% 86%,
-          rgba(132,93,50,.10),
-          transparent 55%
-        ),
-        linear-gradient(
-          110deg,
-          rgba(93,74,48,.04),
-          transparent 30%,
-          rgba(255,255,255,.12) 60%,
-          rgba(82,62,34,.05)
-        );
+  background-color: var(--feuille);
 
-      border: 1px solid #b8aa8c;
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    ),
+    linear-gradient(
+      110deg,
+      rgba(93,74,48,.04),
+      transparent 30%,
+      rgba(255,255,255,.12) 60%,
+      rgba(82,62,34,.05)
+    );
 
-      box-shadow:
-        8px 10px 0 #c6b99c,
-        0 14px 35px rgba(64,49,25,.14);
+  border: 1px solid #b8aa8c;
 
-    }
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
 
-    .page::before {
+}
 
-      content: "";
+.page::before {
 
-      position: absolute;
-      inset: 8px;
+  content: "";
 
-      border: 1px solid rgba(95,75,45,.09);
+  position: absolute;
+  inset: 8px;
 
-      pointer-events: none;
+  border: 1px solid
+    rgba(95,75,45,.09);
 
-    }
+  pointer-events: none;
 
+}
 
-    /* ======================================
-       EN-TÊTE
-       ====================================== */
+/* ==========================================
+   EN-TÊTE
+   ========================================== */
 
-    .top {
+.top {
 
-      display: flex;
+  display: flex;
 
-      justify-content: space-between;
-      align-items: flex-start;
+  justify-content: space-between;
 
-      gap: 20px;
+  align-items: flex-start;
 
-      padding-bottom: 26px;
+  gap: 20px;
 
-      border-bottom: 2px solid var(--encre);
+  padding-bottom: 26px;
 
-    }
+  border-bottom: 2px solid var(--encre);
 
-    .republique {
+}
 
-      font-family: var(--machine);
-      font-size: 12px;
+.republique {
 
-      line-height: 1.7;
-      letter-spacing: .03em;
+  font-family: var(--machine);
+  font-size: 12px;
 
-      text-transform: uppercase;
+  line-height: 1.7;
+  letter-spacing: .03em;
 
-    }
+  text-transform: uppercase;
 
-    .ref {
+}
 
-      font-family: var(--machine);
-      font-size: 11px;
+.ref {
 
-      line-height: 1.7;
+  font-family: var(--machine);
+  font-size: 11px;
 
-      text-align: right;
+  line-height: 1.7;
 
-      color: #55584e;
+  text-align: right;
 
-    }
+  color: #55584e;
 
+}
 
-    /* ======================================
-       TITRE PRINCIPAL
-       ====================================== */
+/* ==========================================
+   TITRE PRINCIPAL
+   ========================================== */
 
-    .entete {
+.entete {
 
-      text-align: center;
+  text-align: center;
 
-      padding: 55px 0 32px;
+  padding: 55px 0 32px;
 
-    }
+}
 
-    .eyebrow {
+.eyebrow {
 
-      font-family: var(--machine);
-      font-size: 12px;
+  font-family: var(--machine);
+  font-size: 12px;
 
-      letter-spacing: .05em;
+  letter-spacing: .05em;
 
-      color: var(--vert);
+  color: var(--vert);
 
-    }
+}
 
-    h1 {
+h1 {
 
-      margin: 23px 0 15px;
+  margin: 23px 0 15px;
 
-      font-family: var(--serif);
+  font-family: var(--serif);
 
-      font-size: clamp(42px, 7vw, 78px);
-      font-weight: 500;
+  font-size: clamp(
+    42px,
+    7vw,
+    78px
+  );
 
-      letter-spacing: -.035em;
-      line-height: 1.02;
+  font-weight: 500;
 
-    }
+  letter-spacing: -.035em;
 
-    h1 span {
-      display: block;
-    }
+  line-height: 1.02;
 
-    .subtitle {
+}
 
-      margin: 0;
+h1 span {
+  display: block;
+}
 
-      font-size: 21px;
-      font-style: italic;
+.subtitle {
 
-    }
+  margin: 0;
 
-    .mention {
+  font-size: 21px;
+  font-style: italic;
 
-      display: inline-block;
+}
 
-      margin-top: 12px;
+.mention {
 
-      font-family: var(--machine);
-      font-size: 11px;
+  display: inline-block;
 
-      color: #655d55;
+  margin-top: 12px;
 
-      letter-spacing: .05em;
+  font-family: var(--machine);
+  font-size: 11px;
 
-      text-transform: uppercase;
+  color: #655d55;
 
-    }
+  letter-spacing: .05em;
 
+  text-transform: uppercase;
 
-    /* ======================================
-       TAMPONS
-       ====================================== */
+}
 
-    .stamp-image {
+/* ==========================================
+   TAMPONS TRANSPARENTS
+   ========================================== */
 
-      display: block;
+.stamp-image {
 
-      width: 130px;
-      height: auto;
+  display: block;
 
-      opacity: .82;
+  width: 130px;
+  height: auto;
 
-      mix-blend-mode: multiply;
+  opacity: .65;
 
-      filter: contrast(1.08);
+  mix-blend-mode: multiply;
 
-    }
+}
 
-    .stamp-small {
-      width: 105px;
-    }
+.stamp-small {
+  width: 105px;
+}
 
-    .stamp-large {
-      width: 160px;
-    }
+.stamp-large {
+  width: 160px;
+}
 
-    .stamp-tilt-left {
-      transform: rotate(-11deg);
-    }
+.stamp-tilt-left {
+  transform: rotate(-11deg);
+}
 
-    .stamp-tilt-right {
-      transform: rotate(8deg);
-    }
+.stamp-tilt-right {
+  transform: rotate(8deg);
+}
 
-    .stamp-meld {
+.stamp-meld {
 
-      display: flex;
+  display: flex;
 
-      justify-content: center;
+  justify-content: center;
 
-      margin-top: 27px;
+  margin-top: 27px;
 
-    }
+}
 
-    .stamp-meld img {
+.stamp-meld img {
 
-      width: 142px;
+  width: 142px;
 
-      transform: rotate(-7deg);
+  transform: rotate(-7deg);
 
-    }
+}
 
-    .document-stamp {
+.document-stamp {
 
-      display: flex;
+  display: flex;
 
-      justify-content: flex-end;
+  justify-content: flex-end;
 
-      margin: 18px 6px 4px;
+  margin: 18px 6px 4px;
 
-    }
+}
 
-    .document-stamp.left {
-      justify-content: flex-start;
-    }
+.document-stamp.left {
+  justify-content: flex-start;
+}
 
-    .document-stamp.center {
-      justify-content: center;
-    }
+.document-stamp.center {
+  justify-content: center;
+}
 
-    .stamp-row {
+/* ==========================================
+   DOCUMENTS À MARGE ROUGE
+   ========================================== */
 
-      display: flex;
+.document {
 
-      justify-content: space-around;
-      align-items: center;
+  position: relative;
 
-      gap: 16px;
+  margin: 30px 0;
 
-      flex-wrap: wrap;
+  padding: 26px 30px 26px 43px;
 
-      margin: 26px 0;
+  background: var(--blanc);
 
-    }
+  border: 1px solid
+    rgba(151,133,105,.35);
 
-    .stamp-row img {
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
 
-      width: 115px;
-      max-width: 42%;
+}
 
-    }
+.document::before {
 
+  content: "";
 
-    /* ======================================
-       AVIS OFFICIEL
-       ====================================== */
+  position: absolute;
 
-    .avis {
+  top: 18px;
+  bottom: 18px;
+  left: 23px;
 
-      border-top: 1px solid var(--trait);
-      border-bottom: 1px solid var(--trait);
+  width: 2px;
 
-      padding: 24px 0;
+  background: var(--rouge);
 
-      margin: 24px 0 35px;
+  opacity: .85;
 
-    }
+}
 
-    .avis p {
+.document h3 {
 
-      max-width: 680px;
+  margin: 0 0 18px;
 
-      margin: 0 auto;
+  font-family: var(--machine);
 
-      text-align: center;
+  font-size: 13px;
+  font-weight: normal;
 
-      font-size: 22px;
-      font-style: italic;
+  line-height: 1.6;
 
-      line-height: 1.55;
+  text-transform: uppercase;
 
-    }
+}
 
+.document p {
 
-    /* ======================================
-       SECTIONS
-       ====================================== */
+  margin: 0 0 15px;
 
-    .section-title {
+}
 
-      margin: 48px 0 20px;
+.document p:last-child {
+  margin-bottom: 0;
+}
 
-      font-family: var(--machine);
+/* ==========================================
+   AVIS OFFICIEL
+   ========================================== */
 
-      font-size: 13px;
-      font-weight: normal;
+.avis {
 
-      letter-spacing: .08em;
-      line-height: 1.6;
+  margin: 28px 0 38px;
 
-      text-transform: uppercase;
+}
 
-      color: var(--vert);
+.avis p {
 
-    }
+  margin: 0;
 
-    section p {
-      margin: 0 0 17px;
-    }
+  font-size: 23px;
+  font-style: italic;
 
-    .notice {
+  line-height: 1.5;
 
-      max-width: 700px;
+}
 
-      margin: 0 auto;
+/* ==========================================
+   SECTIONS
+   ========================================== */
 
-    }
+.section-title {
 
-    .notice .first:first-letter {
+  margin: 48px 0 20px;
 
-      float: left;
+  font-family: var(--machine);
 
-      font-family: var(--serif);
+  font-size: 13px;
+  font-weight: normal;
 
-      font-size: 3.4em;
-      line-height: .78;
+  letter-spacing: .08em;
 
-      padding: 9px 9px 0 0;
+  line-height: 1.6;
 
-    }
+  text-transform: uppercase;
 
+  color: var(--vert);
 
-    /* ======================================
-       ARCHIVE AUDIOVISUELLE
-       ====================================== */
+}
 
-    .archive-video {
+section p {
+  margin: 0 0 17px;
+}
 
-      margin: 48px 0 58px;
+.notice {
 
-      padding: 24px;
+  max-width: 700px;
+  margin: 0 auto;
 
-      border: 1px solid var(--trait);
+}
 
-      background:
-        rgba(231,221,194,.65);
+.notice .first:first-letter {
 
-    }
+  float: left;
 
-    .archive-video .section-title {
+  font-family: var(--serif);
 
-      margin: 0 0 24px;
+  font-size: 3.4em;
+  line-height: .78;
 
-    }
+  padding: 9px 9px 0 0;
 
-    .archive-meta {
+}
 
-      font-family: var(--machine);
+/* ==========================================
+   ARCHIVE AUDIOVISUELLE
+   ========================================== */
 
-      font-size: 12px;
-      line-height: 1.8;
+.archive-video {
 
-      color: #55564c;
+  margin: 48px 0 58px;
 
-      margin-bottom: 23px;
+  padding: 24px;
 
-    }
+  border: 1px solid var(--trait);
 
-    .archive-meta strong {
+  background:
+    rgba(231,221,194,.65);
 
-      color: var(--encre);
-      font-weight: normal;
+}
 
-    }
+.archive-video .section-title {
 
-    .video-frame {
+  margin: 0 0 24px;
 
-      position: relative;
+}
 
-      width: 100%;
-      aspect-ratio: 16 / 9;
+.archive-meta {
 
-      overflow: hidden;
+  font-family: var(--machine);
 
-      background: #171717;
+  font-size: 12px;
+  line-height: 1.8;
 
-      border: 8px solid #292920;
+  color: #55564c;
 
-      box-shadow:
-        0 5px 13px rgba(0,0,0,.18);
+  margin-bottom: 23px;
 
-    }
+}
 
-    .video-frame iframe {
+.archive-meta strong {
 
-      width: 100%;
-      height: 100%;
+  color: var(--encre);
+  font-weight: normal;
 
-      display: block;
+}
 
-      border: 0;
+.video-frame {
 
-    }
+  position: relative;
 
-    .video-caption {
+  width: 100%;
+  aspect-ratio: 16 / 9;
 
-      margin-top: 14px;
+  overflow: hidden;
 
-      font-family: var(--machine);
-      font-size: 11px;
+  background: #171717;
 
-      line-height: 1.7;
+  border: 8px solid #292920;
 
-      color: #55564c;
+  box-shadow:
+    0 5px 13px rgba(0,0,0,.18);
 
-    }
+}
 
-    .video-caption a {
+.video-frame iframe {
 
-      text-decoration-thickness: 1px;
-      text-underline-offset: 3px;
+  width: 100%;
+  height: 100%;
 
-    }
+  display: block;
+  border: 0;
 
+}
 
-    /* ======================================
-       NOTE DE CHARLES PINSON
-       ====================================== */
+.video-caption {
 
-    .note-pinson {
+  margin-top: 14px;
 
-      position: relative;
+  font-family: var(--machine);
+  font-size: 11px;
 
-      margin-top: 34px;
+  line-height: 1.7;
 
-      padding: 26px 28px 20px;
+  color: #55564c;
 
-      background: #ede5ce;
+}
 
-      border: 1px solid #b8ad91;
+/* ==========================================
+   NOTE DE CHARLES PINSON
+   ========================================== */
 
-      box-shadow:
-        3px 4px 0 rgba(90,72,46,.10);
+.note-pinson {
 
-    }
+  margin-top: 34px;
 
-    .note-pinson h3 {
+}
 
-      margin: 0 0 21px;
+.note-pinson h3 {
 
-      font-family: var(--machine);
+  font-size: 13px;
 
-      font-size: 13px;
-      font-weight: normal;
+}
 
-      line-height: 1.7;
+.note-pinson p {
 
-      letter-spacing: .04em;
+  font-family: var(--machine);
 
-      color: #34362e;
+  font-size: 14px;
+  line-height: 1.95;
 
-    }
+}
 
-    .note-pinson p {
+.signature-pinson {
 
-      font-family: var(--machine);
+  margin-top: 23px;
 
-      font-size: 14px;
-      line-height: 1.95;
+  text-align: right;
 
-      margin-bottom: 17px;
+}
 
-    }
+.signature-pinson strong {
 
-    .signature-pinson {
+  font-family: var(--serif);
 
-      margin-top: 23px;
+  font-size: 25px;
+  font-weight: 500;
 
-      text-align: right;
+  font-style: italic;
 
-    }
+}
 
-    .signature-pinson strong {
+.signature-pinson span {
 
-      font-family: var(--serif);
+  display: block;
 
-      font-size: 25px;
-      font-weight: 500;
+  font-family: var(--machine);
+  font-size: 11px;
 
-      font-style: italic;
+  color: #55564c;
 
-    }
+}
 
-    .signature-pinson span {
+.archive-disclaimer {
 
-      display: block;
+  margin-top: 23px;
 
-      font-family: var(--machine);
-      font-size: 11px;
+  font-family: var(--machine);
 
-      color: #55564c;
+  font-size: 10px;
+  line-height: 1.7;
 
-    }
+  color: #625e53;
 
-    .note-pinson .document-stamp {
+}
 
-      margin-top: 20px;
+/* ==========================================
+   INDEX DES ARCHIVES
+   ========================================== */
 
-    }
+.index {
 
-    .archive-disclaimer {
+  display: grid;
 
-      margin-top: 23px;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-      font-family: var(--machine);
+  gap: 14px;
 
-      font-size: 10px;
-      line-height: 1.7;
+  margin-top: 24px;
 
-      color: #625e53;
+}
 
-    }
+.dossier {
 
+  display: block;
 
-    /* ======================================
-       INDEX DES ARCHIVES
-       ====================================== */
+  min-height: 145px;
 
-    .index {
+  text-decoration: none;
 
-      display: grid;
+  padding: 22px;
 
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+  border: 1px solid var(--trait);
 
-      gap: 14px;
+  background:
+    rgba(238,228,201,.62);
 
-      margin-top: 24px;
+  transition:
+    transform .16s,
+    background .16s;
 
-    }
+}
 
-    .dossier {
+.dossier:hover {
 
-      display: block;
+  transform: translateY(-3px);
 
-      min-height: 145px;
+  background:
+    rgba(250,243,224,.92);
 
-      text-decoration: none;
+}
 
-      padding: 22px;
+.dossier small {
 
-      border: 1px solid var(--trait);
+  display: block;
 
-      background:
-        rgba(238,228,201,.62);
+  margin-bottom: 13px;
 
-      transition:
-        transform .16s,
-        background .16s;
+  font-family: var(--machine);
+  font-size: 11px;
 
-    }
+  color: #606053;
 
-    .dossier:hover {
+}
 
-      transform: translateY(-3px);
+.dossier strong {
 
-      background:
-        rgba(250,243,224,.92);
+  display: block;
 
-    }
+  font-family: var(--serif);
 
-    .dossier small {
+  font-size: 26px;
+  font-weight: 500;
 
-      display: block;
+  line-height: 1.15;
 
-      margin-bottom: 13px;
+}
 
-      font-family: var(--machine);
-      font-size: 11px;
+.dossier em {
 
-      letter-spacing: .03em;
+  display: block;
 
-      color: #606053;
+  margin-top: 12px;
 
-    }
+  font-size: 17px;
 
-    .dossier strong {
+  color: #626252;
 
-      display: block;
+}
 
-      font-family: var(--serif);
+/* ==========================================
+   FICHES
+   ========================================== */
 
-      font-size: 26px;
-      font-weight: 500;
+.fiche {
 
-      line-height: 1.15;
+  margin-top: 25px;
 
-    }
+}
 
-    .dossier em {
+.fiche h2 {
 
-      display: block;
+  margin: 0 0 15px;
 
-      margin-top: 12px;
+  font-family: var(--machine);
 
-      font-size: 17px;
+  font-size: 13px;
+  font-weight: normal;
 
-      color: #626252;
+  letter-spacing: .06em;
 
-    }
+  text-transform: uppercase;
 
+}
 
-    /* ======================================
-       FICHES
-       ====================================== */
+/* ==========================================
+   PERSONNEL
+   ========================================== */
 
-    .fiche {
+.agents {
 
-      margin-top: 25px;
+  display: grid;
 
-      padding: 26px 28px;
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-      border-left:
-        3px solid var(--vert);
+  gap: 12px;
 
-      background:
-        rgba(226,218,193,.52);
+}
 
-    }
+.agent {
 
-    .fiche h2 {
+  padding: 18px;
 
-      margin: 0 0 15px;
+  border-bottom:
+    1px dotted var(--trait);
 
-      font-family: var(--machine);
+}
 
-      font-size: 13px;
-      font-weight: normal;
+.agent strong {
 
-      letter-spacing: .06em;
+  display: block;
 
-      text-transform: uppercase;
+  font-family: var(--serif);
 
-    }
+  font-size: 24px;
+  font-weight: 500;
 
-    .fiche p {
+}
 
-      margin: 0 0 12px;
+.agent span {
 
-    }
+  display: block;
 
-    .fiche p:last-child {
-      margin: 0;
-    }
+  margin-top: 4px;
 
+  font-family: var(--machine);
 
-    /* ======================================
-       PERSONNEL
-       ====================================== */
+  font-size: 11px;
 
-    .agents {
+  color: #656356;
 
-      display: grid;
+}
 
-      grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+/* ==========================================
+   BOUTONS
+   ========================================== */
 
-      gap: 12px;
+.bouton {
 
-    }
+  display: inline-block;
 
-    .agent {
+  background: var(--encre);
+  color: #f4edda;
 
-      padding: 18px;
+  border: 0;
 
-      border-bottom:
-        1px dotted var(--trait);
+  padding: 15px 20px;
 
-    }
+  font-family: var(--machine);
+  font-size: 12px;
 
-    .agent strong {
+  line-height: 1.5;
 
-      display: block;
+  text-decoration: none;
 
-      font-family: var(--serif);
+  cursor: pointer;
 
-      font-size: 24px;
-      font-weight: 500;
+}
 
-    }
+.bouton:hover {
+  background: var(--violet);
+}
 
-    .agent span {
+/* ==========================================
+   ANNEXE
+   ========================================== */
 
-      display: block;
+.annexe {
 
-      margin-top: 4px;
+  margin-top: 20px;
 
-      font-family: var(--machine);
-      font-size: 11px;
+  border:
+    1px dashed var(--violet);
 
-      color: #656356;
+  padding: 24px;
 
-    }
+  background:
+    rgba(223,217,204,.55);
 
+}
 
-    /* ======================================
-       BOUTONS
-       ====================================== */
+.annexe strong {
 
-    .bouton {
+  font-family: var(--machine);
 
-      display: inline-block;
+  font-size: 13px;
+  font-weight: normal;
 
-      background: var(--encre);
-      color: #f4edda;
+}
 
-      border: 0;
+/* ==========================================
+   GUICHET D'ACCÈS
+   ========================================== */
 
-      padding: 15px 20px;
+.guichet {
 
-      font-family: var(--machine);
-      font-size: 12px;
+  position: fixed;
+  inset: 0;
 
-      line-height: 1.5;
+  z-index: 100;
 
-      letter-spacing: .025em;
+  overflow-y: auto;
 
-      text-decoration: none;
+  background:
+    rgba(37,39,34,.94);
 
-      cursor: pointer;
+  padding: 25px 15px;
 
-      transition:
-        background .16s;
+}
 
-    }
+.guichet-feuille {
 
-    .bouton:hover {
-      background: var(--violet);
-    }
+  position: relative;
 
+  width: min(610px, 100%);
 
-    /* ======================================
-       ANNEXE
-       ====================================== */
+  margin: 25px auto;
 
-    #annexe[hidden] {
-      display: none;
-    }
+  padding: clamp(
+    25px,
+    6vw,
+    48px
+  );
 
-    .annexe {
+  background: var(--feuille);
 
-      margin-top: 20px;
+  border: 1px solid var(--trait);
 
-      border:
-        1px dashed var(--violet);
+  box-shadow:
+    8px 10px 0 #a69a80;
 
-      padding: 24px;
+}
 
-      color: #343044;
+.guichet-entete {
 
-      background:
-        rgba(223,217,204,.55);
+  text-align: center;
 
-    }
+  border-bottom:
+    2px solid var(--encre);
 
-    .annexe strong {
+  padding-bottom: 25px;
 
-      font-family: var(--machine);
+}
 
-      font-size: 13px;
-      font-weight: normal;
+.guichet-entete p {
 
-    }
+  margin: 0;
 
+  font-family: var(--machine);
 
-    /* ======================================
-       PIED DE PAGE
-       ====================================== */
+  font-size: 12px;
+  line-height: 1.8;
 
-    .retour {
+}
 
-      display: inline-block;
+.guichet h2 {
 
-      margin-top: 35px;
+  font-family: var(--serif);
 
-      font-family: var(--machine);
-      font-size: 12px;
+  font-size: 39px;
+  font-weight: 500;
 
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
+  line-height: 1.1;
 
-    }
+  margin: 30px 0 15px;
 
-    .footer {
+}
 
-      border-top:
-        2px solid var(--encre);
+.formulaire-ref {
 
-      margin-top: 55px;
+  font-family: var(--machine);
 
-      padding-top: 22px;
+  font-size: 12px;
 
-      display: flex;
+  color: var(--vert);
 
-      justify-content: space-between;
+}
 
-      gap: 20px;
+.formulaire-intro {
 
-      font-family: var(--machine);
+  margin-bottom: 27px;
 
-      font-size: 11px;
-      line-height: 1.8;
+}
 
-    }
+.champ {
 
-    .footer p {
-      margin: 0;
-    }
+  margin: 25px 0;
 
+}
 
-    /* ======================================
-       MOBILE
-       ====================================== */
+.champ label {
 
-    @media (max-width: 650px) {
+  display: block;
 
-      body {
-        font-size: 19px;
-      }
+  margin-bottom: 9px;
 
-      .page {
+  font-family: var(--machine);
 
-        margin: 15px auto 30px;
+  font-size: 13px;
 
-        box-shadow:
-          4px 6px 0 #c6b99c;
+}
 
-      }
+.champ input {
 
-      .top {
-        display: block;
-      }
+  width: 100%;
 
-      .ref {
+  padding: 13px 14px;
 
-        text-align: left;
+  border: 1px solid var(--trait);
 
-        margin-top: 18px;
+  border-bottom:
+    2px solid var(--encre);
 
-      }
+  background: #fffdf5;
 
-      .entete {
-        padding: 38px 0 25px;
-      }
+  color: var(--encre);
 
-      .index,
-      .agents {
-        grid-template-columns: 1fr;
-      }
+  font-family: var(--machine);
 
-      .avis p {
-        font-size: 20px;
-      }
+  font-size: 17px;
 
-      .footer {
-        display: block;
-      }
+}
 
-      .footer p + p {
-        margin-top: 15px;
-      }
+.cases {
 
-      .stamp-image {
-        width: 110px;
-      }
+  border: 0;
 
-      .stamp-meld img {
-        width: 125px;
-      }
+  padding: 0;
 
-      .archive-video {
-        padding: 15px;
-      }
+  margin: 25px 0;
 
-      .video-frame {
-        border-width: 5px;
-      }
+}
 
-      .note-pinson {
-        padding: 20px;
-      }
+.cases legend {
 
-      .note-pinson p {
-        font-size: 13px;
-      }
+  margin-bottom: 15px;
 
-    }
+  font-family: var(--machine);
 
+  font-size: 13px;
 
-    /* ======================================
-       ACCESSIBILITÉ
-       ====================================== */
+}
 
-    @media (
-      prefers-reduced-motion: reduce
-    ) {
+.case {
 
-      html {
-        scroll-behavior: auto;
-      }
+  display: flex;
 
-      .dossier,
-      .bouton {
-        transition: none;
-      }
+  align-items: flex-start;
 
-    }
+  gap: 13px;
 
+  margin: 17px 0;
 
-    /* ======================================
-       IMPRESSION
-       ====================================== */
+  font-size: 18px;
+  line-height: 1.4;
 
-    @media print {
+  cursor: pointer;
 
-      body {
-        background: white;
-      }
+}
 
-      body::before,
-      .ruban,
-      .video-frame {
-        display: none;
-      }
+.case input {
 
-      .page {
+  margin-top: 6px;
 
-        width: 100%;
+  width: 19px;
+  height: 19px;
 
-        margin: 0;
-        padding: 20mm;
+  flex-shrink: 0;
 
-        border: none;
-        box-shadow: none;
+  accent-color: var(--violet);
 
-      }
+}
 
-    }
+.formulaire-bas {
 
-  </style>
+  margin-top: 28px;
+
+  padding-top: 20px;
+
+  border-top: 1px solid var(--trait);
+
+}
+
+.formulaire-bas p {
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+}
+
+.formulaire-bas .bouton {
+
+  width: 100%;
+
+  text-align: center;
+
+  margin-top: 12px;
+
+}
+
+.message-validation {
+
+  text-align: center;
+
+  padding: 30px 0 10px;
+
+}
+
+.message-validation h2 {
+
+  font-size: 35px;
+
+}
+
+.message-validation img {
+
+  width: 150px;
+  height: auto;
+
+  margin: 15px auto;
+
+  transform: rotate(-8deg);
+
+}
+
+.message-validation p {
+
+  margin: 15px 0;
+
+}
+
+/* ==========================================
+   SALUTATION DES HABITUÉS
+   ========================================== */
+
+.salutation {
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 110;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 25px;
+
+  background:
+    rgba(39,40,34,.94);
+
+}
+
+.salutation-carte {
+
+  width: min(440px, 100%);
+
+  padding: 35px;
+
+  background: var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  text-align: center;
+
+}
+
+.salutation-carte p {
+
+  margin: 0 0 12px;
+
+}
+
+.salutation-carte .petit {
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+
+}
+
+.salutation-carte .bonjour {
+
+  font-size: 28px;
+
+}
+
+/* ==========================================
+   PIED DE PAGE
+   ========================================== */
+
+.retour {
+
+  display: inline-block;
+
+  margin-top: 35px;
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+}
+
+.footer {
+
+  border-top:
+    2px solid var(--encre);
+
+  margin-top: 55px;
+
+  padding-top: 22px;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+  line-height: 1.8;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+.reinitialiser {
+
+  margin-top: 16px;
+
+  padding: 0;
+
+  border: 0;
+  background: none;
+
+  color: #625e53;
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+
+  text-decoration: underline;
+
+  cursor: pointer;
+
+}
+
+/* ==========================================
+   MOBILE
+   ========================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .ref {
+
+    text-align: left;
+
+    margin-top: 18px;
+
+  }
+
+  .entete {
+    padding: 38px 0 25px;
+  }
+
+  .index,
+  .agents {
+    grid-template-columns: 1fr;
+  }
+
+  .avis p {
+    font-size: 20px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer p + p {
+    margin-top: 15px;
+  }
+
+  .archive-video {
+    padding: 15px;
+  }
+
+  .video-frame {
+    border-width: 5px;
+  }
+
+  .document {
+    padding: 22px 20px 22px 35px;
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .note-pinson p {
+    font-size: 13px;
+  }
+
+}
+
+/* ==========================================
+   ACCESSIBILITÉ
+   ========================================== */
+
+@media (
+  prefers-reduced-motion: reduce
+) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .dossier {
+    transition: none;
+  }
+
+}
+
+/* ==========================================
+   IMPRESSION
+   ========================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban,
+  .guichet,
+  .salutation,
+  .video-frame {
+    display: none !important;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+}
+
+</style>
 
 </head>
 
 
 <body>
 
-  <!-- BANDEAU -->
+<!-- ==========================================
+     GUICHET D'ACCÈS
+     ========================================== -->
 
-  <div class="ruban">
+<div
+  class="guichet"
+  id="guichet"
+  role="dialog"
+  aria-modal="true"
+  aria-labelledby="guichet-titre"
+  hidden
+>
 
-    Accès public · Reproduction partielle autorisée ·
-    Les dossiers originaux demeurent introuvables
+  <div class="guichet-feuille">
 
-  </div>
+    <header class="guichet-entete">
 
+      <p>
+        RÉPUBLIQUE FRANÇAISE
+      </p>
 
-  <main class="page" id="haut">
+      <p>
+        BUREAU DES INTERSTICES
+      </p>
 
-
-    <!-- EN-TÊTE ADMINISTRATIF -->
-
-    <header class="top">
-
-      <div class="republique">
-
-        République française<br>
-        Affaires culturelles<br>
-        Service de documentation
-
-      </div>
-
-      <div class="ref">
-
-        PARIS · 1966<br>
-        Référence : B.I. / SANS NUMÉRO<br>
-        Diffusion : intérieure, sauf erreur
-
-      </div>
+      <p>
+        SERVICE DE L'ACCUEIL
+      </p>
 
     </header>
 
+    <div id="formulaire-zone">
 
-    <!-- IDENTITÉ DU BUREAU -->
-
-    <section
-      class="entete"
-      aria-labelledby="titre"
-    >
-
-      <div class="eyebrow">
-
-        Note à l'attention
-        des personnes dûment égarées
-
+      <div class="formulaire-ref">
+        FORMULAIRE A-01<br>
+        DEMANDE D'AUTORISATION PROVISOIRE
       </div>
 
-      <h1 id="titre">
-
-        Le Bureau
-
-        <span>
-          des Interstices
-        </span>
-
-      </h1>
-
-      <p class="subtitle">
-
-        Service des phénomènes
-        insuffisamment documentés
-
-      </p>
-
-
-      <!-- TAMPON M.E.L.D. -->
-
-      <div class="stamp-meld">
-
-        <img
-          class="stamp-image stamp-large"
-          src="images/images/images/tampon_meld.png"
-          alt="Tampon officiel M.E.L.D. — République française"
-          width="160"
-          height="160"
-        >
-
-      </div>
-
-      <span class="mention">
-        Existence non confirmée
-      </span>
-
-    </section>
-
-
-    <!-- AVIS OFFICIEL -->
-
-    <div class="avis">
-
-      <p>
-
-        « L'existence de ce service
-        ne constitue pas une reconnaissance
-        officielle des phénomènes
-        dont il s'occupe. »
-
-      </p>
-
-    </div>
-
-
-    <!-- MISSION -->
-
-    <section
-      class="notice"
-      id="mission"
-      aria-labelledby="mission-titre"
-    >
-
-      <h2
-        class="section-title"
-        id="mission-titre"
-      >
-
-        01 / Objet du service
-
+      <h2 id="guichet-titre">
+        Déclaration de présence
       </h2>
 
-      <p class="first">
-
-        Paris, août 1966. Dans une France
-        où l'on sait classer les personnes,
-        les bâtiments et les formulaires,
-        certains événements persistent
-        à ne figurer dans aucune rubrique.
-
+      <p class="formulaire-intro">
+        Toute personne souhaitant consulter les
+        archives est priée de décliner une identité
+        suffisante pour permettre son accueil.
       </p>
 
       <p>
-
-        Un bruit entendu dans une pièce vide.
-        Un témoignage parfaitement crédible
-        auquel manque une explication.
-        Un dossier dont l'administration assure
-        qu'il n'a jamais existé — mais qu'il
-        faut pourtant restituer avant jeudi.
-
+        Une identité complète n'est pas exigée.
+        L'administration accepte les pseudonymes
+        pour des raisons qu'elle juge satisfaisantes.
       </p>
 
-      <p>
+      <form id="formulaire-acces">
 
-        Le Bureau des Interstices enquête
-        sur ces faits. Ses agents prennent
-        des notes, croisent les témoignages,
-        demandent des autorisations
-        et boivent du café.
+        <div class="champ">
 
-        Les phénomènes, eux,
-        n'ont pas reçu la circulaire.
+          <label for="identite">
+            NOM OU PSEUDONYME DU DEMANDEUR
+          </label>
 
-      </p>
-
-    </section>
-
-
-    <!-- ======================================
-         ARCHIVE AUDIOVISUELLE N° 001
-         ====================================== -->
-
-    <section
-      class="archive-video"
-      id="document-001"
-      aria-labelledby="archive-titre"
-    >
-
-      <h2
-        class="section-title"
-        id="archive-titre"
-      >
-
-        Document audiovisuel n° 001
-        — Diffusion autorisée
-
-      </h2>
-
-
-      <div class="archive-meta">
-
-        <strong>DATE :</strong>
-        6 décembre 1963<br>
-
-        <strong>INTERVENANT :</strong>
-        Alain Peyrefitte<br>
-
-        <strong>FONCTION :</strong>
-        Ministre de l'Information<br>
-
-        <strong>OBJET :</strong>
-        Développement de la télévision régionale<br>
-
-        <strong>SOURCE :</strong>
-        INA Politique
-
-      </div>
-
-
-      <!-- VIDÉO HISTORIQUE -->
-
-      <div class="video-frame">
-
-        <iframe
-          src="https://www.youtube-nocookie.com/embed/AQvhw04Aq4I"
-          title="Allocution d'Alain Peyrefitte — 6 décembre 1963 — INA Politique"
-          loading="lazy"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-
-      </div>
-
-
-      <p class="video-caption">
-
-        Archive audiovisuelle authentique
-        conservée et publiée par l'INA.
-
-        <br>
-
-        <a
-          href="https://www.youtube.com/watch?v=AQvhw04Aq4I"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Voir la vidéo sur la chaîne INA Politique ↗
-        </a>
-
-      </p>
-
-
-      <!-- NOTE DE CHARLES PINSON -->
-
-      <div class="note-pinson">
-
-        <h3>
-
-          BUREAU DES INTERSTICES<br>
-          SERVICE DES ARCHIVES<br>
-          NOTE MANUSCRITE
-
-        </h3>
-
-
-        <p>
-
-          6 décembre 1963 — Allocution de
-          M. Alain Peyrefitte,
-          ministre de l'Information.
-
-        </p>
-
-        <p>
-
-          Le ministre annonce une amélioration
-          de la diffusion des images
-          sur le territoire national.
-
-        </p>
-
-        <p>
-
-          Cette initiative mérite d'être saluée.
-
-        </p>
-
-        <p>
-
-          Il serait toutefois souhaitable
-          de vérifier que les images reçues
-          correspondent bien à celles
-          qui ont été émises.
-
-        </p>
-
-
-        <div class="signature-pinson">
-
-          <strong>
-            Charles Pinson
-          </strong>
-
-          <span>
-            Archiviste
-          </span>
-
-        </div>
-
-
-        <!-- TAMPON À ÉTUDIER -->
-
-        <div class="document-stamp">
-
-          <img
-            class="stamp-image stamp-small stamp-tilt-right"
-            src="images/images/images/a-etudier.png"
-            alt="Tampon À ÉTUDIER"
-            width="105"
-            height="105"
-            loading="lazy"
+          <input
+            type="text"
+            id="identite"
+            name="identite"
+            maxlength="40"
+            autocomplete="nickname"
+            required
+            placeholder="Votre nom ou pseudonyme"
           >
 
         </div>
 
-      </div>
+        <fieldset class="cases">
+
+          <legend>
+            DÉCLARATIONS DU DEMANDEUR
+          </legend>
+
+          <label class="case">
+
+            <input
+              type="checkbox"
+              required
+            >
+
+            <span>
+              Je sollicite l'autorisation
+              de consulter les archives
+              du Bureau des Interstices.
+            </span>
+
+          </label>
+
+          <label class="case">
+
+            <input
+              type="checkbox"
+              required
+            >
+
+            <span>
+              Je reconnais que certains documents
+              pourraient ne pas correspondre
+              exactement à mes souvenirs.
+            </span>
+
+          </label>
+
+          <label class="case">
+
+            <input
+              type="checkbox"
+              required
+            >
+
+            <span>
+              J'accepte que mon pseudonyme soit
+              conservé dans ce navigateur afin
+              d'éviter de renouveler cette demande.
+              Je peux supprimer cet enregistrement
+              depuis le site.
+            </span>
+
+          </label>
+
+          <label class="case">
+
+            <input
+              type="checkbox"
+              id="deja-present"
+            >
+
+            <span>
+              Je ne suis pas, à ma connaissance,
+              déjà présent dans les locaux.
+            </span>
+
+          </label>
+
+        </fieldset>
+
+        <div class="formulaire-bas">
+
+          <p>
+            La délivrance d'une autorisation
+            de consultation ne préjuge en rien
+            de l'existence des documents consultés.
+          </p>
+
+          <p>
+            Les informations saisies restent
+            sur cet appareil. Aucune identité
+            n'est transmise au Bureau.
+          </p>
+
+          <button
+            class="bouton"
+            type="submit"
+          >
+            TRANSMETTRE AU SERVICE COMPÉTENT
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
 
 
-      <p class="archive-disclaimer">
+    <!-- VALIDATION -->
 
-        La vidéo est une archive historique authentique.
-        La note de Charles Pinson appartient
-        à l'univers fictionnel du Bureau
-        des Interstices.
+    <div
+      class="message-validation"
+      id="validation"
+      hidden
+    >
+
+      <p class="formulaire-ref">
+        FORMULAIRE A-01 — TRAITÉ
+      </p>
+
+      <h2>
+        Autorisation provisoire accordée
+      </h2>
+
+      <img
+        src="images/images/images/a-classer.png"
+        alt="Tampon À CLASSER"
+      >
+
+      <p>
+        Votre demande a été enregistrée.
+      </p>
+
+      <p>
+        L'administration ne s'oppose pas
+        à votre présence.
+      </p>
+
+      <button
+        class="bouton"
+        id="entrer"
+        type="button"
+      >
+        CONSULTER LES ARCHIVES →
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<!-- ==========================================
+     SALUTATION
+     ========================================== -->
+
+<div
+  class="salutation"
+  id="salutation"
+  role="status"
+  aria-live="polite"
+  hidden
+>
+
+  <div class="salutation-carte">
+
+    <p class="petit">
+      BUREAU DES INTERSTICES
+    </p>
+
+    <p
+      class="bonjour"
+      id="texte-salutation"
+    ></p>
+
+    <p class="petit">
+      AUTORISATION TOUJOURS VALABLE
+    </p>
+
+  </div>
+
+</div>
+
+
+<!-- ==========================================
+     SITE PRINCIPAL
+     ========================================== -->
+
+<div class="ruban">
+
+  Accès public · Reproduction partielle autorisée ·
+  Les dossiers originaux demeurent introuvables
+
+</div>
+
+
+<main
+  class="page"
+  id="haut"
+>
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Affaires culturelles<br>
+      Service de documentation
+
+    </div>
+
+    <div class="ref">
+
+      PARIS · 1966<br>
+      Référence : B.I. / SANS NUMÉRO<br>
+      Diffusion : intérieure, sauf erreur
+
+    </div>
+
+  </header>
+
+
+  <!-- IDENTITÉ DU BUREAU -->
+
+  <section
+    class="entete"
+    aria-labelledby="titre"
+  >
+
+    <div class="eyebrow">
+      Note à l'attention des personnes
+      dûment égarées
+    </div>
+
+    <h1 id="titre">
+
+      Le Bureau
+
+      <span>
+        des Interstices
+      </span>
+
+    </h1>
+
+    <p class="subtitle">
+
+      Service des phénomènes
+      insuffisamment documentés
+
+    </p>
+
+    <div class="stamp-meld">
+
+      <img
+        class="stamp-image stamp-large"
+        src="images/images/images/tampon_meld.png"
+        alt="Tampon officiel M.E.L.D. — République française"
+        width="160"
+        height="160"
+      >
+
+    </div>
+
+    <span class="mention">
+      Existence non confirmée
+    </span>
+
+  </section>
+
+
+  <!-- AVIS OFFICIEL -->
+
+  <div class="avis document">
+
+    <p>
+      « L'existence de ce service
+      ne constitue pas une reconnaissance
+      officielle des phénomènes
+      dont il s'occupe. »
+    </p>
+
+  </div>
+
+
+  <!-- MISSION -->
+
+  <section
+    class="notice"
+    id="mission"
+    aria-labelledby="mission-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="mission-titre"
+    >
+      01 / Objet du service
+    </h2>
+
+    <p class="first">
+
+      Paris, août 1966. Dans une France
+      où l'on sait classer les personnes,
+      les bâtiments et les formulaires,
+      certains événements persistent
+      à ne figurer dans aucune rubrique.
+
+    </p>
+
+    <p>
+
+      Un bruit entendu dans une pièce vide.
+      Un témoignage parfaitement crédible
+      auquel manque une explication.
+      Un dossier dont l'administration assure
+      qu'il n'a jamais existé — mais qu'il
+      faut pourtant restituer avant jeudi.
+
+    </p>
+
+    <p>
+
+      Le Bureau des Interstices enquête
+      sur ces faits. Ses agents prennent
+      des notes, croisent les témoignages,
+      demandent des autorisations
+      et boivent du café.
+
+      Les phénomènes, eux,
+      n'ont pas reçu la circulaire.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       ARCHIVE AUDIOVISUELLE
+       ====================================== -->
+
+  <section
+    class="archive-video"
+    id="document-001"
+    aria-labelledby="archive-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="archive-titre"
+    >
+      Document audiovisuel n° 001
+      — Diffusion autorisée
+    </h2>
+
+    <div class="archive-meta">
+
+      <strong>DATE :</strong>
+      6 décembre 1963<br>
+
+      <strong>INTERVENANT :</strong>
+      Alain Peyrefitte<br>
+
+      <strong>FONCTION :</strong>
+      Ministre de l'Information<br>
+
+      <strong>OBJET :</strong>
+      Développement de la télévision régionale<br>
+
+      <strong>SOURCE :</strong>
+      INA Politique
+
+    </div>
+
+    <div class="video-frame">
+
+      <iframe
+        src="https://www.youtube-nocookie.com/embed/AQvhw04Aq4I"
+        title="Allocution d'Alain Peyrefitte — 6 décembre 1963 — INA Politique"
+        loading="lazy"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allowfullscreen
+      ></iframe>
+
+    </div>
+
+    <p class="video-caption">
+
+      Archive audiovisuelle publiée par l'INA.
+
+      <br>
+
+      <a
+        href="https://www.youtube.com/watch?v=AQvhw04Aq4I"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Voir la vidéo sur la chaîne INA Politique ↗
+      </a>
+
+    </p>
+
+
+    <!-- NOTE DE CHARLES PINSON -->
+
+    <div class="note-pinson document">
+
+      <h3>
+
+        BUREAU DES INTERSTICES<br>
+        SERVICE DES ARCHIVES<br>
+        NOTE MANUSCRITE
+
+      </h3>
+
+      <p>
+
+        6 décembre 1963 — Allocution de
+        M. Alain Peyrefitte,
+        ministre de l'Information.
 
       </p>
 
-    </section>
+      <p>
 
+        Le ministre annonce une amélioration
+        de la diffusion des images
+        sur le territoire national.
 
-    <!-- ARCHIVES -->
+      </p>
 
-    <section
-      id="archives"
-      aria-labelledby="archives-titre"
-    >
+      <p>
 
-      <h2
-        class="section-title"
-        id="archives-titre"
-      >
+        Cette initiative mérite d'être saluée.
 
-        02 / Consulter les archives
+      </p>
 
-      </h2>
+      <p>
 
+        Il serait toutefois souhaitable
+        de vérifier que les images reçues
+        correspondent bien à celles
+        qui ont été émises.
 
-      <div class="index">
+      </p>
 
-        <a
-          class="dossier"
-          href="#personnel"
-        >
+      <div class="signature-pinson">
 
-          <small>
-            CHEMISE 01 · PERSONNEL
-          </small>
+        <strong>
+          Charles Pinson
+        </strong>
 
-          <strong>
-            Les agents du Bureau
-          </strong>
-
-          <em>
-            Noms, fonctions,
-            habitudes professionnelles.
-          </em>
-
-        </a>
-
-
-        <a
-          class="dossier"
-          href="#affaires"
-        >
-
-          <small>
-            CHEMISE 02 · ENQUÊTES
-          </small>
-
-          <strong>
-            Les affaires
-          </strong>
-
-          <em>
-            Observations, dossiers
-            ouverts et anomalies.
-          </em>
-
-        </a>
-
-
-        <a
-          class="dossier"
-          href="#ambiance"
-        >
-
-          <small>
-            CHEMISE 03 · CONTEXTE
-          </small>
-
-          <strong>
-            Paris, 1966
-          </strong>
-
-          <em>
-            Le monde ordinaire,
-            à quelques détails près.
-          </em>
-
-        </a>
-
-
-        <a
-          class="dossier"
-          href="#jouer"
-        >
-
-          <small>
-            CHEMISE 04 · PROCÉDURE
-          </small>
-
-          <strong>
-            Entrer dans le jeu
-          </strong>
-
-          <em>
-            Un univers d'enquête
-            pour M.I.S.E.
-          </em>
-
-        </a>
+        <span>
+          Archiviste
+        </span>
 
       </div>
-
-
-      <!-- TAMPON À CLASSER -->
 
       <div class="document-stamp">
 
         <img
           class="stamp-image stamp-small stamp-tilt-right"
-          src="images/images/images/a-classer.png"
-          alt="Tampon À CLASSER"
+          src="images/images/images/a-etudier.png"
+          alt="Tampon À ÉTUDIER"
           width="105"
           height="105"
           loading="lazy"
@@ -1571,363 +1950,450 @@
 
       </div>
 
-    </section>
+    </div>
+
+    <p class="archive-disclaimer">
+
+      La vidéo est une archive historique.
+      La note de Charles Pinson appartient
+      à l'univers fictionnel du Bureau
+      des Interstices.
+
+    </p>
+
+  </section>
 
 
-    <!-- PERSONNEL -->
+  <!-- ARCHIVES -->
 
-    <section
-      id="personnel"
-      aria-labelledby="personnel-titre"
+  <section
+    id="archives"
+    aria-labelledby="archives-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="archives-titre"
     >
+      02 / Consulter les archives
+    </h2>
 
-      <h2
-        class="section-title"
-        id="personnel-titre"
-      >
-
-        03 / Extrait du registre
-        du personnel
-
-      </h2>
-
-
-      <div class="agents">
-
-        <div class="agent">
-
-          <strong>
-            Paul de Vauclerc
-          </strong>
-
-          <span>
-            DIRECTION
-          </span>
-
-        </div>
-
-
-        <div class="agent">
-
-          <strong>
-            Suzanne Charrenson
-          </strong>
-
-          <span>
-            ASSISTANCE DE DIRECTION
-          </span>
-
-        </div>
-
-
-        <div class="agent">
-
-          <strong>
-            Christian Boidy
-          </strong>
-
-          <span>
-            CONSEIL SCIENTIFIQUE
-          </span>
-
-        </div>
-
-
-        <div class="agent">
-
-          <strong>
-            Charles Pinson
-          </strong>
-
-          <span>
-            ARCHIVES
-          </span>
-
-        </div>
-
-      </div>
-
-
-      <div class="fiche">
-
-        <h2>
-          Observation administrative
-        </h2>
-
-        <p>
-
-          Les agents ne sont pas tenus
-          de partager les mêmes explications.
-
-          Ils sont néanmoins priés
-          de partager les mêmes dossiers.
-
-        </p>
-
-      </div>
-
-
-      <!-- TAMPON RÉPONDRE -->
-
-      <div class="document-stamp left">
-
-        <img
-          class="stamp-image stamp-small stamp-tilt-left"
-          src="images/images/images/repondre.png"
-          alt="Tampon RÉPONDRE"
-          width="105"
-          height="105"
-          loading="lazy"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- AFFAIRES -->
-
-    <section
-      id="affaires"
-      aria-labelledby="affaires-titre"
-    >
-
-      <h2
-        class="section-title"
-        id="affaires-titre"
-      >
-
-        04 / Affaires signalées
-
-      </h2>
-
-
-      <div class="fiche">
-
-        <h2>
-          État des dossiers
-        </h2>
-
-        <p>
-
-          Les enquêtes sont ouvertes
-          lorsque les circonstances l'exigent.
-
-          Les conclusions, lorsqu'elles existent,
-          ne répondent pas toujours
-          aux questions initiales.
-
-        </p>
-
-        <p>
-
-          Une affaire peut être classée
-          sans être résolue.
-
-          Cette distinction est importante
-          pour les statistiques.
-
-        </p>
-
-      </div>
-
-
-      <!-- TAMPON SANS SUITE -->
-
-      <div class="document-stamp">
-
-        <img
-          class="stamp-image stamp-tilt-right"
-          src="images/images/images/sans-suite.png"
-          alt="Tampon SANS SUITE"
-          width="130"
-          height="130"
-          loading="lazy"
-        >
-
-      </div>
-
-    </section>
-
-
-    <!-- CONTEXTE -->
-
-    <section
-      id="ambiance"
-      aria-labelledby="ambiance-titre"
-    >
-
-      <h2
-        class="section-title"
-        id="ambiance-titre"
-      >
-
-        05 / Conditions générales
-        d'observation
-
-      </h2>
-
-
-      <p>
-
-        La guerre froide, les postes de radio,
-        les machines à écrire, les dossiers
-        cartonnés et les voitures qui fument
-        au démarrage.
-
-        Un Paris d'avant les téléphones portables,
-        où disparaître pendant quelques heures
-        reste techniquement possible.
-
-      </p>
-
-
-      <p>
-
-        L'étrange est rare,
-        sans intention morale connue.
-
-        Ni magie omniprésente
-        ni guerre du Bien contre le Mal.
-
-        Plutôt un monde familier qui,
-        certains jours, oublie une règle
-        élémentaire de son fonctionnement.
-
-      </p>
-
-    </section>
-
-
-    <!-- JOUER -->
-
-    <section
-      id="jouer"
-      aria-labelledby="jouer-titre"
-    >
-
-      <h2
-        class="section-title"
-        id="jouer-titre"
-      >
-
-        06 / Modalités de participation
-
-      </h2>
-
-
-      <p>
-
-        Le Bureau des Interstices
-        est un univers d'enquêtes
-        pour <strong>M.I.S.E.</strong>,
-        un jeu de rôle sans dés
-        fondé sur l'initiative
-        des personnages et leurs choix.
-
-        Les joueurs explorent librement
-        les situations ; le Narrateur
-        ne connaît pas nécessairement l'issue.
-
-      </p>
-
+    <div class="index">
 
       <a
-        class="bouton"
-        href="https://tolmatchevalexis-prog.github.io/mise-rules/"
-        target="_blank"
-        rel="noopener noreferrer"
+        class="dossier"
+        href="#personnel"
       >
 
-        Consulter les règles M.I.S.E. ↗
+        <small>
+          CHEMISE 01 · PERSONNEL
+        </small>
+
+        <strong>
+          Les agents du Bureau
+        </strong>
+
+        <em>
+          Noms, fonctions,
+          habitudes professionnelles.
+        </em>
 
       </a>
 
-    </section>
+      <a
+        class="dossier"
+        href="#affaires"
+      >
+
+        <small>
+          CHEMISE 02 · ENQUÊTES
+        </small>
+
+        <strong>
+          Les affaires
+        </strong>
+
+        <em>
+          Observations, dossiers
+          ouverts et anomalies.
+        </em>
+
+      </a>
+
+      <a
+        class="dossier"
+        href="#ambiance"
+      >
+
+        <small>
+          CHEMISE 03 · CONTEXTE
+        </small>
+
+        <strong>
+          Paris, 1966
+        </strong>
+
+        <em>
+          Le monde ordinaire,
+          à quelques détails près.
+        </em>
+
+      </a>
+
+      <a
+        class="dossier"
+        href="#jouer"
+      >
+
+        <small>
+          CHEMISE 04 · PROCÉDURE
+        </small>
+
+        <strong>
+          Entrer dans le jeu
+        </strong>
+
+        <em>
+          Un univers d'enquête
+          pour M.I.S.E.
+        </em>
+
+      </a>
+
+    </div>
+
+    <div class="document-stamp">
+
+      <img
+        class="stamp-image stamp-small stamp-tilt-right"
+        src="images/images/images/a-classer.png"
+        alt="Tampon À CLASSER"
+        width="105"
+        height="105"
+        loading="lazy"
+      >
+
+    </div>
+
+  </section>
 
 
-    <!-- ANNEXE INTERACTIVE -->
+  <!-- PERSONNEL -->
 
-    <section
-      aria-labelledby="annexe-titre"
+  <section
+    id="personnel"
+    aria-labelledby="personnel-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="personnel-titre"
     >
+      03 / Extrait du registre du personnel
+    </h2>
 
-      <h2
-        class="section-title"
-        id="annexe-titre"
-      >
+    <div class="agents">
 
-        07 / Document joint
+      <div class="agent">
 
-      </h2>
+        <strong>
+          Paul de Vauclerc
+        </strong>
 
-
-      <button
-        class="bouton"
-        type="button"
-        id="ouvrir"
-        aria-expanded="false"
-        aria-controls="annexe"
-      >
-
-        Ouvrir l'annexe non enregistrée
-
-      </button>
-
-
-      <div
-        class="annexe"
-        id="annexe"
-        hidden
-      >
-
-        <p>
-
-          <strong>
-            NOTE INTERNE — À NE PAS REPRODUIRE
-          </strong>
-
-        </p>
-
-
-        <p>
-
-          Si un visiteur affirme avoir déjà consulté
-          ce document, le prier de fournir
-          une attestation du précédent visiteur.
-
-        </p>
-
-
-        <p>
-
-          Si les deux personnes sont identiques,
-          transmettre le dossier à la direction.
-
-          Sans urgence apparente.
-
-        </p>
+        <span>
+          DIRECTION
+        </span>
 
       </div>
 
-    </section>
+      <div class="agent">
+
+        <strong>
+          Suzanne Charrenson
+        </strong>
+
+        <span>
+          ASSISTANCE DE DIRECTION
+        </span>
+
+      </div>
+
+      <div class="agent">
+
+        <strong>
+          Christian Boidy
+        </strong>
+
+        <span>
+          CONSEIL SCIENTIFIQUE
+        </span>
+
+      </div>
+
+      <div class="agent">
+
+        <strong>
+          Charles Pinson
+        </strong>
+
+        <span>
+          ARCHIVES
+        </span>
+
+      </div>
+
+    </div>
+
+    <div class="fiche document">
+
+      <h2>
+        Observation administrative
+      </h2>
+
+      <p>
+
+        Les agents ne sont pas tenus
+        de partager les mêmes explications.
+
+        Ils sont néanmoins priés
+        de partager les mêmes dossiers.
+
+      </p>
+
+    </div>
+
+    <div class="document-stamp left">
+
+      <img
+        class="stamp-image stamp-small stamp-tilt-left"
+        src="images/images/images/repondre.png"
+        alt="Tampon RÉPONDRE"
+        width="105"
+        height="105"
+        loading="lazy"
+      >
+
+    </div>
+
+  </section>
 
 
-    <!-- RETOUR -->
+  <!-- AFFAIRES -->
+
+  <section
+    id="affaires"
+    aria-labelledby="affaires-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="affaires-titre"
+    >
+      04 / Affaires signalées
+    </h2>
+
+    <div class="fiche document">
+
+      <h2>
+        État des dossiers
+      </h2>
+
+      <p>
+
+        Les enquêtes sont ouvertes
+        lorsque les circonstances l'exigent.
+
+        Les conclusions, lorsqu'elles existent,
+        ne répondent pas toujours
+        aux questions initiales.
+
+      </p>
+
+      <p>
+
+        Une affaire peut être classée
+        sans être résolue.
+
+        Cette distinction est importante
+        pour les statistiques.
+
+      </p>
+
+    </div>
+
+    <div class="document-stamp">
+
+      <img
+        class="stamp-image stamp-tilt-right"
+        src="images/images/images/sans-suite.png"
+        alt="Tampon SANS SUITE"
+        width="130"
+        height="130"
+        loading="lazy"
+      >
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTEXTE -->
+
+  <section
+    id="ambiance"
+    aria-labelledby="ambiance-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="ambiance-titre"
+    >
+      05 / Conditions générales d'observation
+    </h2>
+
+    <p>
+
+      La guerre froide, les postes de radio,
+      les machines à écrire, les dossiers
+      cartonnés et les voitures qui fument
+      au démarrage.
+
+      Un Paris d'avant les téléphones portables,
+      où disparaître pendant quelques heures
+      reste techniquement possible.
+
+    </p>
+
+    <p>
+
+      L'étrange est rare,
+      sans intention morale connue.
+
+      Ni magie omniprésente
+      ni guerre du Bien contre le Mal.
+
+      Plutôt un monde familier qui,
+      certains jours, oublie une règle
+      élémentaire de son fonctionnement.
+
+    </p>
+
+  </section>
+
+
+  <!-- JOUER -->
+
+  <section
+    id="jouer"
+    aria-labelledby="jouer-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="jouer-titre"
+    >
+      06 / Modalités de participation
+    </h2>
+
+    <p>
+
+      Le Bureau des Interstices
+      est un univers d'enquêtes
+      pour <strong>M.I.S.E.</strong>,
+      un jeu de rôle sans dés
+      fondé sur l'initiative
+      des personnages et leurs choix.
+
+      Les joueurs explorent librement
+      les situations ; le Narrateur
+      ne connaît pas nécessairement l'issue.
+
+    </p>
 
     <a
-      class="retour"
-      href="#haut"
+      class="bouton"
+      href="https://tolmatchevalexis-prog.github.io/mise-rules/"
+      target="_blank"
+      rel="noopener noreferrer"
     >
-
-      ↑ Retour à l'en-tête du dossier
-
+      Consulter les règles M.I.S.E. ↗
     </a>
 
+  </section>
 
-    <!-- PIED DE PAGE -->
 
-    <footer class="footer">
+  <!-- ANNEXE -->
+
+  <section
+    aria-labelledby="annexe-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="annexe-titre"
+    >
+      07 / Document joint
+    </h2>
+
+    <button
+      class="bouton"
+      type="button"
+      id="ouvrir"
+      aria-expanded="false"
+      aria-controls="annexe"
+    >
+      Ouvrir l'annexe non enregistrée
+    </button>
+
+    <div
+      class="annexe"
+      id="annexe"
+      hidden
+    >
+
+      <p>
+        <strong>
+          NOTE INTERNE — À NE PAS REPRODUIRE
+        </strong>
+      </p>
+
+      <p>
+
+        Si un visiteur affirme avoir déjà consulté
+        ce document, le prier de fournir
+        une attestation du précédent visiteur.
+
+      </p>
+
+      <p>
+
+        Si les deux personnes sont identiques,
+        transmettre le dossier à la direction.
+
+        Sans urgence apparente.
+
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- RETOUR -->
+
+  <a
+    class="retour"
+    href="#haut"
+  >
+    ↑ Retour à l'en-tête du dossier
+  </a>
+
+
+  <!-- PIED DE PAGE -->
+
+  <footer class="footer">
+
+    <div>
 
       <p>
 
@@ -1936,49 +2402,310 @@
 
       </p>
 
-      <p>
+      <button
+        class="reinitialiser"
+        type="button"
+        id="oublier-visiteur"
+      >
+        Effacer mon autorisation locale
+      </button>
 
-        Création : Alexis Tolmatchev<br>
-        Usage du système M.I.S.E.
+    </div>
 
-      </p>
+    <p>
 
-    </footer>
+      Création : Alexis Tolmatchev<br>
+      Usage du système M.I.S.E.
+
+    </p>
+
+  </footer>
+
+</main>
 
 
-  </main>
+<!-- ==========================================
+     JAVASCRIPT
+     ========================================== -->
+
+<script>
+
+"use strict";
+
+/* ------------------------------------------
+   ANNEXE INTERACTIVE
+------------------------------------------ */
+
+const boutonAnnexe =
+  document.getElementById("ouvrir");
+
+const annexe =
+  document.getElementById("annexe");
+
+boutonAnnexe.addEventListener("click", () => {
+
+  const ouvert =
+    boutonAnnexe.getAttribute("aria-expanded")
+    === "true";
+
+  boutonAnnexe.setAttribute(
+    "aria-expanded",
+    String(!ouvert)
+  );
+
+  annexe.hidden = ouvert;
+
+  boutonAnnexe.textContent = ouvert
+    ? "Ouvrir l'annexe non enregistrée"
+    : "Refermer l'annexe non enregistrée";
+
+});
 
 
-  <!-- SCRIPT DE L'ANNEXE -->
+/* ------------------------------------------
+   MÉMOIRE LOCALE DU GUICHET
+------------------------------------------ */
 
-  <script>
+const CLE_VISITEUR =
+  "bureau-interstices-acces-v1";
 
-    const bouton =
-      document.getElementById("ouvrir");
+function lireVisiteur() {
 
-    const annexe =
-      document.getElementById("annexe");
+  try {
 
-    bouton.addEventListener("click", () => {
+    const donnees =
+      localStorage.getItem(CLE_VISITEUR);
 
-      const ouvert =
-        bouton.getAttribute("aria-expanded")
-        === "true";
+    if (!donnees) {
+      return null;
+    }
 
-      bouton.setAttribute(
-        "aria-expanded",
-        String(!ouvert)
-      );
+    const visiteur =
+      JSON.parse(donnees);
 
-      annexe.hidden = ouvert;
+    if (
+      !visiteur ||
+      typeof visiteur.pseudonyme !== "string" ||
+      !visiteur.pseudonyme.trim()
+    ) {
+      return null;
+    }
 
-      bouton.textContent = ouvert
-        ? "Ouvrir l'annexe non enregistrée"
-        : "Refermer l'annexe non enregistrée";
+    return visiteur;
 
-    });
+  } catch (erreur) {
 
-  </script>
+    return null;
+
+  }
+
+}
+
+function enregistrerVisiteur(pseudonyme) {
+
+  const visiteur = {
+
+    pseudonyme: pseudonyme.trim(),
+
+    dateInscription:
+      new Date().toISOString()
+
+  };
+
+  try {
+
+    localStorage.setItem(
+      CLE_VISITEUR,
+      JSON.stringify(visiteur)
+    );
+
+    return true;
+
+  } catch (erreur) {
+
+    return false;
+
+  }
+
+}
+
+
+/* ------------------------------------------
+   ÉLÉMENTS DU GUICHET
+------------------------------------------ */
+
+const guichet =
+  document.getElementById("guichet");
+
+const formulaire =
+  document.getElementById("formulaire-acces");
+
+const formulaireZone =
+  document.getElementById("formulaire-zone");
+
+const validation =
+  document.getElementById("validation");
+
+const boutonEntrer =
+  document.getElementById("entrer");
+
+const salutation =
+  document.getElementById("salutation");
+
+const texteSalutation =
+  document.getElementById("texte-salutation");
+
+const boutonOublier =
+  document.getElementById("oublier-visiteur");
+
+let memorisationDisponible = true;
+
+let retourFocus = null;
+
+function ouvrirGuichet() {
+
+  guichet.hidden = false;
+
+  formulaireZone.hidden = false;
+  validation.hidden = true;
+
+  document.body.style.overflow = "hidden";
+
+  document.getElementById("identite").focus();
+
+}
+
+function fermerGuichet() {
+
+  guichet.hidden = true;
+
+  document.body.style.overflow = "";
+
+  if (retourFocus) {
+    retourFocus.focus();
+    retourFocus = null;
+  }
+
+}
+
+
+/* ------------------------------------------
+   PREMIÈRE VISITE
+------------------------------------------ */
+
+formulaire.addEventListener("submit", (event) => {
+
+  event.preventDefault();
+
+  if (!formulaire.reportValidity()) {
+    return;
+  }
+
+  const pseudonyme =
+    document.getElementById("identite").value.trim();
+
+  if (!pseudonyme) {
+    return;
+  }
+
+  memorisationDisponible =
+    enregistrerVisiteur(pseudonyme);
+
+  formulaireZone.hidden = true;
+  validation.hidden = false;
+
+  if (!memorisationDisponible) {
+
+    const information =
+      document.createElement("p");
+
+    information.textContent =
+      "Votre navigateur refuse la conservation locale. " +
+      "L'autorisation reste valable pour cette visite.";
+
+    validation.appendChild(information);
+
+  }
+
+  boutonEntrer.focus();
+
+});
+
+
+boutonEntrer.addEventListener("click", () => {
+
+  fermerGuichet();
+
+});
+
+
+/* ------------------------------------------
+   VISITES SUIVANTES
+------------------------------------------ */
+
+function saluerVisiteur(visiteur) {
+
+  texteSalutation.textContent =
+    "Bonjour, " + visiteur.pseudonyme + ".";
+
+  salutation.hidden = false;
+
+  document.body.style.overflow = "hidden";
+
+  window.setTimeout(() => {
+
+    salutation.hidden = true;
+
+    document.body.style.overflow = "";
+
+  }, 1700);
+
+}
+
+
+/* ------------------------------------------
+   EFFACEMENT DE L'AUTORISATION
+------------------------------------------ */
+
+boutonOublier.addEventListener("click", () => {
+
+  try {
+
+    localStorage.removeItem(CLE_VISITEUR);
+
+  } catch (erreur) {
+
+    /* Le stockage peut être désactivé. */
+
+  }
+
+  retourFocus = boutonOublier;
+
+  formulaire.reset();
+
+  ouvrirGuichet();
+
+});
+
+
+/* ------------------------------------------
+   INITIALISATION
+------------------------------------------ */
+
+const visiteur =
+  lireVisiteur();
+
+if (visiteur) {
+
+  saluerVisiteur(visiteur);
+
+} else {
+
+  ouvrirGuichet();
+
+}
+
+</script>
 
 </body>
-          </html>
+  </html>
