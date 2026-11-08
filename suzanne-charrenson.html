@@ -1,1 +1,1076 @@
+<!doctype html>
+<html lang="fr">
 
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Dossier individuel de Suzanne Charrenson, assistante du directeur du Bureau des Interstices. Paris, 1966."
+>
+
+<title>
+  Suzanne Charrenson — Bureau des Interstices
+</title>
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ==========================================
+   IDENTITÉ GRAPHIQUE
+========================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --rouge: #ad5346;
+  --violet: #48338a;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* TRAME DISCRÈTE DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+}
+
+/* ==========================================
+   BANDEAU
+========================================== */
+
+.ruban {
+
+  padding: 12px 20px;
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ==========================================
+   FEUILLE PRINCIPALE
+========================================== */
+
+.page {
+
+  width: min(
+    850px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    65px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ==========================================
+   EN-TÊTE ADMINISTRATIF
+========================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.8;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.ref {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   IDENTITÉ DU DOSSIER
+========================================== */
+
+.entete {
+
+  padding: 47px 0 35px;
+
+  text-align: center;
+
+}
+
+.eyebrow {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  color: var(--vert);
+
+  letter-spacing: .07em;
+
+}
+
+h1 {
+
+  margin: 22px 0 12px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    42px,
+    7vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.035em;
+
+  line-height: 1.08;
+
+}
+
+.fonction {
+
+  margin: 0;
+
+  font-size: 24px;
+  font-style: italic;
+
+}
+
+.identite {
+
+  display: inline-block;
+
+  margin-top: 24px;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.9;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   DOCUMENT À MARGE ROUGE
+========================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 28px 0;
+
+  padding: 30px 34px 30px 49px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 24px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ==========================================
+   RUBRIQUES BIOGRAPHIQUES
+========================================== */
+
+.rubrique {
+
+  margin-bottom: 38px;
+
+}
+
+.rubrique:last-child {
+  margin-bottom: 0;
+}
+
+.rubrique h2 {
+
+  margin: 0 0 19px;
+
+  padding-bottom: 9px;
+
+  border-bottom:
+    1px dotted var(--trait);
+
+  font-family: var(--machine);
+  font-size: 13px;
+
+  font-weight: normal;
+
+  letter-spacing: .06em;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+.rubrique p {
+
+  margin: 0 0 17px;
+
+}
+
+.rubrique p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   CITATION
+========================================== */
+
+.citation {
+
+  margin: 45px 0 18px;
+
+  padding: 26px 20px;
+
+  border-top: 2px solid var(--encre);
+  border-bottom: 2px solid var(--encre);
+
+  text-align: center;
+
+}
+
+.citation small {
+
+  display: block;
+
+  margin-bottom: 17px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  letter-spacing: .06em;
+
+  color: var(--vert);
+
+}
+
+.citation blockquote {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    26px,
+    4vw,
+    36px
+  );
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+}
+
+/* ==========================================
+   NOTE FINALE
+========================================== */
+
+.classement {
+
+  margin-top: 32px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.9;
+
+  color: #655e50;
+
+}
+
+/* ==========================================
+   UNIQUE LIEN DE RETOUR
+========================================== */
+
+.retour {
+
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 14px 18px;
+
+  border: 1px solid var(--encre);
+
+  background: var(--encre);
+  color: var(--blanc);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+}
+
+.retour:hover {
+  background: var(--violet);
+  border-color: var(--violet);
+}
+
+/* ==========================================
+   PIED DE PAGE
+========================================== */
+
+.footer {
+
+  border-top: 2px solid var(--encre);
+
+  margin-top: 45px;
+  padding-top: 20px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: #55584e;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .ref {
+
+    margin-top: 18px;
+
+    text-align: left;
+
+  }
+
+  .entete {
+    padding: 35px 0 27px;
+  }
+
+  .document {
+
+    padding: 24px 20px 24px 36px;
+
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .fonction {
+    font-size: 21px;
+  }
+
+  .rubrique {
+    margin-bottom: 30px;
+  }
+
+}
+
+/* ==========================================
+   IMPRESSION
+========================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban,
+  .retour {
+    display: none !important;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ==========================================
+     BANDEAU
+========================================== -->
+
+<div class="ruban">
+
+  Consultation intérieure ·
+  Dossier individuel ·
+  Reproduction sous réserve
+
+</div>
+
+
+<!-- ==========================================
+     DOSSIER PRINCIPAL
+========================================== -->
+
+<main class="page">
+
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Affaires culturelles<br>
+      Mission d'études et de liaison documentaire
+
+    </div>
+
+    <div class="ref">
+
+      PARIS · 1966<br>
+      RÉFÉRENCE : P-002<br>
+      DOSSIER INDIVIDUEL
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       IDENTITÉ
+  ====================================== -->
+
+  <section
+    class="entete"
+    aria-labelledby="titre"
+  >
+
+    <div class="eyebrow">
+
+      SERVICE DU PERSONNEL<br>
+      DOCUMENT P-002
+
+    </div>
+
+    <h1 id="titre">
+
+      Suzanne Charrenson
+
+    </h1>
+
+    <p class="fonction">
+
+      Assistante du directeur du Bureau des Interstices
+
+    </p>
+
+    <div class="identite">
+
+      ÂGE : 42 ANS EN 1966<br>
+      FONCTION : ASSISTANCE DU DIRECTEUR<br>
+      AFFECTATION : M.E.L.D.
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       DOCUMENT BIOGRAPHIQUE
+  ====================================== -->
+
+  <article class="document">
+
+
+    <!-- PORTRAIT -->
+
+    <section class="rubrique">
+
+      <h2>
+        01 / Portrait
+      </h2>
+
+      <p>
+
+        Suzanne possède cette apparence familière
+        qui donne l'impression de l'avoir déjà
+        rencontrée. Elle pourrait être une collègue,
+        une voisine ou une personne venue régler
+        une formalité. Sa présence trouve naturellement
+        sa place dans les lieux qu'elle traverse.
+
+      </p>
+
+      <p>
+
+        Au Bureau, un crayon peut retenir ses cheveux.
+        Près du téléphone, un roman d'Agatha Christie
+        voisine avec le courrier. Elle lève les yeux
+        quand un visiteur entre, lui demande son nom
+        et attend qu'il explique ce qui l'amène.
+
+      </p>
+
+    </section>
+
+
+    <!-- CARACTÈRE -->
+
+    <section class="rubrique">
+
+      <h2>
+        02 / Caractère
+      </h2>
+
+      <p>
+
+        Compétente, attentive et discrète,
+        Suzanne écoute avant de répondre.
+        Elle sait demander une précision
+        sans donner à son interlocuteur le sentiment
+        de subir un interrogatoire.
+
+      </p>
+
+      <p>
+
+        Son humour tient souvent dans une remarque brève,
+        prononcée avec le même sérieux qu'une indication
+        pratique. Il possède parfois quelque chose
+        de presque britannique. Avec Paul, la familiarité
+        professionnelle lui permet de ramener
+        une conversation aux nécessités du moment.
+
+      </p>
+
+      <p>
+
+        Sa formation littéraire nourrit son attention
+        aux mots. Elle remarque les formulations imprécises,
+        les changements dans un récit et les questions
+        auxquelles on n'a pas répondu.
+
+      </p>
+
+    </section>
+
+
+    <!-- PARCOURS -->
+
+    <section class="rubrique">
+
+      <h2>
+        03 / Parcours — proposition biographique
+      </h2>
+
+      <p>
+
+        Née en 1924, Suzanne fait des études de lettres
+        à Paris et obtient sa licence en 1946.
+        Elle commence à enseigner dans le secondaire
+        par des remplacements, puis prépare
+        et réussit le CAPES en 1952.
+
+      </p>
+
+      <p>
+
+        Elle enseigne le français et la littérature.
+        Ces années lui donnent l'habitude d'écouter
+        plusieurs versions d'un même événement,
+        de reformuler une question et de conduire
+        un travail malgré les interruptions.
+
+      </p>
+
+      <p>
+
+        En 1957, elle rejoint un service administratif
+        de l'Éducation nationale, où elle assure
+        des tâches de rédaction, de correspondance
+        et d'organisation. Elle y apprend les usages
+        des bureaux et la manière de suivre
+        une demande jusqu'à son aboutissement.
+
+      </p>
+
+      <p>
+
+        Elle entre au Bureau en 1959, comme assistante
+        de Paul de Vauclerc. La petite taille du service
+        lui permet d'exercer un rôle étendu,
+        où sa capacité de jugement compte autant
+        que son organisation. Les raisons personnelles
+        de sa reconversion restent à préciser.
+
+      </p>
+
+    </section>
+
+
+    <!-- RÔLE AU BUREAU -->
+
+    <section class="rubrique">
+
+      <h2>
+        04 / Rôle au Bureau
+      </h2>
+
+      <p>
+
+        Suzanne reçoit le courrier et les visiteurs,
+        prépare les entretiens du directeur,
+        oriente les demandes et veille à leur suivi.
+
+      </p>
+
+      <p>
+
+        Elle rassemble les documents nécessaires
+        à une décision, transmet les informations
+        et sait à qui demander une réponse.
+        Avec Mireille, elle suit la préparation
+        et l'envoi des courriers.
+        Avec les enquêteurs, elle précise
+        les rendez-vous, les pièces attendues
+        et les démarches encore nécessaires.
+
+      </p>
+
+      <p>
+
+        Sa discrétion lui permet d'occuper
+        une place essentielle sans attirer
+        constamment l'attention sur son travail.
+
+      </p>
+
+    </section>
+
+
+    <!-- RELATION AVEC PAUL -->
+
+    <section class="rubrique">
+
+      <h2>
+        05 / Relation avec Paul de Vauclerc
+      </h2>
+
+      <p>
+
+        Paul connaît sa valeur, respecte son jugement
+        et lui accorde une véritable confiance
+        professionnelle. Il la considère comme
+        une collaboratrice fidèle et importante.
+
+      </p>
+
+      <p>
+
+        Suzanne peut lui rappeler une contrainte,
+        demander une précision ou glisser
+        une remarque ironique.
+        Leur entente repose sur l'expérience
+        du travail commun et sur une estime réciproque.
+
+      </p>
+
+    </section>
+
+
+    <!-- AGATHA CHRISTIE -->
+
+    <section class="rubrique">
+
+      <h2>
+        06 / Agatha Christie
+      </h2>
+
+      <p>
+
+        Suzanne a lu tous les livres d'Agatha Christie
+        parus à la date de l'aventure.
+        Cette passion fait partie de sa vie quotidienne.
+
+      </p>
+
+      <p>
+
+        Elle aime observer la manière dont un récit
+        distribue les informations, ce que chacun
+        choisit de dire et les détails
+        qui prennent leur sens après coup.
+        Le nom de son personnage préféré
+        et ses titres favoris restent à choisir.
+
+      </p>
+
+    </section>
+
+
+    <!-- RAPPORT AUX AFFAIRES -->
+
+    <section class="rubrique">
+
+      <h2>
+        07 / Rapport aux affaires du Bureau
+      </h2>
+
+      <p>
+
+        Elle accueille les témoignages avec sérieux
+        et pose des questions concrètes :
+        qui a écrit, qui était présent,
+        quels documents ont été conservés,
+        quelle réponse a déjà été donnée.
+
+      </p>
+
+      <p>
+
+        Elle peut aider une personne à raconter
+        clairement une expérience qui la trouble,
+        tout en laissant ouverte
+        la question de son explication.
+
+      </p>
+
+    </section>
+
+
+    <!-- INTERPRÉTATION -->
+
+    <section class="rubrique">
+
+      <h2>
+        08 / Pour l'interpréter
+      </h2>
+
+      <p>
+
+        Parler simplement, laisser une place
+        aux silences et poser une question à la fois.
+        Donner aux remarques ironiques
+        le ton d'une information ordinaire.
+
+      </p>
+
+      <p>
+
+        Faire sentir sa compétence
+        dans la justesse d'une demande,
+        un document préparé
+        ou la façon de recevoir quelqu'un.
+
+      </p>
+
+    </section>
+
+  </article>
+
+
+  <!-- ======================================
+       RÉPLIQUE RETENUE
+  ====================================== -->
+
+  <div class="citation">
+
+    <small>
+      RÉPLIQUE RETENUE
+    </small>
+
+    <blockquote>
+
+      « Sur justificatifs. »
+
+    </blockquote>
+
+  </div>
+
+
+  <!-- ======================================
+       CLASSEMENT
+  ====================================== -->
+
+  <p class="classement">
+
+    DOSSIER P-002<br>
+    SERVICE DU PERSONNEL<br>
+    DOCUMENT DE L'UNIVERS FICTIONNEL
+    DES INTERSTICES
+
+  </p>
+
+
+  <!-- ======================================
+       UNIQUE LIEN DE RETOUR
+  ====================================== -->
+
+  <a
+    class="retour"
+    href="personnel.html"
+  >
+
+    ← Retour au registre du personnel
+
+  </a>
+
+
+  <!-- ======================================
+       PIED DE PAGE
+  ====================================== -->
+
+  <footer class="footer">
+
+    <p>
+
+      M.E.L.D. · PARIS, 1966<br>
+      Création : Alexis Tolmatchev
+
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+  </html>
