@@ -2,71 +2,40 @@
 <html lang="fr">
 
 <head>
-
 <meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1"
->
-
+<meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ded3b8">
 
-<meta
-  name="description"
-  content="Le Bureau des Interstices. Paris, 1966. Service des phénomènes insuffisamment documentés."
->
+<meta name="description"
+content="Mission d’études et de liaison documentaire — Bureau des Interstices, Paris 1966.">
 
-<title>
-  Le Bureau des Interstices — Accueil du service
-</title>
+<title>Bureau des Interstices — Accueil</title>
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
-
-<link
-  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
-  rel="stylesheet"
->
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+rel="stylesheet">
 
 <style>
 
-/* =========================================
-   IDENTITÉ DU BUREAU
-========================================= */
+/* ========================================
+   IDENTITÉ GRAPHIQUE
+======================================== */
 
 :root {
-
   --papier: #ded3b8;
   --feuille: #f3e9cf;
   --blanc: #fffaf0;
-
   --encre: #292920;
-  --vert: #4c5546;
   --violet: #48338a;
   --rouge: #ad5346;
-
+  --vert: #4c5546;
   --trait: #b3a88e;
 
-  --serif:
-    "EB Garamond",
-    Garamond,
-    Georgia,
-    serif;
-
-  --machine:
-    "Special Elite",
-    "Courier New",
-    monospace;
-
+  --serif: "EB Garamond", Garamond, Georgia, serif;
+  --machine: "Special Elite", "Courier New", monospace;
 }
 
 * {
@@ -78,51 +47,35 @@ html {
 }
 
 body {
-
   margin: 0;
-
-  background: var(--papier);
-
   color: var(--encre);
+  font: 20px/1.55 var(--serif);
 
-  font-family: var(--serif);
-  font-size: 20px;
-
-  line-height: 1.55;
-
-  background-image:
+  background:
     radial-gradient(
       ellipse at 15% 12%,
-      rgba(255,255,240,.32),
+      #fff9df88,
       transparent 48%
     ),
     radial-gradient(
       ellipse at 85% 75%,
-      rgba(116,85,40,.10),
+      #74552816,
       transparent 52%
-    );
-
+    ),
+    var(--papier);
 }
 
-/* Grain léger du papier */
-
 body::before {
-
   content: "";
-
   position: fixed;
   inset: 0;
-
-  z-index: 20;
-
   pointer-events: none;
-
+  z-index: 20;
   opacity: .11;
 
   background-image: url(
     "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
   );
-
 }
 
 a {
@@ -132,182 +85,115 @@ a {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-
   outline: 3px solid var(--violet);
-
   outline-offset: 3px;
-
 }
 
 [hidden] {
   display: none !important;
 }
 
-/* =========================================
+/* ========================================
    BANDEAU
-========================================= */
+======================================== */
 
 .ruban {
-
   padding: 12px 20px;
-
   background: #4a5344;
   color: #f1eedf;
-
   text-align: center;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-  line-height: 1.7;
+  font: 11px/1.7 var(--machine);
   letter-spacing: .06em;
-
   text-transform: uppercase;
-
 }
 
-/* =========================================
+/* ========================================
    FEUILLE PRINCIPALE
-========================================= */
+======================================== */
 
 .page {
-
-  width: min(
-    940px,
-    calc(100% - 32px)
-  );
-
+  width: min(940px, calc(100% - 32px));
   margin: 34px auto 60px;
-
-  padding: clamp(
-    25px,
-    6vw,
-    70px
-  );
-
+  padding: clamp(25px, 6vw, 70px);
   position: relative;
 
-  background-color: var(--feuille);
-
-  background-image:
+  background:
     radial-gradient(
       ellipse at 10% 9%,
-      rgba(255,255,247,.58),
+      #fffff799,
       transparent 52%
     ),
     radial-gradient(
       ellipse at 92% 86%,
-      rgba(132,93,50,.10),
+      #845d3219,
       transparent 55%
-    );
+    ),
+    var(--feuille);
 
   border: 1px solid #b8aa8c;
 
   box-shadow:
     8px 10px 0 #c6b99c,
-    0 14px 35px rgba(64,49,25,.14);
-
+    0 14px 35px #40311924;
 }
 
 .page::before {
-
   content: "";
-
   position: absolute;
   inset: 8px;
-
-  border: 1px solid
-    rgba(95,75,45,.09);
-
+  border: 1px solid #5f4b2d17;
   pointer-events: none;
-
 }
 
-/* =========================================
-   EN-TÊTE ADMINISTRATIF
-========================================= */
+/* ========================================
+   EN-TÊTE
+======================================== */
 
 .top {
-
   display: flex;
-
   justify-content: space-between;
-
-  align-items: flex-start;
-
   gap: 20px;
-
   padding-bottom: 26px;
-
   border-bottom: 2px solid var(--encre);
+}
 
+.republique,
+.ref {
+  font: 12px/1.7 var(--machine);
+  letter-spacing: .03em;
 }
 
 .republique {
-
-  font-family: var(--machine);
-  font-size: 12px;
-
-  line-height: 1.7;
-  letter-spacing: .03em;
-
   text-transform: uppercase;
-
 }
 
 .ref {
-
-  font-family: var(--machine);
-
-  font-size: 11px;
-  line-height: 1.7;
-
   text-align: right;
-
   color: #55584e;
-
+  font-size: 11px;
 }
 
-/* =========================================
-   TITRE PRINCIPAL
-========================================= */
+/* ========================================
+   TITRE
+======================================== */
 
 .entete {
-
-  padding: 55px 0 32px;
-
   text-align: center;
-
+  padding: 55px 0 32px;
 }
 
-.eyebrow {
-
+.eyebrow,
+.micro {
   font-family: var(--machine);
   font-size: 12px;
-
   letter-spacing: .05em;
-
   color: var(--vert);
-
 }
 
 h1 {
-
   margin: 23px 0 15px;
-
-  font-family: var(--serif);
-
-  font-size: clamp(
-    42px,
-    7vw,
-    78px
-  );
-
-  font-weight: 500;
-
+  font: 500 clamp(42px,7vw,78px)/1.03 var(--serif);
   letter-spacing: -.035em;
-  line-height: 1.02;
-
 }
 
 h1 span {
@@ -315,237 +201,142 @@ h1 span {
 }
 
 .subtitle {
-
-  margin: 0;
-
+  margin: 0 auto;
+  max-width: 670px;
   font-size: 21px;
-  font-style: italic;
-
+  line-height: 1.5;
 }
 
 .mention {
-
   display: inline-block;
-
   margin-top: 12px;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
+  font: 11px var(--machine);
   color: #655d55;
-
-  letter-spacing: .05em;
-
   text-transform: uppercase;
-
+  letter-spacing: .05em;
 }
 
-/* =========================================
-   TAMPONS TRANSPARENTS
-========================================= */
+/* ========================================
+   TAMPONS
+======================================== */
 
 .stamp-image {
-
   display: block;
-
   width: 130px;
   height: auto;
-
-  opacity: .75;
-
+  opacity: .8;
   mix-blend-mode: multiply;
-
 }
 
 .stamp-small {
   width: 105px;
 }
 
-.stamp-large {
-  width: 160px;
-}
-
-.stamp-tilt-left {
-  transform: rotate(-11deg);
-}
-
-.stamp-tilt-right {
-  transform: rotate(8deg);
-}
-
 .stamp-meld {
-
   display: flex;
-
   justify-content: center;
-
   margin-top: 27px;
-
 }
 
 .stamp-meld img {
-
   width: 142px;
-
   transform: rotate(-7deg);
-
 }
 
 .document-stamp {
-
   display: flex;
-
   justify-content: flex-end;
-
   margin: 18px 6px 4px;
-
 }
 
-/* =========================================
+.document-stamp img {
+  transform: rotate(8deg);
+}
+
+/* ========================================
    DOCUMENTS BLANCS À MARGE ROUGE
-========================================= */
+======================================== */
 
 .document {
-
   position: relative;
-
   margin: 30px 0;
-
-  padding: 28px 31px 28px 44px;
-
+  padding: 26px 30px 26px 43px;
   background: var(--blanc);
-
-  border: 1px solid
-    rgba(151,133,105,.35);
+  border: 1px solid #97856959;
 
   box-shadow:
-    2px 4px 8px rgba(65,50,30,.09);
-
+    2px 4px 8px #41321e17;
 }
 
-.document::before {
-
+.document::before,
+.registre-feuille::before {
   content: "";
-
   position: absolute;
-
   top: 18px;
   bottom: 18px;
   left: 23px;
-
   width: 2px;
-
   background: var(--rouge);
-
   opacity: .85;
+}
 
+.document h3 {
+  margin: 0 0 18px;
+  font: 13px/1.6 var(--machine);
+  text-transform: uppercase;
 }
 
 .document p {
-  margin: 0 0 17px;
+  margin: 0 0 15px;
 }
 
 .document p:last-child {
   margin-bottom: 0;
 }
 
-.document h3 {
-
-  margin: 0 0 18px;
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-  font-weight: normal;
-
-  line-height: 1.6;
-
-  text-transform: uppercase;
-
-}
-
-/* =========================================
-   AVIS OFFICIEL
-========================================= */
-
-.avis {
-  margin: 28px 0 38px;
-}
-
 .avis p {
-
-  margin: 0;
-
   font-size: 23px;
   font-style: italic;
-
   line-height: 1.5;
-
 }
 
-/* =========================================
+/* ========================================
    SECTIONS
-========================================= */
+======================================== */
 
 .section-title {
-
   margin: 50px 0 22px;
-
-  font-family: var(--machine);
-
-  font-size: 13px;
-  font-weight: normal;
-
+  font: 13px/1.7 var(--machine);
   letter-spacing: .08em;
-
-  line-height: 1.7;
-
   text-transform: uppercase;
-
   color: var(--vert);
-
-}
-
-section p {
-  margin: 0 0 18px;
 }
 
 .notice {
-
   max-width: 700px;
-
   margin: 0 auto;
-
 }
 
-.notice .first:first-letter {
+.notice p {
+  margin: 0 0 18px;
+}
 
+.notice .first::first-letter {
   float: left;
-
-  font-family: var(--serif);
-
   font-size: 3.4em;
   line-height: .78;
-
   padding: 9px 9px 0 0;
-
 }
 
-/* =========================================
+/* ========================================
    ARCHIVE INA
-========================================= */
+======================================== */
 
 .archive-video {
-
   margin: 48px 0 58px;
-
   padding: 24px;
-
   border: 1px solid var(--trait);
-
-  background:
-    rgba(231,221,194,.65);
-
+  background: #e7ddc2a6;
 }
 
 .archive-video .section-title {
@@ -553,837 +344,260 @@ section p {
 }
 
 .archive-meta {
-
   margin-bottom: 23px;
-
-  font-family: var(--machine);
-  font-size: 12px;
-
-  line-height: 1.8;
-
+  font: 12px/1.8 var(--machine);
   color: #55564c;
-
 }
 
 .video-frame {
-
-  width: 100%;
-
-  aspect-ratio: 16 / 9;
-
+  aspect-ratio: 16/9;
   background: #171717;
-
   border: 8px solid #292920;
-
   overflow: hidden;
 
   box-shadow:
-    0 5px 13px rgba(0,0,0,.18);
-
+    0 5px 13px #0003;
 }
 
 .video-frame iframe {
-
   display: block;
-
   width: 100%;
   height: 100%;
-
   border: 0;
-
 }
 
 .video-caption {
-
   margin-top: 14px;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-  line-height: 1.7;
-
+  font: 11px/1.7 var(--machine);
   color: #55564c;
-
 }
 
-/* =========================================
+/* ========================================
    NOTE DE CHARLES PINSON
-========================================= */
+======================================== */
 
 .note-pinson {
   margin-top: 34px;
 }
 
 .note-pinson p {
-
-  font-family: var(--machine);
-  font-size: 14px;
-
-  line-height: 1.95;
-
+  font: 14px/1.95 var(--machine);
 }
 
 .signature-pinson {
-
-  margin-top: 23px;
-
   text-align: right;
-
+  margin-top: 23px;
 }
 
 .signature-pinson strong {
-
-  font-family: var(--serif);
-
-  font-size: 25px;
-  font-weight: 500;
-
-  font-style: italic;
-
+  font: italic 500 25px var(--serif);
 }
 
 .signature-pinson span {
-
   display: block;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
+  font: 11px var(--machine);
   color: #55564c;
-
 }
 
 .archive-disclaimer {
-
-  margin-top: 23px;
-
-  font-family: var(--machine);
-  font-size: 10px;
-
-  line-height: 1.7;
-
+  font: 10px/1.7 var(--machine);
   color: #625e53;
-
 }
 
-/* =========================================
-   HUIT CHEMISES DU RÉPERTOIRE
-========================================= */
+/* ========================================
+   HUIT CHEMISES
+======================================== */
 
 .repertoire {
-
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
-
+  grid-template-columns: repeat(2,minmax(0,1fr));
   gap: 15px;
-
   margin-top: 28px;
-
 }
 
 .chemise {
-
   display: flex;
-
   flex-direction: column;
-
-  min-height: 186px;
-
+  min-height: 188px;
   padding: 22px;
-
+  text-decoration: none;
   position: relative;
 
-  text-decoration: none;
-
   border: 1px solid var(--trait);
-
   border-top: 4px solid #777a63;
 
-  background:
-    rgba(239,229,203,.72);
+  background: #efe5cbb8;
 
   transition:
     transform .16s,
     background .16s;
-
 }
 
 .chemise:hover {
-
   transform: translateY(-3px);
-
   background: var(--blanc);
-
-}
-
-.chemise:focus-visible {
-
-  outline: 3px solid var(--violet);
-
 }
 
 .chemise small {
-
-  display: block;
-
   margin-bottom: 15px;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
+  font: 11px/1.5 var(--machine);
   color: #595c50;
-
-  line-height: 1.5;
-
 }
 
 .chemise strong {
-
-  display: block;
-
-  font-family: var(--serif);
-
-  font-size: 29px;
-  font-weight: 500;
-
-  line-height: 1.16;
-
+  font: 500 29px/1.16 var(--serif);
 }
 
 .chemise em {
-
-  display: block;
-
   margin-top: 12px;
-
   font-size: 17px;
   line-height: 1.45;
-
   color: #626052;
-
 }
 
 .chemise .etat {
-
   display: block;
-
   margin-top: auto;
   padding-top: 22px;
-
-  font-family: var(--machine);
-  font-size: 10px;
-
-  color: var(--vert);
-
+  font: 10px var(--machine);
   letter-spacing: .04em;
-
+  color: var(--vert);
 }
 
 .chemise.ouverte {
-
   border-left: 3px solid var(--vert);
-
-  background:
-    rgba(250,243,224,.85);
-
+  background: #faf3e0d9;
 }
 
-.chemise.attente {
-
+.chemise.reservee {
   border-top-color: #a69b82;
-
 }
 
-.chemise.attente .etat {
-
+.chemise.reservee .etat {
   color: #766b58;
-
 }
 
-/* =========================================
-   REGISTRE DU PERSONNEL
-========================================= */
-
-.registre {
-
-  margin-top: 28px;
-
-}
-
-.registre-titre {
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-  line-height: 1.8;
-
-  letter-spacing: .04em;
-
-}
+/* ========================================
+   REGISTRE DACTYLOGRAPHIÉ
+======================================== */
 
 .registre-feuille {
-
   position: relative;
-
   margin-top: 23px;
-
-  padding: 28px 28px 45px 44px;
-
-  min-height: 435px;
-
+  padding: 28px 28px 65px 44px;
   background: var(--blanc);
-
   border: 1px solid var(--trait);
 
   box-shadow:
-    3px 5px 9px rgba(65,50,30,.12);
+    3px 5px 9px #41321e1f;
 
   overflow: hidden;
-
-}
-
-.registre-feuille::before {
-
-  content: "";
-
-  position: absolute;
-
-  top: 16px;
-  bottom: 16px;
-  left: 24px;
-
-  width: 2px;
-
-  background: var(--rouge);
-
 }
 
 .registre-entete {
-
-  font-family: var(--machine);
-  font-size: 12px;
-
-  line-height: 1.8;
-
+  font: 12px/1.8 var(--machine);
   letter-spacing: .035em;
-
-  border-bottom:
-    1px solid var(--trait);
-
+  border-bottom: 1px solid var(--trait);
   padding-bottom: 17px;
-
   margin-bottom: 21px;
-
 }
 
 .liste-personnel {
-
   position: relative;
-
+  z-index: 1;
   margin: 0;
   padding: 0;
-
   list-style: none;
-
-  font-family: var(--machine);
-  font-size: 14px;
-
-  line-height: 1.8;
-
-  z-index: 1;
-
+  font: 14px/1.8 var(--machine);
 }
 
 .liste-personnel li {
-
   display: grid;
 
   grid-template-columns:
-    minmax(150px, 1fr)
-    minmax(135px, 1fr);
+    minmax(150px,1fr)
+    minmax(135px,1fr);
 
   gap: 15px;
-
   padding: 9px 0;
-
-  border-bottom:
-    1px dotted rgba(80,73,60,.23);
-
-}
-
-.liste-personnel .nom {
-  color: #282820;
+  border-bottom: 1px dotted #50493c3b;
 }
 
 .liste-personnel .fonction {
-
   color: #656052;
-
   font-size: 12px;
-
 }
 
-/* Le sceau empiète sur les dernières
-   lignes du registre, sans empêcher
-   la lecture des noms. */
-
 .registre-sceau {
-
   position: absolute;
-
-  width: clamp(
-    150px,
-    25vw,
-    218px
-  );
-
-  right: 8%;
-  bottom: 14px;
-
+  width: clamp(150px,25vw,218px);
+  right: 5%;
+  bottom: 8px;
   z-index: 2;
-
   transform: rotate(-13deg);
-
-  opacity: .42;
-
+  opacity: .32;
   pointer-events: none;
-
   mix-blend-mode: multiply;
-
 }
 
 .registre-note {
-
   margin-top: 23px;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-  line-height: 1.8;
-
+  font: 11px/1.8 var(--machine);
   color: #605b51;
-
 }
 
-/* =========================================
-   NOTICES DES DOSSIERS EN ATTENTE
-========================================= */
-
-.attentes {
-
-  margin-top: 48px;
-
-}
-
-.attente-notice {
-
-  scroll-margin-top: 25px;
-
-  margin: 20px 0;
-
-  padding: 22px 25px;
-
-  background:
-    rgba(236,227,205,.65);
-
-  border:
-    1px dashed #a69b82;
-
-}
-
-.attente-notice h3 {
-
-  margin: 0 0 14px;
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-  font-weight: normal;
-
-  line-height: 1.7;
-
-}
-
-.attente-notice p {
-
-  margin: 0 0 10px;
-
-}
-
-.attente-notice .classement {
-
-  margin-top: 15px;
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-  color: #676052;
-
-}
-
-/* =========================================
-   BOUTONS
-========================================= */
+/* ========================================
+   BOUTONS ET ANNEXE
+======================================== */
 
 .bouton {
-
   display: inline-block;
-
   padding: 15px 20px;
-
   border: 0;
 
   background: var(--encre);
-
   color: #f4edda;
 
-  font-family: var(--machine);
-  font-size: 12px;
-
-  line-height: 1.5;
-
+  font: 12px/1.5 var(--machine);
   text-decoration: none;
-
   cursor: pointer;
-
 }
 
 .bouton:hover {
   background: var(--violet);
 }
 
-/* =========================================
-   ANNEXE NON ENREGISTRÉE
-========================================= */
-
 .annexe {
-
   margin-top: 20px;
-
   padding: 24px;
-
   border: 1px dashed var(--violet);
-
-  background:
-    rgba(223,217,204,.55);
-
+  background: #dfd9cc8c;
 }
 
 .annexe strong {
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-  font-weight: normal;
-
+  font: 13px var(--machine);
 }
 
-/* =========================================
-   GUICHET A-01
-========================================= */
-
-.guichet {
-
-  position: fixed;
-  inset: 0;
-
-  z-index: 100;
-
-  overflow-y: auto;
-
-  background:
-    rgba(37,39,34,.94);
-
-  padding: 25px 15px;
-
+.retour {
+  display: inline-block;
+  margin-top: 35px;
+  font: 12px var(--machine);
 }
 
-.guichet-feuille {
-
-  width: min(610px, 100%);
-
-  margin: 25px auto;
-
-  padding: clamp(
-    25px,
-    6vw,
-    48px
-  );
-
-  background: var(--feuille);
-
-  border: 1px solid var(--trait);
-
-  box-shadow:
-    8px 10px 0 #a69a80;
-
-}
-
-.guichet-entete {
-
-  text-align: center;
-
-  border-bottom:
-    2px solid var(--encre);
-
-  padding-bottom: 25px;
-
-}
-
-.guichet-entete p {
-
-  margin: 0;
-
-  font-family: var(--machine);
-  font-size: 12px;
-
-  line-height: 1.8;
-
-}
-
-.guichet h2 {
-
-  font-family: var(--serif);
-
-  font-size: 39px;
-  font-weight: 500;
-
-  line-height: 1.1;
-
-  margin: 30px 0 15px;
-
-}
-
-.formulaire-ref {
-
-  font-family: var(--machine);
-  font-size: 12px;
-
-  color: var(--vert);
-
-}
-
-.champ {
-  margin: 25px 0;
-}
-
-.champ label {
-
-  display: block;
-
-  margin-bottom: 9px;
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-}
-
-.champ input {
-
-  width: 100%;
-
-  padding: 13px 14px;
-
-  border: 1px solid var(--trait);
-
-  border-bottom:
-    2px solid var(--encre);
-
-  background: #fffdf5;
-
-  color: var(--encre);
-
-  font-family: var(--machine);
-  font-size: 17px;
-
-}
-
-.cases {
-
-  border: 0;
-
-  padding: 0;
-
-  margin: 25px 0;
-
-}
-
-.cases legend {
-
-  margin-bottom: 15px;
-
-  font-family: var(--machine);
-  font-size: 13px;
-
-}
-
-.case {
-
-  display: flex;
-
-  align-items: flex-start;
-
-  gap: 13px;
-
-  margin: 17px 0;
-
-  font-size: 18px;
-
-  line-height: 1.4;
-
-  cursor: pointer;
-
-}
-
-.case input {
-
-  margin-top: 6px;
-
-  width: 19px;
-  height: 19px;
-
-  flex-shrink: 0;
-
-  accent-color: var(--violet);
-
-}
-
-.formulaire-bas {
-
-  margin-top: 28px;
-
-  padding-top: 20px;
-
-  border-top: 1px solid var(--trait);
-
-}
-
-.formulaire-bas p {
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-  line-height: 1.7;
-
-}
-
-.formulaire-bas .bouton {
-
-  width: 100%;
-
-  text-align: center;
-
-  margin-top: 12px;
-
-}
-
-.message-validation {
-
-  text-align: center;
-
-  padding: 30px 0 10px;
-
-}
-
-.message-validation h2 {
-  font-size: 35px;
-}
-
-.message-validation img {
-
-  display: block;
-
-  width: 150px;
-  height: auto;
-
-  margin: 15px auto;
-
-  transform: rotate(-8deg);
-
-}
-
-.message-validation p {
-  margin: 15px 0;
-}
-
-/* =========================================
-   SALUTATION DES HABITUÉS
-========================================= */
-
-.salutation {
-
-  position: fixed;
-  inset: 0;
-
-  z-index: 110;
-
-  display: flex;
-
-  justify-content: center;
-  align-items: center;
-
-  padding: 25px;
-
-  background:
-    rgba(39,40,34,.94);
-
-}
-
-.salutation-carte {
-
-  width: min(440px, 100%);
-
-  padding: 35px;
-
-  background: var(--feuille);
-
-  border: 1px solid var(--trait);
-
-  text-align: center;
-
-}
-
-.salutation-carte p {
-  margin: 0 0 12px;
-}
-
-.salutation-carte .petit {
-
-  font-family: var(--machine);
-  font-size: 11px;
-
-}
-
-.salutation-carte .bonjour {
-  font-size: 28px;
-}
-
-/* =========================================
+/* ========================================
    PIED DE PAGE
-========================================= */
+======================================== */
 
 .footer {
-
-  border-top:
-    2px solid var(--encre);
-
+  border-top: 2px solid var(--encre);
   margin-top: 55px;
-
   padding-top: 22px;
 
   display: flex;
-
   justify-content: space-between;
-
   gap: 20px;
 
-  font-family: var(--machine);
-  font-size: 11px;
-
-  line-height: 1.8;
-
+  font: 11px/1.8 var(--machine);
 }
 
 .footer p {
@@ -1391,54 +605,201 @@ section p {
 }
 
 .reinitialiser {
-
   margin-top: 16px;
-
   padding: 0;
-
   border: 0;
-
   background: none;
-
   color: #625e53;
 
-  font-family: var(--machine);
-  font-size: 11px;
-
+  font: 11px var(--machine);
   text-decoration: underline;
-
   cursor: pointer;
-
 }
 
-.retour {
+/* ========================================
+   GUICHET A-01
+======================================== */
 
-  display: inline-block;
-
-  margin-top: 35px;
-
-  font-family: var(--machine);
-  font-size: 12px;
-
+.guichet {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  overflow-y: auto;
+  background: #252722f0;
+  padding: 25px 15px;
 }
 
-/* =========================================
+.guichet-feuille {
+  width: min(610px,100%);
+  margin: 25px auto;
+  padding: clamp(25px,6vw,48px);
+  background: var(--feuille);
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #a69a80;
+}
+
+.guichet-entete {
+  text-align: center;
+  border-bottom: 2px solid var(--encre);
+  padding-bottom: 25px;
+}
+
+.guichet-entete p {
+  margin: 0;
+  font: 12px/1.8 var(--machine);
+}
+
+.guichet h2 {
+  font: 500 39px/1.1 var(--serif);
+  margin: 30px 0 15px;
+}
+
+.formulaire-ref {
+  font: 12px/1.7 var(--machine);
+  color: var(--vert);
+}
+
+.champ {
+  margin: 25px 0;
+}
+
+.champ label {
+  display: block;
+  margin-bottom: 9px;
+  font: 13px var(--machine);
+}
+
+.champ input {
+  width: 100%;
+  padding: 13px 14px;
+
+  border: 1px solid var(--trait);
+  border-bottom: 2px solid var(--encre);
+
+  background: #fffdf5;
+  color: var(--encre);
+
+  font: 17px var(--machine);
+}
+
+.cases {
+  border: 0;
+  padding: 0;
+  margin: 25px 0;
+}
+
+.cases legend {
+  margin-bottom: 15px;
+  font: 13px var(--machine);
+}
+
+.case {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  margin: 17px 0;
+  font-size: 18px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.case input {
+  margin-top: 6px;
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  accent-color: var(--violet);
+}
+
+.formulaire-bas {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--trait);
+}
+
+.formulaire-bas p {
+  font: 11px/1.7 var(--machine);
+}
+
+.formulaire-bas .bouton {
+  width: 100%;
+  text-align: center;
+  margin-top: 12px;
+}
+
+.message-validation {
+  text-align: center;
+  padding: 30px 0 10px;
+}
+
+.message-validation h2 {
+  font-size: 35px;
+}
+
+.message-validation img {
+  display: block;
+  width: 150px;
+  height: auto;
+  margin: 15px auto;
+  transform: rotate(-8deg);
+}
+
+.message-validation p {
+  margin: 15px 0;
+}
+
+/* ========================================
+   SALUTATION DES HABITUÉS
+======================================== */
+
+.salutation {
+  position: fixed;
+  inset: 0;
+  z-index: 110;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 25px;
+
+  background: #272822f0;
+}
+
+.salutation-carte {
+  width: min(440px,100%);
+  padding: 35px;
+  background: var(--feuille);
+  border: 1px solid var(--trait);
+  text-align: center;
+}
+
+.salutation-carte p {
+  margin: 0 0 12px;
+}
+
+.salutation-carte .petit {
+  font: 11px var(--machine);
+}
+
+.salutation-carte .bonjour {
+  font-size: 28px;
+}
+
+/* ========================================
    MOBILE
-========================================= */
+======================================== */
 
-@media (max-width: 650px) {
+@media(max-width:650px) {
 
   body {
     font-size: 19px;
   }
 
   .page {
-
     margin: 15px auto 30px;
-
-    box-shadow:
-      4px 6px 0 #c6b99c;
-
+    box-shadow: 4px 6px 0 #c6b99c;
   }
 
   .top {
@@ -1446,11 +807,8 @@ section p {
   }
 
   .ref {
-
     text-align: left;
-
     margin-top: 18px;
-
   }
 
   .entete {
@@ -1458,9 +816,7 @@ section p {
   }
 
   .repertoire {
-
     grid-template-columns: 1fr;
-
   }
 
   .chemise {
@@ -1476,9 +832,7 @@ section p {
   }
 
   .document {
-
     padding: 23px 20px 23px 35px;
-
   }
 
   .document::before {
@@ -1490,10 +844,7 @@ section p {
   }
 
   .registre-feuille {
-
-    padding:
-      22px 18px 40px 35px;
-
+    padding: 22px 18px 55px 35px;
   }
 
   .registre-feuille::before {
@@ -1501,18 +852,12 @@ section p {
   }
 
   .liste-personnel {
-
     font-size: 12px;
-    line-height: 1.6;
-
   }
 
   .liste-personnel li {
-
     grid-template-columns: 1fr;
-
     gap: 2px;
-
   }
 
   .liste-personnel .fonction {
@@ -1520,12 +865,9 @@ section p {
   }
 
   .registre-sceau {
-
     width: 155px;
-
     right: 4%;
-    bottom: 25px;
-
+    bottom: 15px;
   }
 
   .footer {
@@ -1535,14 +877,9 @@ section p {
   .footer p + p {
     margin-top: 15px;
   }
-
 }
 
-/* =========================================
-   ACCESSIBILITÉ
-========================================= */
-
-@media (prefers-reduced-motion: reduce) {
+@media(prefers-reduced-motion:reduce) {
 
   html {
     scroll-behavior: auto;
@@ -1551,12 +888,11 @@ section p {
   .chemise {
     transition: none;
   }
-
 }
 
-/* =========================================
+/* ========================================
    IMPRESSION
-========================================= */
+======================================== */
 
 @media print {
 
@@ -1573,30 +909,23 @@ section p {
   }
 
   .page {
-
     width: 100%;
-
     margin: 0;
     padding: 20mm;
-
-    border: none;
+    border: 0;
     box-shadow: none;
-
   }
-
 }
 
 </style>
-
 </head>
 
 
 <body>
 
-
-<!-- =========================================
-     GUICHET D'ENTRÉE
-========================================= -->
+<!-- ========================================
+     FORMULAIRE D'ACCÈS A-01
+======================================== -->
 
 <div
   class="guichet"
@@ -1613,21 +942,19 @@ section p {
 
       <p>RÉPUBLIQUE FRANÇAISE</p>
 
-      <p>BUREAU DES INTERSTICES</p>
+      <p>
+        MISSION D’ÉTUDES ET DE LIAISON DOCUMENTAIRE
+      </p>
 
       <p>SERVICE DE L'ACCUEIL</p>
 
     </header>
 
-
     <div id="formulaire-zone">
 
       <p class="formulaire-ref">
-
         FORMULAIRE A-01<br>
-
         DEMANDE D'AUTORISATION PROVISOIRE
-
       </p>
 
       <h2 id="guichet-titre">
@@ -1635,32 +962,24 @@ section p {
       </h2>
 
       <p>
-
         Toute personne souhaitant consulter
         les archives est priée de décliner
-        une identité suffisante
-        pour permettre son accueil.
-
+        une identité suffisante pour permettre
+        son accueil.
       </p>
 
       <p>
-
         Une identité complète n'est pas exigée.
-
         L'administration accepte les pseudonymes
         pour des raisons qu'elle juge satisfaisantes.
-
       </p>
-
 
       <form id="formulaire-acces">
 
         <div class="champ">
 
           <label for="identite">
-
             NOM OU PSEUDONYME DU DEMANDEUR
-
           </label>
 
           <input
@@ -1675,110 +994,81 @@ section p {
 
         </div>
 
-
         <fieldset class="cases">
 
           <legend>
-
             DÉCLARATIONS DU DEMANDEUR
-
           </legend>
-
 
           <label class="case">
 
             <input type="checkbox" required>
 
             <span>
-
               Je sollicite l'autorisation
               de consulter les archives
               du Bureau des Interstices.
-
             </span>
 
           </label>
-
 
           <label class="case">
 
             <input type="checkbox" required>
 
             <span>
-
               Je reconnais que certains documents
               pourraient ne pas correspondre
               exactement à mes souvenirs.
-
             </span>
 
           </label>
-
 
           <label class="case">
 
             <input type="checkbox" required>
 
             <span>
-
               J'accepte que mon pseudonyme
               soit conservé dans ce navigateur
-              afin d'éviter de renouveler
-              cette demande.
-
-              Je peux supprimer cet enregistrement
+              pour éviter de renouveler cette demande.
+              Je peux effacer cet enregistrement
               depuis le site.
-
             </span>
 
           </label>
 
-
           <label class="case">
 
-            <input
-              type="checkbox"
-              id="deja-present"
-            >
+            <input type="checkbox">
 
             <span>
-
               Je ne suis pas, à ma connaissance,
               déjà présent dans les locaux.
-
             </span>
 
           </label>
 
         </fieldset>
 
-
         <div class="formulaire-bas">
 
           <p>
-
             La délivrance d'une autorisation
             de consultation ne préjuge en rien
             de l'existence des documents consultés.
-
           </p>
 
           <p>
-
-            Les informations saisies restent
-            sur cet appareil.
-
-            Aucune identité n'est transmise au Bureau.
-
+            Le pseudonyme reste sur cet appareil ;
+            le formulaire ne le transmet pas à un serveur.
           </p>
 
           <button
             class="bouton"
             type="submit"
           >
-
             TRANSMETTRE AU SERVICE COMPÉTENT
-
           </button>
 
         </div>
@@ -1786,7 +1076,6 @@ section p {
       </form>
 
     </div>
-
 
     <!-- AUTORISATION ACCORDÉE -->
 
@@ -1797,15 +1086,11 @@ section p {
     >
 
       <p class="formulaire-ref">
-
         FORMULAIRE A-01 — TRAITÉ
-
       </p>
 
       <h2>
-
         Autorisation provisoire accordée
-
       </h2>
 
       <img
@@ -1814,16 +1099,12 @@ section p {
       >
 
       <p>
-
         Votre demande a été enregistrée.
-
       </p>
 
       <p>
-
         L'administration ne s'oppose pas
         à votre présence.
-
       </p>
 
       <button
@@ -1831,9 +1112,7 @@ section p {
         id="entrer"
         type="button"
       >
-
         CONSULTER LES ARCHIVES →
-
       </button>
 
     </div>
@@ -1843,9 +1122,9 @@ section p {
 </div>
 
 
-<!-- =========================================
-     SALUTATION DES HABITUÉS
-========================================= -->
+<!-- ========================================
+     SALUTATION DES VISITEURS CONNUS
+======================================== -->
 
 <div
   class="salutation"
@@ -1858,9 +1137,7 @@ section p {
   <div class="salutation-carte">
 
     <p class="petit">
-
       BUREAU DES INTERSTICES
-
     </p>
 
     <p
@@ -1869,9 +1146,7 @@ section p {
     ></p>
 
     <p class="petit">
-
       AUTORISATION TOUJOURS VALABLE
-
     </p>
 
   </div>
@@ -1879,48 +1154,39 @@ section p {
 </div>
 
 
-<!-- =========================================
-     SITE PRINCIPAL
-========================================= -->
+<!-- ========================================
+     ACCUEIL PRINCIPAL
+======================================== -->
 
 <div class="ruban">
-
   Accès public · Reproduction partielle autorisée ·
   Les dossiers originaux demeurent introuvables
-
 </div>
 
+<main class="page" id="haut">
 
-<main
-  class="page"
-  id="haut"
->
-
-
-  <!-- EN-TÊTE -->
+  <!-- EN-TÊTE ADMINISTRATIF -->
 
   <header class="top">
 
     <div class="republique">
-
       République française<br>
       Affaires culturelles<br>
       Service de documentation
-
     </div>
 
     <div class="ref">
-
       PARIS · 1966<br>
       Référence : B.I. / SANS NUMÉRO<br>
-      Diffusion : intérieure, sauf erreur
-
+      Diffusion : intérieure.
     </div>
 
   </header>
 
 
-  <!-- IDENTITÉ DU BUREAU -->
+  <!-- ========================================
+       IDENTITÉ DU BUREAU
+  ======================================== -->
 
   <section
     class="entete"
@@ -1928,33 +1194,32 @@ section p {
   >
 
     <div class="eyebrow">
-
-      Note à l'attention
-      des personnes dûment égarées
-
+      Note à l'attention des personnes dûment égarées
     </div>
 
     <h1 id="titre">
-
       Le Bureau
-
-      <span>
-        des Interstices
-      </span>
-
+      <span>des Interstices</span>
     </h1>
 
     <p class="subtitle">
 
-      Service des phénomènes
-      insuffisamment documentés
+      La Mission d’études et de liaison documentaire
+      (M.E.L.D.) est un service administratif
+      chargé de l’étude des phénomènes
+      insuffisamment documentés.
+
+      <br>
+
+      On l’appelle communément
+      le Bureau des Interstices.
 
     </p>
 
     <div class="stamp-meld">
 
       <img
-        class="stamp-image stamp-large"
+        class="stamp-image"
         src="images/images/images/tampon_meld.png"
         alt="Sceau M.E.L.D. — République française"
       >
@@ -1962,9 +1227,7 @@ section p {
     </div>
 
     <span class="mention">
-
       Existence non confirmée
-
     </span>
 
   </section>
@@ -1975,20 +1238,18 @@ section p {
   <div class="avis document">
 
     <p>
-
       « L'existence de ce service
       ne constitue pas une reconnaissance
       officielle des phénomènes
       dont il s'occupe. »
-
     </p>
 
   </div>
 
 
-  <!-- =====================================
+  <!-- ========================================
        01 — OBJET DU SERVICE
-  ===================================== -->
+  ======================================== -->
 
   <section
     class="notice"
@@ -2000,18 +1261,13 @@ section p {
       class="section-title"
       id="mission-titre"
     >
-
       01 / Objet du service
-
     </h2>
 
     <p class="first">
 
-      Paris, août 1966.
-
       Dans une France où l'on sait classer
-      les personnes, les bâtiments
-      et les formulaires,
+      les personnes, les bâtiments et les formulaires,
       certains événements persistent
       à ne figurer dans aucune rubrique.
 
@@ -2020,7 +1276,6 @@ section p {
     <p>
 
       Un bruit entendu dans une pièce vide.
-
       Un témoignage parfaitement crédible
       auquel manque une explication.
 
@@ -2028,14 +1283,21 @@ section p {
       qu'il n'a jamais existé —
       mais qu'il faut pourtant restituer avant jeudi.
 
+      Une activité inexplicable qui vient modifier
+      le cours ordinaire d'une existence.
+
     </p>
 
     <p>
 
-      Le Bureau des Interstices enquête
-      sur ces faits.
+      Autant de faits qui peuvent conduire
+      le Bureau des Interstices à ouvrir une enquête.
 
-      Ses agents prennent des notes,
+    </p>
+
+    <p>
+
+      Ses agents observent, prennent des notes,
       croisent les témoignages,
       demandent des autorisations
       et boivent du café.
@@ -2043,18 +1305,16 @@ section p {
     </p>
 
     <p>
-
       Les phénomènes, eux,
       n'ont pas reçu la circulaire.
-
     </p>
 
   </section>
 
 
-  <!-- =====================================
+  <!-- ========================================
        ARCHIVE INA — PEYREFITTE
-  ===================================== -->
+  ======================================== -->
 
   <section
     class="archive-video"
@@ -2066,26 +1326,19 @@ section p {
       class="section-title"
       id="archive-titre"
     >
-
-      Document audiovisuel n° 001
-      — Diffusion autorisée
-
+      Document audiovisuel n° 001 —
+      Diffusion autorisée
     </h2>
 
     <div class="archive-meta">
 
       DATE : 6 DÉCEMBRE 1963<br>
-
       INTERVENANT : ALAIN PEYREFITTE<br>
-
       FONCTION : MINISTRE DE L'INFORMATION<br>
-
       OBJET : TÉLÉVISION RÉGIONALE<br>
-
       SOURCE : INA POLITIQUE
 
     </div>
-
 
     <div class="video-frame">
 
@@ -2100,7 +1353,6 @@ section p {
 
     </div>
 
-
     <p class="video-caption">
 
       Archive audiovisuelle publiée par l'INA.
@@ -2112,75 +1364,55 @@ section p {
         target="_blank"
         rel="noopener noreferrer"
       >
-
         Consulter le document original ↗
-
       </a>
 
     </p>
 
 
-    <!-- NOTE DE L'ARCHIVISTE -->
+    <!-- NOTE DE CHARLES PINSON -->
 
     <div class="note-pinson document">
 
       <h3>
-
         BUREAU DES INTERSTICES<br>
         SERVICE DES ARCHIVES<br>
         NOTE MANUSCRITE
-
       </h3>
 
       <p>
-
-        6 décembre 1963 —
-        Allocution de M. Alain Peyrefitte,
-        ministre de l'Information.
-
+        6 décembre 1963 — Allocution de
+        M. Alain Peyrefitte, ministre de l'Information.
       </p>
 
       <p>
-
         Le ministre annonce une amélioration
         de la diffusion des images
         sur le territoire national.
-
       </p>
 
       <p>
-
         Cette initiative mérite d'être saluée.
-
       </p>
 
       <p>
-
         Il serait toutefois souhaitable
         de vérifier que les images reçues
-        correspondent bien à celles
-        qui ont été émises.
-
+        correspondent bien à celles qui ont été émises.
       </p>
-
 
       <div class="signature-pinson">
 
-        <strong>
-          Charles Pinson
-        </strong>
+        <strong>Charles Pinson</strong>
 
-        <span>
-          Archiviste
-        </span>
+        <span>Archiviste</span>
 
       </div>
-
 
       <div class="document-stamp">
 
         <img
-          class="stamp-image stamp-small stamp-tilt-right"
+          class="stamp-image stamp-small"
           src="images/images/images/a-etudier.png"
           alt="Tampon À ÉTUDIER"
           loading="lazy"
@@ -2190,23 +1422,20 @@ section p {
 
     </div>
 
-
     <p class="archive-disclaimer">
 
       La vidéo est une archive historique.
-
       La note de Charles Pinson appartient
-      à l'univers fictionnel du Bureau
-      des Interstices.
+      à l'univers fictionnel du Bureau des Interstices.
 
     </p>
 
   </section>
 
 
-  <!-- =====================================
+  <!-- ========================================
        02 — RÉPERTOIRE GÉNÉRAL
-  ===================================== -->
+  ======================================== -->
 
   <section
     id="archives"
@@ -2217,52 +1446,37 @@ section p {
       class="section-title"
       id="archives-titre"
     >
-
       02 / Répertoire général des archives
-
     </h2>
-
 
     <div class="document">
 
       <h3>
-
         SERVICE CENTRAL DES ARCHIVES
-
       </h3>
 
       <p>
-
         Les documents sont répartis
         entre les services compétents.
-
       </p>
 
       <p>
-
-        Cette répartition n'implique pas
+        Cette répartition raisonnée n'implique pas
         que les services concernés
         reconnaissent leur compétence.
-
       </p>
 
       <p>
-
-        Les personnes autorisées peuvent
-        consulter les chemises disponibles
+        Les personnes autorisées peuvent consulter
+        les chemises disponibles
         dans l'ordre de leur choix.
-
       </p>
 
       <p>
-
         Certains dossiers demeurent
         en cours de constitution.
-
-        Leur absence ne saurait être
-        interprétée comme la preuve
-        de leur inexistence.
-
+        Leur absence ne saurait être interprétée
+        comme la preuve de leur inexistence.
       </p>
 
     </div>
@@ -2272,11 +1486,11 @@ section p {
 
     <nav
       class="repertoire"
-      aria-label="Répertoire général"
+      aria-label="Huit chemises du répertoire"
     >
 
 
-      <!-- 01 : LES INTERSTICES -->
+      <!-- CHEMISE 01 -->
 
       <a
         class="chemise ouverte"
@@ -2284,35 +1498,26 @@ section p {
       >
 
         <small>
-
           CHEMISE 01 · DOCUMENT I-01
-
         </small>
 
         <strong>
-
           Les Interstices
-
         </strong>
 
         <em>
-
-          Présentation de l'univers.
-          De ce qui existe entre
-          les choses connues.
-
+          Présentation du contexte.
+          De ce qui existe entre les choses connues.
         </em>
 
         <span class="etat">
-
           CONSULTATION AUTORISÉE →
-
         </span>
 
       </a>
 
 
-      <!-- 02 : LE BUREAU -->
+      <!-- CHEMISE 02 -->
 
       <a
         class="chemise ouverte"
@@ -2320,35 +1525,28 @@ section p {
       >
 
         <small>
-
           CHEMISE 02 · DOCUMENT B-01
-
         </small>
 
         <strong>
-
           Le Bureau
-
         </strong>
 
         <em>
-
-          Origines, histoire,
-          création par Malraux,
-          missions et moyens.
-
+          Ses origines, son histoire,
+          sa création fictive à l'initiative
+          d'André Malraux.
+          Ses missions et ses moyens.
         </em>
 
         <span class="etat">
-
           CONSULTATION AUTORISÉE →
-
         </span>
 
       </a>
 
 
-      <!-- 03 : LE PERSONNEL -->
+      <!-- CHEMISE 03 -->
 
       <a
         class="chemise ouverte"
@@ -2356,207 +1554,134 @@ section p {
       >
 
         <small>
-
           CHEMISE 03 · DOCUMENT P-01
-
         </small>
 
         <strong>
-
           Le personnel
-
         </strong>
 
         <em>
-
-          Registre des huit membres
-          du service et répartition
-          de leurs responsabilités.
-
+          Registre des huit membres du service
+          et répartition de leurs responsabilités.
         </em>
 
         <span class="etat">
-
           CONSULTATION AUTORISÉE →
-
         </span>
 
       </a>
 
 
-      <!-- 04 : LES ENQUÊTEURS -->
-
-      <!--
-        FUTURE PAGE :
-        enqueteurs.html
-
-        Pour l'instant, la chemise
-        ouvre une notice sur l'accueil.
-      -->
+      <!-- CHEMISE 04 -->
 
       <a
-        class="chemise attente"
-        href="#attente-enqueteurs"
-        data-future-page="enqueteurs.html"
+        class="chemise reservee"
+        href="enqueteurs.html"
       >
 
         <small>
-
           CHEMISE 04 · COLLABORATEURS EXTÉRIEURS
-
         </small>
 
         <strong>
-
           Les enquêteurs
-
         </strong>
 
         <em>
-
-          Identités, parcours,
-          compétences et collaborations
-          occasionnelles.
-
+          Collaborateurs extérieurs, accréditations,
+          identités, parcours et compétences.
         </em>
 
         <span class="etat">
-
-          DOSSIER EN COURS DE CONSTITUTION →
-
+          CONSULTATION RESTREINTE →
         </span>
 
       </a>
 
 
-      <!-- 05 : LES AFFAIRES -->
-
-      <!--
-        FUTURE PAGE :
-        affaires.html
-      -->
+      <!-- CHEMISE 05 -->
 
       <a
-        class="chemise attente"
-        href="#attente-affaires"
-        data-future-page="affaires.html"
+        class="chemise reservee"
+        href="affaires.html"
       >
 
         <small>
-
           CHEMISE 05 · REGISTRE DES ENQUÊTES
-
         </small>
 
         <strong>
-
           Les affaires
-
         </strong>
 
         <em>
-
-          Signalements, témoignages,
-          rapports, pièces réunies
-          et conclusions éventuelles.
-
+          Signalements, témoignages, rapports,
+          pièces réunies et conclusions éventuelles.
         </em>
 
         <span class="etat">
-
-          DOSSIER EN COURS DE CONSTITUTION →
-
+          DOSSIER CONSULTABLE SUR DEMANDE →
         </span>
 
       </a>
 
 
-      <!-- 06 : LES SCÉNARIOS -->
-
-      <!--
-        FUTURE PAGE :
-        scenarios.html
-      -->
+      <!-- CHEMISE 06 -->
 
       <a
-        class="chemise attente"
-        href="#attente-scenarios"
-        data-future-page="scenarios.html"
+        class="chemise reservee"
+        href="enquetes.html"
       >
 
         <small>
-
           CHEMISE 06 · DOCUMENTS DE MISSION
-
         </small>
 
         <strong>
-
-          Les scénarios
-
+          Les enquêtes en cours
         </strong>
 
         <em>
-
-          Situations à explorer,
-          enquêtes jouables
-          et documents réservés
-          au Narrateur.
-
+          Situations à explorer, enquêtes jouables
+          et documents réservés au Narrateur.
         </em>
 
         <span class="etat">
-
-          DOSSIER EN COURS DE CONSTITUTION →
-
+          ATTENDRE UNE CONVOCATION →
         </span>
 
       </a>
 
 
-      <!-- 07 : PARIS 1966 -->
-
-      <!--
-        FUTURE PAGE :
-        paris-1966.html
-      -->
+      <!-- CHEMISE 07 -->
 
       <a
-        class="chemise attente"
-        href="#attente-paris"
-        data-future-page="paris-1966.html"
+        class="chemise reservee"
+        href="paris-1966.html"
       >
 
         <small>
-
           CHEMISE 07 · DOCUMENTATION HISTORIQUE
-
         </small>
 
         <strong>
-
-          Paris, 1966
-
+          Paris et la France des années soixante
         </strong>
 
         <em>
-
-          La France des années soixante,
-          ses institutions, ses habitudes
-          et ses archives authentiques.
-
+          Institutions, habitudes, réalités matérielles
+          et archives authentiques.
         </em>
 
         <span class="etat">
-
           DOSSIER EN COURS DE CONSTITUTION →
-
         </span>
 
       </a>
 
 
-      <!-- 08 : M.I.S.E. -->
+      <!-- CHEMISE 08 -->
 
       <a
         class="chemise ouverte"
@@ -2566,31 +1691,20 @@ section p {
       >
 
         <small>
-
           CHEMISE 08 · DOCUMENTATION EXTÉRIEURE
-
         </small>
 
         <strong>
-
           M.I.S.E.
-
         </strong>
 
         <em>
-
-          Maîtrise, Initiative,
-          Synergie, Engagement.
-
-          Le système narratif sans dés
+          Un système narratif sans dés
           et ses règles de jeu.
-
         </em>
 
         <span class="etat">
-
           CONSULTATION EXTÉRIEURE ↗
-
         </span>
 
       </a>
@@ -2601,7 +1715,7 @@ section p {
     <div class="document-stamp">
 
       <img
-        class="stamp-image stamp-small stamp-tilt-right"
+        class="stamp-image stamp-small"
         src="images/images/images/a-classer.png"
         alt="Tampon À CLASSER"
         loading="lazy"
@@ -2612,9 +1726,9 @@ section p {
   </section>
 
 
-  <!-- =====================================
+  <!-- ========================================
        03 — REGISTRE DU PERSONNEL
-  ===================================== -->
+  ======================================== -->
 
   <section
     id="personnel"
@@ -2625,420 +1739,253 @@ section p {
       class="section-title"
       id="personnel-titre"
     >
-
       03 / Extrait du registre du personnel
-
     </h2>
 
-
     <p>
-
-      Le Bureau réunit huit personnes,
-      auxquelles s'ajoutent
-      les enquêteurs extérieurs
+      Le Bureau réunit huit collaborateurs,
+      auxquels s'ajoutent les enquêteurs extérieurs
       et les concours ponctuels.
-
     </p>
 
     <p>
-
-      Le relevé ci-dessous décrit
-      leurs fonctions dans le service.
-
+      Le relevé ci-dessous décrit leurs fonctions
+      dans le service.
       Il ne fixe ni leurs grades
       ni leurs statuts individuels.
-
     </p>
 
+    <div class="registre-feuille">
 
-    <div class="registre">
+      <div class="registre-entete">
 
-      <div class="registre-feuille">
-
-        <div class="registre-entete">
-
-          BUREAU DES INTERSTICES<br>
-
-          SERVICE DU PERSONNEL<br>
-
-          ÉTAT NOMINATIF — PARIS, 1966<br>
-
-          DOCUMENT P-01 / EXTRAIT
-
-        </div>
-
-
-        <ol class="liste-personnel">
-
-          <li>
-
-            <span class="nom">
-              01. Paul de Vauclerc
-            </span>
-
-            <span class="fonction">
-              DIRECTION
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              02. Suzanne Charrenson
-            </span>
-
-            <span class="fonction">
-              ASSISTANCE DU DIRECTEUR
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              03. Christian Boidy
-            </span>
-
-            <span class="fonction">
-              CONSEIL SCIENTIFIQUE
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              04. Charles Pinson
-            </span>
-
-            <span class="fonction">
-              ARCHIVES ET DOCUMENTATION
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              05. François Phạm
-            </span>
-
-            <span class="fonction">
-              ORGANISATION DES MISSIONS
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              06. Mireille Aubry
-            </span>
-
-            <span class="fonction">
-              STÉNODACTYLOGRAPHIE
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              07. Henri Martin
-            </span>
-
-            <span class="fonction">
-              ACCÈS ET SÉCURITÉ
-            </span>
-
-          </li>
-
-
-          <li>
-
-            <span class="nom">
-              08. Jean-Philippe Lafont
-            </span>
-
-            <span class="fonction">
-              ATTRIBUTIONS DIVERSES
-            </span>
-
-          </li>
-
-        </ol>
-
-
-        <!--
-          SCEAU MELD SUR LE DOCUMENT
-
-          PNG TRANSPARENT
-        -->
-
-        <img
-          class="registre-sceau"
-          src="images/images/images/tampon_meld.png"
-          alt=""
-          aria-hidden="true"
-          loading="lazy"
-        >
+        BUREAU DES INTERSTICES<br>
+        SERVICE DU PERSONNEL<br>
+        ÉTAT NOMINATIF — PARIS, 1965<br>
+        DOCUMENT P-01 / EXTRAIT
 
       </div>
 
+      <ol class="liste-personnel">
 
-      <p class="registre-note">
+        <li>
+          <span>01. Paul de Vauclerc</span>
+          <span class="fonction">DIRECTION</span>
+        </li>
 
-        DOCUMENT ÉTABLI POUR CONSULTATION INTERNE.
+        <li>
+          <span>02. Suzanne Charrenson</span>
+          <span class="fonction">ASSISTANCE DU DIRECTEUR</span>
+        </li>
 
-        <br>
+        <li>
+          <span>03. Christian Boidy</span>
+          <span class="fonction">CONSEIL SCIENTIFIQUE</span>
+        </li>
 
-        L'identité des personnes mentionnées
-        ne préjuge pas de leur présence
-        effective dans les locaux.
+        <li>
+          <span>04. Charles Pinson</span>
+          <span class="fonction">ARCHIVES ET DOCUMENTATION</span>
+        </li>
 
-      </p>
+        <li>
+          <span>05. François Phạm</span>
+          <span class="fonction">ORGANISATION DES MISSIONS</span>
+        </li>
 
+        <li>
+          <span>06. Mireille Aubry</span>
+          <span class="fonction">STÉNODACTYLOGRAPHIE</span>
+        </li>
 
-      <a
-        class="bouton"
-        href="personnel.html"
+        <li>
+          <span>07. Henri Martin</span>
+          <span class="fonction">ACCÈS ET SÉCURITÉ</span>
+        </li>
+
+        <li>
+          <span>08. Jean-Philippe Lafont</span>
+          <span class="fonction">ATTRIBUTIONS DIVERSES</span>
+        </li>
+
+      </ol>
+
+      <!-- SCEAU MELD SUR LE REGISTRE -->
+
+      <img
+        class="registre-sceau"
+        src="images/images/images/tampon_meld.png"
+        alt=""
+        aria-hidden="true"
+        loading="lazy"
       >
 
-        CONSULTER LE REGISTRE COMPLET →
+    </div>
 
-      </a>
+    <p class="registre-note">
+
+      DOCUMENT ÉTABLI POUR CONSULTATION INTERNE.
+
+      <br>
+
+      L'identité des personnes mentionnées
+      ne préjuge pas de leur présence effective
+      dans les locaux.
+
+    </p>
+
+    <a
+      class="bouton"
+      href="personnel.html"
+    >
+      CONSULTER LE REGISTRE COMPLET →
+    </a>
+
+  </section>
+
+
+  <!-- ========================================
+       04 — DOSSIERS DE TRAVAIL
+  ======================================== -->
+
+  <section
+    id="travaux"
+    aria-labelledby="travaux-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="travaux-titre"
+    >
+      04 / Dossiers de travail
+    </h2>
+
+    <p>
+      Plusieurs chemises figurent au répertoire général
+      avant l'achèvement de leur classement.
+      Cette pratique est tolérée lorsque les circonstances
+      ne permettent pas de faire autrement.
+    </p>
+
+
+    <!-- ENQUÊTEURS -->
+
+    <div class="document">
+
+      <h3>
+        CHEMISE 04 — LES ENQUÊTEURS
+      </h3>
+
+      <p>
+        Le Bureau fait appel à des collaborateurs
+        extérieurs dont les compétences ne figurent
+        pas toujours dans les nomenclatures habituelles.
+        Leur registre est en cours de constitution.
+        Les intéressés restent libres
+        de poursuivre leurs activités en attendant.
+      </p>
+
+      <p>
+        <a href="enqueteurs.html">
+          Consulter la procédure d'accès →
+        </a>
+      </p>
+
+    </div>
+
+
+    <!-- AFFAIRES -->
+
+    <div class="document">
+
+      <h3>
+        CHEMISE 05 — LES AFFAIRES
+      </h3>
+
+      <p>
+        Les dossiers d'enquête sont actuellement
+        rapprochés de leurs pièces justificatives.
+
+        Certaines pièces paraissent avoir été réunies
+        avant l'ouverture des dossiers
+        auxquels elles se rapportent.
+      </p>
+
+      <p>
+        <a href="affaires.html">
+          Formuler une demande de consultation →
+        </a>
+      </p>
+
+    </div>
+
+
+    <!-- ENQUÊTES EN COURS -->
+
+    <div class="document">
+
+      <h3>
+        CHEMISE 06 — LES ENQUÊTES
+      </h3>
+
+      <p>
+        Les documents relatifs aux missions futures
+        ne sont pas encore intégralement communicables.
+
+        Le Narrateur peut en connaître certaines dispositions.
+        Les autres personnes sont invitées à ne pas anticiper
+        les conclusions de leurs enquêtes.
+      </p>
+
+      <p>
+        <a href="enquetes.html">
+          Présenter sa disponibilité →
+        </a>
+      </p>
+
+    </div>
+
+
+    <!-- DOCUMENTATION HISTORIQUE -->
+
+    <div class="document">
+
+      <h3>
+        CHEMISE 07 — CONTEXTE
+      </h3>
+
+      <p>
+        La documentation historique
+        est en cours de rassemblement.
+
+        Il est rappelé que les événements du passé
+        ne deviennent pas fictifs du seul fait
+        qu'ils figurent dans les archives du Bureau.
+      </p>
+
+      <p>
+        <a href="paris-1966.html">
+          Consulter la notice documentaire →
+        </a>
+      </p>
 
     </div>
 
   </section>
 
 
-  <!-- =====================================
-       04 — DOCUMENTS EN ATTENTE
-  ===================================== -->
-
-  <section
-    class="attentes"
-    id="documents-attente"
-    aria-labelledby="attentes-titre"
-  >
-
-    <h2
-      class="section-title"
-      id="attentes-titre"
-    >
-
-      04 / Dossiers en cours de constitution
-
-    </h2>
-
-
-    <p>
-
-      Plusieurs chemises figurent
-      au répertoire général
-      avant l'achèvement de leur classement.
-
-      Cette pratique est tolérée
-      lorsque les circonstances
-      ne permettent pas de faire autrement.
-
-    </p>
-
-
-    <!-- ENQUÊTEURS -->
-
-    <article
-      class="attente-notice"
-      id="attente-enqueteurs"
-    >
-
-      <h3>
-
-        CHEMISE 04 — LES ENQUÊTEURS
-
-      </h3>
-
-      <p>
-
-        Le Bureau fait appel
-        à des collaborateurs extérieurs
-        dont les compétences
-        ne figurent pas toujours
-        dans les nomenclatures habituelles.
-
-      </p>
-
-      <p>
-
-        Leur registre est en cours
-        de constitution.
-
-        Les intéressés restent libres
-        de poursuivre leurs activités
-        en attendant.
-
-      </p>
-
-      <p class="classement">
-
-        DESTINATION PRÉVUE :
-        enqueteurs.html
-
-      </p>
-
-    </article>
-
-
-    <!-- AFFAIRES -->
-
-    <article
-      class="attente-notice"
-      id="attente-affaires"
-    >
-
-      <h3>
-
-        CHEMISE 05 — LES AFFAIRES
-
-      </h3>
-
-      <p>
-
-        Les dossiers d'enquête
-        sont actuellement rapprochés
-        de leurs pièces justificatives.
-
-      </p>
-
-      <p>
-
-        Certaines pièces paraissent
-        avoir été réunies
-        avant l'ouverture des dossiers
-        auxquels elles se rapportent.
-
-      </p>
-
-      <p class="classement">
-
-        DESTINATION PRÉVUE :
-        affaires.html
-
-      </p>
-
-    </article>
-
-
-    <!-- SCÉNARIOS -->
-
-    <article
-      class="attente-notice"
-      id="attente-scenarios"
-    >
-
-      <h3>
-
-        CHEMISE 06 — LES SCÉNARIOS
-
-      </h3>
-
-      <p>
-
-        Les documents relatifs
-        aux missions futures
-        ne sont pas encore
-        intégralement communicables.
-
-      </p>
-
-      <p>
-
-        Le Narrateur peut en connaître
-        certaines dispositions.
-
-        Les autres personnes
-        sont invitées à ne pas anticiper
-        les conclusions de leurs enquêtes.
-
-      </p>
-
-      <p class="classement">
-
-        DESTINATION PRÉVUE :
-        scenarios.html
-
-      </p>
-
-    </article>
-
-
-    <!-- PARIS 1966 -->
-
-    <article
-      class="attente-notice"
-      id="attente-paris"
-    >
-
-      <h3>
-
-        CHEMISE 07 — PARIS, 1966
-
-      </h3>
-
-      <p>
-
-        La documentation historique
-        est en cours de rassemblement.
-
-      </p>
-
-      <p>
-
-        Il est rappelé
-        que les événements du passé
-        ne deviennent pas fictifs
-        du seul fait qu'ils figurent
-        dans les archives du Bureau.
-
-      </p>
-
-      <p class="classement">
-
-        DESTINATION PRÉVUE :
-        paris-1966.html
-
-      </p>
-
-    </article>
-
-  </section>
-
-
-  <!-- =====================================
-       05 — ANNEXE NON ENREGISTRÉE
-  ===================================== -->
-
-  <section
-    aria-labelledby="annexe-titre"
-  >
+  <!-- ========================================
+       05 — DOCUMENT JOINT
+  ======================================== -->
+
+  <section aria-labelledby="annexe-titre">
 
     <h2
       class="section-title"
       id="annexe-titre"
     >
-
       05 / Document joint
-
     </h2>
-
 
     <button
       class="bouton"
@@ -3047,11 +1994,8 @@ section p {
       aria-expanded="false"
       aria-controls="annexe"
     >
-
       Ouvrir l'annexe non enregistrée
-
     </button>
-
 
     <div
       class="annexe"
@@ -3060,34 +2004,24 @@ section p {
     >
 
       <p>
-
         <strong>
-
           NOTE INTERNE — À NE PAS REPRODUIRE
-
         </strong>
-
       </p>
 
       <p>
-
         Si un visiteur affirme avoir déjà consulté
         ce document, le prier de fournir
         une attestation du précédent visiteur.
-
       </p>
 
       <p>
-
         Si les deux personnes sont identiques,
         transmettre le dossier à la direction.
-
       </p>
 
       <p>
-
         Sans urgence apparente.
-
       </p>
 
     </div>
@@ -3095,56 +2029,36 @@ section p {
   </section>
 
 
-  <!-- =====================================
-       RETOUR AU DÉBUT
-  ===================================== -->
+  <!-- ========================================
+       RETOUR ET PIED DE PAGE
+  ======================================== -->
 
-  <a
-    class="retour"
-    href="#haut"
-  >
-
+  <a class="retour" href="#haut">
     ↑ Retour à l'en-tête du dossier
-
   </a>
-
-
-  <!-- =====================================
-       PIED DE PAGE
-  ===================================== -->
 
   <footer class="footer">
 
     <div>
 
       <p>
-
         BUREAU DES INTERSTICES<br>
-
         Paris, 1966 · Fiction contemporaine
-
       </p>
-
 
       <button
         class="reinitialiser"
         type="button"
         id="oublier-visiteur"
       >
-
         Effacer mon autorisation locale
-
       </button>
 
     </div>
 
-
     <p>
-
       Création : Alexis Tolmatchev<br>
-
       Univers développé pour M.I.S.E.
-
     </p>
 
   </footer>
@@ -3152,18 +2066,14 @@ section p {
 </main>
 
 
-<!-- =========================================
+<!-- ========================================
      JAVASCRIPT
-========================================= -->
+======================================== -->
 
 <script>
-
 "use strict";
 
-
-/* =========================================
-   ANNEXE INTERACTIVE
-========================================= */
+/* ANNEXE */
 
 const boutonAnnexe =
   document.getElementById("ouvrir");
@@ -3171,61 +2081,49 @@ const boutonAnnexe =
 const annexe =
   document.getElementById("annexe");
 
+boutonAnnexe.addEventListener("click", () => {
 
-boutonAnnexe.addEventListener(
-  "click",
-  () => {
+  const ouvert =
+    boutonAnnexe.getAttribute("aria-expanded") === "true";
 
-    const ouvert =
-      boutonAnnexe.getAttribute("aria-expanded")
-      === "true";
+  boutonAnnexe.setAttribute(
+    "aria-expanded",
+    String(!ouvert)
+  );
 
-    boutonAnnexe.setAttribute(
-      "aria-expanded",
-      String(!ouvert)
-    );
+  annexe.hidden = ouvert;
 
-    annexe.hidden = ouvert;
+  boutonAnnexe.textContent = ouvert
+    ? "Ouvrir l'annexe non enregistrée"
+    : "Refermer l'annexe non enregistrée";
 
-    boutonAnnexe.textContent = ouvert
-      ? "Ouvrir l'annexe non enregistrée"
-      : "Refermer l'annexe non enregistrée";
-
-  }
-);
+});
 
 
-/* =========================================
-   MÉMOIRE LOCALE DU GUICHET
-========================================= */
+/* MÉMOIRE DU GUICHET */
 
 const CLE_VISITEUR =
   "bureau-interstices-acces-v1";
-
 
 function lireVisiteur() {
 
   try {
 
-    const donnees =
+    const brut =
       localStorage.getItem(CLE_VISITEUR);
 
-    if (!donnees) {
-      return null;
-    }
+    if (!brut) return null;
 
     const visiteur =
-      JSON.parse(donnees);
+      JSON.parse(brut);
 
-    if (
-      !visiteur ||
-      typeof visiteur.pseudonyme !== "string" ||
-      !visiteur.pseudonyme.trim()
-    ) {
-      return null;
-    }
-
-    return visiteur;
+    return (
+      visiteur &&
+      typeof visiteur.pseudonyme === "string" &&
+      visiteur.pseudonyme.trim()
+    )
+      ? visiteur
+      : null;
 
   } catch (erreur) {
 
@@ -3235,23 +2133,16 @@ function lireVisiteur() {
 
 }
 
-
-function enregistrerVisiteur(pseudonyme) {
-
-  const visiteur = {
-
-    pseudonyme: pseudonyme.trim(),
-
-    dateInscription:
-      new Date().toISOString()
-
-  };
+function enregistrerVisiteur(nom) {
 
   try {
 
     localStorage.setItem(
       CLE_VISITEUR,
-      JSON.stringify(visiteur)
+      JSON.stringify({
+        pseudonyme: nom.trim(),
+        dateInscription: new Date().toISOString()
+      })
     );
 
     return true;
@@ -3265,9 +2156,7 @@ function enregistrerVisiteur(pseudonyme) {
 }
 
 
-/* =========================================
-   ÉLÉMENTS DU GUICHET
-========================================= */
+/* ÉLÉMENTS DU FORMULAIRE */
 
 const guichet =
   document.getElementById("guichet");
@@ -3293,14 +2182,8 @@ const texteSalutation =
 const boutonOublier =
   document.getElementById("oublier-visiteur");
 
-let memorisationDisponible = true;
 
-let retourFocus = null;
-
-
-/* =========================================
-   OUVERTURE DU GUICHET
-========================================= */
+/* OUVERTURE */
 
 function ouvrirGuichet() {
 
@@ -3317,9 +2200,7 @@ function ouvrirGuichet() {
 }
 
 
-/* =========================================
-   FERMETURE DU GUICHET
-========================================= */
+/* FERMETURE */
 
 function fermerGuichet() {
 
@@ -3327,82 +2208,59 @@ function fermerGuichet() {
 
   document.body.style.overflow = "";
 
-  if (retourFocus) {
-
-    retourFocus.focus();
-
-    retourFocus = null;
-
-  }
-
 }
 
 
-/* =========================================
-   PREMIÈRE VISITE
-========================================= */
+/* PREMIÈRE VISITE */
 
-formulaire.addEventListener(
-  "submit",
-  (event) => {
+formulaire.addEventListener("submit", (event) => {
 
-    event.preventDefault();
+  event.preventDefault();
 
-    if (!formulaire.reportValidity()) {
-      return;
-    }
+  if (!formulaire.reportValidity()) {
+    return;
+  }
 
-    const pseudonyme =
-      document.getElementById("identite")
-      .value.trim();
+  const nom =
+    document.getElementById("identite").value.trim();
 
-    if (!pseudonyme) {
-      return;
-    }
+  if (!nom) {
+    return;
+  }
 
-    memorisationDisponible =
-      enregistrerVisiteur(pseudonyme);
+  const sauvegarde =
+    enregistrerVisiteur(nom);
 
-    formulaireZone.hidden = true;
+  formulaireZone.hidden = true;
+  validation.hidden = false;
 
-    validation.hidden = false;
+  if (!sauvegarde) {
 
-    if (!memorisationDisponible) {
+    const information =
+      document.createElement("p");
 
-      const information =
-        document.createElement("p");
+    information.textContent =
+      "Votre navigateur refuse la conservation locale. " +
+      "L'autorisation demeure valable pour cette visite.";
 
-      information.textContent =
-        "Votre navigateur refuse la conservation locale. " +
-        "L'autorisation reste valable pour cette visite.";
-
-      validation.appendChild(information);
-
-    }
-
-    boutonEntrer.focus();
+    validation.appendChild(information);
 
   }
-);
+
+  boutonEntrer.focus();
+
+});
 
 
-/* =========================================
-   ENTRÉE DANS LE BUREAU
-========================================= */
+/* ENTRÉE */
 
 boutonEntrer.addEventListener(
   "click",
-  () => {
-
-    fermerGuichet();
-
-  }
+  fermerGuichet
 );
 
 
-/* =========================================
-   SALUTATION DES HABITUÉS
-========================================= */
+/* SALUTATION */
 
 function saluerVisiteur(visiteur) {
 
@@ -3413,51 +2271,39 @@ function saluerVisiteur(visiteur) {
 
   document.body.style.overflow = "hidden";
 
-  window.setTimeout(
-    () => {
+  window.setTimeout(() => {
 
-      salutation.hidden = true;
+    salutation.hidden = true;
 
-      document.body.style.overflow = "";
+    document.body.style.overflow = "";
 
-    },
-    1700
-  );
+  }, 1700);
 
 }
 
 
-/* =========================================
-   EFFACEMENT DE L'AUTORISATION
-========================================= */
+/* EFFACEMENT */
 
-boutonOublier.addEventListener(
-  "click",
-  () => {
+boutonOublier.addEventListener("click", () => {
 
-    try {
+  try {
 
-      localStorage.removeItem(CLE_VISITEUR);
+    localStorage.removeItem(CLE_VISITEUR);
 
-    } catch (erreur) {
+  } catch (erreur) {
 
-      /* Stockage éventuellement désactivé. */
-
-    }
-
-    retourFocus = boutonOublier;
-
-    formulaire.reset();
-
-    ouvrirGuichet();
+    /* Stockage éventuellement désactivé. */
 
   }
-);
+
+  formulaire.reset();
+
+  ouvrirGuichet();
+
+});
 
 
-/* =========================================
-   INITIALISATION
-========================================= */
+/* INITIALISATION */
 
 const visiteur =
   lireVisiteur();
@@ -3475,4 +2321,4 @@ if (visiteur) {
 </script>
 
 </body>
-              </html>
+          </html>
