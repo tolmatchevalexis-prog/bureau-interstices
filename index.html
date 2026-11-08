@@ -10,7 +10,7 @@
     content="width=device-width, initial-scale=1"
   >
 
-  <meta name="theme-color" content="#ded8c6">
+  <meta name="theme-color" content="#ded3b8">
 
   <meta
     name="description"
@@ -21,15 +21,52 @@
     Le Bureau des Interstices — Accueil du service
   </title>
 
+  <!-- TYPOGRAPHIES -->
+
+  <link
+    rel="preconnect"
+    href="https://fonts.googleapis.com"
+  >
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
+
   <style>
 
+    /* ==========================================
+       PALETTE DU BUREAU
+       ========================================== */
+
     :root {
-      --papier: #ece6d5;
-      --feuille: #fffdf4;
-      --encre: #262b27;
-      --rouge: #8b2923;
-      --vert: #495747;
-      --trait: #b8b29e;
+
+      --papier: #ded3b8;
+      --feuille: #f3e9cf;
+      --encre: #292920;
+
+      --violet: #48338a;
+      --vert: #4c5546;
+
+      --trait: #b3a88e;
+
+      --serif:
+        "EB Garamond",
+        Garamond,
+        Georgia,
+        serif;
+
+      --machine:
+        "Special Elite",
+        "Courier New",
+        monospace;
+
     }
 
     * {
@@ -41,10 +78,54 @@
     }
 
     body {
+
       margin: 0;
-      background: var(--papier);
+
       color: var(--encre);
-      font: 17px/1.65 Georgia, 'Times New Roman', serif;
+
+      font-family: var(--serif);
+      font-size: 20px;
+      line-height: 1.55;
+
+      background-color: var(--papier);
+
+      background-image:
+        radial-gradient(
+          ellipse at 15% 12%,
+          rgba(255,255,240,.32),
+          transparent 48%
+        ),
+        radial-gradient(
+          ellipse at 85% 75%,
+          rgba(116,85,40,.10),
+          transparent 52%
+        );
+
+    }
+
+    /*
+      Trame de papier :
+      bruit procédural discret.
+      Aucun fichier image supplémentaire.
+    */
+
+    body::before {
+
+      content: "";
+
+      position: fixed;
+      inset: 0;
+
+      pointer-events: none;
+
+      z-index: 20;
+
+      opacity: .12;
+
+      background-image: url(
+        "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+      );
+
     }
 
     a {
@@ -53,69 +134,237 @@
 
     a:focus-visible,
     button:focus-visible {
-      outline: 3px solid var(--rouge);
+
+      outline: 3px solid var(--violet);
       outline-offset: 4px;
+
     }
+
+    /*
+      Certaines zones peuvent contenir des
+      images de tampons sur papier.
+      Le mode multiply fond leur fond clair
+      dans le document.
+    */
+
+    .stamp-image {
+
+      display: block;
+
+      width: 130px;
+      height: auto;
+
+      opacity: .82;
+
+      mix-blend-mode: multiply;
+
+      filter: contrast(1.08);
+
+    }
+
+    .stamp-small {
+      width: 105px;
+    }
+
+    .stamp-large {
+      width: 160px;
+    }
+
+    .stamp-tilt-left {
+      transform: rotate(-11deg);
+    }
+
+    .stamp-tilt-right {
+      transform: rotate(8deg);
+    }
+
+
+    /* ==========================================
+       BANDEAU
+       ========================================== */
 
     .ruban {
-      background: var(--vert);
-      color: #fff;
-      padding: 9px 20px;
+
+      background: #4a5344;
+      color: #f1eedf;
+
+      padding: 12px 20px;
+
       text-align: center;
-      font: 11px/1.5 'Courier New', monospace;
-      letter-spacing: .12em;
+
+      font-family: var(--machine);
+      font-size: 11px;
+
+      line-height: 1.6;
+      letter-spacing: .06em;
+
       text-transform: uppercase;
+
     }
+
+
+    /* ==========================================
+       FEUILLE PRINCIPALE
+       ========================================== */
 
     .page {
-      width: min(940px, calc(100% - 32px));
-      margin: 32px auto 55px;
-      background: var(--feuille);
-      border: 1px solid var(--trait);
-      box-shadow: 8px 10px 0 #c7c0aa;
-      padding: clamp(25px, 6vw, 70px);
+
+      width: min(
+        940px,
+        calc(100% - 32px)
+      );
+
+      margin: 34px auto 60px;
+
+      padding: clamp(
+        25px,
+        6vw,
+        70px
+      );
+
       position: relative;
+
+      background-color: var(--feuille);
+
+      background-image:
+        radial-gradient(
+          ellipse at 10% 9%,
+          rgba(255,255,247,.58),
+          transparent 52%
+        ),
+        radial-gradient(
+          ellipse at 92% 86%,
+          rgba(132,93,50,.10),
+          transparent 55%
+        ),
+        linear-gradient(
+          110deg,
+          rgba(93,74,48,.04),
+          transparent 30%,
+          rgba(255,255,255,.12) 60%,
+          rgba(82,62,34,.05)
+        );
+
+      border: 1px solid #b8aa8c;
+
+      box-shadow:
+        8px 10px 0 #c6b99c,
+        0 14px 35px rgba(64,49,25,.14);
+
     }
 
+    /*
+      Liseré intérieur :
+      suggestion d'une feuille ancienne.
+    */
+
+    .page::before {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 8px;
+
+      border: 1px solid
+        rgba(95,75,45,.09);
+
+      pointer-events: none;
+
+    }
+
+
+    /* ==========================================
+       EN-TÊTE ADMINISTRATIF
+       ========================================== */
+
     .top {
+
       display: flex;
+
       justify-content: space-between;
+
+      align-items: flex-start;
+
       gap: 20px;
-      align-items: start;
-      border-bottom: 2px solid var(--encre);
-      padding-bottom: 23px;
+
+      padding-bottom: 26px;
+
+      border-bottom:
+        2px solid var(--encre);
+
     }
 
     .republique {
-      font: 700 12px/1.55 'Courier New', monospace;
-      letter-spacing: .08em;
+
+      font-family: var(--machine);
+      font-size: 12px;
+
+      line-height: 1.7;
+
+      letter-spacing: .03em;
+
       text-transform: uppercase;
+
     }
 
     .ref {
-      font: 12px/1.55 'Courier New', monospace;
+
+      font-family: var(--machine);
+      font-size: 11px;
+
+      line-height: 1.7;
+
       text-align: right;
-      color: #53574e;
+
+      color: #55584e;
+
     }
 
+
+    /* ==========================================
+       IDENTITÉ DU SERVICE
+       ========================================== */
+
     .entete {
+
+      position: relative;
+
       text-align: center;
-      padding: 48px 0 30px;
+
+      padding: 55px 0 32px;
+
     }
 
     .eyebrow {
-      font: 12px/1.5 'Courier New', monospace;
-      letter-spacing: .17em;
-      text-transform: uppercase;
+
+      font-family: var(--machine);
+      font-size: 12px;
+
+      letter-spacing: .05em;
+
       color: var(--vert);
+
     }
 
     h1 {
-      font-size: clamp(35px, 6vw, 68px);
-      font-weight: 400;
-      letter-spacing: -.045em;
-      line-height: 1.05;
-      margin: 18px 0 16px;
+
+      margin: 23px 0 15px;
+
+      font-family: var(--serif);
+
+      font-size: clamp(
+        42px,
+        7vw,
+        78px
+      );
+
+      font-weight: 500;
+
+      letter-spacing: -.035em;
+
+      line-height: 1.02;
+
     }
 
     h1 span {
@@ -123,208 +372,520 @@
     }
 
     .subtitle {
+
       margin: 0;
+
+      font-size: 21px;
       font-style: italic;
-      font-size: 18px;
+
     }
 
-    .tampon {
-      display: inline-block;
-      margin-top: 24px;
-      border: 3px double var(--rouge);
-      padding: 6px 15px;
-      color: var(--rouge);
-      transform: rotate(-5deg);
-      font: 700 13px 'Courier New', monospace;
-      letter-spacing: .09em;
-      text-transform: uppercase;
+    .stamp-meld {
+
+      display: flex;
+
+      justify-content: center;
+
+      margin-top: 27px;
+
     }
+
+    .stamp-meld img {
+
+      width: 142px;
+
+      transform: rotate(-7deg);
+
+    }
+
+    .mention {
+
+      display: inline-block;
+
+      margin-top: 12px;
+
+      font-family: var(--machine);
+
+      font-size: 11px;
+
+      color: #655d55;
+
+      letter-spacing: .05em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ==========================================
+       AVIS OFFICIEL
+       ========================================== */
 
     .avis {
-      border-top: 1px solid var(--trait);
-      border-bottom: 1px solid var(--trait);
-      padding: 22px 0;
-      margin: 22px 0 30px;
+
+      border-top:
+        1px solid var(--trait);
+
+      border-bottom:
+        1px solid var(--trait);
+
+      padding: 24px 0;
+
+      margin: 24px 0 35px;
+
     }
 
     .avis p {
+
       max-width: 680px;
+
       margin: 0 auto;
+
       text-align: center;
-      font-size: 19px;
-      line-height: 1.7;
+
+      font-size: 22px;
+      font-style: italic;
+
+      line-height: 1.55;
+
     }
 
+
+    /* ==========================================
+       SECTIONS
+       ========================================== */
+
     .section-title {
-      font: 700 12px/1.5 'Courier New', monospace;
-      letter-spacing: .14em;
+
+      margin: 48px 0 20px;
+
+      font-family: var(--machine);
+
+      font-size: 13px;
+
+      font-weight: normal;
+
+      letter-spacing: .08em;
+
+      line-height: 1.6;
+
       text-transform: uppercase;
+
       color: var(--vert);
-      margin: 40px 0 17px;
+
+    }
+
+    section p {
+
+      margin: 0 0 17px;
+
     }
 
     .notice {
-      max-width: 690px;
-      margin: 0 auto;
-    }
 
-    .notice p {
-      margin: 0 0 15px;
+      max-width: 700px;
+
+      margin: 0 auto;
+
     }
 
     .notice .first:first-letter {
+
       float: left;
-      font-size: 3em;
-      line-height: .85;
-      padding: 7px 8px 0 0;
+
+      font-family: var(--serif);
+
+      font-size: 3.4em;
+
+      line-height: .78;
+
+      padding: 9px 9px 0 0;
+
     }
 
+
+    /* ==========================================
+       ARCHIVES
+       ========================================== */
+
     .index {
+
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 13px;
-      margin-top: 20px;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 14px;
+
+      margin-top: 24px;
+
     }
 
     .dossier {
+
       display: block;
+
+      min-height: 145px;
+
       text-decoration: none;
-      padding: 21px;
-      border: 1px solid var(--trait);
-      background: #f3efdf;
-      transition: transform .16s, background .16s;
+
+      padding: 22px;
+
+      border: 1px solid
+        var(--trait);
+
+      background:
+        rgba(238,228,201,.62);
+
+      transition:
+        transform .16s,
+        background .16s;
+
     }
 
     .dossier:hover {
-      transform: translateY(-2px);
-      background: #fffaf0;
+
+      transform:
+        translateY(-3px);
+
+      background:
+        rgba(250,243,224,.92);
+
     }
 
     .dossier small {
+
       display: block;
-      font: 11px 'Courier New', monospace;
-      color: #62685e;
-      letter-spacing: .05em;
-      margin-bottom: 12px;
+
+      margin-bottom: 13px;
+
+      font-family: var(--machine);
+
+      font-size: 11px;
+
+      letter-spacing: .03em;
+
+      color: #606053;
+
     }
 
     .dossier strong {
+
       display: block;
-      font-size: 22px;
-      font-weight: 400;
-      line-height: 1.25;
+
+      font-family: var(--serif);
+
+      font-size: 26px;
+
+      font-weight: 500;
+
+      line-height: 1.15;
+
     }
 
     .dossier em {
+
       display: block;
-      font-size: 14px;
-      margin-top: 8px;
-      color: #5c6257;
+
+      margin-top: 12px;
+
+      font-size: 17px;
+
+      color: #626252;
+
     }
 
+
+    /* ==========================================
+       FICHES ADMINISTRATIVES
+       ========================================== */
+
     .fiche {
-      margin-top: 23px;
-      padding: 22px 24px;
-      border-left: 3px solid var(--vert);
-      background: #f2efe2;
+
+      position: relative;
+
+      margin-top: 25px;
+
+      padding: 26px 28px;
+
+      border-left:
+        3px solid var(--vert);
+
+      background:
+        rgba(226,218,193,.52);
+
     }
 
     .fiche h2 {
-      font: 700 13px 'Courier New', monospace;
+
+      margin: 0 0 15px;
+
+      font-family: var(--machine);
+
+      font-size: 13px;
+
+      font-weight: normal;
+
+      letter-spacing: .06em;
+
       text-transform: uppercase;
-      letter-spacing: .09em;
-      margin: 0 0 12px;
+
     }
 
     .fiche p {
+
       margin: 0 0 12px;
+
     }
 
     .fiche p:last-child {
+
       margin: 0;
+
     }
 
+
+    /* ==========================================
+       PERSONNEL
+       ========================================== */
+
     .agents {
+
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
       gap: 12px;
+
     }
 
     .agent {
-      padding: 16px 18px;
-      border-bottom: 1px dotted var(--trait);
-      font-size: 15px;
+
+      padding: 18px;
+
+      border-bottom:
+        1px dotted var(--trait);
+
     }
 
     .agent strong {
+
       display: block;
-      font-size: 18px;
-      font-weight: 400;
+
+      font-family: var(--serif);
+
+      font-size: 24px;
+
+      font-weight: 500;
+
     }
 
     .agent span {
-      font: 12px 'Courier New', monospace;
-      color: #62685e;
+
+      display: block;
+
+      margin-top: 4px;
+
+      font-family: var(--machine);
+
+      font-size: 11px;
+
+      color: #656356;
+
     }
 
+
+    /* ==========================================
+       TAMPONS SUR DOCUMENTS
+       ========================================== */
+
+    .document-stamp {
+
+      display: flex;
+
+      justify-content: flex-end;
+
+      margin: 18px 6px 4px;
+
+    }
+
+    .document-stamp.left {
+
+      justify-content: flex-start;
+
+    }
+
+    .document-stamp.center {
+
+      justify-content: center;
+
+    }
+
+    .stamp-row {
+
+      display: flex;
+
+      justify-content: space-around;
+
+      align-items: center;
+
+      gap: 16px;
+
+      flex-wrap: wrap;
+
+      margin: 26px 0;
+
+    }
+
+    .stamp-row img {
+
+      width: 115px;
+      max-width: 42%;
+
+    }
+
+
+    /* ==========================================
+       BOUTONS
+       ========================================== */
+
     .bouton {
+
       display: inline-block;
+
       background: var(--encre);
-      color: #fff;
+
+      color: #f4edda;
+
       border: 0;
-      padding: 13px 18px;
-      font: 12px 'Courier New', monospace;
-      letter-spacing: .05em;
+
+      padding: 15px 20px;
+
+      font-family: var(--machine);
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+      letter-spacing: .025em;
+
+      text-decoration: none;
+
       cursor: pointer;
+
+      transition:
+        background .16s;
+
     }
 
     .bouton:hover {
-      background: var(--rouge);
+
+      background:
+        var(--violet);
+
     }
+
+
+    /* ==========================================
+       ANNEXE INTERACTIVE
+       ========================================== */
 
     #annexe[hidden] {
       display: none;
     }
 
     .annexe {
-      margin-top: 18px;
-      border: 1px dashed var(--rouge);
-      padding: 20px;
-      color: #542d28;
-      background: #f9f0e5;
+
+      margin-top: 20px;
+
+      border:
+        1px dashed var(--violet);
+
+      padding: 24px;
+
+      color: #343044;
+
+      background:
+        rgba(223,217,204,.55);
+
+    }
+
+    .annexe strong {
+
+      font-family: var(--machine);
+
+      font-size: 13px;
+
+      font-weight: normal;
+
+    }
+
+
+    /* ==========================================
+       PIED DE PAGE
+       ========================================== */
+
+    .retour {
+
+      display: inline-block;
+
+      margin-top: 35px;
+
+      font-family: var(--machine);
+
+      font-size: 12px;
+
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+
     }
 
     .footer {
-      border-top: 2px solid var(--encre);
-      margin-top: 54px;
-      padding-top: 20px;
+
+      border-top:
+        2px solid var(--encre);
+
+      margin-top: 55px;
+
+      padding-top: 22px;
+
       display: flex;
+
       justify-content: space-between;
+
       gap: 20px;
-      font: 11px/1.7 'Courier New', monospace;
+
+      font-family: var(--machine);
+
+      font-size: 11px;
+
+      line-height: 1.8;
+
     }
 
     .footer p {
       margin: 0;
     }
 
-    .retour {
-      display: inline-block;
-      margin-top: 25px;
-      font: 12px 'Courier New', monospace;
-      text-decoration-thickness: 1px;
-      text-underline-offset: 4px;
-    }
+
+    /* ==========================================
+       MOBILE
+       ========================================== */
 
     @media (max-width: 650px) {
 
       body {
-        font-size: 16px;
+        font-size: 19px;
       }
 
       .page {
+
         margin: 15px auto 30px;
-        box-shadow: 4px 6px 0 #c7c0aa;
+
+        box-shadow:
+          4px 6px 0 #c6b99c;
+
       }
 
       .top {
@@ -332,17 +893,30 @@
       }
 
       .ref {
+
         text-align: left;
-        margin-top: 13px;
+
+        margin-top: 18px;
+
       }
 
       .entete {
-        padding: 35px 0 25px;
+
+        padding: 38px 0 25px;
+
       }
 
       .index,
       .agents {
+
         grid-template-columns: 1fr;
+
+      }
+
+      .avis p {
+
+        font-size: 20px;
+
       }
 
       .footer {
@@ -350,23 +924,92 @@
       }
 
       .footer p + p {
-        margin-top: 12px;
+        margin-top: 15px;
       }
 
-      .avis p {
-        font-size: 17px;
+      .stamp-image {
+
+        width: 110px;
+
+      }
+
+      .stamp-meld img {
+
+        width: 125px;
+
       }
 
     }
 
-    @media (prefers-reduced-motion: reduce) {
+
+    /* ==========================================
+       ACCESSIBILITÉ
+       ========================================== */
+
+    @media (
+      prefers-reduced-motion: reduce
+    ) {
 
       html {
         scroll-behavior: auto;
       }
 
-      .dossier {
+      .dossier,
+      .bouton {
+
         transition: none;
+
+      }
+
+    }
+
+
+    /* ==========================================
+       IMPRESSION
+       ========================================== */
+
+    @media print {
+
+      body {
+
+        background: white;
+
+      }
+
+      body::before {
+
+        display: none;
+
+      }
+
+      .ruban {
+
+        display: none;
+
+      }
+
+      .page {
+
+        width: 100%;
+
+        margin: 0;
+
+        padding: 20mm;
+
+        border: none;
+
+        box-shadow: none;
+
+      }
+
+      .bouton {
+
+        border: 1px solid black;
+
+        color: black;
+
+        background: transparent;
+
       }
 
     }
@@ -375,72 +1018,129 @@
 
 </head>
 
+
 <body>
 
+
+  <!-- BANDEAU -->
+
   <div class="ruban">
+
     Accès public · Reproduction partielle autorisée ·
     Les dossiers originaux demeurent introuvables
+
   </div>
+
 
   <main class="page" id="haut">
 
-    <!-- EN-TÊTE ADMINISTRATIF -->
+
+    <!-- ======================================
+         EN-TÊTE ADMINISTRATIF
+         ====================================== -->
 
     <header class="top">
 
       <div class="republique">
+
         République française<br>
         Affaires culturelles<br>
         Service de documentation
+
       </div>
 
       <div class="ref">
+
         PARIS · 1966<br>
         Référence : B.I. / SANS NUMÉRO<br>
         Diffusion : intérieure, sauf erreur
+
       </div>
 
     </header>
 
 
-    <!-- IDENTITÉ DU SERVICE -->
+    <!-- ======================================
+         IDENTITÉ DU SERVICE
+         ====================================== -->
 
-    <section class="entete" aria-labelledby="titre">
+    <section
+      class="entete"
+      aria-labelledby="titre"
+    >
 
       <div class="eyebrow">
-        Note à l'attention des personnes dûment égarées
+
+        Note à l'attention
+        des personnes dûment égarées
+
       </div>
 
+
       <h1 id="titre">
+
         Le Bureau
-        <span>des Interstices</span>
+
+        <span>
+          des Interstices
+        </span>
+
       </h1>
 
+
       <p class="subtitle">
-        Service des phénomènes insuffisamment documentés
+
+        Service des phénomènes
+        insuffisamment documentés
+
       </p>
 
-      <span class="tampon">
+
+      <!-- TAMPON OFFICIEL M.E.L.D -->
+
+      <div class="stamp-meld">
+
+        <img
+          class="stamp-image stamp-large"
+          src="tampon_meld.png"
+          alt="Tampon officiel M.E.L.D. — République française"
+          width="160"
+          height="160"
+        >
+
+      </div>
+
+
+      <span class="mention">
+
         Existence non confirmée
+
       </span>
 
     </section>
 
 
-    <!-- AVIS OFFICIEL -->
+    <!-- ======================================
+         AVIS OFFICIEL
+         ====================================== -->
 
     <div class="avis">
 
       <p>
-        « L'existence de ce service ne constitue pas
-        une reconnaissance officielle des phénomènes
+
+        « L'existence de ce service
+        ne constitue pas une reconnaissance
+        officielle des phénomènes
         dont il s'occupe. »
+
       </p>
 
     </div>
 
 
-    <!-- MISSION -->
+    <!-- ======================================
+         MISSION
+         ====================================== -->
 
     <section
       class="notice"
@@ -448,248 +1148,490 @@
       aria-labelledby="mission-titre"
     >
 
-      <h2 class="section-title" id="mission-titre">
+      <h2
+        class="section-title"
+        id="mission-titre"
+      >
+
         01 / Objet du service
+
       </h2>
 
+
       <p class="first">
-        Paris, août 1966. Dans une France où l'on sait
-        classer les personnes, les bâtiments et les
-        formulaires, certains événements persistent
+
+        Paris, août 1966. Dans une France
+        où l'on sait classer les personnes,
+        les bâtiments et les formulaires,
+        certains événements persistent
         à ne figurer dans aucune rubrique.
+
       </p>
 
+
       <p>
+
         Un bruit entendu dans une pièce vide.
-        Un témoignage parfaitement crédible auquel
-        manque une explication. Un dossier dont
-        l'administration assure qu'il n'a jamais existé
-        — mais qu'il faut pourtant restituer avant jeudi.
+        Un témoignage parfaitement crédible
+        auquel manque une explication.
+        Un dossier dont l'administration assure
+        qu'il n'a jamais existé — mais qu'il
+        faut pourtant restituer avant jeudi.
+
       </p>
 
+
       <p>
-        Le Bureau des Interstices enquête sur ces faits.
-        Ses agents prennent des notes, croisent les
-        témoignages, demandent des autorisations
-        et boivent du café. Les phénomènes, eux,
+
+        Le Bureau des Interstices enquête
+        sur ces faits. Ses agents prennent
+        des notes, croisent les témoignages,
+        demandent des autorisations
+        et boivent du café.
+
+        Les phénomènes, eux,
         n'ont pas reçu la circulaire.
+
       </p>
 
     </section>
 
 
-    <!-- ARCHIVES -->
+    <!-- ======================================
+         ARCHIVES
+         ====================================== -->
 
-    <section id="archives" aria-labelledby="archives-titre">
+    <section
+      id="archives"
+      aria-labelledby="archives-titre"
+    >
 
-      <h2 class="section-title" id="archives-titre">
+      <h2
+        class="section-title"
+        id="archives-titre"
+      >
+
         02 / Consulter les archives
+
       </h2>
+
 
       <div class="index">
 
-        <a class="dossier" href="#personnel">
 
-          <small>CHEMISE 01 · PERSONNEL</small>
+        <a
+          class="dossier"
+          href="#personnel"
+        >
 
-          <strong>Les agents du Bureau</strong>
+          <small>
+            CHEMISE 01 · PERSONNEL
+          </small>
+
+          <strong>
+            Les agents du Bureau
+          </strong>
 
           <em>
-            Noms, fonctions, habitudes professionnelles.
+            Noms, fonctions,
+            habitudes professionnelles.
           </em>
 
         </a>
 
-        <a class="dossier" href="#affaires">
 
-          <small>CHEMISE 02 · ENQUÊTES</small>
+        <a
+          class="dossier"
+          href="#affaires"
+        >
 
-          <strong>Les affaires</strong>
+          <small>
+            CHEMISE 02 · ENQUÊTES
+          </small>
+
+          <strong>
+            Les affaires
+          </strong>
 
           <em>
-            Observations, dossiers ouverts et anomalies.
+            Observations, dossiers
+            ouverts et anomalies.
           </em>
 
         </a>
 
-        <a class="dossier" href="#ambiance">
 
-          <small>CHEMISE 03 · CONTEXTE</small>
+        <a
+          class="dossier"
+          href="#ambiance"
+        >
 
-          <strong>Paris, 1966</strong>
+          <small>
+            CHEMISE 03 · CONTEXTE
+          </small>
+
+          <strong>
+            Paris, 1966
+          </strong>
 
           <em>
-            Le monde ordinaire, à quelques détails près.
+            Le monde ordinaire,
+            à quelques détails près.
           </em>
 
         </a>
 
-        <a class="dossier" href="#jouer">
 
-          <small>CHEMISE 04 · PROCÉDURE</small>
+        <a
+          class="dossier"
+          href="#jouer"
+        >
 
-          <strong>Entrer dans le jeu</strong>
+          <small>
+            CHEMISE 04 · PROCÉDURE
+          </small>
+
+          <strong>
+            Entrer dans le jeu
+          </strong>
 
           <em>
-            Un univers d'enquête pour M.I.S.E.
+            Un univers d'enquête
+            pour M.I.S.E.
           </em>
 
         </a>
+
+
+      </div>
+
+
+      <!-- TAMPON À CLASSER -->
+
+      <div class="document-stamp">
+
+        <img
+          class="stamp-image stamp-small stamp-tilt-right"
+          src="a-classer.png"
+          alt="Tampon À CLASSER"
+          width="105"
+          height="105"
+          loading="lazy"
+        >
 
       </div>
 
     </section>
 
 
-    <!-- PERSONNEL -->
+    <!-- ======================================
+         PERSONNEL
+         ====================================== -->
 
     <section
       id="personnel"
       aria-labelledby="personnel-titre"
     >
 
-      <h2 class="section-title" id="personnel-titre">
-        03 / Extrait du registre du personnel
+      <h2
+        class="section-title"
+        id="personnel-titre"
+      >
+
+        03 / Extrait du registre
+        du personnel
+
       </h2>
+
 
       <div class="agents">
 
-        <div class="agent">
-          <strong>Paul de Vauclerc</strong>
-          <span>DIRECTION</span>
-        </div>
 
         <div class="agent">
-          <strong>Suzanne Charrenson</strong>
-          <span>ASSISTANCE DE DIRECTION</span>
+
+          <strong>
+            Paul de Vauclerc
+          </strong>
+
+          <span>
+            DIRECTION
+          </span>
+
         </div>
 
-        <div class="agent">
-          <strong>Christian Boidy</strong>
-          <span>CONSEIL SCIENTIFIQUE</span>
-        </div>
 
         <div class="agent">
-          <strong>Charles Pinson</strong>
-          <span>ARCHIVES</span>
+
+          <strong>
+            Suzanne Charrenson
+          </strong>
+
+          <span>
+            ASSISTANCE DE DIRECTION
+          </span>
+
         </div>
+
+
+        <div class="agent">
+
+          <strong>
+            Christian Boidy
+          </strong>
+
+          <span>
+            CONSEIL SCIENTIFIQUE
+          </span>
+
+        </div>
+
+
+        <div class="agent">
+
+          <strong>
+            Charles Pinson
+          </strong>
+
+          <span>
+            ARCHIVES
+          </span>
+
+        </div>
+
 
       </div>
 
+
       <div class="fiche">
 
-        <h2>Observation administrative</h2>
+        <h2>
+          Observation administrative
+        </h2>
 
         <p>
-          Les agents ne sont pas tenus de partager
-          les mêmes explications. Ils sont néanmoins
-          priés de partager les mêmes dossiers.
+
+          Les agents ne sont pas tenus
+          de partager les mêmes explications.
+
+          Ils sont néanmoins priés
+          de partager les mêmes dossiers.
+
         </p>
+
+      </div>
+
+
+      <!-- TAMPON RÉPONDRE -->
+
+      <div class="document-stamp left">
+
+        <img
+          class="stamp-image stamp-small stamp-tilt-left"
+          src="repondre.png"
+          alt="Tampon RÉPONDRE"
+          width="105"
+          height="105"
+          loading="lazy"
+        >
 
       </div>
 
     </section>
 
 
-    <!-- AFFAIRES -->
+    <!-- ======================================
+         AFFAIRES
+         ====================================== -->
 
     <section
       id="affaires"
       aria-labelledby="affaires-titre"
     >
 
-      <h2 class="section-title" id="affaires-titre">
+      <h2
+        class="section-title"
+        id="affaires-titre"
+      >
+
         04 / Affaires signalées
+
       </h2>
+
 
       <div class="fiche">
 
-        <h2>État des dossiers</h2>
+        <h2>
+          État des dossiers
+        </h2>
 
         <p>
-          Les enquêtes sont ouvertes lorsque les
-          circonstances l'exigent. Les conclusions,
-          lorsqu'elles existent, ne répondent pas
-          toujours aux questions initiales.
+
+          Les enquêtes sont ouvertes
+          lorsque les circonstances l'exigent.
+
+          Les conclusions, lorsqu'elles existent,
+          ne répondent pas toujours
+          aux questions initiales.
+
         </p>
 
         <p>
-          Une affaire peut être classée sans être résolue.
+
+          Une affaire peut être classée
+          sans être résolue.
+
           Cette distinction est importante
           pour les statistiques.
+
         </p>
+
+      </div>
+
+
+      <!-- TAMPONS SUR LES AFFAIRES -->
+
+      <div class="stamp-row">
+
+        <img
+          class="stamp-image stamp-tilt-left"
+          src="a-etudier.png"
+          alt="Tampon À ÉTUDIER"
+          width="115"
+          height="115"
+          loading="lazy"
+        >
+
+        <img
+          class="stamp-image stamp-tilt-right"
+          src="sans-suite.png"
+          alt="Tampon SANS SUITE"
+          width="115"
+          height="115"
+          loading="lazy"
+        >
 
       </div>
 
     </section>
 
 
-    <!-- CONTEXTE -->
+    <!-- ======================================
+         CONTEXTE
+         ====================================== -->
 
     <section
       id="ambiance"
       aria-labelledby="ambiance-titre"
     >
 
-      <h2 class="section-title" id="ambiance-titre">
-        05 / Conditions générales d'observation
+      <h2
+        class="section-title"
+        id="ambiance-titre"
+      >
+
+        05 / Conditions générales
+        d'observation
+
       </h2>
 
+
       <p>
+
         La guerre froide, les postes de radio,
-        les machines à écrire, les dossiers cartonnés
-        et les voitures qui fument au démarrage.
+        les machines à écrire, les dossiers
+        cartonnés et les voitures qui fument
+        au démarrage.
+
         Un Paris d'avant les téléphones portables,
         où disparaître pendant quelques heures
         reste techniquement possible.
+
       </p>
 
+
       <p>
-        L'étrange est rare, sans intention morale connue.
-        Ni magie omniprésente ni guerre du Bien contre le Mal.
-        Plutôt un monde familier qui, certains jours,
-        oublie une règle élémentaire de son fonctionnement.
+
+        L'étrange est rare,
+        sans intention morale connue.
+
+        Ni magie omniprésente
+        ni guerre du Bien contre le Mal.
+
+        Plutôt un monde familier qui,
+        certains jours, oublie une règle
+        élémentaire de son fonctionnement.
+
       </p>
 
     </section>
 
 
-    <!-- JOUER -->
+    <!-- ======================================
+         JOUER
+         ====================================== -->
 
     <section
       id="jouer"
       aria-labelledby="jouer-titre"
     >
 
-      <h2 class="section-title" id="jouer-titre">
+      <h2
+        class="section-title"
+        id="jouer-titre"
+      >
+
         06 / Modalités de participation
+
       </h2>
 
+
       <p>
-        Le Bureau des Interstices est un univers d'enquêtes
-        pour <strong>M.I.S.E.</strong>, un jeu de rôle sans dés
-        fondé sur l'initiative des personnages et leurs choix.
-        Les joueurs explorent librement les situations ;
-        le Narrateur ne connaît pas nécessairement l'issue.
+
+        Le Bureau des Interstices
+        est un univers d'enquêtes
+        pour <strong>M.I.S.E.</strong>,
+        un jeu de rôle sans dés
+        fondé sur l'initiative
+        des personnages et leurs choix.
+
+        Les joueurs explorent librement
+        les situations ; le Narrateur
+        ne connaît pas nécessairement l'issue.
+
       </p>
+
 
       <a
         class="bouton"
         href="https://tolmatchevalexis-prog.github.io/mise-rules/"
+        target="_blank"
+        rel="noopener noreferrer"
       >
+
         Consulter les règles M.I.S.E. ↗
+
       </a>
 
     </section>
 
 
-    <!-- ANNEXE INTERACTIVE -->
+    <!-- ======================================
+         ANNEXE INTERACTIVE
+         ====================================== -->
 
-    <section aria-labelledby="annexe-titre">
+    <section
+      aria-labelledby="annexe-titre"
+    >
 
-      <h2 class="section-title" id="annexe-titre">
+      <h2
+        class="section-title"
+        id="annexe-titre"
+      >
+
         07 / Document joint
+
       </h2>
+
 
       <button
         class="bouton"
@@ -698,8 +1640,11 @@
         aria-expanded="false"
         aria-controls="annexe"
       >
+
         Ouvrir l'annexe non enregistrée
+
       </button>
+
 
       <div
         class="annexe"
@@ -708,21 +1653,30 @@
       >
 
         <p>
+
           <strong>
             NOTE INTERNE — À NE PAS REPRODUIRE
           </strong>
+
         </p>
 
+
         <p>
+
           Si un visiteur affirme avoir déjà consulté
-          ce document, le prier de fournir une
-          attestation du précédent visiteur.
+          ce document, le prier de fournir
+          une attestation du précédent visiteur.
+
         </p>
 
+
         <p>
+
           Si les deux personnes sont identiques,
           transmettre le dossier à la direction.
+
           Sans urgence apparente.
+
         </p>
 
       </div>
@@ -730,46 +1684,66 @@
     </section>
 
 
-    <!-- RETOUR EN HAUT -->
+    <!-- ======================================
+         RETOUR
+         ====================================== -->
 
-    <a class="retour" href="#haut">
+    <a
+      class="retour"
+      href="#haut"
+    >
+
       ↑ Retour à l'en-tête du dossier
+
     </a>
 
 
-    <!-- PIED DE PAGE -->
+    <!-- ======================================
+         PIED DE PAGE
+         ====================================== -->
 
     <footer class="footer">
 
       <p>
+
         BUREAU DES INTERSTICES<br>
         Paris, 1966 · Fiction contemporaine
+
       </p>
 
       <p>
+
         Création : Alexis Tolmatchev<br>
         Usage du système M.I.S.E.
+
       </p>
 
     </footer>
 
+
   </main>
 
 
-  <!-- SCRIPT DE L'ANNEXE -->
+  <!-- ========================================
+       SCRIPT DE L'ANNEXE
+       ======================================== -->
 
   <script>
 
-    const bouton = document.getElementById('ouvrir');
-    const annexe = document.getElementById('annexe');
+    const bouton =
+      document.getElementById("ouvrir");
 
-    bouton.addEventListener('click', () => {
+    const annexe =
+      document.getElementById("annexe");
+
+    bouton.addEventListener("click", () => {
 
       const ouvert =
-        bouton.getAttribute('aria-expanded') === 'true';
+        bouton.getAttribute("aria-expanded")
+        === "true";
 
       bouton.setAttribute(
-        'aria-expanded',
+        "aria-expanded",
         String(!ouvert)
       );
 
@@ -784,4 +1758,4 @@
   </script>
 
 </body>
-        </html>
+  </html>
