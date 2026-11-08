@@ -1,1 +1,2074 @@
+<!doctype html>
+<html lang="fr">
 
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Le Bureau des Interstices : origines, histoire, mission et moyens d'une petite administration française fondée, dans la fiction, à l'initiative d'André Malraux."
+>
+
+<title>
+  Le Bureau — Origines et mission | Les Interstices
+</title>
+
+<!-- TYPOGRAPHIES -->
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ======================================
+   IDENTITÉ GRAPHIQUE
+   ====================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --violet: #48338a;
+  --rouge: #ad5346;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* TRAME DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 20;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible,
+button:focus-visible {
+
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+
+}
+
+/* ======================================
+   BANDEAU
+   ====================================== */
+
+.ruban {
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  padding: 12px 20px;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.6;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ======================================
+   FEUILLE PRINCIPALE
+   ====================================== */
+
+.page {
+
+  width: min(
+    940px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    70px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ======================================
+   EN-TÊTE ADMINISTRATIF
+   ====================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.7;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.reference {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ======================================
+   TITRE
+   ====================================== */
+
+.titre-page {
+
+  padding: 52px 0 30px;
+
+  text-align: center;
+
+}
+
+.surtitre {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  letter-spacing: .08em;
+
+  color: var(--vert);
+
+  text-transform: uppercase;
+
+}
+
+h1 {
+
+  margin: 18px 0 14px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    43px,
+    7vw,
+    73px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.035em;
+  line-height: 1.05;
+
+}
+
+.sous-titre {
+
+  font-size: 22px;
+  font-style: italic;
+
+  margin: 0;
+
+}
+
+.notice-document {
+
+  margin-top: 25px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #635d51;
+
+}
+
+/* ======================================
+   DOCUMENTS À MARGE ROUGE
+   ====================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 28px 0;
+
+  padding: 29px 32px 29px 45px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 23px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ======================================
+   INTRODUCTION
+   ====================================== */
+
+.introduction p {
+  margin: 0 0 18px;
+}
+
+.introduction p:last-child {
+  margin-bottom: 0;
+}
+
+.introduction .premiere {
+
+  font-size: 24px;
+  line-height: 1.4;
+
+}
+
+.introduction .conclusion {
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--trait);
+
+  font-style: italic;
+
+}
+
+/* ======================================
+   TITRES ET PARAGRAPHES
+   ====================================== */
+
+.section-title {
+
+  margin: 50px 0 20px;
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  font-weight: normal;
+
+  letter-spacing: .08em;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+.prose {
+
+  max-width: 720px;
+
+  margin: 0 auto;
+
+}
+
+.prose p {
+  margin: 0 0 19px;
+}
+
+.prose strong {
+  font-weight: 600;
+}
+
+/* ======================================
+   REPÈRES HISTORIQUES
+   ====================================== */
+
+.reperes {
+
+  display: grid;
+
+  grid-template-columns:
+    140px 1fr;
+
+  gap: 0;
+
+  margin: 28px 0;
+
+  border-top: 1px solid var(--trait);
+
+}
+
+.repere-date,
+.repere-texte {
+
+  padding: 18px 14px;
+
+  border-bottom:
+    1px solid var(--trait);
+
+}
+
+.repere-date {
+
+  font-family: var(--machine);
+  font-size: 13px;
+
+  color: var(--vert);
+
+}
+
+.repere-texte {
+
+  font-size: 19px;
+  line-height: 1.5;
+
+}
+
+.repere-texte p {
+  margin: 0;
+}
+
+/* ======================================
+   LISTE DES MOYENS
+   ====================================== */
+
+.moyens {
+
+  margin: 23px 0;
+
+  padding: 0;
+
+  list-style: none;
+
+}
+
+.moyens li {
+
+  position: relative;
+
+  padding: 14px 0 14px 24px;
+
+  border-bottom:
+    1px dotted var(--trait);
+
+}
+
+.moyens li::before {
+
+  content: "—";
+
+  position: absolute;
+
+  left: 0;
+
+  color: var(--vert);
+
+}
+
+/* ======================================
+   NOTE ADMINISTRATIVE
+   ====================================== */
+
+.note-service {
+
+  font-family: var(--machine);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+}
+
+.note-service h3 {
+
+  margin: 0 0 20px;
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  font-weight: normal;
+
+  text-transform: uppercase;
+
+}
+
+.note-service p {
+  margin: 0 0 18px;
+}
+
+/* ======================================
+   EXERGUE
+   ====================================== */
+
+.exergue {
+
+  margin: 38px 0;
+
+  padding: 24px 30px;
+
+  border-top: 1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
+
+  text-align: center;
+
+}
+
+.exergue p {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: 29px;
+  font-style: italic;
+
+  line-height: 1.35;
+
+}
+
+/* ======================================
+   SOMMAIRE INTERNE
+   ====================================== */
+
+.sommaire {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin: 30px 0 45px;
+
+}
+
+.sommaire a {
+
+  display: block;
+
+  padding: 18px 20px;
+
+  border: 1px solid var(--trait);
+
+  background:
+    rgba(238,228,201,.62);
+
+  text-decoration: none;
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  transition:
+    background .16s,
+    transform .16s;
+
+}
+
+.sommaire a:hover {
+
+  background: var(--blanc);
+
+  transform: translateY(-2px);
+
+}
+
+/* ======================================
+   ARCHIVE AUDIOVISUELLE
+   ====================================== */
+
+.archive-video {
+
+  margin-top: 65px;
+
+}
+
+.archive-meta {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.9;
+
+  color: #55564c;
+
+}
+
+.archive-meta strong {
+
+  font-weight: normal;
+  color: var(--encre);
+
+}
+
+.archive-video h3 {
+
+  margin: 28px 0 14px;
+
+  font-family: var(--serif);
+
+  font-size: 32px;
+  font-weight: 500;
+
+}
+
+.video-frame {
+
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 16 / 9;
+
+  margin: 28px 0 20px;
+
+  overflow: hidden;
+
+  background: #171717;
+
+  border: 7px solid #292920;
+
+  box-shadow:
+    0 5px 12px rgba(0,0,0,.18);
+
+}
+
+.video-frame iframe {
+
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  border: 0;
+
+}
+
+.archive-legende {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: #55564c;
+
+}
+
+.archive-legende a {
+  text-underline-offset: 3px;
+}
+
+.distinction {
+
+  margin-top: 28px;
+
+  padding-top: 18px;
+
+  border-top:
+    1px solid var(--trait);
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: #655f54;
+
+}
+
+.fin-dossier {
+
+  margin-top: 25px;
+
+  text-align: right;
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  color: var(--vert);
+
+}
+
+/* ======================================
+   NAVIGATION
+   ====================================== */
+
+.navigation {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 55px;
+
+  padding-top: 22px;
+
+  border-top:
+    2px solid var(--encre);
+
+}
+
+.navigation a {
+
+  font-family: var(--machine);
+
+  font-size: 12px;
+  line-height: 1.8;
+
+  text-underline-offset: 4px;
+
+}
+
+/* ======================================
+   PIED DE PAGE
+   ====================================== */
+
+.footer {
+
+  margin-top: 50px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid var(--trait);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+  line-height: 1.8;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ======================================
+   MOBILE
+   ====================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .reference {
+
+    text-align: left;
+
+    margin-top: 18px;
+
+  }
+
+  .titre-page {
+    padding-top: 37px;
+  }
+
+  .sommaire {
+    grid-template-columns: 1fr;
+  }
+
+  .document {
+    padding: 23px 20px 23px 35px;
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .reperes {
+    grid-template-columns: 105px 1fr;
+  }
+
+  .repere-date,
+  .repere-texte {
+    padding: 13px 9px;
+  }
+
+  .repere-texte {
+    font-size: 17px;
+  }
+
+  .exergue p {
+    font-size: 25px;
+  }
+
+  .video-frame {
+    border-width: 5px;
+  }
+
+  .archive-video h3 {
+    font-size: 27px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer p + p {
+    margin-top: 13px;
+  }
+
+}
+
+/* ======================================
+   ACCESSIBILITÉ
+   ====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .sommaire a {
+    transition: none;
+  }
+
+}
+
+/* ======================================
+   IMPRESSION
+   ====================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban,
+  .video-frame {
+    display: none;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+  .navigation {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+<!-- BANDEAU -->
+
+<div class="ruban">
+
+  Archives institutionnelles ·
+  Consultation autorisée ·
+  Les conclusions demeurent provisoires
+
+</div>
+
+
+<main class="page" id="haut">
+
+
+  <!-- ======================================
+       EN-TÊTE
+       ====================================== -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Services du Premier ministre<br>
+      Mission d'étude et de documentation
+
+    </div>
+
+    <div class="reference">
+
+      PARIS · 1966<br>
+      DOSSIER : INSTITUTION<br>
+      DIFFUSION : INTÉRIEURE
+
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       TITRE
+       ====================================== -->
+
+  <header class="titre-page">
+
+    <div class="surtitre">
+      Documentation générale
+    </div>
+
+    <h1>
+      Le Bureau
+    </h1>
+
+    <p class="sous-titre">
+      Origines, mission et moyens
+    </p>
+
+    <div class="notice-document">
+      DOCUMENT B-01 · NOTICE INSTITUTIONNELLE
+    </div>
+
+  </header>
+
+
+  <!-- ======================================
+       INTRODUCTION
+       ====================================== -->
+
+  <section
+    class="introduction document"
+    aria-label="Présentation du Bureau"
+  >
+
+    <p class="premiere">
+
+      Le Bureau des Interstices
+      n'est pas son nom.
+
+    </p>
+
+    <p>
+
+      Du moins, pas son nom administratif.
+
+    </p>
+
+    <p>
+
+      Cette appellation d'usage désigne
+      une très petite mission d'étude
+      et de documentation rattachée
+      aux services du Premier ministre français.
+
+    </p>
+
+    <p>
+
+      Elle recueille des événements que
+      les catégories habituelles ne permettent
+      pas toujours de décrire, des documents
+      qui résistent au classement et des
+      témoignages dont les contradictions
+      ne suffisent pas à expliquer
+      l'étrangeté.
+
+    </p>
+
+    <p>
+
+      Le Bureau ne possède pas de doctrine
+      officielle concernant le surnaturel.
+
+      Il ne dispose d'aucun pouvoir
+      particulier pour le combattre,
+      le provoquer ou le maîtriser.
+
+    </p>
+
+    <p class="conclusion">
+
+      Il est simplement chargé
+      de prendre les faits au sérieux.
+
+      Ce qui, dans certaines circonstances,
+      représente déjà une difficulté.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       SOMMAIRE
+       ====================================== -->
+
+  <nav
+    class="sommaire"
+    aria-label="Sommaire du dossier"
+  >
+
+    <a href="#origines">
+      01 / Origines administratives
+    </a>
+
+    <a href="#mission">
+      02 / Nature de la mission
+    </a>
+
+    <a href="#univers">
+      03 / Les Interstices
+    </a>
+
+    <a href="#moyens">
+      04 / Moyens et fonctionnement
+    </a>
+
+    <a href="#enqueteurs">
+      05 / Enquêteurs et administrations
+    </a>
+
+    <a href="#limites">
+      06 / Limites de compétence
+    </a>
+
+    <a href="#archive-malraux">
+      07 / Archive audiovisuelle — Malraux
+    </a>
+
+  </nav>
+
+
+  <!-- ======================================
+       01 — ORIGINES
+       ====================================== -->
+
+  <section
+    id="origines"
+    class="prose"
+    aria-labelledby="origines-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="origines-titre"
+    >
+      01 / Origines administratives
+    </h2>
+
+    <p>
+
+      La création du Bureau remonte
+      approximativement à 1958.
+
+    </p>
+
+    <p>
+
+      À l'initiative d'André Malraux,
+      alors membre du gouvernement français,
+      une petite mission d'étude
+      et de documentation est constituée
+      auprès des services du Premier ministre.
+
+    </p>
+
+    <p>
+
+      Sa vocation est de recueillir
+      et d'examiner certains faits
+      que les administrations ordinaires
+      peinent à interpréter ou à classer.
+
+    </p>
+
+    <p>
+
+      Cette initiative appartient
+      à l'histoire fictive des Interstices.
+
+      Elle situe l'apparition du Bureau
+      dans la France de la fin des années 1950,
+      au moment de l'installation
+      de la Ve République.
+
+    </p>
+
+    <p>
+
+      Malraux est à l'origine
+      de cette création, mais il
+      n'assure pas personnellement
+      la direction du service.
+
+    </p>
+
+    <p>
+
+      Cette responsabilité revient
+      à Paul de Vauclerc,
+      chargé de conduire les études,
+      de décider des missions et de répondre
+      de l'activité du Bureau.
+
+    </p>
+
+    <p>
+
+      Le Bureau appartient à l'appareil
+      administratif de l'État,
+      tout en conservant la dimension
+      modeste d'une mission d'étude.
+
+    </p>
+
+    <p>
+
+      Son appellation courante,
+      « Bureau des Interstices »,
+      ne correspond pas à sa dénomination
+      administrative officielle.
+
+    </p>
+
+    <p>
+
+      La date exacte de création,
+      les circonstances détaillées
+      de sa fondation et sa dénomination
+      officielle ne sont pas encore
+      précisées dans les documents
+      de référence.
+
+    </p>
+
+
+    <!-- REPÈRES CHRONOLOGIQUES -->
+
+    <div class="reperes">
+
+      <div class="repere-date">
+        VERS 1958
+      </div>
+
+      <div class="repere-texte">
+
+        <p>
+          Création fictive de la mission
+          d'étude et de documentation
+          à l'initiative d'André Malraux.
+        </p>
+
+      </div>
+
+
+      <div class="repere-date">
+        1959
+      </div>
+
+      <div class="repere-texte">
+
+        <p>
+          Dans l'histoire réelle,
+          André Malraux devient ministre
+          d'État chargé des Affaires culturelles.
+        </p>
+
+      </div>
+
+
+      <div class="repere-date">
+        ANNÉES 1960
+      </div>
+
+      <div class="repere-texte">
+
+        <p>
+          Période des premières aventures
+          dans l'univers des Interstices.
+        </p>
+
+      </div>
+
+
+      <div class="repere-date">
+        1966
+      </div>
+
+      <div class="repere-texte">
+
+        <p>
+          Époque de référence des premiers
+          dossiers présentés sur ce site.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       02 — MISSION
+       ====================================== -->
+
+  <section
+    id="mission"
+    class="prose"
+    aria-labelledby="mission-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="mission-titre"
+    >
+      02 / Nature de la mission
+    </h2>
+
+    <p>
+
+      Le Bureau n'est ni un service
+      de renseignement classique
+      ni une organisation policière.
+
+    </p>
+
+    <p>
+
+      Il ne possède aucun pouvoir
+      de police particulier.
+
+    </p>
+
+    <p>
+
+      Sa mission consiste à recueillir,
+      documenter, rapprocher et analyser
+      des événements qui résistent aux
+      catégories administratives
+      et scientifiques habituelles.
+
+    </p>
+
+    <p>
+
+      Son travail porte notamment
+      sur des témoignages contradictoires,
+      des documents historiques inhabituels,
+      des anomalies matérielles
+      ou des phénomènes inexpliqués.
+
+    </p>
+
+    <p>
+
+      Le Bureau s'efforce d'établir
+      les faits, de conserver les pièces
+      et de proposer des vérifications.
+
+    </p>
+
+    <p>
+
+      Il ne formule pas nécessairement
+      d'hypothèse surnaturelle.
+
+    </p>
+
+    <p>
+
+      Ses employés ne disposent
+      d'aucune connaissance générale
+      des forces qui traversent
+      les Interstices.
+
+    </p>
+
+    <p>
+
+      Ils ne savent pas davantage
+      que les enquêteurs ce qu'ils
+      cherchent véritablement.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       EXERGUE
+       ====================================== -->
+
+  <div class="exergue">
+
+    <p>
+
+      Le Bureau étudie l'inexplicable.<br>
+      Il n'est pas chargé de le maîtriser.
+
+    </p>
+
+  </div>
+
+
+  <!-- ======================================
+       03 — UNIVERS
+       ====================================== -->
+
+  <section
+    id="univers"
+    class="prose"
+    aria-labelledby="univers-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="univers-titre"
+    >
+      03 / Les Interstices
+    </h2>
+
+    <p>
+
+      Les Interstices est un univers
+      de jeu de rôle contemporain historique,
+      développé pour le système narratif
+      sans dés M.I.S.E.
+
+    </p>
+
+    <p>
+
+      Les premières aventures se déroulent
+      dans les années 1960.
+
+    </p>
+
+    <p>
+
+      Cet univers ressemble au nôtre.
+
+      Son histoire, ses institutions,
+      ses évolutions sociales,
+      ses conflits politiques et ses
+      conditions matérielles respectent
+      autant que possible les réalités
+      documentées de l'époque.
+
+    </p>
+
+    <p>
+
+      Mais certaines manifestations
+      échappent à la compréhension humaine.
+
+    </p>
+
+    <p>
+
+      Elles peuvent être les conséquences
+      de forces extrêmement anciennes,
+      dont l'existence précède parfois
+      l'histoire des sociétés humaines.
+
+    </p>
+
+    <p>
+
+      Elles sont rares, généralement
+      discrètes et difficiles à interpréter.
+
+    </p>
+
+    <p>
+
+      Elles ne constituent pas
+      un système de magie.
+
+    </p>
+
+    <p>
+
+      Elles ne répondent pas nécessairement
+      à des intentions intelligibles.
+
+      Elles ne sont pas intrinsèquement
+      bonnes ou mauvaises.
+
+    </p>
+
+    <p>
+
+      Les traditions, les religions
+      et les mythologies humaines
+      peuvent en conserver des traces
+      déformées, mais aucune ne possède
+      une connaissance complète
+      de leur nature.
+
+    </p>
+
+    <p>
+
+      L'invisible existe.
+
+      Les hommes tentent de l'expliquer.
+
+      Ils se trompent souvent.
+
+    </p>
+
+    <p>
+
+      Les Interstices privilégie
+      les personnages, les situations humaines,
+      les contradictions et les conséquences
+      ordinaires d'événements extraordinaires.
+
+    </p>
+
+    <p>
+
+      Le fantastique discret,
+      certaines œuvres de David Lynch,
+      Andreï Tarkovski et Yasujirō Ozu,
+      ainsi qu'une tradition du roman
+      d'espionnage, participent
+      de ses inspirations.
+
+    </p>
+
+    <p>
+
+      L'humour, l'absurde et la tendresse
+      y ont également toute leur place.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       04 — MOYENS
+       ====================================== -->
+
+  <section
+    id="moyens"
+    class="prose"
+    aria-labelledby="moyens-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="moyens-titre"
+    >
+      04 / Moyens et fonctionnement
+    </h2>
+
+    <p>
+
+      Le Bureau est une structure minuscule.
+
+    </p>
+
+    <p>
+
+      Ses moyens financiers, administratifs
+      et humains sont limités.
+
+    </p>
+
+    <p>
+
+      Son fonctionnement repose essentiellement
+      sur les pratiques et les instruments
+      ordinaires de l'administration française
+      des années 1960.
+
+    </p>
+
+    <ul class="moyens">
+
+      <li>
+        Courriers, rapports, archives
+        et chemises cartonnées.
+      </li>
+
+      <li>
+        Téléphones, machines à écrire
+        et correspondances interministérielles.
+      </li>
+
+      <li>
+        Classement et recoupement
+        de documents.
+      </li>
+
+      <li>
+        Relations ponctuelles
+        avec les préfectures,
+        les ambassades et d'autres services.
+      </li>
+
+      <li>
+        Missions confiées
+        à des enquêteurs indépendants.
+      </li>
+
+    </ul>
+
+    <p>
+
+      La documentation joue
+      un rôle essentiel.
+
+    </p>
+
+    <p>
+
+      Conserver un rapport,
+      retrouver une correspondance,
+      comparer deux témoignages ou
+      rapprocher des événements
+      éloignés dans le temps constitue
+      une part importante du travail.
+
+    </p>
+
+    <p>
+
+      Ces pratiques ordinaires
+      ne garantissent pas que les faits
+      deviennent compréhensibles.
+
+    </p>
+
+    <p>
+
+      Elles permettent au moins
+      de ne pas les perdre.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       05 — ENQUÊTEURS
+       ====================================== -->
+
+  <section
+    id="enqueteurs"
+    class="prose"
+    aria-labelledby="enqueteurs-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="enqueteurs-titre"
+    >
+      05 / Enquêteurs et administrations
+    </h2>
+
+    <p>
+
+      Le Bureau fait appel
+      à des enquêteurs indépendants
+      pour certaines missions.
+
+    </p>
+
+    <p>
+
+      Ces collaborateurs peuvent venir
+      de professions très différentes.
+
+    </p>
+
+    <p>
+
+      Ils rencontrent des témoins,
+      examinent des lieux,
+      consultent des documents
+      et rendent compte
+      de leurs observations.
+
+    </p>
+
+    <p>
+
+      Ils peuvent disposer
+      d'une accréditation administrative.
+
+    </p>
+
+    <p>
+
+      Celle-ci facilite certains contacts,
+      mais ne leur confère
+      aucune autorité particulière.
+
+    </p>
+
+    <p>
+
+      Le Bureau peut demander des informations
+      ou solliciter la coopération
+      d'autres administrations.
+
+    </p>
+
+    <p>
+
+      Il ne peut pas simplement
+      leur imposer ses décisions.
+
+    </p>
+
+    <p>
+
+      Ses agents doivent régulièrement
+      négocier, expliquer leur démarche,
+      composer avec les réticences
+      administratives ou accepter
+      qu'un interlocuteur refuse
+      de les aider.
+
+    </p>
+
+    <p>
+
+      Cette situation peut faire naître
+      des désaccords entre les enquêteurs
+      et leur administration.
+
+    </p>
+
+    <p>
+
+      Les décisions des enquêteurs
+      leur appartiennent.
+
+    </p>
+
+    <p>
+
+      Le Bureau ne constitue pas
+      nécessairement leur allié
+      inconditionnel.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       06 — LIMITES
+       ====================================== -->
+
+  <section
+    id="limites"
+    class="prose"
+    aria-labelledby="limites-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="limites-titre"
+    >
+      06 / Limites de compétence
+    </h2>
+
+    <div class="document note-service">
+
+      <h3>
+        Note d'information
+      </h3>
+
+      <p>
+
+        Le Bureau recueille des faits
+        dont l'explication demeure incertaine.
+
+      </p>
+
+      <p>
+
+        Il n'en résulte aucune présomption
+        quant à leur origine.
+
+      </p>
+
+      <p>
+
+        La difficulté de classer un événement
+        ne constitue pas, à elle seule,
+        la preuve de son caractère exceptionnel.
+
+      </p>
+
+      <p>
+
+        Inversement, le classement
+        d'un dossier ne saurait être
+        considéré comme la résolution
+        du phénomène qu'il décrit.
+
+      </p>
+
+      <p>
+
+        Les agents du Bureau
+        sont invités à conserver
+        cette distinction à l'esprit.
+
+      </p>
+
+    </div>
+
+    <p>
+
+      L'activité du Bureau repose donc
+      sur une tension permanente.
+
+    </p>
+
+    <p>
+
+      Il doit documenter des événements
+      qui échappent parfois
+      aux méthodes disponibles,
+      sans renoncer pour autant
+      à la rigueur de l'observation.
+
+    </p>
+
+    <p>
+
+      Il cherche à comprendre,
+      mais ne possède pas nécessairement
+      les moyens d'aboutir.
+
+    </p>
+
+    <p>
+
+      Son travail n'abolit ni le doute,
+      ni les contradictions,
+      ni les limites de ses membres.
+
+    </p>
+
+  </section>
+
+
+  <!-- ======================================
+       CONCLUSION
+       ====================================== -->
+
+  <div class="exergue">
+
+    <p>
+
+      L'invisible existe.<br>
+      Les hommes tentent de l'expliquer.<br>
+      Ils se trompent souvent.
+
+    </p>
+
+  </div>
+
+
+  <!-- ======================================
+       07 — ARCHIVE AUDIOVISUELLE
+       ANDRÉ MALRAUX
+       ====================================== -->
+
+  <section
+    id="archive-malraux"
+    class="archive-video"
+    aria-labelledby="malraux-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="malraux-titre"
+    >
+      07 / Pièce audiovisuelle annexée
+    </h2>
+
+
+    <div class="document">
+
+      <div class="archive-meta">
+
+        DOCUMENT HISTORIQUE N° B-02<br>
+
+        ORIGINE : LES ACTUALITÉS FRANÇAISES<br>
+
+        DATE DU JOURNAL : 23 DÉCEMBRE 1964<br>
+
+        SOURCE : INSTITUT NATIONAL
+        DE L'AUDIOVISUEL
+
+      </div>
+
+
+      <h3>
+        André Malraux
+      </h3>
+
+      <p>
+
+        À l'origine de la création fictive
+        du Bureau des Interstices vers 1958,
+        André Malraux n'en assure pas
+        personnellement la direction.
+
+      </p>
+
+      <p>
+
+        La petite mission administrative
+        poursuit ses travaux sous l'autorité
+        des services du Premier ministre,
+        avec Paul de Vauclerc à sa tête.
+
+      </p>
+
+      <p>
+
+        Dans l'histoire réelle,
+        André Malraux devient
+        ministre d'État chargé
+        des Affaires culturelles en 1959,
+        sous la présidence
+        du général de Gaulle.
+
+      </p>
+
+      <p>
+
+        Le 19 décembre 1964,
+        il prononce au Panthéon
+        un hommage à Jean Moulin.
+
+      </p>
+
+      <p>
+
+        Les <em>Actualités françaises</em>
+        rendent compte de cette cérémonie
+        dans leur édition du
+        23 décembre 1964.
+
+      </p>
+
+
+      <!-- VIDÉO INA -->
+
+      <div class="video-frame">
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/oPVz7ZJNb2k"
+          title="Les Actualités françaises du 23 décembre 1964 — André Malraux et Jean Moulin — INA Actu"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
+
+      <p class="archive-legende">
+
+        ARCHIVE HISTORIQUE AUTHENTIQUE<br>
+        SOURCE : INA ACTU
+
+      </p>
+
+      <p class="archive-legende">
+
+        <a
+          href="https://www.youtube.com/watch?v=oPVz7ZJNb2k"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Consulter le document sur INA Actu ↗
+        </a>
+
+      </p>
+
+
+      <!-- DISTINCTION HISTOIRE / FICTION -->
+
+      <div class="distinction">
+
+        PRÉCISION DOCUMENTAIRE
+
+        <p>
+
+          André Malraux est un personnage historique.
+
+          Sa participation à la fondation
+          du Bureau des Interstices
+          appartient exclusivement
+          à cet univers de fiction.
+
+        </p>
+
+        <p>
+
+          Le document audiovisuel présenté
+          est une archive historique de l'INA.
+
+          Il ne concerne pas le Bureau,
+          dont l'existence est fictive.
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+    <div class="fin-dossier">
+
+      FIN DU DOSSIER B-01
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================
+       NAVIGATION
+       ====================================== -->
+
+  <nav
+    class="navigation"
+    aria-label="Navigation du Bureau"
+  >
+
+    <a href="index.html#archives">
+      ← Retour aux archives
+    </a>
+
+    <a href="personnel.html">
+      Consulter le registre du personnel →
+    </a>
+
+  </nav>
+
+
+  <!-- ======================================
+       PIED DE PAGE
+       ====================================== -->
+
+  <footer class="footer">
+
+    <p>
+
+      BUREAU DES INTERSTICES<br>
+      Documentation générale<br>
+      Paris, 1966
+
+    </p>
+
+    <p>
+
+      Création : Alexis Tolmatchev<br>
+      Univers de jeu pour M.I.S.E.
+
+    </p>
+
+  </footer>
+
+
+</main>
+
+</body>
+  </html>
