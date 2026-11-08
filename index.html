@@ -41,9 +41,9 @@
 
   <style>
 
-    /* ==========================================
-       PALETTE DU BUREAU
-       ========================================== */
+    /* ======================================
+       IDENTITÉ GRAPHIQUE
+       ====================================== */
 
     :root {
 
@@ -104,9 +104,7 @@
     }
 
     /*
-      Trame de papier :
-      bruit procédural discret.
-      Aucun fichier image supplémentaire.
+      Trame irrégulière du papier.
     */
 
     body::before {
@@ -117,7 +115,6 @@
       inset: 0;
 
       pointer-events: none;
-
       z-index: 20;
 
       opacity: .12;
@@ -140,48 +137,10 @@
 
     }
 
-    /*
-      Certaines zones peuvent contenir des
-      images de tampons sur papier.
-      Le mode multiply fond leur fond clair
-      dans le document.
-    */
 
-    .stamp-image {
-
-      display: block;
-
-      width: 130px;
-      height: auto;
-
-      opacity: .82;
-
-      mix-blend-mode: multiply;
-
-      filter: contrast(1.08);
-
-    }
-
-    .stamp-small {
-      width: 105px;
-    }
-
-    .stamp-large {
-      width: 160px;
-    }
-
-    .stamp-tilt-left {
-      transform: rotate(-11deg);
-    }
-
-    .stamp-tilt-right {
-      transform: rotate(8deg);
-    }
-
-
-    /* ==========================================
+    /* ======================================
        BANDEAU
-       ========================================== */
+       ====================================== */
 
     .ruban {
 
@@ -203,24 +162,17 @@
     }
 
 
-    /* ==========================================
-       FEUILLE PRINCIPALE
-       ========================================== */
+    /* ======================================
+       FEUILLE
+       ====================================== */
 
     .page {
 
-      width: min(
-        940px,
-        calc(100% - 32px)
-      );
+      width: min(940px, calc(100% - 32px));
 
       margin: 34px auto 60px;
 
-      padding: clamp(
-        25px,
-        6vw,
-        70px
-      );
+      padding: clamp(25px, 6vw, 70px);
 
       position: relative;
 
@@ -253,45 +205,36 @@
 
     }
 
-    /*
-      Liseré intérieur :
-      suggestion d'une feuille ancienne.
-    */
-
     .page::before {
 
       content: "";
 
       position: absolute;
-
       inset: 8px;
 
-      border: 1px solid
-        rgba(95,75,45,.09);
+      border: 1px solid rgba(95,75,45,.09);
 
       pointer-events: none;
 
     }
 
 
-    /* ==========================================
-       EN-TÊTE ADMINISTRATIF
-       ========================================== */
+    /* ======================================
+       EN-TÊTE
+       ====================================== */
 
     .top {
 
       display: flex;
 
       justify-content: space-between;
-
       align-items: flex-start;
 
       gap: 20px;
 
       padding-bottom: 26px;
 
-      border-bottom:
-        2px solid var(--encre);
+      border-bottom: 2px solid var(--encre);
 
     }
 
@@ -301,7 +244,6 @@
       font-size: 12px;
 
       line-height: 1.7;
-
       letter-spacing: .03em;
 
       text-transform: uppercase;
@@ -322,13 +264,11 @@
     }
 
 
-    /* ==========================================
-       IDENTITÉ DU SERVICE
-       ========================================== */
+    /* ======================================
+       TITRE PRINCIPAL
+       ====================================== */
 
     .entete {
-
-      position: relative;
 
       text-align: center;
 
@@ -353,16 +293,10 @@
 
       font-family: var(--serif);
 
-      font-size: clamp(
-        42px,
-        7vw,
-        78px
-      );
-
+      font-size: clamp(42px, 7vw, 78px);
       font-weight: 500;
 
       letter-spacing: -.035em;
-
       line-height: 1.02;
 
     }
@@ -378,6 +312,59 @@
       font-size: 21px;
       font-style: italic;
 
+    }
+
+    .mention {
+
+      display: inline-block;
+
+      margin-top: 12px;
+
+      font-family: var(--machine);
+      font-size: 11px;
+
+      color: #655d55;
+
+      letter-spacing: .05em;
+
+      text-transform: uppercase;
+
+    }
+
+
+    /* ======================================
+       TAMPONS
+       ====================================== */
+
+    .stamp-image {
+
+      display: block;
+
+      width: 130px;
+      height: auto;
+
+      opacity: .82;
+
+      mix-blend-mode: multiply;
+
+      filter: contrast(1.08);
+
+    }
+
+    .stamp-small {
+      width: 105px;
+    }
+
+    .stamp-large {
+      width: 160px;
+    }
+
+    .stamp-tilt-left {
+      transform: rotate(-11deg);
+    }
+
+    .stamp-tilt-right {
+      transform: rotate(8deg);
     }
 
     .stamp-meld {
@@ -398,36 +385,55 @@
 
     }
 
-    .mention {
+    .document-stamp {
 
-      display: inline-block;
+      display: flex;
 
-      margin-top: 12px;
+      justify-content: flex-end;
 
-      font-family: var(--machine);
+      margin: 18px 6px 4px;
 
-      font-size: 11px;
+    }
 
-      color: #655d55;
+    .document-stamp.left {
+      justify-content: flex-start;
+    }
 
-      letter-spacing: .05em;
+    .document-stamp.center {
+      justify-content: center;
+    }
 
-      text-transform: uppercase;
+    .stamp-row {
+
+      display: flex;
+
+      justify-content: space-around;
+      align-items: center;
+
+      gap: 16px;
+
+      flex-wrap: wrap;
+
+      margin: 26px 0;
+
+    }
+
+    .stamp-row img {
+
+      width: 115px;
+      max-width: 42%;
 
     }
 
 
-    /* ==========================================
+    /* ======================================
        AVIS OFFICIEL
-       ========================================== */
+       ====================================== */
 
     .avis {
 
-      border-top:
-        1px solid var(--trait);
-
-      border-bottom:
-        1px solid var(--trait);
+      border-top: 1px solid var(--trait);
+      border-bottom: 1px solid var(--trait);
 
       padding: 24px 0;
 
@@ -451,9 +457,9 @@
     }
 
 
-    /* ==========================================
+    /* ======================================
        SECTIONS
-       ========================================== */
+       ====================================== */
 
     .section-title {
 
@@ -462,11 +468,9 @@
       font-family: var(--machine);
 
       font-size: 13px;
-
       font-weight: normal;
 
       letter-spacing: .08em;
-
       line-height: 1.6;
 
       text-transform: uppercase;
@@ -476,9 +480,7 @@
     }
 
     section p {
-
       margin: 0 0 17px;
-
     }
 
     .notice {
@@ -496,7 +498,6 @@
       font-family: var(--serif);
 
       font-size: 3.4em;
-
       line-height: .78;
 
       padding: 9px 9px 0 0;
@@ -504,9 +505,201 @@
     }
 
 
-    /* ==========================================
-       ARCHIVES
-       ========================================== */
+    /* ======================================
+       ARCHIVE AUDIOVISUELLE
+       ====================================== */
+
+    .archive-video {
+
+      margin: 48px 0 58px;
+
+      padding: 24px;
+
+      border: 1px solid var(--trait);
+
+      background:
+        rgba(231,221,194,.65);
+
+    }
+
+    .archive-video .section-title {
+
+      margin: 0 0 24px;
+
+    }
+
+    .archive-meta {
+
+      font-family: var(--machine);
+
+      font-size: 12px;
+      line-height: 1.8;
+
+      color: #55564c;
+
+      margin-bottom: 23px;
+
+    }
+
+    .archive-meta strong {
+
+      color: var(--encre);
+      font-weight: normal;
+
+    }
+
+    .video-frame {
+
+      position: relative;
+
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+
+      background: #171717;
+
+      border: 8px solid #292920;
+
+      box-shadow:
+        0 5px 13px rgba(0,0,0,.18);
+
+    }
+
+    .video-frame iframe {
+
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      border: 0;
+
+    }
+
+    .video-caption {
+
+      margin-top: 14px;
+
+      font-family: var(--machine);
+      font-size: 11px;
+
+      line-height: 1.7;
+
+      color: #55564c;
+
+    }
+
+    .video-caption a {
+
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+
+    }
+
+
+    /* ======================================
+       NOTE DE CHARLES PINSON
+       ====================================== */
+
+    .note-pinson {
+
+      position: relative;
+
+      margin-top: 34px;
+
+      padding: 26px 28px 20px;
+
+      background: #ede5ce;
+
+      border: 1px solid #b8ad91;
+
+      box-shadow:
+        3px 4px 0 rgba(90,72,46,.10);
+
+    }
+
+    .note-pinson h3 {
+
+      margin: 0 0 21px;
+
+      font-family: var(--machine);
+
+      font-size: 13px;
+      font-weight: normal;
+
+      line-height: 1.7;
+
+      letter-spacing: .04em;
+
+      color: #34362e;
+
+    }
+
+    .note-pinson p {
+
+      font-family: var(--machine);
+
+      font-size: 14px;
+      line-height: 1.95;
+
+      margin-bottom: 17px;
+
+    }
+
+    .signature-pinson {
+
+      margin-top: 23px;
+
+      text-align: right;
+
+    }
+
+    .signature-pinson strong {
+
+      font-family: var(--serif);
+
+      font-size: 25px;
+      font-weight: 500;
+
+      font-style: italic;
+
+    }
+
+    .signature-pinson span {
+
+      display: block;
+
+      font-family: var(--machine);
+      font-size: 11px;
+
+      color: #55564c;
+
+    }
+
+    .note-pinson .document-stamp {
+
+      margin-top: 20px;
+
+    }
+
+    .archive-disclaimer {
+
+      margin-top: 23px;
+
+      font-family: var(--machine);
+
+      font-size: 10px;
+      line-height: 1.7;
+
+      color: #625e53;
+
+    }
+
+
+    /* ======================================
+       INDEX DES ARCHIVES
+       ====================================== */
 
     .index {
 
@@ -531,8 +724,7 @@
 
       padding: 22px;
 
-      border: 1px solid
-        var(--trait);
+      border: 1px solid var(--trait);
 
       background:
         rgba(238,228,201,.62);
@@ -545,8 +737,7 @@
 
     .dossier:hover {
 
-      transform:
-        translateY(-3px);
+      transform: translateY(-3px);
 
       background:
         rgba(250,243,224,.92);
@@ -560,7 +751,6 @@
       margin-bottom: 13px;
 
       font-family: var(--machine);
-
       font-size: 11px;
 
       letter-spacing: .03em;
@@ -576,7 +766,6 @@
       font-family: var(--serif);
 
       font-size: 26px;
-
       font-weight: 500;
 
       line-height: 1.15;
@@ -596,13 +785,11 @@
     }
 
 
-    /* ==========================================
-       FICHES ADMINISTRATIVES
-       ========================================== */
+    /* ======================================
+       FICHES
+       ====================================== */
 
     .fiche {
-
-      position: relative;
 
       margin-top: 25px;
 
@@ -623,7 +810,6 @@
       font-family: var(--machine);
 
       font-size: 13px;
-
       font-weight: normal;
 
       letter-spacing: .06em;
@@ -639,15 +825,13 @@
     }
 
     .fiche p:last-child {
-
       margin: 0;
-
     }
 
 
-    /* ==========================================
+    /* ======================================
        PERSONNEL
-       ========================================== */
+       ====================================== */
 
     .agents {
 
@@ -676,7 +860,6 @@
       font-family: var(--serif);
 
       font-size: 24px;
-
       font-weight: 500;
 
     }
@@ -688,7 +871,6 @@
       margin-top: 4px;
 
       font-family: var(--machine);
-
       font-size: 11px;
 
       color: #656356;
@@ -696,66 +878,15 @@
     }
 
 
-    /* ==========================================
-       TAMPONS SUR DOCUMENTS
-       ========================================== */
-
-    .document-stamp {
-
-      display: flex;
-
-      justify-content: flex-end;
-
-      margin: 18px 6px 4px;
-
-    }
-
-    .document-stamp.left {
-
-      justify-content: flex-start;
-
-    }
-
-    .document-stamp.center {
-
-      justify-content: center;
-
-    }
-
-    .stamp-row {
-
-      display: flex;
-
-      justify-content: space-around;
-
-      align-items: center;
-
-      gap: 16px;
-
-      flex-wrap: wrap;
-
-      margin: 26px 0;
-
-    }
-
-    .stamp-row img {
-
-      width: 115px;
-      max-width: 42%;
-
-    }
-
-
-    /* ==========================================
+    /* ======================================
        BOUTONS
-       ========================================== */
+       ====================================== */
 
     .bouton {
 
       display: inline-block;
 
       background: var(--encre);
-
       color: #f4edda;
 
       border: 0;
@@ -763,7 +894,6 @@
       padding: 15px 20px;
 
       font-family: var(--machine);
-
       font-size: 12px;
 
       line-height: 1.5;
@@ -780,16 +910,13 @@
     }
 
     .bouton:hover {
-
-      background:
-        var(--violet);
-
+      background: var(--violet);
     }
 
 
-    /* ==========================================
-       ANNEXE INTERACTIVE
-       ========================================== */
+    /* ======================================
+       ANNEXE
+       ====================================== */
 
     #annexe[hidden] {
       display: none;
@@ -816,15 +943,14 @@
       font-family: var(--machine);
 
       font-size: 13px;
-
       font-weight: normal;
 
     }
 
 
-    /* ==========================================
+    /* ======================================
        PIED DE PAGE
-       ========================================== */
+       ====================================== */
 
     .retour {
 
@@ -833,7 +959,6 @@
       margin-top: 35px;
 
       font-family: var(--machine);
-
       font-size: 12px;
 
       text-decoration-thickness: 1px;
@@ -859,7 +984,6 @@
       font-family: var(--machine);
 
       font-size: 11px;
-
       line-height: 1.8;
 
     }
@@ -869,9 +993,9 @@
     }
 
 
-    /* ==========================================
+    /* ======================================
        MOBILE
-       ========================================== */
+       ====================================== */
 
     @media (max-width: 650px) {
 
@@ -901,22 +1025,16 @@
       }
 
       .entete {
-
         padding: 38px 0 25px;
-
       }
 
       .index,
       .agents {
-
         grid-template-columns: 1fr;
-
       }
 
       .avis p {
-
         font-size: 20px;
-
       }
 
       .footer {
@@ -928,23 +1046,35 @@
       }
 
       .stamp-image {
-
         width: 110px;
-
       }
 
       .stamp-meld img {
-
         width: 125px;
+      }
 
+      .archive-video {
+        padding: 15px;
+      }
+
+      .video-frame {
+        border-width: 5px;
+      }
+
+      .note-pinson {
+        padding: 20px;
+      }
+
+      .note-pinson p {
+        font-size: 13px;
       }
 
     }
 
 
-    /* ==========================================
+    /* ======================================
        ACCESSIBILITÉ
-       ========================================== */
+       ====================================== */
 
     @media (
       prefers-reduced-motion: reduce
@@ -956,36 +1086,26 @@
 
       .dossier,
       .bouton {
-
         transition: none;
-
       }
 
     }
 
 
-    /* ==========================================
+    /* ======================================
        IMPRESSION
-       ========================================== */
+       ====================================== */
 
     @media print {
 
       body {
-
         background: white;
-
       }
 
-      body::before {
-
+      body::before,
+      .ruban,
+      .video-frame {
         display: none;
-
-      }
-
-      .ruban {
-
-        display: none;
-
       }
 
       .page {
@@ -993,22 +1113,10 @@
         width: 100%;
 
         margin: 0;
-
         padding: 20mm;
 
         border: none;
-
         box-shadow: none;
-
-      }
-
-      .bouton {
-
-        border: 1px solid black;
-
-        color: black;
-
-        background: transparent;
 
       }
 
@@ -1020,7 +1128,6 @@
 
 
 <body>
-
 
   <!-- BANDEAU -->
 
@@ -1035,9 +1142,7 @@
   <main class="page" id="haut">
 
 
-    <!-- ======================================
-         EN-TÊTE ADMINISTRATIF
-         ====================================== -->
+    <!-- EN-TÊTE ADMINISTRATIF -->
 
     <header class="top">
 
@@ -1060,9 +1165,7 @@
     </header>
 
 
-    <!-- ======================================
-         IDENTITÉ DU SERVICE
-         ====================================== -->
+    <!-- IDENTITÉ DU BUREAU -->
 
     <section
       class="entete"
@@ -1076,7 +1179,6 @@
 
       </div>
 
-
       <h1 id="titre">
 
         Le Bureau
@@ -1087,7 +1189,6 @@
 
       </h1>
 
-
       <p class="subtitle">
 
         Service des phénomènes
@@ -1096,13 +1197,13 @@
       </p>
 
 
-      <!-- TAMPON OFFICIEL M.E.L.D -->
+      <!-- TAMPON M.E.L.D. -->
 
       <div class="stamp-meld">
 
         <img
           class="stamp-image stamp-large"
-          src="tampon_meld.png"
+          src="images/images/images/tampon_meld.png"
           alt="Tampon officiel M.E.L.D. — République française"
           width="160"
           height="160"
@@ -1110,19 +1211,14 @@
 
       </div>
 
-
       <span class="mention">
-
         Existence non confirmée
-
       </span>
 
     </section>
 
 
-    <!-- ======================================
-         AVIS OFFICIEL
-         ====================================== -->
+    <!-- AVIS OFFICIEL -->
 
     <div class="avis">
 
@@ -1138,9 +1234,7 @@
     </div>
 
 
-    <!-- ======================================
-         MISSION
-         ====================================== -->
+    <!-- MISSION -->
 
     <section
       class="notice"
@@ -1157,7 +1251,6 @@
 
       </h2>
 
-
       <p class="first">
 
         Paris, août 1966. Dans une France
@@ -1167,7 +1260,6 @@
         à ne figurer dans aucune rubrique.
 
       </p>
-
 
       <p>
 
@@ -1179,7 +1271,6 @@
         faut pourtant restituer avant jeudi.
 
       </p>
-
 
       <p>
 
@@ -1198,8 +1289,169 @@
 
 
     <!-- ======================================
-         ARCHIVES
+         ARCHIVE AUDIOVISUELLE N° 001
          ====================================== -->
+
+    <section
+      class="archive-video"
+      id="document-001"
+      aria-labelledby="archive-titre"
+    >
+
+      <h2
+        class="section-title"
+        id="archive-titre"
+      >
+
+        Document audiovisuel n° 001
+        — Diffusion autorisée
+
+      </h2>
+
+
+      <div class="archive-meta">
+
+        <strong>DATE :</strong>
+        6 décembre 1963<br>
+
+        <strong>INTERVENANT :</strong>
+        Alain Peyrefitte<br>
+
+        <strong>FONCTION :</strong>
+        Ministre de l'Information<br>
+
+        <strong>OBJET :</strong>
+        Développement de la télévision régionale<br>
+
+        <strong>SOURCE :</strong>
+        INA Politique
+
+      </div>
+
+
+      <!-- VIDÉO HISTORIQUE -->
+
+      <div class="video-frame">
+
+        <iframe
+          src="https://www.youtube-nocookie.com/embed/AQvhw04Aq4I"
+          title="Allocution d'Alain Peyrefitte — 6 décembre 1963 — INA Politique"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen
+        ></iframe>
+
+      </div>
+
+
+      <p class="video-caption">
+
+        Archive audiovisuelle authentique
+        conservée et publiée par l'INA.
+
+        <br>
+
+        <a
+          href="https://www.youtube.com/watch?v=AQvhw04Aq4I"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Voir la vidéo sur la chaîne INA Politique ↗
+        </a>
+
+      </p>
+
+
+      <!-- NOTE DE CHARLES PINSON -->
+
+      <div class="note-pinson">
+
+        <h3>
+
+          BUREAU DES INTERSTICES<br>
+          SERVICE DES ARCHIVES<br>
+          NOTE MANUSCRITE
+
+        </h3>
+
+
+        <p>
+
+          6 décembre 1963 — Allocution de
+          M. Alain Peyrefitte,
+          ministre de l'Information.
+
+        </p>
+
+        <p>
+
+          Le ministre annonce une amélioration
+          de la diffusion des images
+          sur le territoire national.
+
+        </p>
+
+        <p>
+
+          Cette initiative mérite d'être saluée.
+
+        </p>
+
+        <p>
+
+          Il serait toutefois souhaitable
+          de vérifier que les images reçues
+          correspondent bien à celles
+          qui ont été émises.
+
+        </p>
+
+
+        <div class="signature-pinson">
+
+          <strong>
+            Charles Pinson
+          </strong>
+
+          <span>
+            Archiviste
+          </span>
+
+        </div>
+
+
+        <!-- TAMPON À ÉTUDIER -->
+
+        <div class="document-stamp">
+
+          <img
+            class="stamp-image stamp-small stamp-tilt-right"
+            src="images/images/images/a-etudier.png"
+            alt="Tampon À ÉTUDIER"
+            width="105"
+            height="105"
+            loading="lazy"
+          >
+
+        </div>
+
+      </div>
+
+
+      <p class="archive-disclaimer">
+
+        La vidéo est une archive historique authentique.
+        La note de Charles Pinson appartient
+        à l'univers fictionnel du Bureau
+        des Interstices.
+
+      </p>
+
+    </section>
+
+
+    <!-- ARCHIVES -->
 
     <section
       id="archives"
@@ -1217,7 +1469,6 @@
 
 
       <div class="index">
-
 
         <a
           class="dossier"
@@ -1302,7 +1553,6 @@
 
         </a>
 
-
       </div>
 
 
@@ -1312,7 +1562,7 @@
 
         <img
           class="stamp-image stamp-small stamp-tilt-right"
-          src="a-classer.png"
+          src="images/images/images/a-classer.png"
           alt="Tampon À CLASSER"
           width="105"
           height="105"
@@ -1324,9 +1574,7 @@
     </section>
 
 
-    <!-- ======================================
-         PERSONNEL
-         ====================================== -->
+    <!-- PERSONNEL -->
 
     <section
       id="personnel"
@@ -1345,7 +1593,6 @@
 
 
       <div class="agents">
-
 
         <div class="agent">
 
@@ -1398,7 +1645,6 @@
 
         </div>
 
-
       </div>
 
 
@@ -1427,7 +1673,7 @@
 
         <img
           class="stamp-image stamp-small stamp-tilt-left"
-          src="repondre.png"
+          src="images/images/images/repondre.png"
           alt="Tampon RÉPONDRE"
           width="105"
           height="105"
@@ -1439,9 +1685,7 @@
     </section>
 
 
-    <!-- ======================================
-         AFFAIRES
-         ====================================== -->
+    <!-- AFFAIRES -->
 
     <section
       id="affaires"
@@ -1488,25 +1732,16 @@
       </div>
 
 
-      <!-- TAMPONS SUR LES AFFAIRES -->
+      <!-- TAMPON SANS SUITE -->
 
-      <div class="stamp-row">
-
-        <img
-          class="stamp-image stamp-tilt-left"
-          src="a-etudier.png"
-          alt="Tampon À ÉTUDIER"
-          width="115"
-          height="115"
-          loading="lazy"
-        >
+      <div class="document-stamp">
 
         <img
           class="stamp-image stamp-tilt-right"
-          src="sans-suite.png"
+          src="images/images/images/sans-suite.png"
           alt="Tampon SANS SUITE"
-          width="115"
-          height="115"
+          width="130"
+          height="130"
           loading="lazy"
         >
 
@@ -1515,9 +1750,7 @@
     </section>
 
 
-    <!-- ======================================
-         CONTEXTE
-         ====================================== -->
+    <!-- CONTEXTE -->
 
     <section
       id="ambiance"
@@ -1566,9 +1799,7 @@
     </section>
 
 
-    <!-- ======================================
-         JOUER
-         ====================================== -->
+    <!-- JOUER -->
 
     <section
       id="jouer"
@@ -1615,9 +1846,7 @@
     </section>
 
 
-    <!-- ======================================
-         ANNEXE INTERACTIVE
-         ====================================== -->
+    <!-- ANNEXE INTERACTIVE -->
 
     <section
       aria-labelledby="annexe-titre"
@@ -1684,9 +1913,7 @@
     </section>
 
 
-    <!-- ======================================
-         RETOUR
-         ====================================== -->
+    <!-- RETOUR -->
 
     <a
       class="retour"
@@ -1698,9 +1925,7 @@
     </a>
 
 
-    <!-- ======================================
-         PIED DE PAGE
-         ====================================== -->
+    <!-- PIED DE PAGE -->
 
     <footer class="footer">
 
@@ -1724,9 +1949,7 @@
   </main>
 
 
-  <!-- ========================================
-       SCRIPT DE L'ANNEXE
-       ======================================== -->
+  <!-- SCRIPT DE L'ANNEXE -->
 
   <script>
 
@@ -1758,4 +1981,4 @@
   </script>
 
 </body>
-  </html>
+          </html>
