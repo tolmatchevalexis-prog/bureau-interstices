@@ -4,35 +4,18 @@
 <head>
 
 <meta charset="utf-8">
-
-<meta
-  name="viewport"
-  content="width=device-width, initial-scale=1"
->
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ded3b8">
 
 <meta
   name="description"
-  content="Le Bureau des Interstices — Paris, 1966. Archives d'un service discret consacré aux phénomènes qui résistent aux classements."
+  content="Le Bureau des Interstices — Paris, 1966. Archives d'une mission administrative consacrée aux phénomènes insuffisamment documentés."
 >
 
-<title>
-  Le Bureau des Interstices — Accueil du service
-</title>
+<title>Le Bureau des Interstices — Accueil du service</title>
 
-<!-- TYPOGRAPHIES -->
-
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
-
-<link
-  rel="preconnect"
-  href="https://fonts.gstatic.com"
-  crossorigin
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
   href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
@@ -41,34 +24,25 @@
 
 <style>
 
-/* ==========================================
+/* ======================================
    IDENTITÉ GRAPHIQUE
-   ========================================== */
+====================================== */
 
 :root {
-
   --papier: #ded3b8;
   --feuille: #f3e9cf;
   --blanc: #fffaf0;
   --encre: #292920;
-
   --violet: #48338a;
   --rouge: #ad5346;
   --vert: #4c5546;
-
   --trait: #b3a88e;
 
   --serif:
-    "EB Garamond",
-    Garamond,
-    Georgia,
-    serif;
+    "EB Garamond", Garamond, Georgia, serif;
 
   --machine:
-    "Special Elite",
-    "Courier New",
-    monospace;
-
+    "Special Elite", "Courier New", monospace;
 }
 
 * {
@@ -80,13 +54,9 @@ html {
 }
 
 body {
-
   margin: 0;
-
   color: var(--encre);
-
   font-family: var(--serif);
-
   font-size: 20px;
   line-height: 1.55;
 
@@ -103,28 +73,21 @@ body {
       rgba(116,85,40,.10),
       transparent 52%
     );
-
 }
 
-/* TRAME DISCRÈTE */
+/* GRAIN DU PAPIER */
 
 body::before {
-
   content: "";
-
   position: fixed;
   inset: 0;
-
   pointer-events: none;
-
   z-index: 20;
-
   opacity: .11;
 
   background-image: url(
     "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
   );
-
 }
 
 a {
@@ -134,57 +97,39 @@ a {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible {
-
   outline: 3px solid var(--violet);
   outline-offset: 3px;
-
 }
 
 [hidden] {
   display: none !important;
 }
 
-/* ==========================================
+/* ======================================
    BANDEAU
-   ========================================== */
+====================================== */
 
 .ruban {
-
   background: #4a5344;
   color: #f1eedf;
-
   padding: 12px 20px;
-
   text-align: center;
 
   font-family: var(--machine);
   font-size: 11px;
-
   line-height: 1.6;
   letter-spacing: .06em;
-
   text-transform: uppercase;
-
 }
 
-/* ==========================================
+/* ======================================
    FEUILLE PRINCIPALE
-   ========================================== */
+====================================== */
 
 .page {
-
-  width: min(
-    940px,
-    calc(100% - 32px)
-  );
-
+  width: min(940px, calc(100% - 32px));
   margin: 34px auto 60px;
-
-  padding: clamp(
-    25px,
-    6vw,
-    70px
-  );
+  padding: clamp(25px, 6vw, 70px);
 
   position: relative;
 
@@ -214,109 +159,69 @@ input:focus-visible {
   box-shadow:
     8px 10px 0 #c6b99c,
     0 14px 35px rgba(64,49,25,.14);
-
 }
 
 .page::before {
-
   content: "";
-
   position: absolute;
   inset: 8px;
-
-  border: 1px solid
-    rgba(95,75,45,.09);
-
+  border: 1px solid rgba(95,75,45,.09);
   pointer-events: none;
-
 }
 
-/* ==========================================
+/* ======================================
    EN-TÊTE
-   ========================================== */
+====================================== */
 
 .top {
-
   display: flex;
-
   justify-content: space-between;
-
   align-items: flex-start;
-
   gap: 20px;
 
   padding-bottom: 26px;
-
   border-bottom: 2px solid var(--encre);
-
 }
 
 .republique {
-
   font-family: var(--machine);
   font-size: 12px;
-
   line-height: 1.7;
   letter-spacing: .03em;
-
   text-transform: uppercase;
-
 }
 
 .ref {
-
   font-family: var(--machine);
   font-size: 11px;
-
   line-height: 1.7;
-
   text-align: right;
-
   color: #55584e;
-
 }
 
-/* ==========================================
+/* ======================================
    TITRE PRINCIPAL
-   ========================================== */
+====================================== */
 
 .entete {
-
   text-align: center;
-
   padding: 55px 0 32px;
-
 }
 
 .eyebrow {
-
   font-family: var(--machine);
   font-size: 12px;
-
   letter-spacing: .05em;
-
   color: var(--vert);
-
 }
 
 h1 {
-
   margin: 23px 0 15px;
-
   font-family: var(--serif);
-
-  font-size: clamp(
-    42px,
-    7vw,
-    78px
-  );
-
+  font-size: clamp(42px, 7vw, 78px);
   font-weight: 500;
-
   letter-spacing: -.035em;
-
   line-height: 1.02;
-
 }
 
 h1 span {
@@ -324,46 +229,33 @@ h1 span {
 }
 
 .subtitle {
-
   margin: 0;
-
   font-size: 21px;
   font-style: italic;
-
 }
 
 .mention {
-
   display: inline-block;
-
   margin-top: 12px;
 
   font-family: var(--machine);
   font-size: 11px;
-
   color: #655d55;
 
   letter-spacing: .05em;
-
   text-transform: uppercase;
-
 }
 
-/* ==========================================
-   TAMPONS TRANSPARENTS
-   ========================================== */
+/* ======================================
+   TAMPONS
+====================================== */
 
 .stamp-image {
-
   display: block;
-
   width: 130px;
   height: auto;
-
-  opacity: .65;
-
+  opacity: .7;
   mix-blend-mode: multiply;
-
 }
 
 .stamp-small {
@@ -383,148 +275,96 @@ h1 span {
 }
 
 .stamp-meld {
-
   display: flex;
-
   justify-content: center;
-
   margin-top: 27px;
-
 }
 
 .stamp-meld img {
-
   width: 142px;
-
   transform: rotate(-7deg);
-
 }
 
 .document-stamp {
-
   display: flex;
-
   justify-content: flex-end;
-
   margin: 18px 6px 4px;
-
 }
 
 .document-stamp.left {
   justify-content: flex-start;
 }
 
-.document-stamp.center {
-  justify-content: center;
-}
-
-/* ==========================================
+/* ======================================
    DOCUMENTS À MARGE ROUGE
-   ========================================== */
+====================================== */
 
 .document {
-
   position: relative;
-
   margin: 30px 0;
-
   padding: 26px 30px 26px 43px;
 
   background: var(--blanc);
-
-  border: 1px solid
-    rgba(151,133,105,.35);
+  border: 1px solid rgba(151,133,105,.35);
 
   box-shadow:
     2px 4px 8px rgba(65,50,30,.09);
-
 }
 
 .document::before {
-
   content: "";
-
   position: absolute;
-
   top: 18px;
   bottom: 18px;
   left: 23px;
-
   width: 2px;
-
   background: var(--rouge);
-
   opacity: .85;
-
 }
 
 .document h3 {
-
   margin: 0 0 18px;
 
   font-family: var(--machine);
-
   font-size: 13px;
   font-weight: normal;
-
   line-height: 1.6;
-
   text-transform: uppercase;
-
 }
 
 .document p {
-
   margin: 0 0 15px;
-
 }
 
 .document p:last-child {
   margin-bottom: 0;
 }
 
-/* ==========================================
-   AVIS OFFICIEL
-   ========================================== */
-
 .avis {
-
   margin: 28px 0 38px;
-
 }
 
 .avis p {
-
   margin: 0;
-
   font-size: 23px;
   font-style: italic;
-
   line-height: 1.5;
-
 }
 
-/* ==========================================
+/* ======================================
    SECTIONS
-   ========================================== */
+====================================== */
 
 .section-title {
-
   margin: 48px 0 20px;
 
   font-family: var(--machine);
-
   font-size: 13px;
   font-weight: normal;
-
   letter-spacing: .08em;
-
   line-height: 1.6;
-
   text-transform: uppercase;
-
   color: var(--vert);
-
 }
 
 section p {
@@ -532,729 +372,477 @@ section p {
 }
 
 .notice {
-
   max-width: 700px;
   margin: 0 auto;
-
 }
 
 .notice .first:first-letter {
-
   float: left;
-
   font-family: var(--serif);
-
   font-size: 3.4em;
   line-height: .78;
-
   padding: 9px 9px 0 0;
-
 }
 
-/* ==========================================
+/* ======================================
    ARCHIVE AUDIOVISUELLE
-   ========================================== */
+====================================== */
 
 .archive-video {
-
   margin: 48px 0 58px;
-
   padding: 24px;
-
   border: 1px solid var(--trait);
-
-  background:
-    rgba(231,221,194,.65);
-
+  background: rgba(231,221,194,.65);
 }
 
 .archive-video .section-title {
-
   margin: 0 0 24px;
-
 }
 
 .archive-meta {
-
   font-family: var(--machine);
-
   font-size: 12px;
   line-height: 1.8;
-
   color: #55564c;
-
   margin-bottom: 23px;
-
 }
 
 .archive-meta strong {
-
   color: var(--encre);
   font-weight: normal;
-
 }
 
 .video-frame {
-
   position: relative;
-
   width: 100%;
   aspect-ratio: 16 / 9;
-
   overflow: hidden;
 
   background: #171717;
-
   border: 8px solid #292920;
 
   box-shadow:
     0 5px 13px rgba(0,0,0,.18);
-
 }
 
 .video-frame iframe {
-
   width: 100%;
   height: 100%;
-
   display: block;
   border: 0;
-
 }
 
 .video-caption {
-
   margin-top: 14px;
-
   font-family: var(--machine);
   font-size: 11px;
-
   line-height: 1.7;
-
   color: #55564c;
-
 }
 
-/* ==========================================
+/* ======================================
    NOTE DE CHARLES PINSON
-   ========================================== */
+====================================== */
 
 .note-pinson {
-
   margin-top: 34px;
-
-}
-
-.note-pinson h3 {
-
-  font-size: 13px;
-
 }
 
 .note-pinson p {
-
   font-family: var(--machine);
-
   font-size: 14px;
   line-height: 1.95;
-
 }
 
 .signature-pinson {
-
   margin-top: 23px;
-
   text-align: right;
-
 }
 
 .signature-pinson strong {
-
   font-family: var(--serif);
-
   font-size: 25px;
   font-weight: 500;
-
   font-style: italic;
-
 }
 
 .signature-pinson span {
-
   display: block;
-
   font-family: var(--machine);
   font-size: 11px;
-
   color: #55564c;
-
 }
 
 .archive-disclaimer {
-
   margin-top: 23px;
-
   font-family: var(--machine);
-
   font-size: 10px;
   line-height: 1.7;
-
   color: #625e53;
-
 }
 
-/* ==========================================
-   INDEX DES ARCHIVES
-   ========================================== */
+/* ======================================
+   NOUVEL INDEX DES ARCHIVES
+====================================== */
 
 .index {
-
   display: grid;
-
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
 
   gap: 14px;
-
   margin-top: 24px;
-
 }
 
 .dossier {
-
   display: block;
-
-  min-height: 145px;
-
-  text-decoration: none;
-
+  min-height: 160px;
   padding: 22px;
 
+  text-decoration: none;
   border: 1px solid var(--trait);
-
-  background:
-    rgba(238,228,201,.62);
+  background: rgba(238,228,201,.62);
 
   transition:
     transform .16s,
     background .16s;
-
 }
 
 .dossier:hover {
-
   transform: translateY(-3px);
-
-  background:
-    rgba(250,243,224,.92);
-
+  background: rgba(250,243,224,.92);
 }
 
 .dossier small {
-
   display: block;
-
   margin-bottom: 13px;
-
   font-family: var(--machine);
   font-size: 11px;
-
   color: #606053;
-
 }
 
 .dossier strong {
-
   display: block;
-
   font-family: var(--serif);
-
   font-size: 26px;
   font-weight: 500;
-
   line-height: 1.15;
-
 }
 
 .dossier em {
-
   display: block;
-
   margin-top: 12px;
-
   font-size: 17px;
-
+  line-height: 1.4;
   color: #626252;
-
 }
 
-/* ==========================================
-   FICHES
-   ========================================== */
+/* Une distinction visuelle discrète
+   pour les documents complets */
 
-.fiche {
-
-  margin-top: 25px;
-
+.dossier.document-complet {
+  background: rgba(250,243,224,.82);
+  border-left: 3px solid var(--vert);
 }
 
-.fiche h2 {
-
-  margin: 0 0 15px;
-
-  font-family: var(--machine);
-
-  font-size: 13px;
-  font-weight: normal;
-
-  letter-spacing: .06em;
-
-  text-transform: uppercase;
-
+.dossier.document-complet:hover {
+  background: var(--blanc);
 }
 
-/* ==========================================
+/* ======================================
    PERSONNEL
-   ========================================== */
+====================================== */
 
 .agents {
-
   display: grid;
-
   grid-template-columns:
     repeat(2, minmax(0, 1fr));
-
   gap: 12px;
-
 }
 
 .agent {
-
   padding: 18px;
-
-  border-bottom:
-    1px dotted var(--trait);
-
+  border-bottom: 1px dotted var(--trait);
 }
 
 .agent strong {
-
   display: block;
-
   font-family: var(--serif);
-
   font-size: 24px;
   font-weight: 500;
-
 }
 
 .agent span {
-
   display: block;
-
   margin-top: 4px;
-
   font-family: var(--machine);
-
   font-size: 11px;
-
   color: #656356;
-
 }
 
-/* ==========================================
+.fiche {
+  margin-top: 25px;
+}
+
+.fiche h2 {
+  margin: 0 0 15px;
+  font-family: var(--machine);
+  font-size: 13px;
+  font-weight: normal;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ======================================
    BOUTONS
-   ========================================== */
+====================================== */
 
 .bouton {
-
   display: inline-block;
-
   background: var(--encre);
   color: #f4edda;
-
   border: 0;
-
   padding: 15px 20px;
 
   font-family: var(--machine);
   font-size: 12px;
-
   line-height: 1.5;
-
   text-decoration: none;
-
   cursor: pointer;
-
 }
 
 .bouton:hover {
   background: var(--violet);
 }
 
-/* ==========================================
+/* ======================================
    ANNEXE
-   ========================================== */
+====================================== */
 
 .annexe {
-
   margin-top: 20px;
-
-  border:
-    1px dashed var(--violet);
-
   padding: 24px;
-
-  background:
-    rgba(223,217,204,.55);
-
+  border: 1px dashed var(--violet);
+  background: rgba(223,217,204,.55);
 }
 
 .annexe strong {
-
   font-family: var(--machine);
-
   font-size: 13px;
   font-weight: normal;
-
 }
 
-/* ==========================================
-   GUICHET D'ACCÈS
-   ========================================== */
+/* ======================================
+   GUICHET A-01
+====================================== */
 
 .guichet {
-
   position: fixed;
   inset: 0;
-
   z-index: 100;
-
   overflow-y: auto;
-
-  background:
-    rgba(37,39,34,.94);
-
+  background: rgba(37,39,34,.94);
   padding: 25px 15px;
-
 }
 
 .guichet-feuille {
-
   position: relative;
-
   width: min(610px, 100%);
-
   margin: 25px auto;
-
-  padding: clamp(
-    25px,
-    6vw,
-    48px
-  );
+  padding: clamp(25px, 6vw, 48px);
 
   background: var(--feuille);
-
   border: 1px solid var(--trait);
 
   box-shadow:
     8px 10px 0 #a69a80;
-
 }
 
 .guichet-entete {
-
   text-align: center;
-
-  border-bottom:
-    2px solid var(--encre);
-
+  border-bottom: 2px solid var(--encre);
   padding-bottom: 25px;
-
 }
 
 .guichet-entete p {
-
   margin: 0;
-
   font-family: var(--machine);
-
   font-size: 12px;
   line-height: 1.8;
-
 }
 
 .guichet h2 {
-
   font-family: var(--serif);
-
   font-size: 39px;
   font-weight: 500;
-
   line-height: 1.1;
-
   margin: 30px 0 15px;
-
 }
 
 .formulaire-ref {
-
   font-family: var(--machine);
-
   font-size: 12px;
-
   color: var(--vert);
-
 }
 
 .formulaire-intro {
-
   margin-bottom: 27px;
-
 }
 
 .champ {
-
   margin: 25px 0;
-
 }
 
 .champ label {
-
   display: block;
-
   margin-bottom: 9px;
-
   font-family: var(--machine);
-
   font-size: 13px;
-
 }
 
 .champ input {
-
   width: 100%;
-
   padding: 13px 14px;
-
   border: 1px solid var(--trait);
-
-  border-bottom:
-    2px solid var(--encre);
+  border-bottom: 2px solid var(--encre);
 
   background: #fffdf5;
-
   color: var(--encre);
 
   font-family: var(--machine);
-
   font-size: 17px;
-
 }
 
 .cases {
-
   border: 0;
-
   padding: 0;
-
   margin: 25px 0;
-
 }
 
 .cases legend {
-
   margin-bottom: 15px;
-
   font-family: var(--machine);
-
   font-size: 13px;
-
 }
 
 .case {
-
   display: flex;
-
   align-items: flex-start;
-
   gap: 13px;
-
   margin: 17px 0;
 
   font-size: 18px;
   line-height: 1.4;
-
   cursor: pointer;
-
 }
 
 .case input {
-
   margin-top: 6px;
-
   width: 19px;
   height: 19px;
-
   flex-shrink: 0;
-
   accent-color: var(--violet);
-
 }
 
 .formulaire-bas {
-
   margin-top: 28px;
-
   padding-top: 20px;
-
   border-top: 1px solid var(--trait);
-
 }
 
 .formulaire-bas p {
-
   font-family: var(--machine);
-
   font-size: 11px;
-
   line-height: 1.7;
-
 }
 
 .formulaire-bas .bouton {
-
   width: 100%;
-
   text-align: center;
-
   margin-top: 12px;
-
 }
 
 .message-validation {
-
   text-align: center;
-
   padding: 30px 0 10px;
-
 }
 
 .message-validation h2 {
-
   font-size: 35px;
-
 }
 
 .message-validation img {
-
   width: 150px;
   height: auto;
-
   margin: 15px auto;
-
   transform: rotate(-8deg);
-
 }
 
 .message-validation p {
-
   margin: 15px 0;
-
 }
 
-/* ==========================================
-   SALUTATION DES HABITUÉS
-   ========================================== */
+/* ======================================
+   SALUTATION
+====================================== */
 
 .salutation {
-
   position: fixed;
   inset: 0;
-
   z-index: 110;
 
   display: flex;
-
   justify-content: center;
   align-items: center;
 
   padding: 25px;
-
-  background:
-    rgba(39,40,34,.94);
-
+  background: rgba(39,40,34,.94);
 }
 
 .salutation-carte {
-
   width: min(440px, 100%);
-
   padding: 35px;
-
   background: var(--feuille);
-
   border: 1px solid var(--trait);
-
   text-align: center;
-
 }
 
 .salutation-carte p {
-
   margin: 0 0 12px;
-
 }
 
 .salutation-carte .petit {
-
   font-family: var(--machine);
-
   font-size: 11px;
-
 }
 
 .salutation-carte .bonjour {
-
   font-size: 28px;
-
 }
 
-/* ==========================================
+/* ======================================
    PIED DE PAGE
-   ========================================== */
+====================================== */
 
 .retour {
-
   display: inline-block;
-
   margin-top: 35px;
-
   font-family: var(--machine);
   font-size: 12px;
-
 }
 
 .footer {
-
-  border-top:
-    2px solid var(--encre);
-
+  border-top: 2px solid var(--encre);
   margin-top: 55px;
-
   padding-top: 22px;
 
   display: flex;
-
   justify-content: space-between;
-
   gap: 20px;
 
   font-family: var(--machine);
-
   font-size: 11px;
   line-height: 1.8;
-
 }
 
 .footer p {
@@ -1262,29 +850,21 @@ section p {
 }
 
 .reinitialiser {
-
   margin-top: 16px;
-
   padding: 0;
-
   border: 0;
   background: none;
-
   color: #625e53;
 
   font-family: var(--machine);
-
   font-size: 11px;
-
   text-decoration: underline;
-
   cursor: pointer;
-
 }
 
-/* ==========================================
+/* ======================================
    MOBILE
-   ========================================== */
+====================================== */
 
 @media (max-width: 650px) {
 
@@ -1293,12 +873,8 @@ section p {
   }
 
   .page {
-
     margin: 15px auto 30px;
-
-    box-shadow:
-      4px 6px 0 #c6b99c;
-
+    box-shadow: 4px 6px 0 #c6b99c;
   }
 
   .top {
@@ -1306,11 +882,8 @@ section p {
   }
 
   .ref {
-
     text-align: left;
-
     margin-top: 18px;
-
   }
 
   .entete {
@@ -1353,16 +926,13 @@ section p {
   .note-pinson p {
     font-size: 13px;
   }
-
 }
 
-/* ==========================================
+/* ======================================
    ACCESSIBILITÉ
-   ========================================== */
+====================================== */
 
-@media (
-  prefers-reduced-motion: reduce
-) {
+@media (prefers-reduced-motion: reduce) {
 
   html {
     scroll-behavior: auto;
@@ -1371,12 +941,11 @@ section p {
   .dossier {
     transition: none;
   }
-
 }
 
-/* ==========================================
+/* ======================================
    IMPRESSION
-   ========================================== */
+====================================== */
 
 @media print {
 
@@ -1393,29 +962,23 @@ section p {
   }
 
   .page {
-
     width: 100%;
-
     margin: 0;
     padding: 20mm;
-
     border: none;
     box-shadow: none;
-
   }
-
 }
 
 </style>
 
 </head>
 
-
 <body>
 
-<!-- ==========================================
+<!-- ======================================
      GUICHET D'ACCÈS
-     ========================================== -->
+====================================== -->
 
 <div
   class="guichet"
@@ -1430,17 +993,9 @@ section p {
 
     <header class="guichet-entete">
 
-      <p>
-        RÉPUBLIQUE FRANÇAISE
-      </p>
-
-      <p>
-        BUREAU DES INTERSTICES
-      </p>
-
-      <p>
-        SERVICE DE L'ACCUEIL
-      </p>
+      <p>RÉPUBLIQUE FRANÇAISE</p>
+      <p>BUREAU DES INTERSTICES</p>
+      <p>SERVICE DE L'ACCUEIL</p>
 
     </header>
 
@@ -1495,10 +1050,7 @@ section p {
 
           <label class="case">
 
-            <input
-              type="checkbox"
-              required
-            >
+            <input type="checkbox" required>
 
             <span>
               Je sollicite l'autorisation
@@ -1510,10 +1062,7 @@ section p {
 
           <label class="case">
 
-            <input
-              type="checkbox"
-              required
-            >
+            <input type="checkbox" required>
 
             <span>
               Je reconnais que certains documents
@@ -1525,10 +1074,7 @@ section p {
 
           <label class="case">
 
-            <input
-              type="checkbox"
-              required
-            >
+            <input type="checkbox" required>
 
             <span>
               J'accepte que mon pseudonyme soit
@@ -1583,8 +1129,7 @@ section p {
 
     </div>
 
-
-    <!-- VALIDATION -->
+    <!-- AUTORISATION ACCORDÉE -->
 
     <div
       class="message-validation"
@@ -1629,9 +1174,9 @@ section p {
 </div>
 
 
-<!-- ==========================================
-     SALUTATION
-     ========================================== -->
+<!-- ======================================
+     SALUTATION DES VISITEURS CONNUS
+====================================== -->
 
 <div
   class="salutation"
@@ -1661,9 +1206,9 @@ section p {
 </div>
 
 
-<!-- ==========================================
+<!-- ======================================
      SITE PRINCIPAL
-     ========================================== -->
+====================================== -->
 
 <div class="ruban">
 
@@ -1673,10 +1218,8 @@ section p {
 </div>
 
 
-<main
-  class="page"
-  id="haut"
->
+<main class="page" id="haut">
+
 
   <!-- EN-TÊTE ADMINISTRATIF -->
 
@@ -1717,17 +1260,13 @@ section p {
 
       Le Bureau
 
-      <span>
-        des Interstices
-      </span>
+      <span>des Interstices</span>
 
     </h1>
 
     <p class="subtitle">
-
       Service des phénomènes
       insuffisamment documentés
-
     </p>
 
     <div class="stamp-meld">
@@ -1763,7 +1302,9 @@ section p {
   </div>
 
 
-  <!-- MISSION -->
+  <!-- ======================================
+       01 — OBJET DU SERVICE
+  ====================================== -->
 
   <section
     class="notice"
@@ -1816,8 +1357,8 @@ section p {
 
 
   <!-- ======================================
-       ARCHIVE AUDIOVISUELLE
-       ====================================== -->
+       ARCHIVE INA — PEYREFITTE
+  ====================================== -->
 
   <section
     class="archive-video"
@@ -1911,9 +1452,7 @@ section p {
       </p>
 
       <p>
-
         Cette initiative mérite d'être saluée.
-
       </p>
 
       <p>
@@ -1964,7 +1503,9 @@ section p {
   </section>
 
 
-  <!-- ARCHIVES -->
+  <!-- ======================================
+       02 — RÉPERTOIRE DES ARCHIVES
+  ====================================== -->
 
   <section
     id="archives"
@@ -1975,30 +1516,96 @@ section p {
       class="section-title"
       id="archives-titre"
     >
-      02 / Consulter les archives
+      02 / Répertoire des archives
     </h2>
+
+    <p>
+
+      Les documents sont classés
+      par nature administrative.
+
+      Leur ordre de consultation
+      est laissé à l'appréciation
+      des personnes autorisées.
+
+    </p>
 
     <div class="index">
 
+
+      <!-- CHEMISE 01 -->
+
       <a
-        class="dossier"
-        href="#personnel"
+        class="dossier document-complet"
+        href="interstices.html"
       >
 
         <small>
-          CHEMISE 01 · PERSONNEL
+          CHEMISE 01 · DOCUMENT I-01
         </small>
 
         <strong>
-          Les agents du Bureau
+          Les Interstices
         </strong>
 
         <em>
-          Noms, fonctions,
-          habitudes professionnelles.
+          Introduction à l'univers.
+          De ce qui existe entre
+          les choses connues.
         </em>
 
       </a>
+
+
+      <!-- CHEMISE 02 -->
+
+      <a
+        class="dossier document-complet"
+        href="bureau.html"
+      >
+
+        <small>
+          CHEMISE 02 · DOCUMENT B-01
+        </small>
+
+        <strong>
+          Le Bureau
+        </strong>
+
+        <em>
+          Origines, histoire,
+          mission et moyens
+          de notre institution.
+        </em>
+
+      </a>
+
+
+      <!-- CHEMISE 03 -->
+
+      <a
+        class="dossier document-complet"
+        href="personnel.html"
+      >
+
+        <small>
+          CHEMISE 03 · DOCUMENT P-01
+        </small>
+
+        <strong>
+          Le personnel
+        </strong>
+
+        <em>
+          Registre des huit membres
+          du service et répartition
+          de leurs responsabilités.
+        </em>
+
+      </a>
+
+
+      <!-- CHEMISE 04 -->
 
       <a
         class="dossier"
@@ -2006,7 +1613,7 @@ section p {
       >
 
         <small>
-          CHEMISE 02 · ENQUÊTES
+          CHEMISE 04 · ENQUÊTES
         </small>
 
         <strong>
@@ -2020,13 +1627,16 @@ section p {
 
       </a>
 
+
+      <!-- CHEMISE 05 -->
+
       <a
         class="dossier"
         href="#ambiance"
       >
 
         <small>
-          CHEMISE 03 · CONTEXTE
+          CHEMISE 05 · CONTEXTE
         </small>
 
         <strong>
@@ -2040,22 +1650,27 @@ section p {
 
       </a>
 
+
+      <!-- CHEMISE 06 -->
+
       <a
-        class="dossier"
-        href="#jouer"
+        class="dossier document-complet"
+        href="https://tolmatchevalexis-prog.github.io/mise-rules/"
+        target="_blank"
+        rel="noopener noreferrer"
       >
 
         <small>
-          CHEMISE 04 · PROCÉDURE
+          CHEMISE 06 · DOCUMENTATION EXTÉRIEURE
         </small>
 
         <strong>
-          Entrer dans le jeu
+          Le système M.I.S.E.
         </strong>
 
         <em>
-          Un univers d'enquête
-          pour M.I.S.E.
+          Les règles de notre jeu
+          narratif sans dés.
         </em>
 
       </a>
@@ -2078,7 +1693,9 @@ section p {
   </section>
 
 
-  <!-- PERSONNEL -->
+  <!-- ======================================
+       03 — PERSONNEL
+  ====================================== -->
 
   <section
     id="personnel"
@@ -2092,57 +1709,82 @@ section p {
       03 / Extrait du registre du personnel
     </h2>
 
+    <p>
+
+      Le Bureau réunit huit personnes,
+      auxquelles s'ajoutent les enquêteurs
+      extérieurs et les concours ponctuels.
+
+    </p>
+
     <div class="agents">
 
+
       <div class="agent">
 
-        <strong>
-          Paul de Vauclerc
-        </strong>
-
-        <span>
-          DIRECTION
-        </span>
+        <strong>Paul de Vauclerc</strong>
+        <span>DIRECTION</span>
 
       </div>
 
+
       <div class="agent">
 
-        <strong>
-          Suzanne Charrenson
-        </strong>
-
-        <span>
-          ASSISTANCE DE DIRECTION
-        </span>
+        <strong>Suzanne Charrenson</strong>
+        <span>ASSISTANCE DU DIRECTEUR</span>
 
       </div>
 
+
       <div class="agent">
 
-        <strong>
-          Christian Boidy
-        </strong>
-
-        <span>
-          CONSEIL SCIENTIFIQUE
-        </span>
+        <strong>Christian Boidy</strong>
+        <span>CONSEIL SCIENTIFIQUE</span>
 
       </div>
 
+
       <div class="agent">
 
-        <strong>
-          Charles Pinson
-        </strong>
+        <strong>Charles Pinson</strong>
+        <span>ARCHIVES ET DOCUMENTATION</span>
 
-        <span>
-          ARCHIVES
-        </span>
+      </div>
+
+
+      <div class="agent">
+
+        <strong>François Phạm</strong>
+        <span>ORGANISATION DES MISSIONS</span>
+
+      </div>
+
+
+      <div class="agent">
+
+        <strong>Mireille Aubry</strong>
+        <span>STÉNODACTYLOGRAPHIE</span>
+
+      </div>
+
+
+      <div class="agent">
+
+        <strong>Henri Martin</strong>
+        <span>ACCÈS ET SÉCURITÉ</span>
+
+      </div>
+
+
+      <div class="agent">
+
+        <strong>Jean-Philippe Lafont</strong>
+        <span>ATTRIBUTIONS DIVERSES</span>
 
       </div>
 
     </div>
+
 
     <div class="fiche document">
 
@@ -2162,6 +1804,15 @@ section p {
 
     </div>
 
+
+    <a
+      class="bouton"
+      href="personnel.html"
+    >
+      CONSULTER LE REGISTRE COMPLET →
+    </a>
+
+
     <div class="document-stamp left">
 
       <img
@@ -2178,7 +1829,9 @@ section p {
   </section>
 
 
-  <!-- AFFAIRES -->
+  <!-- ======================================
+       04 — AFFAIRES
+  ====================================== -->
 
   <section
     id="affaires"
@@ -2237,7 +1890,9 @@ section p {
   </section>
 
 
-  <!-- CONTEXTE -->
+  <!-- ======================================
+       05 — PARIS, 1966
+  ====================================== -->
 
   <section
     id="ambiance"
@@ -2278,10 +1933,19 @@ section p {
 
     </p>
 
+    <a
+      class="bouton"
+      href="interstices.html"
+    >
+      DÉCOUVRIR L'UNIVERS DES INTERSTICES →
+    </a>
+
   </section>
 
 
-  <!-- JOUER -->
+  <!-- ======================================
+       06 — PARTICIPATION
+  ====================================== -->
 
   <section
     id="jouer"
@@ -2298,8 +1962,8 @@ section p {
     <p>
 
       Le Bureau des Interstices
-      est un univers d'enquêtes
-      pour <strong>M.I.S.E.</strong>,
+      appartient à un univers d'enquêtes
+      développé pour <strong>M.I.S.E.</strong>,
       un jeu de rôle sans dés
       fondé sur l'initiative
       des personnages et leurs choix.
@@ -2316,17 +1980,17 @@ section p {
       target="_blank"
       rel="noopener noreferrer"
     >
-      Consulter les règles M.I.S.E. ↗
+      CONSULTER LES RÈGLES M.I.S.E. ↗
     </a>
 
   </section>
 
 
-  <!-- ANNEXE -->
+  <!-- ======================================
+       07 — ANNEXE
+  ====================================== -->
 
-  <section
-    aria-labelledby="annexe-titre"
-  >
+  <section aria-labelledby="annexe-titre">
 
     <h2
       class="section-title"
@@ -2379,7 +2043,9 @@ section p {
   </section>
 
 
-  <!-- RETOUR -->
+  <!-- ======================================
+       RETOUR
+  ====================================== -->
 
   <a
     class="retour"
@@ -2389,7 +2055,9 @@ section p {
   </a>
 
 
-  <!-- PIED DE PAGE -->
+  <!-- ======================================
+       PIED DE PAGE
+  ====================================== -->
 
   <footer class="footer">
 
@@ -2415,7 +2083,7 @@ section p {
     <p>
 
       Création : Alexis Tolmatchev<br>
-      Usage du système M.I.S.E.
+      Univers développé pour M.I.S.E.
 
     </p>
 
@@ -2424,17 +2092,17 @@ section p {
 </main>
 
 
-<!-- ==========================================
+<!-- ======================================
      JAVASCRIPT
-     ========================================== -->
+====================================== -->
 
 <script>
 
 "use strict";
 
-/* ------------------------------------------
+/* ======================================
    ANNEXE INTERACTIVE
------------------------------------------- */
+====================================== */
 
 const boutonAnnexe =
   document.getElementById("ouvrir");
@@ -2462,12 +2130,13 @@ boutonAnnexe.addEventListener("click", () => {
 });
 
 
-/* ------------------------------------------
+/* ======================================
    MÉMOIRE LOCALE DU GUICHET
------------------------------------------- */
+====================================== */
 
 const CLE_VISITEUR =
   "bureau-interstices-acces-v1";
+
 
 function lireVisiteur() {
 
@@ -2501,6 +2170,7 @@ function lireVisiteur() {
 
 }
 
+
 function enregistrerVisiteur(pseudonyme) {
 
   const visiteur = {
@@ -2530,9 +2200,9 @@ function enregistrerVisiteur(pseudonyme) {
 }
 
 
-/* ------------------------------------------
+/* ======================================
    ÉLÉMENTS DU GUICHET
------------------------------------------- */
+====================================== */
 
 const guichet =
   document.getElementById("guichet");
@@ -2562,6 +2232,11 @@ let memorisationDisponible = true;
 
 let retourFocus = null;
 
+
+/* ======================================
+   OUVERTURE ET FERMETURE
+====================================== */
+
 function ouvrirGuichet() {
 
   guichet.hidden = false;
@@ -2575,6 +2250,7 @@ function ouvrirGuichet() {
 
 }
 
+
 function fermerGuichet() {
 
   guichet.hidden = true;
@@ -2582,16 +2258,18 @@ function fermerGuichet() {
   document.body.style.overflow = "";
 
   if (retourFocus) {
+
     retourFocus.focus();
     retourFocus = null;
+
   }
 
 }
 
 
-/* ------------------------------------------
+/* ======================================
    PREMIÈRE VISITE
------------------------------------------- */
+====================================== */
 
 formulaire.addEventListener("submit", (event) => {
 
@@ -2639,9 +2317,9 @@ boutonEntrer.addEventListener("click", () => {
 });
 
 
-/* ------------------------------------------
+/* ======================================
    VISITES SUIVANTES
------------------------------------------- */
+====================================== */
 
 function saluerVisiteur(visiteur) {
 
@@ -2663,9 +2341,9 @@ function saluerVisiteur(visiteur) {
 }
 
 
-/* ------------------------------------------
+/* ======================================
    EFFACEMENT DE L'AUTORISATION
------------------------------------------- */
+====================================== */
 
 boutonOublier.addEventListener("click", () => {
 
@@ -2675,7 +2353,7 @@ boutonOublier.addEventListener("click", () => {
 
   } catch (erreur) {
 
-    /* Le stockage peut être désactivé. */
+    /* Stockage éventuellement désactivé. */
 
   }
 
@@ -2688,9 +2366,9 @@ boutonOublier.addEventListener("click", () => {
 });
 
 
-/* ------------------------------------------
+/* ======================================
    INITIALISATION
------------------------------------------- */
+====================================== */
 
 const visiteur =
   lireVisiteur();
