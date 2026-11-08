@@ -1,1 +1,262 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
+<title>Les enquêtes en cours — Bureau des Interstices</title>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --blanc:#fffaf0;
+  --encre:#292920;
+  --rouge:#ad5346;
+  --trait:#b3a88e;
+  --violet:#48338a;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:20px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.55 "EB Garamond",Georgia,serif;
+}
+
+main {
+  width:min(740px,100%);
+  margin:25px auto;
+  padding:clamp(25px,6vw,60px);
+  background:var(--feuille);
+  box-shadow:6px 8px 0 #c6b99c;
+  border:1px solid var(--trait);
+}
+
+header {
+  border-bottom:2px solid var(--encre);
+  padding-bottom:20px;
+}
+
+h1 {
+  font-size:clamp(38px,7vw,60px);
+  font-weight:500;
+  line-height:1.1;
+}
+
+h2 {
+  font-size:14px;
+  font-weight:normal;
+}
+
+small,h2,label,button,.ref,footer,.reponse {
+  font-family:"Special Elite","Courier New",monospace;
+}
+
+small,.ref {
+  font-size:11px;
+}
+
+.document {
+  position:relative;
+  background:var(--blanc);
+  padding:28px 28px 28px 45px;
+  border:1px solid #97856959;
+  margin:30px 0;
+}
+
+.document::before {
+  content:"";
+  position:absolute;
+  left:24px;
+  top:18px;
+  bottom:18px;
+  width:2px;
+  background:var(--rouge);
+}
+
+label {
+  display:block;
+  font-size:13px;
+  margin:18px 0;
+  cursor:pointer;
+}
+
+label input {
+  accent-color:var(--violet);
+  margin-right:12px;
+}
+
+button {
+  background:var(--encre);
+  color:#fffaf0;
+  padding:13px 18px;
+  border:0;
+  font:12px "Special Elite",monospace;
+  cursor:pointer;
+}
+
+button:hover {
+  background:var(--violet);
+}
+
+.reponse {
+  margin-top:25px;
+  padding:20px;
+  border:1px dashed var(--violet);
+  font-size:13px;
+  line-height:1.8;
+}
+
+footer {
+  margin-top:45px;
+  border-top:1px solid var(--trait);
+  padding-top:20px;
+  font:12px "Special Elite",monospace;
+}
+
+a { color:inherit; }
+
+[hidden] { display:none!important; }
+</style>
+</head>
+
+<body>
+
+<main>
+
+<header>
+
+<small>
+RÉPUBLIQUE FRANÇAISE<br>
+MISSION D'ÉTUDES ET DE LIAISON DOCUMENTAIRE
+</small>
+
+<p class="ref">
+PARIS · 1966<br>
+CHEMISE 06<br>
+DOCUMENTS DE MISSION
+</p>
+
+</header>
+
+<h1>Les enquêtes en cours</h1>
+
+<p>
+<em>Situations à explorer et missions éventuelles</em>
+</p>
+
+<div class="document">
+
+<h2>DOCUMENTS DE MISSION</h2>
+
+<p>
+Les documents relatifs aux missions futures
+ne sont pas encore intégralement communicables.
+</p>
+
+<p>
+Le Narrateur peut en connaître certaines dispositions.
+Les autres personnes sont invitées à ne pas anticiper
+les conclusions de leurs enquêtes.
+</p>
+
+<p>
+Toute personne souhaitant signaler sa disponibilité
+peut compléter la déclaration suivante.
+</p>
+
+</div>
+
+<form id="demande">
+
+<div class="document">
+
+<h2>
+FORMULAIRE M-06<br>
+AVIS DE DISPONIBILITÉ
+</h2>
+
+<label>
+<input type="checkbox" required>
+Je déclare pouvoir être convoqué,
+sans que cette déclaration m'y oblige.
+</label>
+
+<label>
+<input type="checkbox" required>
+Je souhaite savoir si la convocation me concerne.
+</label>
+
+<button type="submit">
+ENREGISTRER MA DISPONIBILITÉ
+</button>
+
+</div>
+
+</form>
+
+<div class="reponse" id="reponse" hidden>
+
+<p>
+AVIS DE DISPONIBILITÉ — REÇU
+</p>
+
+<p>
+Votre disponibilité a été prise en note
+pour cette consultation.
+</p>
+
+<p>
+Aucune convocation réelle ne sera envoyée
+à la suite de cette démarche.
+</p>
+
+<p>
+Veuillez poursuivre normalement vos activités.
+</p>
+
+<p>
+Le Bureau se réserve le droit
+de ne pas vous déranger.
+</p>
+
+</div>
+
+<footer>
+
+<p>
+<a href="index.html#archives">
+← Retour au répertoire général des archives
+</a>
+</p>
+
+<p>
+M.E.L.D. · DOCUMENT M-06
+</p>
+
+</footer>
+
+</main>
+
+<script>
+const formulaire = document.getElementById("demande");
+const reponse = document.getElementById("reponse");
+
+formulaire.addEventListener("submit",function(event){
+  event.preventDefault();
+
+  if(!formulaire.reportValidity()) return;
+
+  formulaire.hidden = true;
+  reponse.hidden = false;
+});
+</script>
+
+</body>
+  </html>
