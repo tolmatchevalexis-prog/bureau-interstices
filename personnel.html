@@ -1,1 +1,1592 @@
+<!doctype html>
+<html lang="fr">
 
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Bureau des Interstices — Registre du personnel. État des effectifs à Paris en 1966."
+>
+
+<title>
+  Registre du personnel — Bureau des Interstices
+</title>
+
+<!-- TYPOGRAPHIES -->
+
+<link
+  rel="preconnect"
+  href="https://fonts.googleapis.com"
+>
+
+<link
+  rel="preconnect"
+  href="https://fonts.gstatic.com"
+  crossorigin
+>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ======================================
+   IDENTITÉ GRAPHIQUE
+   ====================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --violet: #48338a;
+  --rouge: #ad5346;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* TRAME DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  pointer-events: none;
+  z-index: 20;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+}
+
+/* ======================================
+   BANDEAU
+   ====================================== */
+
+.ruban {
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  padding: 12px 20px;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.6;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ======================================
+   FEUILLE PRINCIPALE
+   ====================================== */
+
+.page {
+
+  width: min(
+    940px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    70px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ======================================
+   EN-TÊTE
+   ====================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.7;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.reference {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ======================================
+   TITRE
+   ====================================== */
+
+.titre-page {
+
+  padding: 52px 0 30px;
+
+  text-align: center;
+
+}
+
+.surtitre {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  letter-spacing: .08em;
+
+  color: var(--vert);
+
+  text-transform: uppercase;
+
+}
+
+h1 {
+
+  margin: 18px 0 14px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    43px,
+    7vw,
+    73px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.035em;
+  line-height: 1.05;
+
+}
+
+.sous-titre {
+
+  font-size: 22px;
+  font-style: italic;
+
+  margin: 0;
+
+}
+
+.notice-document {
+
+  margin-top: 25px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #635d51;
+
+}
+
+/* ======================================
+   DOCUMENTS À MARGE ROUGE
+   ====================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 28px 0;
+
+  padding: 29px 32px 29px 45px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 23px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ======================================
+   INTRODUCTION
+   ====================================== */
+
+.introduction p {
+
+  margin: 0 0 18px;
+
+}
+
+.introduction p:last-child {
+  margin-bottom: 0;
+}
+
+.introduction .conclusion {
+
+  margin-top: 25px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid var(--trait);
+
+  font-style: italic;
+
+}
+
+/* ======================================
+   TITRES DE SECTION
+   ====================================== */
+
+.section-title {
+
+  margin: 50px 0 20px;
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  font-weight: normal;
+
+  letter-spacing: .08em;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+/* ======================================
+   INDEX DES HUIT PERSONNES
+   ====================================== */
+
+.sommaire-personnel {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin: 25px 0 40px;
+
+}
+
+.entree-index {
+
+  display: block;
+
+  padding: 17px 19px;
+
+  background: rgba(238,228,201,.62);
+
+  border: 1px solid var(--trait);
+
+  text-decoration: none;
+
+  transition:
+    background .16s,
+    transform .16s;
+
+}
+
+.entree-index:hover {
+
+  background: var(--blanc);
+
+  transform: translateY(-2px);
+
+}
+
+.entree-index small {
+
+  display: block;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #666054;
+
+  margin-bottom: 6px;
+
+}
+
+.entree-index strong {
+
+  display: block;
+
+  font-size: 23px;
+  font-weight: 500;
+
+  line-height: 1.2;
+
+}
+
+/* ======================================
+   FICHES DU PERSONNEL
+   ====================================== */
+
+.fiche-personnel {
+
+  scroll-margin-top: 24px;
+
+  margin: 30px 0;
+
+}
+
+.fiche-entete {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 17px;
+
+  border-bottom:
+    1px solid var(--trait);
+
+}
+
+.fiche-numero {
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+
+  line-height: 1.7;
+
+  color: #665e53;
+
+}
+
+.fiche-identite {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: 32px;
+  font-weight: 500;
+
+  line-height: 1.15;
+
+}
+
+.fiche-fonction {
+
+  margin: 10px 0 0;
+
+  font-family: var(--machine);
+
+  font-size: 12px;
+
+  line-height: 1.6;
+
+  color: var(--vert);
+
+  text-transform: uppercase;
+
+}
+
+.fiche-corps {
+
+  margin-top: 22px;
+
+}
+
+.fiche-corps h3 {
+
+  font-family: var(--machine);
+
+  font-size: 12px;
+  font-weight: normal;
+
+  color: #656052;
+
+  text-transform: uppercase;
+
+  margin: 0 0 12px;
+
+}
+
+.fiche-corps p {
+
+  margin: 0;
+
+  font-size: 21px;
+
+}
+
+.fiche-pied {
+
+  margin-top: 23px;
+
+  padding-top: 12px;
+
+  border-top:
+    1px dotted var(--trait);
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  color: #776f60;
+
+}
+
+/* ======================================
+   ENQUÊTEURS EXTÉRIEURS
+   ====================================== */
+
+.exterieurs {
+
+  margin-top: 50px;
+
+}
+
+.exterieurs p {
+
+  margin: 0 0 17px;
+
+}
+
+.note-service {
+
+  font-family: var(--machine);
+
+  font-size: 13px;
+  line-height: 1.85;
+
+}
+
+/* ======================================
+   TAMPON
+   ====================================== */
+
+.tampon-zone {
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 18px;
+
+}
+
+.tampon-zone img {
+
+  width: 120px;
+  height: auto;
+
+  display: block;
+
+  opacity: .7;
+
+  transform: rotate(-9deg);
+
+}
+
+/* ======================================
+   NAVIGATION
+   ====================================== */
+
+.navigation {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 55px;
+
+  padding-top: 22px;
+
+  border-top:
+    2px solid var(--encre);
+
+}
+
+.navigation a {
+
+  font-family: var(--machine);
+
+  font-size: 12px;
+
+  line-height: 1.8;
+
+  text-underline-offset: 4px;
+
+}
+
+.retour-haut {
+
+  display: inline-block;
+
+  margin-top: 15px;
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+
+}
+
+/* ======================================
+   PIED DE PAGE
+   ====================================== */
+
+.footer {
+
+  margin-top: 50px;
+
+  padding-top: 20px;
+
+  border-top:
+    1px solid var(--trait);
+
+  display: flex;
+
+  justify-content: space-between;
+
+  gap: 20px;
+
+  font-family: var(--machine);
+
+  font-size: 11px;
+  line-height: 1.8;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ======================================
+   MOBILE
+   ====================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .reference {
+
+    text-align: left;
+    margin-top: 18px;
+
+  }
+
+  .titre-page {
+    padding-top: 37px;
+  }
+
+  .sommaire-personnel {
+    grid-template-columns: 1fr;
+  }
+
+  .document {
+    padding: 23px 20px 23px 35px;
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .fiche-identite {
+    font-size: 27px;
+  }
+
+  .fiche-corps p {
+    font-size: 19px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer p + p {
+    margin-top: 13px;
+  }
+
+}
+
+/* ======================================
+   ACCESSIBILITÉ
+   ====================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .entree-index {
+    transition: none;
+  }
+
+}
+
+/* ======================================
+   IMPRESSION
+   ====================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban {
+    display: none;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+  .fiche-personnel {
+    break-inside: avoid;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- BANDEAU -->
+
+<div class="ruban">
+
+  Service du personnel · Consultation autorisée ·
+  Reproduction soumise aux usages du service
+
+</div>
+
+
+<main class="page" id="haut">
+
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Affaires culturelles<br>
+      Bureau des Interstices
+
+    </div>
+
+    <div class="reference">
+
+      PARIS · 1966<br>
+      RÉPERTOIRE : PERSONNEL<br>
+      DIFFUSION : INTÉRIEURE
+
+    </div>
+
+  </header>
+
+
+  <!-- TITRE -->
+
+  <header class="titre-page">
+
+    <div class="surtitre">
+      Service du personnel
+    </div>
+
+    <h1>
+      Registre du personnel
+    </h1>
+
+    <p class="sous-titre">
+      État des effectifs — Paris, 1966
+    </p>
+
+    <div class="notice-document">
+      DOCUMENT P-01 · CONSULTATION ADMINISTRATIVE
+    </div>
+
+  </header>
+
+
+  <!-- INTRODUCTION VALIDÉE -->
+
+  <section
+    class="introduction document"
+    aria-label="Introduction au registre"
+  >
+
+    <p>
+      Le Bureau des Interstices compte huit personnes.
+    </p>
+
+    <p>
+      Comme dans toute administration, chacun possède
+      une fonction, des responsabilités et une idée
+      plus ou moins précise de ce que font ses collègues.
+    </p>
+
+    <p>
+      Le service reçoit des courriers, examine des dossiers,
+      organise des déplacements, consulte des spécialistes
+      et rédige des rapports. Il arrive également que certains
+      faits résistent aux explications proposées. Cela ne
+      dispense personne de remplir les formulaires.
+    </p>
+
+    <p>
+      Le Bureau fait appel, selon les nécessités,
+      à des enquêteurs extérieurs. Ceux-ci observent,
+      interrogent, recueillent des témoignages et transmettent
+      leurs conclusions. Leurs appréciations ne coïncident
+      pas toujours avec celles de la direction.
+    </p>
+
+    <p>
+      Les huit personnes mentionnées ci-dessous constituent
+      l'effectif permanent du service. Leurs fonctions sont
+      établies ; leurs attributions peuvent néanmoins évoluer
+      selon les circonstances.
+    </p>
+
+    <p class="conclusion">
+      La présente liste ne préjuge ni des compétences réelles
+      des intéressés ni de leur capacité à travailler ensemble.
+    </p>
+
+  </section>
+
+
+  <!-- SOMMAIRE -->
+
+  <section
+    id="effectifs"
+    aria-labelledby="effectifs-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="effectifs-titre"
+    >
+      01 / Index nominatif
+    </h2>
+
+
+    <nav
+      class="sommaire-personnel"
+      aria-label="Index du personnel"
+    >
+
+      <a class="entree-index" href="#paul">
+
+        <small>FICHE P-001</small>
+        <strong>Paul de Vauclerc</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#suzanne">
+
+        <small>FICHE P-002</small>
+        <strong>Suzanne Charrenson</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#christian">
+
+        <small>FICHE P-003</small>
+        <strong>Christian Boidy</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#charles">
+
+        <small>FICHE P-004</small>
+        <strong>Charles Pinson</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#francois">
+
+        <small>FICHE P-005</small>
+        <strong>François Phạm</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#mireille">
+
+        <small>FICHE P-006</small>
+        <strong>Mireille Aubry</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#henri">
+
+        <small>FICHE P-007</small>
+        <strong>Henri Martin</strong>
+
+      </a>
+
+
+      <a class="entree-index" href="#jean-philippe">
+
+        <small>FICHE P-008</small>
+        <strong>Jean-Philippe Lafont</strong>
+
+      </a>
+
+    </nav>
+
+  </section>
+
+
+  <!-- ======================================
+       FICHES INDIVIDUELLES
+       ====================================== -->
+
+  <section
+    id="fiches"
+    aria-labelledby="fiches-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="fiches-titre"
+    >
+      02 / État des fonctions
+    </h2>
+
+
+    <!-- PAUL -->
+
+    <article
+      class="fiche-personnel document"
+      id="paul"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Paul de Vauclerc
+          </h2>
+
+          <p class="fiche-fonction">
+            Direction
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-001
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Choisir les études et les missions,
+          apprécier les conclusions, signer
+          la correspondance et répondre
+          de l’activité du Bureau.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- SUZANNE -->
+
+    <article
+      class="fiche-personnel document"
+      id="suzanne"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Suzanne Charrenson
+          </h2>
+
+          <p class="fiche-fonction">
+            Assistance du directeur
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-002
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Préparer les entretiens, organiser
+          le travail autour de Paul, orienter
+          les demandes et veiller à leur suivi.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- CHRISTIAN -->
+
+    <article
+      class="fiche-personnel document"
+      id="christian"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Christian Boidy
+          </h2>
+
+          <p class="fiche-fonction">
+            Conseil scientifique
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-003
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Examiner les questions scientifiques,
+          proposer des vérifications et entretenir
+          les relations avec des spécialistes.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- CHARLES -->
+
+    <article
+      class="fiche-personnel document"
+      id="charles"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Charles Pinson
+          </h2>
+
+          <p class="fiche-fonction">
+            Archives et documentation
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-004
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Conserver, classer, retrouver et rapprocher
+          les pièces ; tenir la mémoire documentaire
+          du Bureau.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- FRANÇOIS -->
+
+    <article
+      class="fiche-personnel document"
+      id="francois"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            François Phạm
+          </h2>
+
+          <p class="fiche-fonction">
+            Organisation des missions
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-005
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Préparer les déplacements, les contacts
+          et les moyens matériels ; suivre les dépenses
+          et les difficultés pratiques.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- MIREILLE -->
+
+    <article
+      class="fiche-personnel document"
+      id="mireille"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Mireille Aubry
+          </h2>
+
+          <p class="fiche-fonction">
+            Sténodactylographie
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-006
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Prendre les notes dictées, mettre au net
+          les courriers et rapports, préparer leurs doubles
+          et leur transmission.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- HENRI -->
+
+    <article
+      class="fiche-personnel document"
+      id="henri"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Henri Martin
+          </h2>
+
+          <p class="fiche-fonction">
+            Accès et sécurité
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-007
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Veiller aux accès, aux clés,
+          à la circulation matérielle des documents
+          et aux dispositions pratiques de sécurité.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+
+    <!-- JEAN-PHILIPPE -->
+
+    <article
+      class="fiche-personnel document"
+      id="jean-philippe"
+    >
+
+      <header class="fiche-entete">
+
+        <div>
+
+          <h2 class="fiche-identite">
+            Jean-Philippe Lafont
+          </h2>
+
+          <p class="fiche-fonction">
+            Attributions diverses
+          </p>
+
+        </div>
+
+        <span class="fiche-numero">
+          P-008
+        </span>
+
+      </header>
+
+      <div class="fiche-corps">
+
+        <h3>
+          Responsabilité principale
+        </h3>
+
+        <p>
+          Participer à des travaux dont l’objet varie
+          selon les demandes ; ses attributions
+          restent difficiles à résumer.
+        </p>
+
+      </div>
+
+      <div class="fiche-pied">
+        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+      </div>
+
+    </article>
+
+  </section>
+
+
+  <!-- ======================================
+       COLLABORATEURS EXTÉRIEURS
+       ====================================== -->
+
+  <section
+    class="exterieurs"
+    id="exterieurs"
+    aria-labelledby="exterieurs-titre"
+  >
+
+    <h2
+      class="section-title"
+      id="exterieurs-titre"
+    >
+      03 / Collaborateurs extérieurs
+    </h2>
+
+    <div class="document">
+
+      <p>
+        Le Bureau recrute ou sollicite
+        des collaborateurs indépendants.
+        Ils peuvent venir de professions
+        très différentes.
+      </p>
+
+      <p>
+        Leurs compétences ordinaires peuvent être
+        aussi importantes que leur éventuelle
+        sensibilité à l'invisible.
+      </p>
+
+      <p>
+        Ils ne sont ni des élus ni des spécialistes
+        omniscients du surnaturel.
+      </p>
+
+      <p>
+        Ils réalisent des observations,
+        rencontrent des témoins,
+        consultent des archives
+        et remettent des rapports.
+      </p>
+
+      <p>
+        Leurs décisions leur appartiennent.
+      </p>
+
+      <p>
+        Le Bureau n'est pas nécessairement
+        leur allié inconditionnel.
+        Des désaccords peuvent surgir
+        entre les enquêteurs et leur administration.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- NOTE FINALE -->
+
+  <section aria-label="Note du service">
+
+    <h2 class="section-title">
+      04 / Note du service
+    </h2>
+
+    <div class="document note-service">
+
+      <p>
+        Le présent registre décrit
+        la répartition des fonctions
+        au sein du Bureau.
+      </p>
+
+      <p>
+        Il ne fixe ni les grades
+        ni les statuts individuels
+        des personnes mentionnées.
+      </p>
+
+      <p>
+        Toute demande de modification
+        devra être adressée
+        au service compétent.
+      </p>
+
+      <p>
+        L'identification dudit service
+        ne relève pas du présent registre.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- NAVIGATION -->
+
+  <nav
+    class="navigation"
+    aria-label="Navigation du site"
+  >
+
+    <a href="index.html#archives">
+      ← Retour aux archives
+    </a>
+
+    <a href="index.html#document-001">
+      Document audiovisuel n° 001 →
+    </a>
+
+  </nav>
+
+  <a
+    class="retour-haut"
+    href="#haut"
+  >
+    ↑ Retour au début du registre
+  </a>
+
+
+  <!-- PIED DE PAGE -->
+
+  <footer class="footer">
+
+    <p>
+      BUREAU DES INTERSTICES<br>
+      Service du personnel<br>
+      Paris, 1966
+    </p>
+
+    <p>
+      Création : Alexis Tolmatchev<br>
+      Univers de jeu pour M.I.S.E.
+    </p>
+
+  </footer>
+
+
+</main>
+
+</body>
+  </html>
