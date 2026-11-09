@@ -1,1 +1,1004 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Dossier individuel de Charles Pinson, archiviste du Bureau des Interstices. Paris, 1966."
+>
+
+<title>Charles Pinson — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ==========================================
+   IDENTITÉ GRAPHIQUE
+========================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --rouge: #ad5346;
+  --violet: #48338a;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* TRAME DISCRÈTE DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+
+}
+
+/* ==========================================
+   BANDEAU
+========================================== */
+
+.ruban {
+
+  padding: 12px 20px;
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ==========================================
+   FEUILLE PRINCIPALE
+========================================== */
+
+.page {
+
+  width: min(
+    850px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    65px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ==========================================
+   EN-TÊTE ADMINISTRATIF
+========================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.8;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.ref {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   IDENTITÉ DU DOSSIER
+========================================== */
+
+.entete {
+
+  padding: 47px 0 35px;
+
+  text-align: center;
+
+}
+
+.eyebrow {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  color: var(--vert);
+
+  letter-spacing: .07em;
+
+}
+
+h1 {
+
+  margin: 22px 0 12px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    42px,
+    7vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.035em;
+
+  line-height: 1.08;
+
+}
+
+.fonction {
+
+  margin: 0;
+
+  font-size: 24px;
+  font-style: italic;
+
+}
+
+.identite {
+
+  display: inline-block;
+
+  margin-top: 24px;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.9;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   DOCUMENT À MARGE ROUGE
+========================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 28px 0;
+
+  padding: 30px 34px 30px 49px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 24px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ==========================================
+   RUBRIQUES BIOGRAPHIQUES
+========================================== */
+
+.rubrique {
+
+  margin-bottom: 38px;
+
+}
+
+.rubrique:last-child {
+  margin-bottom: 0;
+}
+
+.rubrique h2 {
+
+  margin: 0 0 19px;
+
+  padding-bottom: 9px;
+
+  border-bottom:
+    1px dotted var(--trait);
+
+  font-family: var(--machine);
+  font-size: 13px;
+
+  font-weight: normal;
+
+  letter-spacing: .06em;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+.rubrique p {
+
+  margin: 0 0 17px;
+
+}
+
+.rubrique p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   CITATION
+========================================== */
+
+.citation {
+
+  margin: 45px 0 18px;
+
+  padding: 26px 20px;
+
+  border-top: 2px solid var(--encre);
+  border-bottom: 2px solid var(--encre);
+
+  text-align: center;
+
+}
+
+.citation small {
+
+  display: block;
+
+  margin-bottom: 17px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  letter-spacing: .06em;
+
+  color: var(--vert);
+
+}
+
+.citation blockquote {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    24px,
+    4vw,
+    32px
+  );
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+}
+
+/* ==========================================
+   NOTE FINALE
+========================================== */
+
+.classement {
+
+  margin-top: 32px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.9;
+
+  color: #655e50;
+
+}
+
+/* ==========================================
+   UNIQUE LIEN DE RETOUR
+========================================== */
+
+.retour {
+
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 14px 18px;
+
+  border: 1px solid var(--encre);
+
+  background: var(--encre);
+  color: var(--blanc);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+}
+
+.retour:hover {
+
+  background: var(--violet);
+  border-color: var(--violet);
+
+}
+
+/* ==========================================
+   PIED DE PAGE
+========================================== */
+
+.footer {
+
+  border-top: 2px solid var(--encre);
+
+  margin-top: 45px;
+  padding-top: 20px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: #55584e;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .ref {
+
+    margin-top: 18px;
+
+    text-align: left;
+
+  }
+
+  .entete {
+    padding: 35px 0 27px;
+  }
+
+  .document {
+
+    padding: 24px 20px 24px 36px;
+
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .fonction {
+    font-size: 21px;
+  }
+
+  .rubrique {
+    margin-bottom: 30px;
+  }
+
+}
+
+/* ==========================================
+   IMPRESSION
+========================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban,
+  .retour {
+    display: none !important;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     BANDEAU
+========================================== -->
+
+<div class="ruban">
+
+  Consultation intérieure ·
+  Dossier individuel ·
+  Reproduction sous réserve
+
+</div>
+
+<!-- ==========================================
+     DOSSIER PRINCIPAL
+========================================== -->
+
+<main class="page">
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Affaires culturelles<br>
+      Mission d'études et de liaison documentaire
+
+    </div>
+
+    <div class="ref">
+
+      PARIS · 1966<br>
+      RÉFÉRENCE : P-004<br>
+      DOSSIER INDIVIDUEL
+
+    </div>
+
+  </header>
+
+  <!-- ======================================
+       IDENTITÉ
+  ====================================== -->
+
+  <section
+    class="entete"
+    aria-labelledby="titre"
+  >
+
+    <div class="eyebrow">
+
+      SERVICE DU PERSONNEL<br>
+      DOCUMENT P-004
+
+    </div>
+
+    <h1 id="titre">
+      Charles Pinson
+    </h1>
+
+    <p class="fonction">
+      Archiviste du Bureau des Interstices
+    </p>
+
+    <div class="identite">
+
+      ÂGE : 29 ANS EN 1966<br>
+      FONCTION : ARCHIVES ET DOCUMENTATION<br>
+      AFFECTATION : M.E.L.D.
+
+    </div>
+
+  </section>
+
+  <!-- ======================================
+       DOCUMENT BIOGRAPHIQUE
+  ====================================== -->
+
+  <article class="document">
+
+    <!-- PORTRAIT -->
+
+    <section class="rubrique">
+
+      <h2>01 / Portrait</h2>
+
+      <p>
+        Charles soigne sa personne avec la même attention
+        qu'il apporte à ses dossiers.
+        Ses vêtements sont entretenus,
+        ses gestes mesurés.
+        Il parle très doucement ;
+        pour lui répondre,
+        on baisse presque toujours la voix.
+      </p>
+
+      <p>
+        Il se déplace à bicyclette
+        et la range dans la cour du Bureau.
+        Ceux qui viennent régulièrement savent
+        qu'elle peut annoncer sa présence
+        avant même qu'on ait trouvé sa porte.
+      </p>
+
+    </section>
+
+    <!-- CARACTÈRE -->
+
+    <section class="rubrique">
+
+      <h2>02 / Caractère</h2>
+
+      <p>
+        Très méthodique, à la limite de la manie,
+        Charles tient à ce que chaque pièce
+        puisse être retrouvée et replacée
+        dans son contexte.
+        Il remarque une date manquante,
+        un feuillet déplacé ou un renvoi devenu inutile.
+      </p>
+
+      <p>
+        Sa douceur accompagne cette exigence.
+        Il peut demander très poliment
+        que l'on remette un dossier dans l'ordre,
+        puis attendre que ce soit fait.
+      </p>
+
+      <p>
+        Derrière sa minutie se trouve
+        une attention aux personnes.
+        Un nom, une lettre ou une photographie
+        sont les traces d'une existence
+        à laquelle son travail permet encore de revenir.
+      </p>
+
+    </section>
+
+    <!-- RÔLE AU BUREAU -->
+
+    <section class="rubrique">
+
+      <h2>03 / Rôle au Bureau</h2>
+
+      <p>
+        Charles conserve, classe, retrouve
+        et rapproche les documents.
+        Il tient la mémoire documentaire du service
+        et aide les enquêteurs à comprendre
+        ce qui a déjà été recherché,
+        constaté ou laissé en attente.
+      </p>
+
+      <p>
+        Lorsqu'un dossier est consulté,
+        une indication permet de savoir
+        où il se trouve et qui l'utilise.
+        Charles peut ainsi suivre la circulation
+        des pièces sans parcourir tous les bureaux.
+      </p>
+
+      <p>
+        Il attire parfois l'attention sur une lettre
+        que la demande initiale ne permettait pas
+        de retrouver.
+        Un rapprochement peut tenir à une graphie,
+        à une adresse ancienne ou à un nom conservé
+        dans un autre dossier.
+      </p>
+
+    </section>
+
+    <!-- LES ARCHIVES -->
+
+    <section class="rubrique">
+
+      <h2>04 / Les archives</h2>
+
+      <p>
+        Une petite table de consultation
+        accompagne les rayonnages.
+        Charles reçoit les enquêteurs,
+        apporte les chemises nécessaires
+        et explique leur classement.
+      </p>
+
+      <p>
+        Un plan trop grand conduit
+        à réserver la salle de réunion.
+        Les pièces fragiles ou confiées temporairement
+        reçoivent des précautions particulières.
+        Un document emporté doit pouvoir retrouver sa place.
+      </p>
+
+      <p>
+        Il peut accompagner un dossier
+        pour aider à suivre ses renvois
+        ou signaler une pièce utile.
+        Sa présence rend parfois lisible
+        un ensemble de documents
+        que l'on aurait parcourus séparément.
+      </p>
+
+    </section>
+
+    <!-- LA JÉRUSALEM CÉLESTE -->
+
+    <section class="rubrique">
+
+      <h2>05 / La Jérusalem céleste</h2>
+
+      <p>
+        Charles est mystique et convaincu
+        de l'existence de la Jérusalem céleste.
+        Cette conviction lui donne
+        une espérance de consolation.
+      </p>
+
+      <p>
+        Le motif biblique des noms inscrits
+        dans les cieux résonne avec son attention
+        aux noms et aux traces humaines.
+        Cette espérance accompagne
+        son travail de conservation.
+      </p>
+
+    </section>
+
+    <!-- LES DANSES DE SALON -->
+
+    <section class="rubrique">
+
+      <h2>06 / Les danses de salon</h2>
+
+      <p>
+        Charles excelle dans les danses de salon.
+        Il y déploie une aisance
+        et une précision remarquables.
+        Ce plaisir fait pleinement partie de sa vie,
+        avec le soin de sa personne
+        et ses trajets à bicyclette.
+      </p>
+
+    </section>
+
+    <!-- RELATIONS PROFESSIONNELLES -->
+
+    <section class="rubrique">
+
+      <h2>07 / Relations professionnelles</h2>
+
+      <p>
+        Les collaborateurs et les enquêteurs
+        s'adressent à lui pour retrouver une pièce,
+        comprendre un classement
+        ou reprendre une affaire ancienne.
+        Charles leur demande les précisions
+        qui rendront la recherche possible.
+      </p>
+
+      <p>
+        Son travail prolonge celui des personnes
+        qui ont recueilli les témoignages
+        et rédigé les rapports.
+        Il conserve les éléments qui permettront,
+        plus tard, de reprendre leurs questions.
+      </p>
+
+    </section>
+
+    <!-- RAPPORT AUX AFFAIRES -->
+
+    <section class="rubrique">
+
+      <h2>08 / Rapport aux affaires du Bureau</h2>
+
+      <p>
+        Charles porte une attention particulière
+        à ce qui demeure après un événement :
+        des noms, des dates, des correspondances,
+        les pièces dont on connaît encore la provenance.
+      </p>
+
+      <p>
+        Il contribue à l'enquête
+        en rendant ces traces consultables
+        et en permettant leur rapprochement.
+        Une affaire classée peut ainsi conserver
+        les éléments nécessaires à sa réouverture.
+      </p>
+
+    </section>
+
+    <!-- INTERPRÉTATION -->
+
+    <section class="rubrique">
+
+      <h2>09 / Pour l'interpréter</h2>
+
+      <p>
+        Parler très doucement et employer des mots précis.
+        Laisser à ses demandes polies
+        le temps d'être entendues.
+        Faire sentir l'exigence dans un geste soigneux,
+        un document replacé
+        ou une question sur sa provenance.
+      </p>
+
+      <p>
+        Donner également leur place
+        à ses plaisirs et à sa sensibilité.
+        La danse, le soin de soi
+        et l'espérance de consolation
+        appartiennent autant au personnage
+        que sa minutie professionnelle.
+      </p>
+
+    </section>
+
+  </article>
+
+  <!-- ======================================
+       RÉPLIQUE RETENUE
+  ====================================== -->
+
+  <div class="citation">
+
+    <small>RÉPLIQUE</small>
+
+    <blockquote>
+      « Vous avez bien fait
+      de conserver cette lettre. »
+    </blockquote>
+
+  </div>
+
+  <!-- ======================================
+       CLASSEMENT
+  ====================================== -->
+
+  <p class="classement">
+
+    DOSSIER P-004<br>
+    SERVICE DU PERSONNEL<br>
+    DOCUMENT DE L'UNIVERS FICTIONNEL
+    DES INTERSTICES
+
+  </p>
+
+  <!-- ======================================
+       UNIQUE LIEN DE RETOUR
+  ====================================== -->
+
+  <a
+    class="retour"
+    href="personnel.html"
+  >
+    ← Retour au registre du personnel
+  </a>
+
+  <!-- ======================================
+       PIED DE PAGE
+  ====================================== -->
+
+  <footer class="footer">
+
+    <p>
+      M.E.L.D. · PARIS, 1966<br>
+      Création : Alexis Tolmatchev
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
 
