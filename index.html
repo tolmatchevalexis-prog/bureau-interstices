@@ -12,7 +12,9 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
+
 /* IDENTITÉ GRAPHIQUE */
+
 :root {
   --papier:#ded3b8;
   --feuille:#f3e9cf;
@@ -23,20 +25,38 @@
   --vert:#4c5546;
   --trait:#b3a88e;
   --bleu-archives:#24374f;
+
   --serif:"EB Garamond",Garamond,Georgia,serif;
   --machine:"Special Elite","Courier New",monospace;
 }
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
 body {
   margin:0;
   color:var(--encre);
   font:20px/1.55 var(--serif);
+
   background:
-    radial-gradient(ellipse at 15% 12%,#fff9df88,transparent 48%),
-    radial-gradient(ellipse at 85% 75%,#74552816,transparent 52%),
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff9df88,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      #74552816,
+      transparent 52%
+    ),
     var(--papier);
 }
+
 body::before {
   content:"";
   position:fixed;
@@ -44,16 +64,30 @@ body::before {
   pointer-events:none;
   z-index:20;
   opacity:.11;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E");
+
+  background-image:url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
 }
-a { color:inherit; }
-a:focus-visible,button:focus-visible,input:focus-visible {
+
+a {
+  color:inherit;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+summary:focus-visible {
   outline:3px solid var(--violet);
   outline-offset:3px;
 }
-[hidden] { display:none!important; }
+
+[hidden] {
+  display:none!important;
+}
 
 /* BANDEAU */
+
 .ruban {
   padding:12px 20px;
   background:#4a5344;
@@ -65,18 +99,33 @@ a:focus-visible,button:focus-visible,input:focus-visible {
 }
 
 /* FEUILLE PRINCIPALE */
+
 .page {
   width:min(940px,calc(100% - 32px));
   margin:34px auto 60px;
   padding:clamp(25px,6vw,70px);
   position:relative;
+
   background:
-    radial-gradient(ellipse at 10% 9%,#fffff799,transparent 52%),
-    radial-gradient(ellipse at 92% 86%,#845d3219,transparent 55%),
+    radial-gradient(
+      ellipse at 10% 9%,
+      #fffff799,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      #845d3219,
+      transparent 55%
+    ),
     var(--feuille);
+
   border:1px solid #b8aa8c;
-  box-shadow:8px 10px 0 #c6b99c,0 14px 35px #40311924;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px #40311924;
 }
+
 .page::before {
   content:"";
   position:absolute;
@@ -86,6 +135,7 @@ a:focus-visible,button:focus-visible,input:focus-visible {
 }
 
 /* EN-TÊTE */
+
 .top {
   display:flex;
   justify-content:space-between;
@@ -93,11 +143,17 @@ a:focus-visible,button:focus-visible,input:focus-visible {
   padding-bottom:26px;
   border-bottom:2px solid var(--encre);
 }
-.republique,.ref {
+
+.republique,
+.ref {
   font:12px/1.7 var(--machine);
   letter-spacing:.03em;
 }
-.republique { text-transform:uppercase; }
+
+.republique {
+  text-transform:uppercase;
+}
+
 .ref {
   text-align:right;
   color:#55584e;
@@ -105,28 +161,37 @@ a:focus-visible,button:focus-visible,input:focus-visible {
 }
 
 /* TITRE */
+
 .entete {
   text-align:center;
   padding:55px 0 32px;
 }
-.eyebrow,.micro {
+
+.eyebrow,
+.micro {
   font-family:var(--machine);
   font-size:12px;
   letter-spacing:.05em;
   color:var(--vert);
 }
+
 h1 {
   margin:23px 0 15px;
   font:500 clamp(42px,7vw,78px)/1.03 var(--serif);
   letter-spacing:-.035em;
 }
-h1 span { display:block; }
+
+h1 span {
+  display:block;
+}
+
 .subtitle {
   margin:0 auto;
   max-width:670px;
   font-size:21px;
   line-height:1.5;
 }
+
 .mention {
   display:inline-block;
   margin-top:12px;
@@ -136,7 +201,8 @@ h1 span { display:block; }
   letter-spacing:.05em;
 }
 
-/* TAMPONS */
+/* TAMPONS DU BUREAU */
+
 .stamp-image {
   display:block;
   width:130px;
@@ -144,24 +210,34 @@ h1 span { display:block; }
   opacity:.8;
   mix-blend-mode:multiply;
 }
-.stamp-small { width:105px; }
+
+.stamp-small {
+  width:105px;
+}
+
 .stamp-meld {
   display:flex;
   justify-content:center;
   margin-top:27px;
 }
+
 .stamp-meld img {
   width:142px;
   transform:rotate(-7deg);
 }
+
 .document-stamp {
   display:flex;
   justify-content:flex-end;
   margin:18px 6px 4px;
 }
-.document-stamp img { transform:rotate(8deg); }
+
+.document-stamp img {
+  transform:rotate(8deg);
+}
 
 /* DOCUMENTS */
+
 .document {
   position:relative;
   margin:30px 0;
@@ -170,7 +246,9 @@ h1 span { display:block; }
   border:1px solid #97856959;
   box-shadow:2px 4px 8px #41321e17;
 }
-.document::before,.registre-feuille::before {
+
+.document::before,
+.registre-feuille::before {
   content:"";
   position:absolute;
   top:18px;
@@ -180,13 +258,21 @@ h1 span { display:block; }
   background:var(--rouge);
   opacity:.85;
 }
+
 .document h3 {
   margin:0 0 18px;
   font:13px/1.6 var(--machine);
   text-transform:uppercase;
 }
-.document p { margin:0 0 15px; }
-.document p:last-child { margin-bottom:0; }
+
+.document p {
+  margin:0 0 15px;
+}
+
+.document p:last-child {
+  margin-bottom:0;
+}
+
 .avis p {
   font-size:23px;
   font-style:italic;
@@ -194,6 +280,7 @@ h1 span { display:block; }
 }
 
 /* SECTIONS */
+
 .section-title {
   margin:50px 0 22px;
   font:13px/1.7 var(--machine);
@@ -201,11 +288,16 @@ h1 span { display:block; }
   text-transform:uppercase;
   color:var(--vert);
 }
+
 .notice {
   max-width:700px;
   margin:0 auto;
 }
-.notice p { margin:0 0 18px; }
+
+.notice p {
+  margin:0 0 18px;
+}
+
 .notice .first::first-letter {
   float:left;
   font-size:3.4em;
@@ -214,18 +306,24 @@ h1 span { display:block; }
 }
 
 /* ARCHIVES AUDIOVISUELLES */
+
 .archive-video {
   margin:48px 0 58px;
   padding:24px;
   border:1px solid var(--trait);
   background:#e7ddc2a6;
 }
-.archive-video .section-title { margin:0 0 24px; }
+
+.archive-video .section-title {
+  margin:0 0 24px;
+}
+
 .archive-meta {
   margin-bottom:23px;
   font:12px/1.8 var(--machine);
   color:#55564c;
 }
+
 .video-frame {
   aspect-ratio:16/9;
   background:#171717;
@@ -233,24 +331,35 @@ h1 span { display:block; }
   overflow:hidden;
   box-shadow:0 5px 13px #0003;
 }
+
 .video-frame iframe {
   display:block;
   width:100%;
   height:100%;
   border:0;
 }
+
+/* Légende historique, très discrète */
+
 .video-caption {
   margin-top:14px;
-  font:11px/1.7 var(--machine);
-  color:#55564c;
+  font:12px/1.6 var(--machine);
+  color:var(--bleu-archives);
 }
 
 /* PHOTOGRAPHIES D'ARCHIVES */
+
 .archive-piece {
   max-width:700px;
   margin:42px auto;
 }
-.archive-piece figure { margin:0; }
+
+.archive-piece figure {
+  margin:0;
+}
+
+/* Références bleu nuit */
+
 .archive-reference {
   margin:0 0 14px;
   color:var(--bleu-archives);
@@ -258,76 +367,125 @@ h1 span { display:block; }
   letter-spacing:.035em;
   overflow-wrap:anywhere;
 }
+
+/* Support photographique */
+
 .archive-support {
   position:relative;
   padding-top:18px;
   isolation:isolate;
 }
+
 .archive-photo {
   display:block;
   width:100%;
   height:auto;
+
   border:8px solid var(--blanc);
   box-shadow:0 4px 13px #33271438;
+
   filter:grayscale(1) contrast(1.04);
 }
+
+/*
+  LÉGENDES ET PHOTOGRAPHES
+  BLEU NUIT
+*/
+
 .archive-piece figcaption {
-  padding-top:12px;
-  font:12px/1.65 var(--machine);
-  color:#56564d;
+  padding-top:13px;
+  color:var(--bleu-archives);
+  font:14px/1.55 var(--machine);
 }
+
 .archive-credit {
   display:block;
   margin-top:7px;
-  font-size:10px;
-  line-height:1.7;
+  color:var(--bleu-archives);
+  font:12px/1.6 var(--machine);
 }
+
+/*
+  TAMPONS ROUGES
+  TAILLE DOUBLÉE
+
+  Ancien maximum : 175 px
+  Nouveau maximum : 350 px
+*/
+
 .media-stamp {
   position:absolute;
   z-index:2;
-  top:0;
-  right:-7px;
-  width:clamp(100px,26%,175px);
+
+  top:-5px;
+  right:-8px;
+
+  width:clamp(200px,52%,350px);
   height:auto;
+
   transform:rotate(8deg);
+
   pointer-events:none;
   user-select:none;
+
+  opacity:.88;
+  mix-blend-mode:multiply;
+
+  filter:
+    drop-shadow(1px 2px 1px #5a281b22);
 }
-.archive-video .archive-reference { margin-bottom:18px; }
+
+.archive-video .archive-reference {
+  margin-bottom:18px;
+}
+
 .archive-video .media-stamp {
-  width:clamp(100px,24%,160px);
+  width:clamp(200px,48%,320px);
 }
-.archive-video.fin-dossier { margin-bottom:35px; }
+
+.archive-video.fin-dossier {
+  margin-bottom:35px;
+}
 
 /* NOTE DE CHARLES PINSON */
-.note-pinson { margin-top:34px; }
+
+.note-pinson {
+  margin-top:34px;
+}
+
 .note-pinson p {
   font:14px/1.95 var(--machine);
 }
+
 .signature-pinson {
   text-align:right;
   margin-top:23px;
 }
+
 .signature-pinson strong {
   font:italic 500 25px var(--serif);
 }
+
 .signature-pinson span {
   display:block;
   font:11px var(--machine);
   color:#55564c;
 }
+
 .archive-disclaimer {
   font:10px/1.7 var(--machine);
   color:#625e53;
 }
 
 /* HUIT CHEMISES */
+
 .repertoire {
   display:grid;
   grid-template-columns:repeat(2,minmax(0,1fr));
   gap:15px;
   margin-top:28px;
 }
+
 .chemise {
   display:flex;
   flex-direction:column;
@@ -335,29 +493,36 @@ h1 span { display:block; }
   padding:22px;
   text-decoration:none;
   position:relative;
+
   border:1px solid var(--trait);
   border-top:4px solid #777a63;
   background:#efe5cbb8;
+
   transition:transform .16s,background .16s;
 }
+
 .chemise:hover {
   transform:translateY(-3px);
   background:var(--blanc);
 }
+
 .chemise small {
   margin-bottom:15px;
   font:11px/1.5 var(--machine);
   color:#595c50;
 }
+
 .chemise strong {
   font:500 29px/1.16 var(--serif);
 }
+
 .chemise em {
   margin-top:12px;
   font-size:17px;
   line-height:1.45;
   color:#626052;
 }
+
 .chemise .etat {
   display:block;
   margin-top:auto;
@@ -366,14 +531,22 @@ h1 span { display:block; }
   letter-spacing:.04em;
   color:var(--vert);
 }
+
 .chemise.ouverte {
   border-left:3px solid var(--vert);
   background:#faf3e0d9;
 }
-.chemise.reservee { border-top-color:#a69b82; }
-.chemise.reservee .etat { color:#766b58; }
+
+.chemise.reservee {
+  border-top-color:#a69b82;
+}
+
+.chemise.reservee .etat {
+  color:#766b58;
+}
 
 /* REGISTRE */
+
 .registre-feuille {
   position:relative;
   margin-top:23px;
@@ -383,6 +556,7 @@ h1 span { display:block; }
   box-shadow:3px 5px 9px #41321e1f;
   overflow:hidden;
 }
+
 .registre-entete {
   font:12px/1.8 var(--machine);
   letter-spacing:.035em;
@@ -390,6 +564,7 @@ h1 span { display:block; }
   padding-bottom:17px;
   margin-bottom:21px;
 }
+
 .liste-personnel {
   position:relative;
   z-index:1;
@@ -398,6 +573,7 @@ h1 span { display:block; }
   list-style:none;
   font:14px/1.8 var(--machine);
 }
+
 .liste-personnel li {
   display:grid;
   grid-template-columns:minmax(150px,1fr) minmax(135px,1fr);
@@ -405,21 +581,26 @@ h1 span { display:block; }
   padding:9px 0;
   border-bottom:1px dotted #50493c3b;
 }
+
 .liste-personnel .fonction {
   color:#656052;
   font-size:12px;
 }
+
 .registre-sceau {
   position:absolute;
   width:clamp(150px,25vw,218px);
   right:5%;
   bottom:8px;
   z-index:2;
+
   transform:rotate(-13deg);
   opacity:.32;
+
   pointer-events:none;
   mix-blend-mode:multiply;
 }
+
 .registre-note {
   margin-top:23px;
   font:11px/1.8 var(--machine);
@@ -427,41 +608,106 @@ h1 span { display:block; }
 }
 
 /* BOUTONS */
+
 .bouton {
   display:inline-block;
   padding:15px 20px;
   border:0;
   background:var(--encre);
   color:#f4edda;
+
   font:12px/1.5 var(--machine);
   text-decoration:none;
   cursor:pointer;
 }
-.bouton:hover { background:var(--violet); }
+
+.bouton:hover {
+  background:var(--violet);
+}
+
+/* ANNEXE */
+
 .annexe {
   margin-top:20px;
   padding:24px;
   border:1px dashed var(--violet);
   background:#dfd9cc8c;
 }
-.annexe strong { font:13px var(--machine); }
+
+.annexe strong {
+  font:13px var(--machine);
+}
+
 .retour {
   display:inline-block;
   margin-top:35px;
   font:12px var(--machine);
 }
 
+/*
+  CRÉDITS DOCUMENTAIRES
+
+  Rassemblés dans un volet discret.
+  Fermé par défaut.
+*/
+
+.credits-documentaires {
+  margin:42px 0 12px;
+  border-top:1px solid #a89b84;
+  padding-top:15px;
+  color:#686356;
+}
+
+.credits-documentaires summary {
+  display:inline-block;
+  cursor:pointer;
+
+  font:10px/1.8 var(--machine);
+  letter-spacing:.035em;
+  text-transform:uppercase;
+}
+
+.credits-documentaires summary:hover {
+  color:var(--bleu-archives);
+}
+
+.credits-contenu {
+  max-width:700px;
+  margin-top:17px;
+  padding:17px 20px;
+  border:1px solid #bdb19b;
+  background:#eee5d0;
+}
+
+.credits-contenu p {
+  margin:0 0 14px;
+  font:11px/1.7 var(--machine);
+}
+
+.credits-contenu p:last-child {
+  margin-bottom:0;
+}
+
+.credits-contenu a {
+  color:var(--bleu-archives);
+}
+
 /* PIED DE PAGE */
+
 .footer {
   border-top:2px solid var(--encre);
-  margin-top:55px;
+  margin-top:35px;
   padding-top:22px;
   display:flex;
   justify-content:space-between;
   gap:20px;
   font:11px/1.8 var(--machine);
 }
-.footer p { margin:0; }
+
+.footer p {
+  margin:0;
+}
+
 .reinitialiser {
   margin-top:16px;
   padding:0;
@@ -474,6 +720,7 @@ h1 span { display:block; }
 }
 
 /* GUICHET A-01 */
+
 .guichet {
   position:fixed;
   inset:0;
@@ -482,6 +729,7 @@ h1 span { display:block; }
   background:#252722f0;
   padding:25px 15px;
 }
+
 .guichet-feuille {
   width:min(610px,100%);
   margin:25px auto;
@@ -490,29 +738,38 @@ h1 span { display:block; }
   border:1px solid var(--trait);
   box-shadow:8px 10px 0 #a69a80;
 }
+
 .guichet-entete {
   text-align:center;
   border-bottom:2px solid var(--encre);
   padding-bottom:25px;
 }
+
 .guichet-entete p {
   margin:0;
   font:12px/1.8 var(--machine);
 }
+
 .guichet h2 {
   font:500 39px/1.1 var(--serif);
   margin:30px 0 15px;
 }
+
 .formulaire-ref {
   font:12px/1.7 var(--machine);
   color:var(--vert);
 }
-.champ { margin:25px 0; }
+
+.champ {
+  margin:25px 0;
+}
+
 .champ label {
   display:block;
   margin-bottom:9px;
   font:13px var(--machine);
 }
+
 .champ input {
   width:100%;
   padding:13px 14px;
@@ -522,24 +779,29 @@ h1 span { display:block; }
   color:var(--encre);
   font:17px var(--machine);
 }
+
 .cases {
   border:0;
   padding:0;
   margin:25px 0;
 }
+
 .cases legend {
   margin-bottom:15px;
   font:13px var(--machine);
 }
+
 .case {
   display:flex;
   align-items:flex-start;
   gap:13px;
   margin:17px 0;
+
   font-size:18px;
   line-height:1.4;
   cursor:pointer;
 }
+
 .case input {
   margin-top:6px;
   width:19px;
@@ -547,22 +809,32 @@ h1 span { display:block; }
   flex-shrink:0;
   accent-color:var(--violet);
 }
+
 .formulaire-bas {
   margin-top:28px;
   padding-top:20px;
   border-top:1px solid var(--trait);
 }
-.formulaire-bas p { font:11px/1.7 var(--machine); }
+
+.formulaire-bas p {
+  font:11px/1.7 var(--machine);
+}
+
 .formulaire-bas .bouton {
   width:100%;
   text-align:center;
   margin-top:12px;
 }
+
 .message-validation {
   text-align:center;
   padding:30px 0 10px;
 }
-.message-validation h2 { font-size:35px; }
+
+.message-validation h2 {
+  font-size:35px;
+}
+
 .message-validation img {
   display:block;
   width:150px;
@@ -570,9 +842,13 @@ h1 span { display:block; }
   margin:15px auto;
   transform:rotate(-8deg);
 }
-.message-validation p { margin:15px 0; }
+
+.message-validation p {
+  margin:15px 0;
+}
 
 /* SALUTATION */
+
 .salutation {
   position:fixed;
   inset:0;
@@ -583,6 +859,7 @@ h1 span { display:block; }
   padding:25px;
   background:#272822f0;
 }
+
 .salutation-carte {
   width:min(440px,100%);
   padding:35px;
@@ -590,60 +867,171 @@ h1 span { display:block; }
   border:1px solid var(--trait);
   text-align:center;
 }
-.salutation-carte p { margin:0 0 12px; }
-.salutation-carte .petit { font:11px var(--machine); }
-.salutation-carte .bonjour { font-size:28px; }
+
+.salutation-carte p {
+  margin:0 0 12px;
+}
+
+.salutation-carte .petit {
+  font:11px var(--machine);
+}
+
+.salutation-carte .bonjour {
+  font-size:28px;
+}
 
 /* MOBILE */
+
 @media(max-width:650px) {
-  body { font-size:19px; }
+
+  body {
+    font-size:19px;
+  }
+
   .page {
     margin:15px auto 30px;
     box-shadow:4px 6px 0 #c6b99c;
   }
-  .top { display:block; }
-  .ref { text-align:left; margin-top:18px; }
-  .entete { padding:38px 0 25px; }
-  .repertoire { grid-template-columns:1fr; }
-  .chemise { min-height:160px; }
-  .archive-video { padding:15px; }
-  .video-frame { border-width:5px; }
-  .archive-reference { font-size:10px; }
-  .archive-piece { margin:30px auto; }
-  .archive-photo { border-width:5px; }
-  .media-stamp {
-    right:-3px;
-    width:min(32%,120px);
+
+  .top {
+    display:block;
   }
-  .archive-video .media-stamp { width:min(29%,110px); }
-  .document { padding:23px 20px 23px 35px; }
-  .document::before { left:17px; }
-  .note-pinson p { font-size:13px; }
-  .registre-feuille { padding:22px 18px 55px 35px; }
-  .registre-feuille::before { left:17px; }
-  .liste-personnel { font-size:12px; }
+
+  .ref {
+    text-align:left;
+    margin-top:18px;
+  }
+
+  .entete {
+    padding:38px 0 25px;
+  }
+
+  .repertoire {
+    grid-template-columns:1fr;
+  }
+
+  .chemise {
+    min-height:160px;
+  }
+
+  .archive-video {
+    padding:15px;
+  }
+
+  .video-frame {
+    border-width:5px;
+  }
+
+  .archive-reference {
+    font-size:10px;
+  }
+
+  .archive-piece {
+    margin:30px auto;
+  }
+
+  .archive-photo {
+    border-width:5px;
+  }
+
+  /*
+    Tampons doublés aussi sur mobile.
+  */
+
+  .media-stamp {
+    top:-3px;
+    right:-3px;
+    width:min(64%,240px);
+  }
+
+  .archive-video .media-stamp {
+    width:min(58%,220px);
+  }
+
+  .archive-piece figcaption {
+    font-size:12px;
+  }
+
+  .archive-credit {
+    font-size:11px;
+  }
+
+  .document {
+    padding:23px 20px 23px 35px;
+  }
+
+  .document::before {
+    left:17px;
+  }
+
+  .note-pinson p {
+    font-size:13px;
+  }
+
+  .registre-feuille {
+    padding:22px 18px 55px 35px;
+  }
+
+  .registre-feuille::before {
+    left:17px;
+  }
+
+  .liste-personnel {
+    font-size:12px;
+  }
+
   .liste-personnel li {
     grid-template-columns:1fr;
     gap:2px;
   }
-  .liste-personnel .fonction { font-size:10px; }
+
+  .liste-personnel .fonction {
+    font-size:10px;
+  }
+
   .registre-sceau {
     width:155px;
     right:4%;
     bottom:15px;
   }
-  .footer { display:block; }
-  .footer p + p { margin-top:15px; }
+
+  .footer {
+    display:block;
+  }
+
+  .footer p + p {
+    margin-top:15px;
+  }
 }
+
+/* RÉDUCTION DES ANIMATIONS */
+
 @media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior:auto; }
-  .chemise { transition:none; }
+  html {
+    scroll-behavior:auto;
+  }
+
+  .chemise {
+    transition:none;
+  }
 }
+
+/* IMPRESSION */
+
 @media print {
-  body { background:white; }
-  body::before,.ruban,.guichet,.salutation,.video-frame {
+
+  body {
+    background:white;
+  }
+
+  body::before,
+  .ruban,
+  .guichet,
+  .salutation,
+  .video-frame {
     display:none!important;
   }
+
   .page {
     width:100%;
     margin:0;
@@ -652,14 +1040,21 @@ h1 span { display:block; }
     box-shadow:none;
   }
 }
+
 </style>
 </head>
 
 <body>
 
 <!-- FORMULAIRE D'ACCÈS A-01 -->
-<div class="guichet" id="guichet" role="dialog"
-     aria-modal="true" aria-labelledby="guichet-titre" hidden>
+
+<div class="guichet"
+     id="guichet"
+     role="dialog"
+     aria-modal="true"
+     aria-labelledby="guichet-titre"
+     hidden>
+
   <div class="guichet-feuille">
 
     <header class="guichet-entete">
@@ -669,12 +1064,15 @@ h1 span { display:block; }
     </header>
 
     <div id="formulaire-zone">
+
       <p class="formulaire-ref">
         FORMULAIRE A-01<br>
         DEMANDE D'AUTORISATION PROVISOIRE
       </p>
 
-      <h2 id="guichet-titre">Déclaration de présence</h2>
+      <h2 id="guichet-titre">
+        Déclaration de présence
+      </h2>
 
       <p>
         Toute personne souhaitant consulter
@@ -690,15 +1088,27 @@ h1 span { display:block; }
       </p>
 
       <form id="formulaire-acces">
+
         <div class="champ">
-          <label for="identite">NOM OU PSEUDONYME DU DEMANDEUR</label>
-          <input id="identite" name="identite" type="text"
-                 maxlength="40" autocomplete="nickname" required
-                 placeholder="Votre nom ou pseudonyme">
+          <label for="identite">
+            NOM OU PSEUDONYME DU DEMANDEUR
+          </label>
+
+          <input
+            id="identite"
+            name="identite"
+            type="text"
+            maxlength="40"
+            autocomplete="nickname"
+            required
+            placeholder="Votre nom ou pseudonyme">
         </div>
 
         <fieldset class="cases">
-          <legend>DÉCLARATIONS DU DEMANDEUR</legend>
+
+          <legend>
+            DÉCLARATIONS DU DEMANDEUR
+          </legend>
 
           <label class="case">
             <input type="checkbox" required>
@@ -736,51 +1146,90 @@ h1 span { display:block; }
               déjà présent dans les locaux.
             </span>
           </label>
+
         </fieldset>
 
         <div class="formulaire-bas">
+
           <p>
             La délivrance d'une autorisation
             de consultation ne préjuge en rien
             de l'existence des documents consultés.
           </p>
+
           <p>
             Le pseudonyme reste sur cet appareil ;
             le formulaire ne le transmet pas à un serveur.
           </p>
+
           <button class="bouton" type="submit">
             TRANSMETTRE AU SERVICE COMPÉTENT
           </button>
+
         </div>
+
       </form>
+
     </div>
 
-    <div class="message-validation" id="validation" hidden>
-      <p class="formulaire-ref">FORMULAIRE A-01 — TRAITÉ</p>
+    <div class="message-validation"
+         id="validation"
+         hidden>
+
+      <p class="formulaire-ref">
+        FORMULAIRE A-01 — TRAITÉ
+      </p>
+
       <h2>Autorisation provisoire accordée</h2>
-      <img src="images/images/images/a-classer.png"
-           alt="Tampon À CLASSER">
+
+      <img
+        src="images/images/images/a-classer.png"
+        alt="Tampon À CLASSER">
+
       <p>Votre demande a été enregistrée.</p>
-      <p>L'administration ne s'oppose pas à votre présence.</p>
-      <button class="bouton" id="entrer" type="button">
+
+      <p>
+        L'administration ne s'oppose pas
+        à votre présence.
+      </p>
+
+      <button class="bouton"
+              id="entrer"
+              type="button">
         CONSULTER LES ARCHIVES →
       </button>
+
     </div>
 
   </div>
 </div>
 
 <!-- SALUTATION DES VISITEURS CONNUS -->
-<div class="salutation" id="salutation"
-     role="status" aria-live="polite" hidden>
+
+<div class="salutation"
+     id="salutation"
+     role="status"
+     aria-live="polite"
+     hidden>
+
   <div class="salutation-carte">
-    <p class="petit">BUREAU DES INTERSTICES</p>
-    <p class="bonjour" id="texte-salutation"></p>
-    <p class="petit">AUTORISATION TOUJOURS VALABLE</p>
+
+    <p class="petit">
+      BUREAU DES INTERSTICES
+    </p>
+
+    <p class="bonjour"
+       id="texte-salutation"></p>
+
+    <p class="petit">
+      AUTORISATION TOUJOURS VALABLE
+    </p>
+
   </div>
 </div>
 
 <!-- ACCUEIL PRINCIPAL -->
+
 <div class="ruban">
   Accès public · Reproduction partielle autorisée ·
   Les dossiers originaux demeurent introuvables
@@ -789,20 +1238,26 @@ h1 span { display:block; }
 <main class="page" id="haut">
 
   <header class="top">
+
     <div class="republique">
       République française<br>
       Affaires culturelles<br>
       Service de documentation
     </div>
+
     <div class="ref">
       PARIS · 1966<br>
       Référence : B.I. / SANS NUMÉRO<br>
       Diffusion : intérieure.
     </div>
+
   </header>
 
   <!-- IDENTITÉ DU BUREAU -->
-  <section class="entete" aria-labelledby="titre">
+
+  <section class="entete"
+           aria-labelledby="titre">
+
     <div class="eyebrow">
       Note à l'attention des personnes dûment égarées
     </div>
@@ -823,12 +1278,16 @@ h1 span { display:block; }
     </p>
 
     <div class="stamp-meld">
-      <img class="stamp-image"
-           src="images/images/images/tampon_meld.png"
-           alt="Sceau M.E.L.D. — République française">
+      <img
+        class="stamp-image"
+        src="images/images/images/tampon_meld.png"
+        alt="Sceau M.E.L.D. — République française">
     </div>
 
-    <span class="mention">Existence non confirmée</span>
+    <span class="mention">
+      Existence non confirmée
+    </span>
+
   </section>
 
   <div class="avis document">
@@ -841,9 +1300,13 @@ h1 span { display:block; }
   </div>
 
   <!-- 01 — OBJET DU SERVICE -->
-  <section class="notice" id="mission"
+
+  <section class="notice"
+           id="mission"
            aria-labelledby="mission-titre">
-    <h2 class="section-title" id="mission-titre">
+
+    <h2 class="section-title"
+        id="mission-titre">
       01 / Objet du service
     </h2>
 
@@ -883,43 +1346,64 @@ h1 span { display:block; }
       Les phénomènes, eux,
       n'ont pas reçu la circulaire.
     </p>
+
   </section>
 
-  <!-- PHOTOGRAPHIE 01 — MÉTRO BLANCHE -->
-  <section class="archive-piece" aria-label="Archive photographique métro Blanche">
+  <!--
+    PHOTOGRAPHIE 01
+    MÉTRO BLANCHE
+  -->
+
+  <section class="archive-piece"
+           aria-label="Archive photographique métro Blanche">
+
     <figure>
+
       <p class="archive-reference">
         ARCHIVE PHOTOGRAPHIQUE — P/001 — PARIS, ANNÉES 1960
       </p>
+
       <div class="archive-support">
-        <img class="archive-photo"
-             src="https://commons.wikimedia.org/wiki/Special:FilePath/Verkoopstalletje%20bij%20de%20metro-ingang%20op%20Place%20Blanche%2C%20Bestanddeelnr%20254-0581.jpg"
-             alt="Scène de rue avec des personnes devant l'entrée du métro Blanche à Paris"
-             loading="lazy">
-        <img class="media-stamp"
-             src="images/images/images/tampon_enregistre.png"
-             alt="" aria-hidden="true" loading="lazy">
+
+        <img
+          class="archive-photo"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/Verkoopstalletje%20bij%20de%20metro-ingang%20op%20Place%20Blanche%2C%20Bestanddeelnr%20254-0581.jpg"
+          alt="Scène de rue devant l'entrée du métro Blanche à Paris"
+          loading="lazy">
+
+        <img
+          class="media-stamp"
+          src="images/images/images/tampon_enregistre.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+
       </div>
+
       <figcaption>
-        Paris, place Blanche. Scène de rue devant une entrée du métro.
+        Paris, place Blanche. Scène de rue
+        devant une entrée du métro.
+
         <span class="archive-credit">
-          Photographie : Willem van de Poll / Nationaal Archief.
-          Licence CC0.
-          <a href="https://commons.wikimedia.org/wiki/File:Verkoopstalletje_bij_de_metro-ingang_op_Place_Blanche,_Bestanddeelnr_254-0581.jpg"
-             target="_blank" rel="noopener noreferrer">
-            Source et conditions de réutilisation ↗
-          </a>
-          Référence et tampon fictifs.
+          Willem van de Poll
         </span>
       </figcaption>
+
     </figure>
+
   </section>
 
-  <!-- ARCHIVE INA — PEYREFITTE -->
-  <section class="archive-video" id="document-001"
+  <!--
+    ARCHIVE INA
+    PEYREFITTE
+  -->
+
+  <section class="archive-video"
+           id="document-001"
            aria-labelledby="archive-titre">
 
-    <h2 class="section-title" id="archive-titre">
+    <h2 class="section-title"
+        id="archive-titre">
       Document audiovisuel n° 001 —
       Diffusion autorisée
     </h2>
@@ -937,31 +1421,37 @@ h1 span { display:block; }
     </p>
 
     <div class="archive-support">
+
       <div class="video-frame">
+
         <iframe
           src="https://www.youtube-nocookie.com/embed/AQvhw04Aq4I"
           title="Alain Peyrefitte — 6 décembre 1963 — INA Politique"
           loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen>
+        </iframe>
+
       </div>
-      <img class="media-stamp"
-           src="images/images/images/tampon_visionne.png"
-           alt="" aria-hidden="true" loading="lazy">
+
+      <img
+        class="media-stamp"
+        src="images/images/images/tampon_visionne.png"
+        alt=""
+        aria-hidden="true"
+        loading="lazy">
+
     </div>
 
     <p class="video-caption">
-      Archive audiovisuelle publiée par l'INA.
-      <br>
-      <a href="https://www.youtube.com/watch?v=AQvhw04Aq4I"
-         target="_blank" rel="noopener noreferrer">
-        Consulter le document original ↗
-      </a>
+      Alain Peyrefitte — 6 décembre 1963
     </p>
 
     <!-- NOTE DE CHARLES PINSON -->
+
     <div class="note-pinson document">
+
       <h3>
         BUREAU DES INTERSTICES<br>
         SERVICE DES ARCHIVES<br>
@@ -970,7 +1460,8 @@ h1 span { display:block; }
 
       <p>
         6 décembre 1963 — Allocution de
-        M. Alain Peyrefitte, ministre de l'Information.
+        M. Alain Peyrefitte,
+        ministre de l'Information.
       </p>
 
       <p>
@@ -979,12 +1470,15 @@ h1 span { display:block; }
         sur le territoire national.
       </p>
 
-      <p>Cette initiative mérite d'être saluée.</p>
+      <p>
+        Cette initiative mérite d'être saluée.
+      </p>
 
       <p>
         Il serait toutefois souhaitable
         de vérifier que les images reçues
-        correspondent bien à celles qui ont été émises.
+        correspondent bien à celles
+        qui ont été émises.
       </p>
 
       <div class="signature-pinson">
@@ -993,58 +1487,73 @@ h1 span { display:block; }
       </div>
 
       <div class="document-stamp">
-        <img class="stamp-image stamp-small"
-             src="images/images/images/a-etudier.png"
-             alt="Tampon À ÉTUDIER" loading="lazy">
+        <img
+          class="stamp-image stamp-small"
+          src="images/images/images/a-etudier.png"
+          alt="Tampon À ÉTUDIER"
+          loading="lazy">
       </div>
+
     </div>
 
-    <p class="archive-disclaimer">
-      La vidéo est une archive historique.
-      La note de Charles Pinson appartient
-      à l'univers fictionnel du Bureau des Interstices.
-    </p>
   </section>
 
-  <!-- PHOTOGRAPHIE 02 — KOSSYGUINE -->
-  <section class="archive-piece" aria-label="Archive photographique Kossyguine">
+  <!--
+    PHOTOGRAPHIE 02
+    KOSSYGUINE À TOULOUSE
+  -->
+
+  <section class="archive-piece"
+           aria-label="Archive photographique Kossyguine">
+
     <figure>
+
       <p class="archive-reference">
         ARCHIVE PHOTOGRAPHIQUE — P/002 — TOULOUSE, 05.11.1966
       </p>
+
       <div class="archive-support">
-        <img class="archive-photo"
-             src="https://commons.wikimedia.org/wiki/Special:FilePath/05.11.1966.%20Kossiguine%20%C3%A0%20Toulouse.%20%281966%29%20-%2053Fi3432.jpg"
-             alt="Foule réunie à Toulouse lors de la visite officielle d'Alexis Kossyguine"
-             loading="lazy">
-        <img class="media-stamp"
-             src="images/images/images/tampon_enregistre.png"
-             alt="" aria-hidden="true" loading="lazy">
+
+        <img
+          class="archive-photo"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/05.11.1966.%20Kossiguine%20%C3%A0%20Toulouse.%20%281966%29%20-%2053Fi3432.jpg"
+          alt="Foule réunie à Toulouse lors de la visite officielle d'Alexis Kossyguine"
+          loading="lazy">
+
+        <img
+          class="media-stamp"
+          src="images/images/images/tampon_enregistre.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+
       </div>
+
       <figcaption>
-        Toulouse, 5 novembre 1966. Visite officielle
-        d'Alexis Kossyguine, président du Conseil des ministres soviétique.
+        Toulouse, 5 novembre 1966.
+        Visite officielle d'Alexis Kossyguine.
+
         <span class="archive-credit">
-          Photographie : André Cros / Archives municipales de Toulouse.
-          CC BY-SA 4.0.
-          <a href="https://commons.wikimedia.org/wiki/File:05.11.1966._Kossiguine_%C3%A0_Toulouse._(1966)_-_53Fi3432.jpg"
-             target="_blank" rel="noopener noreferrer">
-            Source et licence ↗
-          </a>
-          Modification : conversion en noir et blanc par affichage CSS.
-          Référence et tampon fictifs.
+          André Cros
         </span>
       </figcaption>
+
     </figure>
+
   </section>
 
   <!-- 02 — RÉPERTOIRE GÉNÉRAL -->
-  <section id="archives" aria-labelledby="archives-titre">
-    <h2 class="section-title" id="archives-titre">
+
+  <section id="archives"
+           aria-labelledby="archives-titre">
+
+    <h2 class="section-title"
+        id="archives-titre">
       02 / Répertoire général des archives
     </h2>
 
     <div class="document">
+
       <h3>SERVICE CENTRAL DES ARCHIVES</h3>
 
       <p>
@@ -1070,140 +1579,245 @@ h1 span { display:block; }
         Leur absence ne saurait être interprétée
         comme la preuve de leur inexistence.
       </p>
+
     </div>
 
     <nav class="repertoire"
          aria-label="Huit chemises du répertoire">
 
-      <a class="chemise ouverte" href="interstices.html">
-        <small>CHEMISE 01 · DOCUMENT I-01</small>
+      <a class="chemise ouverte"
+         href="interstices.html">
+
+        <small>
+          CHEMISE 01 · DOCUMENT I-01
+        </small>
+
         <strong>Les Interstices</strong>
+
         <em>
           Présentation du contexte.
           De ce qui existe entre les choses connues.
         </em>
-        <span class="etat">CONSULTATION AUTORISÉE →</span>
+
+        <span class="etat">
+          CONSULTATION AUTORISÉE →
+        </span>
+
       </a>
 
-      <a class="chemise ouverte" href="bureau.html">
-        <small>CHEMISE 02 · DOCUMENT B-01</small>
+      <a class="chemise ouverte"
+         href="bureau.html">
+
+        <small>
+          CHEMISE 02 · DOCUMENT B-01
+        </small>
+
         <strong>Le Bureau</strong>
+
         <em>
           Ses origines, son histoire,
           sa création fictive à l'initiative
           d'André Malraux.
           Ses missions et ses moyens.
         </em>
-        <span class="etat">CONSULTATION AUTORISÉE →</span>
+
+        <span class="etat">
+          CONSULTATION AUTORISÉE →
+        </span>
+
       </a>
 
-      <a class="chemise ouverte" href="personnel.html">
-        <small>CHEMISE 03 · DOCUMENT P-01</small>
+      <a class="chemise ouverte"
+         href="personnel.html">
+
+        <small>
+          CHEMISE 03 · DOCUMENT P-01
+        </small>
+
         <strong>Le personnel</strong>
+
         <em>
           Registre des huit membres du service
           et répartition de leurs responsabilités.
         </em>
-        <span class="etat">CONSULTATION AUTORISÉE →</span>
+
+        <span class="etat">
+          CONSULTATION AUTORISÉE →
+        </span>
+
       </a>
 
-      <a class="chemise reservee" href="enqueteurs.html">
-        <small>CHEMISE 04 · COLLABORATEURS EXTÉRIEURS</small>
+      <a class="chemise reservee"
+         href="enqueteurs.html">
+
+        <small>
+          CHEMISE 04 · COLLABORATEURS EXTÉRIEURS
+        </small>
+
         <strong>Les enquêteurs</strong>
+
         <em>
-          Collaborateurs extérieurs, accréditations,
-          identités, parcours et compétences.
+          Collaborateurs extérieurs,
+          accréditations, identités,
+          parcours et compétences.
         </em>
-        <span class="etat">CONSULTATION RESTREINTE →</span>
+
+        <span class="etat">
+          CONSULTATION RESTREINTE →
+        </span>
+
       </a>
 
-      <a class="chemise reservee" href="affaires.html">
-        <small>CHEMISE 05 · REGISTRE DES ENQUÊTES</small>
+      <a class="chemise reservee"
+         href="affaires.html">
+
+        <small>
+          CHEMISE 05 · REGISTRE DES ENQUÊTES
+        </small>
+
         <strong>Les affaires</strong>
+
         <em>
-          Signalements, témoignages, rapports,
-          pièces réunies et conclusions éventuelles.
+          Signalements, témoignages,
+          rapports, pièces réunies
+          et conclusions éventuelles.
         </em>
-        <span class="etat">DOSSIER CONSULTABLE SUR DEMANDE →</span>
+
+        <span class="etat">
+          DOSSIER CONSULTABLE SUR DEMANDE →
+        </span>
+
       </a>
 
-      <a class="chemise reservee" href="enquetes.html">
-        <small>CHEMISE 06 · DOCUMENTS DE MISSION</small>
+      <a class="chemise reservee"
+         href="enquetes.html">
+
+        <small>
+          CHEMISE 06 · DOCUMENTS DE MISSION
+        </small>
+
         <strong>Les enquêtes en cours</strong>
+
         <em>
-          Situations à explorer, enquêtes jouables
+          Situations à explorer,
+          enquêtes jouables
           et documents réservés au Narrateur.
         </em>
-        <span class="etat">ATTENDRE UNE CONVOCATION →</span>
+
+        <span class="etat">
+          ATTENDRE UNE CONVOCATION →
+        </span>
+
       </a>
 
-      <a class="chemise reservee" href="paris-1966.html">
-        <small>CHEMISE 07 · DOCUMENTATION HISTORIQUE</small>
-        <strong>Paris et la France des années soixante</strong>
+      <a class="chemise reservee"
+         href="paris-1966.html">
+
+        <small>
+          CHEMISE 07 · DOCUMENTATION HISTORIQUE
+        </small>
+
+        <strong>
+          Paris et la France des années soixante
+        </strong>
+
         <em>
-          Institutions, habitudes, réalités matérielles
+          Institutions, habitudes,
+          réalités matérielles
           et archives authentiques.
         </em>
+
         <span class="etat">
           DOSSIER EN COURS DE CONSTITUTION →
         </span>
+
       </a>
 
       <a class="chemise ouverte"
          href="https://tolmatchevalexis-prog.github.io/mise-rules/"
-         target="_blank" rel="noopener noreferrer">
-        <small>CHEMISE 08 · DOCUMENTATION EXTÉRIEURE</small>
+         target="_blank"
+         rel="noopener noreferrer">
+
+        <small>
+          CHEMISE 08 · DOCUMENTATION EXTÉRIEURE
+        </small>
+
         <strong>M.I.S.E.</strong>
+
         <em>
           Un système narratif sans dés
           et ses règles de jeu.
         </em>
-        <span class="etat">CONSULTATION EXTÉRIEURE ↗</span>
+
+        <span class="etat">
+          CONSULTATION EXTÉRIEURE ↗
+        </span>
+
       </a>
+
     </nav>
 
     <div class="document-stamp">
-      <img class="stamp-image stamp-small"
-           src="images/images/images/a-classer.png"
-           alt="Tampon À CLASSER" loading="lazy">
+      <img
+        class="stamp-image stamp-small"
+        src="images/images/images/a-classer.png"
+        alt="Tampon À CLASSER"
+        loading="lazy">
     </div>
+
   </section>
 
-  <!-- PHOTOGRAPHIE 03 — CITROËN DS -->
-  <section class="archive-piece" aria-label="Archive photographique Citroën DS">
+  <!--
+    PHOTOGRAPHIE 03
+    CITROËN DS
+  -->
+
+  <section class="archive-piece"
+           aria-label="Archive photographique Citroën DS">
+
     <figure>
+
       <p class="archive-reference">
         ARCHIVE PHOTOGRAPHIQUE — P/003 — TOULOUSE, 05.11.1966
       </p>
+
       <div class="archive-support">
-        <img class="archive-photo"
-             src="https://commons.wikimedia.org/wiki/Special:FilePath/05.11.1966.%20Kossiguine%20%C3%A0%20Toulouse.%20%281966%29%20-%2053Fi3429.jpg"
-             alt="Voiture officielle Citroën DS escortée par des motards à Toulouse"
-             loading="lazy">
-        <img class="media-stamp"
-             src="images/images/images/tampon_enregistre.png"
-             alt="" aria-hidden="true" loading="lazy">
+
+        <img
+          class="archive-photo"
+          src="https://commons.wikimedia.org/wiki/Special:FilePath/05.11.1966.%20Kossiguine%20%C3%A0%20Toulouse.%20%281966%29%20-%2053Fi3429.jpg"
+          alt="Voiture officielle Citroën DS escortée par des motards à Toulouse"
+          loading="lazy">
+
+        <img
+          class="media-stamp"
+          src="images/images/images/tampon_enregistre.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+
       </div>
+
       <figcaption>
-        Toulouse, 5 novembre 1966. Convoi officiel
-        dans la rue Alsace-Lorraine.
+        Toulouse, 5 novembre 1966.
+        Convoi officiel, rue Alsace-Lorraine.
+
         <span class="archive-credit">
-          Photographie : André Cros / Archives municipales de Toulouse.
-          CC BY-SA 4.0.
-          <a href="https://commons.wikimedia.org/wiki/File:05.11.1966._Kossiguine_%C3%A0_Toulouse._(1966)_-_53Fi3429.jpg"
-             target="_blank" rel="noopener noreferrer">
-            Source et licence ↗
-          </a>
-          Modification : conversion en noir et blanc par affichage CSS.
-          Référence et tampon fictifs.
+          André Cros
         </span>
       </figcaption>
+
     </figure>
+
   </section>
 
   <!-- 03 — REGISTRE DU PERSONNEL -->
-  <section id="personnel" aria-labelledby="personnel-titre">
-    <h2 class="section-title" id="personnel-titre">
+
+  <section id="personnel"
+           aria-labelledby="personnel-titre">
+
+    <h2 class="section-title"
+        id="personnel-titre">
       03 / Extrait du registre du personnel
     </h2>
 
@@ -1221,6 +1835,7 @@ h1 span { display:block; }
     </p>
 
     <div class="registre-feuille">
+
       <div class="registre-entete">
         BUREAU DES INTERSTICES<br>
         SERVICE DU PERSONNEL<br>
@@ -1229,43 +1844,70 @@ h1 span { display:block; }
       </div>
 
       <ol class="liste-personnel">
+
         <li>
           <span>01. Paul de Vauclerc</span>
           <span class="fonction">DIRECTION</span>
         </li>
+
         <li>
           <span>02. Suzanne Charrenson</span>
-          <span class="fonction">ASSISTANCE DU DIRECTEUR</span>
+          <span class="fonction">
+            ASSISTANCE DU DIRECTEUR
+          </span>
         </li>
+
         <li>
           <span>03. Christian Boidy</span>
-          <span class="fonction">CONSEIL SCIENTIFIQUE</span>
+          <span class="fonction">
+            CONSEIL SCIENTIFIQUE
+          </span>
         </li>
+
         <li>
           <span>04. Charles Pinson</span>
-          <span class="fonction">ARCHIVES ET DOCUMENTATION</span>
+          <span class="fonction">
+            ARCHIVES ET DOCUMENTATION
+          </span>
         </li>
+
         <li>
           <span>05. François Phạm</span>
-          <span class="fonction">ORGANISATION DES MISSIONS</span>
+          <span class="fonction">
+            ORGANISATION DES MISSIONS
+          </span>
         </li>
+
         <li>
           <span>06. Mireille Aubry</span>
-          <span class="fonction">STÉNODACTYLOGRAPHIE</span>
+          <span class="fonction">
+            STÉNODACTYLOGRAPHIE
+          </span>
         </li>
+
         <li>
           <span>07. Henri Martin</span>
-          <span class="fonction">ACCÈS ET SÉCURITÉ</span>
+          <span class="fonction">
+            ACCÈS ET SÉCURITÉ
+          </span>
         </li>
+
         <li>
           <span>08. Jean-Philippe Lafont</span>
-          <span class="fonction">ATTRIBUTIONS DIVERSES</span>
+          <span class="fonction">
+            ATTRIBUTIONS DIVERSES
+          </span>
         </li>
+
       </ol>
 
-      <img class="registre-sceau"
-           src="images/images/images/tampon_meld.png"
-           alt="" aria-hidden="true" loading="lazy">
+      <img
+        class="registre-sceau"
+        src="images/images/images/tampon_meld.png"
+        alt=""
+        aria-hidden="true"
+        loading="lazy">
+
     </div>
 
     <p class="registre-note">
@@ -1279,41 +1921,60 @@ h1 span { display:block; }
     <a class="bouton" href="personnel.html">
       CONSULTER LE REGISTRE COMPLET →
     </a>
+
   </section>
 
-  <!-- PHOTOGRAPHIE 04 — SACLAY -->
-  <section class="archive-piece" aria-label="Archive photographique Saclay">
+  <!--
+    PHOTOGRAPHIE 04
+    SACLAY — OSIRIS
+  -->
+
+  <section class="archive-piece"
+           aria-label="Archive photographique Saclay">
+
     <figure>
+
       <p class="archive-reference">
         ARCHIVE PHOTOGRAPHIQUE — P/004 — SACLAY, JUIN 1966
       </p>
+
       <div class="archive-support">
-        <img class="archive-photo"
-             src="https://www.cea.fr/presse/PublishingImages/Pages/actualites-communiques/energies/nom-de-code-osiris/Vue%20d%27ensemble%20d%27Osiris.jpg"
-             alt="Techniciens au travail dans les installations du réacteur Osiris à Saclay"
-             loading="lazy">
-        <img class="media-stamp"
-             src="images/images/images/tampon_enregistre.png"
-             alt="" aria-hidden="true" loading="lazy">
+
+        <img
+          class="archive-photo"
+          src="https://www.cea.fr/presse/PublishingImages/Pages/actualites-communiques/energies/nom-de-code-osiris/Vue%20d%27ensemble%20d%27Osiris.jpg"
+          alt="Installations du réacteur expérimental Osiris à Saclay"
+          loading="lazy">
+
+        <img
+          class="media-stamp"
+          src="images/images/images/tampon_enregistre.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy">
+
       </div>
+
       <figcaption>
-        Centre de Saclay. Réacteur expérimental Osiris, juin 1966.
+        Saclay, juin 1966.
+        Le réacteur expérimental Osiris.
+
         <span class="archive-credit">
-          © Pierre Jahan / CEA.
-          Reproduction dont l'autorisation reste à obtenir.
-          <a href="https://www.cea.fr/presse/Pages/actualites-communiques/energies/nom-de-code-osiris-mythologie-egyptienne-rencontre-recherche-nucleaire.aspx"
-             target="_blank" rel="noopener noreferrer">
-            Archive originale du CEA ↗
-          </a>
-          Référence et tampon fictifs.
+          Pierre Jahan / CEA
         </span>
       </figcaption>
+
     </figure>
+
   </section>
 
   <!-- 04 — DOSSIERS DE TRAVAIL -->
-  <section id="travaux" aria-labelledby="travaux-titre">
-    <h2 class="section-title" id="travaux-titre">
+
+  <section id="travaux"
+           aria-labelledby="travaux-titre">
+
+    <h2 class="section-title"
+        id="travaux-titre">
       04 / Dossiers de travail
     </h2>
 
@@ -1325,7 +1986,9 @@ h1 span { display:block; }
     </p>
 
     <div class="document">
+
       <h3>CHEMISE 04 — LES ENQUÊTEURS</h3>
+
       <p>
         Le Bureau fait appel à des collaborateurs
         extérieurs dont les compétences ne figurent
@@ -1334,15 +1997,19 @@ h1 span { display:block; }
         Les intéressés restent libres
         de poursuivre leurs activités en attendant.
       </p>
+
       <p>
         <a href="enqueteurs.html">
           Consulter la procédure d'accès →
         </a>
       </p>
+
     </div>
 
     <div class="document">
+
       <h3>CHEMISE 05 — LES AFFAIRES</h3>
+
       <p>
         Les dossiers d'enquête sont actuellement
         rapprochés de leurs pièces justificatives.
@@ -1351,15 +2018,19 @@ h1 span { display:block; }
         avant l'ouverture des dossiers
         auxquels elles se rapportent.
       </p>
+
       <p>
         <a href="affaires.html">
           Formuler une demande de consultation →
         </a>
       </p>
+
     </div>
 
     <div class="document">
+
       <h3>CHEMISE 06 — LES ENQUÊTES</h3>
+
       <p>
         Les documents relatifs aux missions futures
         ne sont pas encore intégralement communicables.
@@ -1368,15 +2039,19 @@ h1 span { display:block; }
         Les autres personnes sont invitées à ne pas anticiper
         les conclusions de leurs enquêtes.
       </p>
+
       <p>
         <a href="enquetes.html">
           Présenter sa disponibilité →
         </a>
       </p>
+
     </div>
 
     <div class="document">
+
       <h3>CHEMISE 07 — CONTEXTE</h3>
+
       <p>
         La documentation historique
         est en cours de rassemblement.
@@ -1385,45 +2060,76 @@ h1 span { display:block; }
         ne deviennent pas fictifs du seul fait
         qu'ils figurent dans les archives du Bureau.
       </p>
+
       <p>
         <a href="paris-1966.html">
           Consulter la notice documentaire →
         </a>
       </p>
+
     </div>
+
   </section>
 
   <!-- 05 — DOCUMENT JOINT -->
+
   <section aria-labelledby="annexe-titre">
-    <h2 class="section-title" id="annexe-titre">
+
+    <h2 class="section-title"
+        id="annexe-titre">
       05 / Document joint
     </h2>
 
-    <button class="bouton" type="button" id="ouvrir"
-            aria-expanded="false" aria-controls="annexe">
+    <button
+      class="bouton"
+      type="button"
+      id="ouvrir"
+      aria-expanded="false"
+      aria-controls="annexe">
+
       Ouvrir l'annexe non enregistrée
+
     </button>
 
-    <div class="annexe" id="annexe" hidden>
-      <p><strong>NOTE INTERNE — À NE PAS REPRODUIRE</strong></p>
+    <div class="annexe"
+         id="annexe"
+         hidden>
+
+      <p>
+        <strong>
+          NOTE INTERNE — À NE PAS REPRODUIRE
+        </strong>
+      </p>
+
       <p>
         Si un visiteur affirme avoir déjà consulté
         ce document, le prier de fournir
         une attestation du précédent visiteur.
       </p>
+
       <p>
         Si les deux personnes sont identiques,
         transmettre le dossier à la direction.
       </p>
+
       <p>Sans urgence apparente.</p>
+
     </div>
+
   </section>
 
-  <!-- ARCHIVE AUDIOVISUELLE 002 — LES TONTONS FLINGUEURS -->
+  <!--
+    ARCHIVE AUDIOVISUELLE 002
+    LES TONTONS FLINGUEURS
+  -->
+
   <section class="archive-video fin-dossier"
            aria-labelledby="tontons-titre">
-    <h2 class="section-title" id="tontons-titre">
-      Document audiovisuel n° 002 — Pièce jointe
+
+    <h2 class="section-title"
+        id="tontons-titre">
+      Document audiovisuel n° 002 —
+      Pièce jointe
     </h2>
 
     <p class="archive-reference">
@@ -1431,168 +2137,375 @@ h1 span { display:block; }
     </p>
 
     <div class="archive-support">
+
       <div class="video-frame">
+
         <iframe
           src="https://www.youtube-nocookie.com/embed/btIkYYTFqDQ"
           title="Les Tontons flingueurs — extrait vidéo"
           loading="lazy"
           referrerpolicy="strict-origin-when-cross-origin"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
+          allowfullscreen>
+        </iframe>
+
       </div>
 
-      <img class="media-stamp"
-           src="images/images/images/tampon_visionne.png"
-           alt="" aria-hidden="true" loading="lazy">
+      <img
+        class="media-stamp"
+        src="images/images/images/tampon_visionne.png"
+        alt=""
+        aria-hidden="true"
+        loading="lazy">
+
     </div>
 
     <p class="video-caption">
-      Les Tontons flingueurs (1963) — Document audiovisuel externe.
-      <br>
-      <a href="https://youtu.be/btIkYYTFqDQ"
-         target="_blank" rel="noopener noreferrer">
-        Consulter la vidéo sur YouTube ↗
-      </a>
-      <br>
-      Extrait soumis aux droits de ses ayants droit.
+      Les Tontons flingueurs — 1963
     </p>
+
   </section>
 
+  <!--
+    CRÉDITS DOCUMENTAIRES
+    CONSULTABLES MAIS NON ENVAHISSANTS
+  -->
+
+  <details class="credits-documentaires">
+
+    <summary>
+      Crédits documentaires et sources
+    </summary>
+
+    <div class="credits-contenu">
+
+      <p>
+        <strong>Photographie P/001 — Métro Blanche.</strong><br>
+        Willem van de Poll / Nationaal Archief.
+        Domaine public, CC0.<br>
+        <a
+          href="https://commons.wikimedia.org/wiki/File:Verkoopstalletje_bij_de_metro-ingang_op_Place_Blanche,_Bestanddeelnr_254-0581.jpg"
+          target="_blank"
+          rel="noopener noreferrer">
+          Consulter la source
+        </a>
+      </p>
+
+      <p>
+        <strong>Photographie P/002 — Kossyguine.</strong><br>
+        André Cros / Archives municipales de Toulouse.
+        Licence CC BY-SA 4.0.<br>
+        <a
+          href="https://commons.wikimedia.org/wiki/File:05.11.1966._Kossiguine_%C3%A0_Toulouse._(1966)_-_53Fi3432.jpg"
+          target="_blank"
+          rel="noopener noreferrer">
+          Consulter la source
+        </a>
+        —
+        <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr"
+          target="_blank"
+          rel="noopener noreferrer">
+          Licence
+        </a>
+      </p>
+
+      <p>
+        <strong>Photographie P/003 — Convoi officiel.</strong><br>
+        André Cros / Archives municipales de Toulouse.
+        Licence CC BY-SA 4.0.<br>
+        <a
+          href="https://commons.wikimedia.org/wiki/File:05.11.1966._Kossiguine_%C3%A0_Toulouse._(1966)_-_53Fi3429.jpg"
+          target="_blank"
+          rel="noopener noreferrer">
+          Consulter la source
+        </a>
+        —
+        <a
+          href="https://creativecommons.org/licenses/by-sa/4.0/deed.fr"
+          target="_blank"
+          rel="noopener noreferrer">
+          Licence
+        </a>
+      </p>
+
+      <p>
+        Pour les photographies d'André Cros,
+        présentation en noir et blanc par affichage CSS.
+        Références administratives et tampons ajoutés
+        dans le cadre fictionnel du Bureau.
+      </p>
+
+      <p>
+        <strong>Photographie P/004 — Saclay.</strong><br>
+        © Pierre Jahan / CEA.
+        Autorisation de reproduction non confirmée.<br>
+        <a
+          href="https://www.cea.fr/presse/Pages/actualites-communiques/energies/nom-de-code-osiris-mythologie-egyptienne-rencontre-recherche-nucleaire.aspx"
+          target="_blank"
+          rel="noopener noreferrer">
+          Consulter la source
+        </a>
+      </p>
+
+      <p>
+        <strong>Document audiovisuel A/0046.</strong><br>
+        Alain Peyrefitte, 6 décembre 1963.
+        Vidéo publiée par INA Politique.<br>
+        <a
+          href="https://www.youtube.com/watch?v=AQvhw04Aq4I"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir la vidéo d'origine
+        </a>
+      </p>
+
+      <p>
+        <strong>Document audiovisuel B/0047.</strong><br>
+        Les Tontons flingueurs, 1963.
+        Extrait disponible sur YouTube.<br>
+        <a
+          href="https://youtu.be/btIkYYTFqDQ"
+          target="_blank"
+          rel="noopener noreferrer">
+          Voir la vidéo d'origine
+        </a>
+      </p>
+
+      <p>
+        Les références administratives,
+        les tampons et les notes de Charles Pinson
+        appartiennent à l'univers fictionnel
+        du Bureau des Interstices.
+      </p>
+
+    </div>
+
+  </details>
+
   <!-- RETOUR ET PIED DE PAGE -->
+
   <a class="retour" href="#haut">
     ↑ Retour à l'en-tête du dossier
   </a>
 
   <footer class="footer">
+
     <div>
+
       <p>
         BUREAU DES INTERSTICES<br>
         Paris, 1966 · Fiction contemporaine
       </p>
-      <button class="reinitialiser"
-              type="button" id="oublier-visiteur">
+
+      <button
+        class="reinitialiser"
+        type="button"
+        id="oublier-visiteur">
+
         Effacer mon autorisation locale
+
       </button>
+
     </div>
 
     <p>
       Création : Alexis Tolmatchev<br>
       Univers développé pour M.I.S.E.
     </p>
+
   </footer>
+
 </main>
 
 <script>
+
 "use strict";
 
 /* ANNEXE */
-const boutonAnnexe = document.getElementById("ouvrir");
-const annexe = document.getElementById("annexe");
+
+const boutonAnnexe =
+  document.getElementById("ouvrir");
+
+const annexe =
+  document.getElementById("annexe");
 
 boutonAnnexe.addEventListener("click", () => {
+
   const ouvert =
     boutonAnnexe.getAttribute("aria-expanded") === "true";
 
-  boutonAnnexe.setAttribute("aria-expanded", String(!ouvert));
+  boutonAnnexe.setAttribute(
+    "aria-expanded",
+    String(!ouvert)
+  );
+
   annexe.hidden = ouvert;
 
   boutonAnnexe.textContent = ouvert
     ? "Ouvrir l'annexe non enregistrée"
     : "Refermer l'annexe non enregistrée";
+
 });
 
 /* MÉMOIRE DU GUICHET */
-const CLE_VISITEUR = "bureau-interstices-acces-v1";
+
+const CLE_VISITEUR =
+  "bureau-interstices-acces-v1";
 
 function lireVisiteur() {
-  try {
-    const brut = localStorage.getItem(CLE_VISITEUR);
-    if (!brut) return null;
 
-    const visiteur = JSON.parse(brut);
+  try {
+
+    const brut =
+      localStorage.getItem(CLE_VISITEUR);
+
+    if (!brut) {
+      return null;
+    }
+
+    const visiteur =
+      JSON.parse(brut);
 
     return (
       visiteur &&
       typeof visiteur.pseudonyme === "string" &&
       visiteur.pseudonyme.trim()
-    ) ? visiteur : null;
+    )
+      ? visiteur
+      : null;
+
   } catch (erreur) {
+
     return null;
+
   }
+
 }
 
 function enregistrerVisiteur(nom) {
+
   try {
+
     localStorage.setItem(
       CLE_VISITEUR,
       JSON.stringify({
-        pseudonyme: nom.trim(),
-        dateInscription: new Date().toISOString()
+        pseudonyme:nom.trim(),
+        dateInscription:new Date().toISOString()
       })
     );
+
     return true;
+
   } catch (erreur) {
+
     return false;
+
   }
+
 }
 
 /* ÉLÉMENTS DU FORMULAIRE */
-const guichet = document.getElementById("guichet");
-const formulaire = document.getElementById("formulaire-acces");
-const formulaireZone = document.getElementById("formulaire-zone");
-const validation = document.getElementById("validation");
-const boutonEntrer = document.getElementById("entrer");
-const salutation = document.getElementById("salutation");
-const texteSalutation = document.getElementById("texte-salutation");
-const boutonOublier = document.getElementById("oublier-visiteur");
 
-/* OUVERTURE */
+const guichet =
+  document.getElementById("guichet");
+
+const formulaire =
+  document.getElementById("formulaire-acces");
+
+const formulaireZone =
+  document.getElementById("formulaire-zone");
+
+const validation =
+  document.getElementById("validation");
+
+const boutonEntrer =
+  document.getElementById("entrer");
+
+const salutation =
+  document.getElementById("salutation");
+
+const texteSalutation =
+  document.getElementById("texte-salutation");
+
+const boutonOublier =
+  document.getElementById("oublier-visiteur");
+
+/* OUVERTURE DU GUICHET */
+
 function ouvrirGuichet() {
+
   guichet.hidden = false;
   formulaireZone.hidden = false;
   validation.hidden = true;
+
   document.body.style.overflow = "hidden";
+
   document.getElementById("identite").focus();
+
 }
 
 /* FERMETURE */
+
 function fermerGuichet() {
+
   guichet.hidden = true;
   document.body.style.overflow = "";
+
 }
 
 /* PREMIÈRE VISITE */
+
 formulaire.addEventListener("submit", (event) => {
+
   event.preventDefault();
 
-  if (!formulaire.reportValidity()) return;
+  if (!formulaire.reportValidity()) {
+    return;
+  }
 
   const nom =
-    document.getElementById("identite").value.trim();
+    document.getElementById("identite")
+      .value.trim();
 
-  if (!nom) return;
+  if (!nom) {
+    return;
+  }
 
-  const sauvegarde = enregistrerVisiteur(nom);
+  const sauvegarde =
+    enregistrerVisiteur(nom);
 
   formulaireZone.hidden = true;
   validation.hidden = false;
 
   if (!sauvegarde) {
-    const information = document.createElement("p");
+
+    const information =
+      document.createElement("p");
+
     information.textContent =
       "Votre navigateur refuse la conservation locale. " +
       "L'autorisation demeure valable pour cette visite.";
+
     validation.appendChild(information);
+
   }
 
   boutonEntrer.focus();
+
 });
 
 /* ENTRÉE */
-boutonEntrer.addEventListener("click", fermerGuichet);
+
+boutonEntrer.addEventListener(
+  "click",
+  fermerGuichet
+);
 
 /* SALUTATION */
+
 function saluerVisiteur(visiteur) {
+
   texteSalutation.textContent =
     "Bonjour, " + visiteur.pseudonyme + ".";
 
@@ -1600,31 +2513,48 @@ function saluerVisiteur(visiteur) {
   document.body.style.overflow = "hidden";
 
   window.setTimeout(() => {
+
     salutation.hidden = true;
     document.body.style.overflow = "";
+
   }, 1700);
+
 }
 
 /* EFFACEMENT */
+
 boutonOublier.addEventListener("click", () => {
+
   try {
+
     localStorage.removeItem(CLE_VISITEUR);
+
   } catch (erreur) {
+
     /* Stockage éventuellement désactivé. */
+
   }
 
   formulaire.reset();
   ouvrirGuichet();
+
 });
 
 /* INITIALISATION */
+
 const visiteur = lireVisiteur();
 
 if (visiteur) {
+
   saluerVisiteur(visiteur);
+
 } else {
+
   ouvrirGuichet();
+
 }
+
 </script>
+
 </body>
 </html>
