@@ -1,1 +1,950 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1"
+>
+
+<meta name="theme-color" content="#ded3b8">
+
+<meta
+  name="description"
+  content="Dossier individuel de François Phạm, adjoint chargé des missions du Bureau des Interstices. Paris, 1966."
+>
+
+<title>
+  François Phạm — Bureau des Interstices
+</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Special+Elite&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+
+/* ==========================================
+   IDENTITÉ GRAPHIQUE
+========================================== */
+
+:root {
+
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+
+  --encre: #292920;
+  --vert: #4c5546;
+  --rouge: #ad5346;
+  --violet: #48338a;
+
+  --trait: #b3a88e;
+
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  margin: 0;
+
+  color: var(--encre);
+
+  font-family: var(--serif);
+  font-size: 20px;
+  line-height: 1.55;
+
+  background-color: var(--papier);
+
+  background-image:
+    radial-gradient(
+      ellipse at 15% 12%,
+      rgba(255,255,240,.32),
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      rgba(116,85,40,.10),
+      transparent 52%
+    );
+
+}
+
+/* TRAME DISCRÈTE DU PAPIER */
+
+body::before {
+
+  content: "";
+
+  position: fixed;
+  inset: 0;
+
+  z-index: 20;
+
+  pointer-events: none;
+
+  opacity: .11;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+
+  outline: 3px solid var(--violet);
+  outline-offset: 4px;
+
+}
+
+/* ==========================================
+   BANDEAU
+========================================== */
+
+.ruban {
+
+  padding: 12px 20px;
+
+  background: #4a5344;
+  color: #f1eedf;
+
+  text-align: center;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.7;
+  letter-spacing: .06em;
+
+  text-transform: uppercase;
+
+}
+
+/* ==========================================
+   FEUILLE PRINCIPALE
+========================================== */
+
+.page {
+
+  width: min(
+    850px,
+    calc(100% - 32px)
+  );
+
+  margin: 34px auto 60px;
+
+  padding: clamp(
+    25px,
+    6vw,
+    65px
+  );
+
+  position: relative;
+
+  background-color: var(--feuille);
+
+  background-image:
+    radial-gradient(
+      ellipse at 10% 9%,
+      rgba(255,255,247,.58),
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      rgba(132,93,50,.10),
+      transparent 55%
+    );
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px rgba(64,49,25,.14);
+
+}
+
+.page::before {
+
+  content: "";
+
+  position: absolute;
+  inset: 8px;
+
+  border: 1px solid
+    rgba(95,75,45,.09);
+
+  pointer-events: none;
+
+}
+
+/* ==========================================
+   EN-TÊTE ADMINISTRATIF
+========================================== */
+
+.top {
+
+  display: flex;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  padding-bottom: 25px;
+
+  border-bottom: 2px solid var(--encre);
+
+}
+
+.republique {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.8;
+  letter-spacing: .03em;
+
+  text-transform: uppercase;
+
+}
+
+.ref {
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  text-align: right;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   IDENTITÉ DU DOSSIER
+========================================== */
+
+.entete {
+
+  padding: 47px 0 35px;
+
+  text-align: center;
+
+}
+
+.eyebrow {
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  color: var(--vert);
+
+  letter-spacing: .07em;
+
+}
+
+h1 {
+
+  margin: 22px 0 12px;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    42px,
+    7vw,
+    68px
+  );
+
+  font-weight: 500;
+
+  letter-spacing: -.035em;
+
+  line-height: 1.08;
+
+}
+
+.fonction {
+
+  margin: 0;
+
+  font-size: 24px;
+  font-style: italic;
+
+}
+
+.identite {
+
+  display: inline-block;
+
+  margin-top: 24px;
+
+  padding: 12px 20px;
+
+  border-top: 1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.9;
+
+  color: #55584e;
+
+}
+
+/* ==========================================
+   DOCUMENT À MARGE ROUGE
+========================================== */
+
+.document {
+
+  position: relative;
+
+  margin: 28px 0;
+
+  padding: 30px 34px 30px 49px;
+
+  background: var(--blanc);
+
+  border: 1px solid
+    rgba(151,133,105,.35);
+
+  box-shadow:
+    2px 4px 8px rgba(65,50,30,.09);
+
+}
+
+.document::before {
+
+  content: "";
+
+  position: absolute;
+
+  top: 18px;
+  bottom: 18px;
+  left: 24px;
+
+  width: 2px;
+
+  background: var(--rouge);
+
+  opacity: .85;
+
+}
+
+/* ==========================================
+   RUBRIQUES BIOGRAPHIQUES
+========================================== */
+
+.rubrique {
+
+  margin-bottom: 38px;
+
+}
+
+.rubrique:last-child {
+  margin-bottom: 0;
+}
+
+.rubrique h2 {
+
+  margin: 0 0 19px;
+
+  padding-bottom: 9px;
+
+  border-bottom:
+    1px dotted var(--trait);
+
+  font-family: var(--machine);
+  font-size: 13px;
+
+  font-weight: normal;
+
+  letter-spacing: .06em;
+
+  line-height: 1.6;
+
+  text-transform: uppercase;
+
+  color: var(--vert);
+
+}
+
+.rubrique p {
+
+  margin: 0 0 17px;
+
+}
+
+.rubrique p:last-child {
+  margin-bottom: 0;
+}
+
+/* ==========================================
+   CITATION
+========================================== */
+
+.citation {
+
+  margin: 45px 0 18px;
+
+  padding: 26px 20px;
+
+  border-top: 2px solid var(--encre);
+  border-bottom: 2px solid var(--encre);
+
+  text-align: center;
+
+}
+
+.citation small {
+
+  display: block;
+
+  margin-bottom: 17px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  letter-spacing: .06em;
+
+  color: var(--vert);
+
+}
+
+.citation blockquote {
+
+  margin: 0;
+
+  font-family: var(--serif);
+
+  font-size: clamp(
+    24px,
+    4vw,
+    32px
+  );
+
+  font-style: italic;
+
+  line-height: 1.4;
+
+}
+
+/* ==========================================
+   NOTE FINALE
+========================================== */
+
+.classement {
+
+  margin-top: 32px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.9;
+
+  color: #655e50;
+
+}
+
+/* ==========================================
+   UNIQUE LIEN DE RETOUR
+========================================== */
+
+.retour {
+
+  display: inline-block;
+
+  margin-top: 35px;
+
+  padding: 14px 18px;
+
+  border: 1px solid var(--encre);
+
+  background: var(--encre);
+  color: var(--blanc);
+
+  font-family: var(--machine);
+  font-size: 12px;
+
+  line-height: 1.5;
+
+  text-decoration: none;
+
+}
+
+.retour:hover {
+
+  background: var(--violet);
+  border-color: var(--violet);
+
+}
+
+/* ==========================================
+   PIED DE PAGE
+========================================== */
+
+.footer {
+
+  border-top: 2px solid var(--encre);
+
+  margin-top: 45px;
+  padding-top: 20px;
+
+  font-family: var(--machine);
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  color: #55584e;
+
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+
+    margin: 15px auto 30px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
+  }
+
+  .top {
+    display: block;
+  }
+
+  .ref {
+
+    margin-top: 18px;
+
+    text-align: left;
+
+  }
+
+  .entete {
+    padding: 35px 0 27px;
+  }
+
+  .document {
+
+    padding: 24px 20px 24px 36px;
+
+  }
+
+  .document::before {
+    left: 17px;
+  }
+
+  .fonction {
+    font-size: 21px;
+  }
+
+  .rubrique {
+    margin-bottom: 30px;
+  }
+
+}
+
+/* ==========================================
+   IMPRESSION
+========================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .ruban,
+  .retour {
+    display: none !important;
+  }
+
+  .page {
+
+    width: 100%;
+
+    margin: 0;
+    padding: 20mm;
+
+    border: none;
+    box-shadow: none;
+
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- ==========================================
+     BANDEAU
+========================================== -->
+
+<div class="ruban">
+
+  Consultation intérieure ·
+  Dossier individuel ·
+  Reproduction sous réserve
+
+</div>
+
+<!-- ==========================================
+     DOSSIER PRINCIPAL
+========================================== -->
+
+<main class="page">
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="top">
+
+    <div class="republique">
+
+      République française<br>
+      Affaires culturelles<br>
+      Mission d'études et de liaison documentaire
+
+    </div>
+
+    <div class="ref">
+
+      PARIS · 1966<br>
+      RÉFÉRENCE : P-005<br>
+      DOSSIER INDIVIDUEL
+
+    </div>
+
+  </header>
+
+  <!-- ======================================
+       IDENTITÉ
+  ====================================== -->
+
+  <section
+    class="entete"
+    aria-labelledby="titre"
+  >
+
+    <div class="eyebrow">
+
+      SERVICE DU PERSONNEL<br>
+      DOCUMENT P-005
+
+    </div>
+
+    <h1 id="titre">
+      François Phạm
+    </h1>
+
+    <p class="fonction">
+      Adjoint chargé des missions du Bureau des Interstices
+    </p>
+
+    <div class="identite">
+
+      ÂGE : 37 ANS EN 1966<br>
+      FONCTION : ORGANISATION DES MISSIONS<br>
+      AFFECTATION : M.E.L.D.
+
+    </div>
+
+  </section>
+
+  <!-- ======================================
+       DOCUMENT BIOGRAPHIQUE
+  ====================================== -->
+
+  <article class="document">
+
+    <!-- IDENTITÉ ET NOM D'USAGE -->
+
+    <section class="rubrique">
+
+      <h2>01 / Identité</h2>
+
+      <p>
+        Nom vietnamien : Phạm Văn Lâm.<br>
+        Nom d'usage en France : François Phạm.
+      </p>
+
+    </section>
+
+    <!-- PORTRAIT -->
+
+    <section class="rubrique">
+
+      <h2>02 / Portrait</h2>
+
+      <p>
+        François est plutôt grand, très mince,
+        avec une légère tendance à se tenir voûté.
+        Il porte toujours des costumes clairs.
+        Sa silhouette se reconnaît aisément
+        dans les couloirs du Bureau.
+      </p>
+
+      <p>
+        Son bureau, où de nombreux éléments
+        décoratifs évoquent sa culture vietnamienne,
+        constitue un autre signe de sa présence
+        dans le service.
+      </p>
+
+    </section>
+
+    <!-- PARCOURS -->
+
+    <section class="rubrique">
+
+      <h2>03 / Parcours</h2>
+
+      <p>
+        Originaire de Hanoï,
+        François a exercé dans le commerce,
+        avec une activité spécialisée
+        dans l'import-export.
+        Sa famille entretenait des liens étroits
+        avec la France.
+      </p>
+
+      <p>
+        Il a fui le Vietnam à la fin
+        de la guerre d'Indochine.
+        Il apporte aujourd'hui au Bureau
+        une expérience des échanges,
+        des négociations
+        et de l'acheminement des marchandises.
+      </p>
+
+    </section>
+
+    <!-- RÔLE AU BUREAU -->
+
+    <section class="rubrique">
+
+      <h2>04 / Rôle au Bureau</h2>
+
+      <p>
+        François organise les missions
+        confiées aux enquêteurs.
+        Il prépare les déplacements,
+        suit les acheminements,
+        examine les coûts et les délais.
+        Il négocie avec les interlocuteurs
+        dont dépend la réalisation d'un voyage
+        ou l'envoi de matériel.
+      </p>
+
+      <p>
+        Les décisions de Paul de Vauclerc
+        prennent entre ses mains une forme concrète :
+        un trajet, des correspondances,
+        des dépenses et des démarches à effectuer.
+      </p>
+
+      <p>
+        Il travaille avec les moyens limités
+        du service.
+        Une mission décidée rapidement
+        peut demander plusieurs courriers
+        et conversations avant qu'un départ soit possible.
+        Son expérience du commerce lui sert
+        à suivre une demande jusqu'à son aboutissement
+        et à repérer ce qui risque de la retarder.
+      </p>
+
+    </section>
+
+    <!-- SON BUREAU -->
+
+    <section class="rubrique">
+
+      <h2>05 / Son bureau</h2>
+
+      <p>
+        De nombreux éléments décoratifs
+        issus de la culture vietnamienne
+        occupent sa pièce.
+        Ils côtoient les dossiers,
+        les courriers et les documents
+        nécessaires à la préparation des missions.
+      </p>
+
+      <p>
+        Ce décor donne au lieu
+        un caractère personnel.
+        Il inscrit une part de la vie de François
+        dans les locaux administratifs du Bureau.
+      </p>
+
+    </section>
+
+    <!-- AUPRÈS DES ENQUÊTEURS -->
+
+    <section class="rubrique">
+
+      <h2>06 / Auprès des enquêteurs</h2>
+
+      <p>
+        Les enquêteurs s'adressent à lui
+        pour préparer leur déplacement,
+        faire parvenir un équipement
+        ou résoudre une difficulté matérielle
+        en cours de mission.
+      </p>
+
+      <p>
+        Il leur demande des informations utilisables :
+        une adresse, un nombre de voyageurs,
+        la nature du matériel
+        et la durée prévue du séjour.
+        Un changement de programme peut l'obliger
+        à reprendre les dispositions déjà prises.
+      </p>
+
+      <p>
+        Un phénomène peut résister
+        à toute explication ;
+        les personnes envoyées sur place
+        doivent pouvoir voyager,
+        se loger et rentrer.
+        François veille à ces nécessités.
+      </p>
+
+    </section>
+
+    <!-- PLACE DANS LE COLLECTIF -->
+
+    <section class="rubrique">
+
+      <h2>07 / Place dans le collectif</h2>
+
+      <p>
+        Son travail relie les bureaux parisiens
+        aux lieux où les collaborateurs sont envoyés.
+        Il assure le passage entre la décision
+        d'enquêter et les conditions pratiques
+        de l'enquête.
+      </p>
+
+      <p>
+        Les échanges avec Suzanne permettent
+        de faire circuler les informations
+        nécessaires au départ
+        et au suivi des enquêteurs.
+        François prend en charge
+        la préparation matérielle des missions
+        à partir des éléments réunis par le service.
+      </p>
+
+    </section>
+
+  </article>
+
+  <!-- ======================================
+       RÉPLIQUE
+  ====================================== -->
+
+  <div class="citation">
+
+    <small>RÉPLIQUE</small>
+
+    <blockquote>
+      « Très bien. Et sur place,
+      vous comptez dormir où ? »
+    </blockquote>
+
+  </div>
+
+  <!-- ======================================
+       CLASSEMENT
+  ====================================== -->
+
+  <p class="classement">
+
+    DOSSIER P-005<br>
+    SERVICE DU PERSONNEL<br>
+    DOCUMENT DE L'UNIVERS FICTIONNEL
+    DES INTERSTICES
+
+  </p>
+
+  <!-- ======================================
+       UNIQUE LIEN DE RETOUR
+  ====================================== -->
+
+  <a
+    class="retour"
+    href="personnel.html"
+  >
+    ← Retour au registre du personnel
+  </a>
+
+  <!-- ======================================
+       PIED DE PAGE
+  ====================================== -->
+
+  <footer class="footer">
+
+    <p>
+      M.E.L.D. · PARIS, 1966<br>
+      Création : Alexis Tolmatchev
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
 
