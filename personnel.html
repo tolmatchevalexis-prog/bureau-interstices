@@ -23,10 +23,7 @@
 
 <!-- TYPOGRAPHIES -->
 
-<link
-  rel="preconnect"
-  href="https://fonts.googleapis.com"
->
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
 <link
   rel="preconnect"
@@ -43,7 +40,7 @@
 
 /* ======================================
    IDENTITÉ GRAPHIQUE
-   ====================================== */
+====================================== */
 
 :root {
 
@@ -82,7 +79,6 @@ html {
 body {
 
   margin: 0;
-
   color: var(--encre);
 
   font-family: var(--serif);
@@ -110,13 +106,10 @@ body {
 body::before {
 
   content: "";
-
   position: fixed;
   inset: 0;
-
   pointer-events: none;
   z-index: 20;
-
   opacity: .11;
 
   background-image: url(
@@ -136,7 +129,7 @@ a:focus-visible {
 
 /* ======================================
    BANDEAU
-   ====================================== */
+====================================== */
 
 .ruban {
 
@@ -144,7 +137,6 @@ a:focus-visible {
   color: #f1eedf;
 
   padding: 12px 20px;
-
   text-align: center;
 
   font-family: var(--machine);
@@ -152,29 +144,19 @@ a:focus-visible {
 
   line-height: 1.6;
   letter-spacing: .06em;
-
   text-transform: uppercase;
 
 }
 
 /* ======================================
    FEUILLE PRINCIPALE
-   ====================================== */
+====================================== */
 
 .page {
 
-  width: min(
-    940px,
-    calc(100% - 32px)
-  );
-
+  width: min(940px, calc(100% - 32px));
   margin: 34px auto 60px;
-
-  padding: clamp(
-    25px,
-    6vw,
-    70px
-  );
+  padding: clamp(25px, 6vw, 70px);
 
   position: relative;
 
@@ -203,30 +185,25 @@ a:focus-visible {
 .page::before {
 
   content: "";
-
   position: absolute;
   inset: 8px;
 
-  border: 1px solid
-    rgba(95,75,45,.09);
-
+  border: 1px solid rgba(95,75,45,.09);
   pointer-events: none;
 
 }
 
 /* ======================================
    EN-TÊTE
-   ====================================== */
+====================================== */
 
 .top {
 
   display: flex;
-
   justify-content: space-between;
   align-items: flex-start;
 
   gap: 20px;
-
   padding-bottom: 25px;
 
   border-bottom: 2px solid var(--encre);
@@ -240,7 +217,6 @@ a:focus-visible {
 
   line-height: 1.7;
   letter-spacing: .03em;
-
   text-transform: uppercase;
 
 }
@@ -249,23 +225,20 @@ a:focus-visible {
 
   font-family: var(--machine);
   font-size: 11px;
-
   line-height: 1.7;
 
   text-align: right;
-
   color: #55584e;
 
 }
 
 /* ======================================
    TITRE
-   ====================================== */
+====================================== */
 
 .titre-page {
 
   padding: 52px 0 30px;
-
   text-align: center;
 
 }
@@ -276,7 +249,6 @@ a:focus-visible {
   font-size: 12px;
 
   letter-spacing: .08em;
-
   color: var(--vert);
 
   text-transform: uppercase;
@@ -288,15 +260,9 @@ h1 {
   margin: 18px 0 14px;
 
   font-family: var(--serif);
-
-  font-size: clamp(
-    43px,
-    7vw,
-    73px
-  );
+  font-size: clamp(43px, 7vw, 73px);
 
   font-weight: 500;
-
   letter-spacing: -.035em;
   line-height: 1.05;
 
@@ -306,7 +272,6 @@ h1 {
 
   font-size: 22px;
   font-style: italic;
-
   margin: 0;
 
 }
@@ -324,20 +289,18 @@ h1 {
 
 /* ======================================
    DOCUMENTS À MARGE ROUGE
-   ====================================== */
+====================================== */
 
 .document {
 
   position: relative;
-
   margin: 28px 0;
 
   padding: 29px 32px 29px 45px;
 
   background: var(--blanc);
 
-  border: 1px solid
-    rgba(151,133,105,.35);
+  border: 1px solid rgba(151,133,105,.35);
 
   box-shadow:
     2px 4px 8px rgba(65,50,30,.09);
@@ -347,7 +310,6 @@ h1 {
 .document::before {
 
   content: "";
-
   position: absolute;
 
   top: 18px;
@@ -357,19 +319,16 @@ h1 {
   width: 2px;
 
   background: var(--rouge);
-
   opacity: .85;
 
 }
 
 /* ======================================
    INTRODUCTION
-   ====================================== */
+====================================== */
 
 .introduction p {
-
   margin: 0 0 18px;
-
 }
 
 .introduction p:last-child {
@@ -379,18 +338,16 @@ h1 {
 .introduction .conclusion {
 
   margin-top: 25px;
-
   padding-top: 18px;
 
   border-top: 1px solid var(--trait);
-
   font-style: italic;
 
 }
 
 /* ======================================
    TITRES DE SECTION
-   ====================================== */
+====================================== */
 
 .section-title {
 
@@ -402,28 +359,23 @@ h1 {
   font-weight: normal;
 
   letter-spacing: .08em;
-
   line-height: 1.6;
 
   text-transform: uppercase;
-
   color: var(--vert);
 
 }
 
 /* ======================================
    INDEX DES HUIT PERSONNES
-   ====================================== */
+====================================== */
 
 .sommaire-personnel {
 
   display: grid;
-
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 12px;
-
   margin: 25px 0 40px;
 
 }
@@ -431,11 +383,9 @@ h1 {
 .entree-index {
 
   display: block;
-
   padding: 17px 19px;
 
   background: rgba(238,228,201,.62);
-
   border: 1px solid var(--trait);
 
   text-decoration: none;
@@ -449,7 +399,6 @@ h1 {
 .entree-index:hover {
 
   background: var(--blanc);
-
   transform: translateY(-2px);
 
 }
@@ -462,7 +411,6 @@ h1 {
   font-size: 11px;
 
   color: #666054;
-
   margin-bottom: 6px;
 
 }
@@ -473,19 +421,17 @@ h1 {
 
   font-size: 23px;
   font-weight: 500;
-
   line-height: 1.2;
 
 }
 
 /* ======================================
    FICHES DU PERSONNEL
-   ====================================== */
+====================================== */
 
 .fiche-personnel {
 
   scroll-margin-top: 24px;
-
   margin: 30px 0;
 
 }
@@ -493,27 +439,22 @@ h1 {
 .fiche-entete {
 
   display: flex;
-
   justify-content: space-between;
   align-items: flex-start;
 
   gap: 20px;
-
   padding-bottom: 17px;
 
-  border-bottom:
-    1px solid var(--trait);
+  border-bottom: 1px solid var(--trait);
 
 }
 
 .fiche-numero {
 
   font-family: var(--machine);
-
   font-size: 11px;
 
   line-height: 1.7;
-
   color: #665e53;
 
 }
@@ -523,10 +464,9 @@ h1 {
   margin: 0;
 
   font-family: var(--serif);
-
   font-size: 32px;
-  font-weight: 500;
 
+  font-weight: 500;
   line-height: 1.15;
 
 }
@@ -536,11 +476,9 @@ h1 {
   margin: 10px 0 0;
 
   font-family: var(--machine);
-
   font-size: 12px;
 
   line-height: 1.6;
-
   color: var(--vert);
 
   text-transform: uppercase;
@@ -548,20 +486,16 @@ h1 {
 }
 
 .fiche-corps {
-
   margin-top: 22px;
-
 }
 
 .fiche-corps h3 {
 
   font-family: var(--machine);
-
   font-size: 12px;
   font-weight: normal;
 
   color: #656052;
-
   text-transform: uppercase;
 
   margin: 0 0 12px;
@@ -571,7 +505,6 @@ h1 {
 .fiche-corps p {
 
   margin: 0;
-
   font-size: 21px;
 
 }
@@ -579,11 +512,9 @@ h1 {
 .fiche-pied {
 
   margin-top: 23px;
-
   padding-top: 12px;
 
-  border-top:
-    1px dotted var(--trait);
+  border-top: 1px dotted var(--trait);
 
   font-family: var(--machine);
   font-size: 11px;
@@ -593,88 +524,157 @@ h1 {
 }
 
 /* ======================================
-   ENQUÊTEURS EXTÉRIEURS
-   ====================================== */
+   NOUVEAU : BLOCS BLANCS CLIQUABLES
+====================================== */
 
-.exterieurs {
+/*
+  Le lien entoure intégralement la fiche.
 
-  margin-top: 50px;
+  Le document conserve sa présentation.
+  Toute sa surface ouvre le dossier individuel.
+*/
+
+.fiche-lien {
+
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+
+  border-radius: 1px;
 
 }
 
+.fiche-lien .fiche-personnel {
+
+  transition:
+    background-color .18s,
+    box-shadow .18s,
+    transform .18s;
+
+}
+
+.fiche-lien:hover .fiche-personnel,
+.fiche-lien:focus-visible .fiche-personnel {
+
+  background-color: #fffdf5;
+
+  box-shadow:
+    3px 6px 14px rgba(65,50,30,.16);
+
+  transform: translateY(-2px);
+
+}
+
+.fiche-lien:hover .fiche-identite,
+.fiche-lien:focus-visible .fiche-identite {
+
+  text-decoration: underline;
+  text-decoration-color: var(--violet);
+  text-underline-offset: 5px;
+
+}
+
+.fiche-lien:focus-visible {
+
+  outline: 3px solid var(--violet);
+  outline-offset: 5px;
+
+}
+
+/* ======================================
+   ENQUÊTEURS EXTÉRIEURS
+====================================== */
+
+.exterieurs {
+  margin-top: 50px;
+}
+
 .exterieurs p {
-
   margin: 0 0 17px;
-
 }
 
 .note-service {
 
   font-family: var(--machine);
-
   font-size: 13px;
   line-height: 1.85;
 
 }
 
 /* ======================================
-   TAMPON
-   ====================================== */
+   NOUVEAU : DEUX TAMPONS
+====================================== */
 
-.tampon-zone {
+.tampons {
 
   display: flex;
+  justify-content: space-between;
+  align-items: center;
 
-  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 28px;
 
-  margin-top: 18px;
+  margin: 35px 8px 12px;
+  padding: 12px 0;
 
 }
 
-.tampon-zone img {
-
-  width: 120px;
-  height: auto;
+.tampons img {
 
   display: block;
+  height: auto;
+
+  object-fit: contain;
+
+  mix-blend-mode: multiply;
+  pointer-events: none;
+
+}
+
+.tampon-meld {
+
+  width: clamp(115px, 22vw, 175px);
+
+  opacity: .78;
+  transform: rotate(-11deg);
+
+}
+
+.tampon-classement {
+
+  width: clamp(115px, 23vw, 170px);
 
   opacity: .7;
-
-  transform: rotate(-9deg);
+  transform: rotate(8deg);
 
 }
 
 /* ======================================
    NAVIGATION
-   ====================================== */
+====================================== */
 
 .navigation {
 
   display: flex;
-
   justify-content: space-between;
 
   flex-wrap: wrap;
-
   gap: 18px;
 
   margin-top: 55px;
-
   padding-top: 22px;
 
-  border-top:
-    2px solid var(--encre);
+  border-top: 2px solid var(--encre);
 
 }
 
 .navigation a {
 
   font-family: var(--machine);
-
   font-size: 12px;
 
   line-height: 1.8;
-
   text-underline-offset: 4px;
 
 }
@@ -682,36 +682,30 @@ h1 {
 .retour-haut {
 
   display: inline-block;
-
   margin-top: 15px;
 
   font-family: var(--machine);
-
   font-size: 11px;
 
 }
 
 /* ======================================
    PIED DE PAGE
-   ====================================== */
+====================================== */
 
 .footer {
 
   margin-top: 50px;
-
   padding-top: 20px;
 
-  border-top:
-    1px solid var(--trait);
+  border-top: 1px solid var(--trait);
 
   display: flex;
-
   justify-content: space-between;
 
   gap: 20px;
 
   font-family: var(--machine);
-
   font-size: 11px;
   line-height: 1.8;
 
@@ -723,7 +717,7 @@ h1 {
 
 /* ======================================
    MOBILE
-   ====================================== */
+====================================== */
 
 @media (max-width: 650px) {
 
@@ -734,9 +728,7 @@ h1 {
   .page {
 
     margin: 15px auto 30px;
-
-    box-shadow:
-      4px 6px 0 #c6b99c;
+    box-shadow: 4px 6px 0 #c6b99c;
 
   }
 
@@ -775,6 +767,14 @@ h1 {
     font-size: 19px;
   }
 
+  .tampons {
+
+    gap: 18px;
+    margin-left: 0;
+    margin-right: 0;
+
+  }
+
   .footer {
     display: block;
   }
@@ -787,7 +787,7 @@ h1 {
 
 /* ======================================
    ACCESSIBILITÉ
-   ====================================== */
+====================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -795,7 +795,8 @@ h1 {
     scroll-behavior: auto;
   }
 
-  .entree-index {
+  .entree-index,
+  .fiche-lien .fiche-personnel {
     transition: none;
   }
 
@@ -803,7 +804,7 @@ h1 {
 
 /* ======================================
    IMPRESSION
-   ====================================== */
+====================================== */
 
 @media print {
 
@@ -819,7 +820,6 @@ h1 {
   .page {
 
     width: 100%;
-
     margin: 0;
     padding: 20mm;
 
@@ -842,9 +842,7 @@ h1 {
 
 </head>
 
-
 <body>
-
 
 <!-- BANDEAU -->
 
@@ -858,8 +856,9 @@ h1 {
 
 <main class="page" id="haut">
 
-
-  <!-- EN-TÊTE ADMINISTRATIF -->
+  <!-- ======================================
+       EN-TÊTE ADMINISTRATIF
+  ====================================== -->
 
   <header class="top">
 
@@ -882,7 +881,9 @@ h1 {
   </header>
 
 
-  <!-- TITRE -->
+  <!-- ======================================
+       TITRE
+  ====================================== -->
 
   <header class="titre-page">
 
@@ -905,7 +906,9 @@ h1 {
   </header>
 
 
-  <!-- INTRODUCTION VALIDÉE -->
+  <!-- ======================================
+       INTRODUCTION
+  ====================================== -->
 
   <section
     class="introduction document"
@@ -953,7 +956,9 @@ h1 {
   </section>
 
 
-  <!-- SOMMAIRE -->
+  <!-- ======================================
+       INDEX NOMINATIF
+  ====================================== -->
 
   <section
     id="effectifs"
@@ -967,73 +972,49 @@ h1 {
       01 / Index nominatif
     </h2>
 
-
     <nav
       class="sommaire-personnel"
       aria-label="Index du personnel"
     >
 
       <a class="entree-index" href="#paul">
-
         <small>FICHE P-001</small>
         <strong>Paul de Vauclerc</strong>
-
       </a>
-
 
       <a class="entree-index" href="#suzanne">
-
         <small>FICHE P-002</small>
         <strong>Suzanne Charrenson</strong>
-
       </a>
-
 
       <a class="entree-index" href="#christian">
-
         <small>FICHE P-003</small>
         <strong>Christian Boidy</strong>
-
       </a>
-
 
       <a class="entree-index" href="#charles">
-
         <small>FICHE P-004</small>
         <strong>Charles Pinson</strong>
-
       </a>
-
 
       <a class="entree-index" href="#francois">
-
         <small>FICHE P-005</small>
         <strong>François Phạm</strong>
-
       </a>
-
 
       <a class="entree-index" href="#mireille">
-
         <small>FICHE P-006</small>
         <strong>Mireille Aubry</strong>
-
       </a>
-
 
       <a class="entree-index" href="#henri">
-
         <small>FICHE P-007</small>
         <strong>Henri Martin</strong>
-
       </a>
 
-
       <a class="entree-index" href="#jean-philippe">
-
         <small>FICHE P-008</small>
         <strong>Jean-Philippe Lafont</strong>
-
       </a>
 
     </nav>
@@ -1042,8 +1023,9 @@ h1 {
 
 
   <!-- ======================================
-       FICHES INDIVIDUELLES
-       ====================================== -->
+       ÉTAT DES FONCTIONS
+       LES HUIT BLOCS BLANCS SONT CLIQUABLES
+  ====================================== -->
 
   <section
     id="fiches"
@@ -1058,396 +1040,476 @@ h1 {
     </h2>
 
 
-    <!-- PAUL -->
+    <!-- ==================================
+         P-001 — PAUL DE VAUCLERC
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="paul"
+    <a
+      class="fiche-lien"
+      href="paul-de-vauclerc.html"
+      aria-label="Consulter le dossier de Paul de Vauclerc"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="paul"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Paul de Vauclerc
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Direction
+            <h2 class="fiche-identite">
+              Paul de Vauclerc
+            </h2>
+
+            <p class="fiche-fonction">
+              Direction
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-001
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Choisir les études et les missions,
+            apprécier les conclusions, signer
+            la correspondance et répondre
+            de l’activité du Bureau.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-001
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Choisir les études et les missions,
-          apprécier les conclusions, signer
-          la correspondance et répondre
-          de l’activité du Bureau.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- SUZANNE -->
+    <!-- ==================================
+         P-002 — SUZANNE CHARRENSON
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="suzanne"
+    <a
+      class="fiche-lien"
+      href="suzanne-charrenson.html"
+      aria-label="Consulter le dossier de Suzanne Charrenson"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="suzanne"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Suzanne Charrenson
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Assistance du directeur
+            <h2 class="fiche-identite">
+              Suzanne Charrenson
+            </h2>
+
+            <p class="fiche-fonction">
+              Assistance du directeur
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-002
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Préparer les entretiens, organiser
+            le travail autour de Paul, orienter
+            les demandes et veiller à leur suivi.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-002
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Préparer les entretiens, organiser
-          le travail autour de Paul, orienter
-          les demandes et veiller à leur suivi.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- CHRISTIAN -->
+    <!-- ==================================
+         P-003 — CHRISTIAN BOIDY
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="christian"
+    <a
+      class="fiche-lien"
+      href="christian-boidy.html"
+      aria-label="Consulter le dossier de Christian Boidy"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="christian"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Christian Boidy
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Conseil scientifique
+            <h2 class="fiche-identite">
+              Christian Boidy
+            </h2>
+
+            <p class="fiche-fonction">
+              Conseil scientifique
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-003
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Examiner les questions scientifiques,
+            proposer des vérifications et entretenir
+            les relations avec des spécialistes.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-003
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Examiner les questions scientifiques,
-          proposer des vérifications et entretenir
-          les relations avec des spécialistes.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- CHARLES -->
+    <!-- ==================================
+         P-004 — CHARLES PINSON
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="charles"
+    <a
+      class="fiche-lien"
+      href="charles-pinson.html"
+      aria-label="Consulter le dossier de Charles Pinson"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="charles"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Charles Pinson
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Archives et documentation
+            <h2 class="fiche-identite">
+              Charles Pinson
+            </h2>
+
+            <p class="fiche-fonction">
+              Archives et documentation
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-004
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Conserver, classer, retrouver et rapprocher
+            les pièces ; tenir la mémoire documentaire
+            du Bureau.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-004
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Conserver, classer, retrouver et rapprocher
-          les pièces ; tenir la mémoire documentaire
-          du Bureau.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- FRANÇOIS -->
+    <!-- ==================================
+         P-005 — FRANÇOIS PHẠM
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="francois"
+    <a
+      class="fiche-lien"
+      href="francois-pham.html"
+      aria-label="Consulter le dossier de François Phạm"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="francois"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            François Phạm
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Organisation des missions
+            <h2 class="fiche-identite">
+              François Phạm
+            </h2>
+
+            <p class="fiche-fonction">
+              Organisation des missions
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-005
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Préparer les déplacements, les contacts
+            et les moyens matériels ; suivre les dépenses
+            et les difficultés pratiques.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-005
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Préparer les déplacements, les contacts
-          et les moyens matériels ; suivre les dépenses
-          et les difficultés pratiques.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- MIREILLE -->
+    <!-- ==================================
+         P-006 — MIREILLE AUBRY
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="mireille"
+    <a
+      class="fiche-lien"
+      href="mireille-aubry.html"
+      aria-label="Consulter le dossier de Mireille Aubry"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="mireille"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Mireille Aubry
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Sténodactylographie
+            <h2 class="fiche-identite">
+              Mireille Aubry
+            </h2>
+
+            <p class="fiche-fonction">
+              Sténodactylographie
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-006
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Prendre les notes dictées, mettre au net
+            les courriers et rapports, préparer leurs doubles
+            et leur transmission.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-006
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Prendre les notes dictées, mettre au net
-          les courriers et rapports, préparer leurs doubles
-          et leur transmission.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- HENRI -->
+    <!-- ==================================
+         P-007 — HENRI MARTIN
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="henri"
+    <a
+      class="fiche-lien"
+      href="henri-martin.html"
+      aria-label="Consulter le dossier de Henri Martin"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="henri"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Henri Martin
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Accès et sécurité
+            <h2 class="fiche-identite">
+              Henri Martin
+            </h2>
+
+            <p class="fiche-fonction">
+              Accès et sécurité
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-007
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Veiller aux accès, aux clés,
+            à la circulation matérielle des documents
+            et aux dispositions pratiques de sécurité.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-007
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Veiller aux accès, aux clés,
-          à la circulation matérielle des documents
-          et aux dispositions pratiques de sécurité.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
 
-    <!-- JEAN-PHILIPPE -->
+    <!-- ==================================
+         P-008 — JEAN-PHILIPPE LAFONT
+    ================================== -->
 
-    <article
-      class="fiche-personnel document"
-      id="jean-philippe"
+    <a
+      class="fiche-lien"
+      href="jean-philippe-lafont.html"
+      aria-label="Consulter le dossier de Jean-Philippe Lafont"
     >
 
-      <header class="fiche-entete">
+      <article
+        class="fiche-personnel document"
+        id="jean-philippe"
+      >
 
-        <div>
+        <header class="fiche-entete">
 
-          <h2 class="fiche-identite">
-            Jean-Philippe Lafont
-          </h2>
+          <div>
 
-          <p class="fiche-fonction">
-            Attributions diverses
+            <h2 class="fiche-identite">
+              Jean-Philippe Lafont
+            </h2>
+
+            <p class="fiche-fonction">
+              Attributions diverses
+            </p>
+
+          </div>
+
+          <span class="fiche-numero">
+            P-008
+          </span>
+
+        </header>
+
+        <div class="fiche-corps">
+
+          <h3>
+            Responsabilité principale
+          </h3>
+
+          <p>
+            Participer à des travaux dont l’objet varie
+            selon les demandes ; ses attributions
+            restent difficiles à résumer.
           </p>
 
         </div>
 
-        <span class="fiche-numero">
-          P-008
-        </span>
+        <div class="fiche-pied">
+          DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
+        </div>
 
-      </header>
+      </article>
 
-      <div class="fiche-corps">
-
-        <h3>
-          Responsabilité principale
-        </h3>
-
-        <p>
-          Participer à des travaux dont l’objet varie
-          selon les demandes ; ses attributions
-          restent difficiles à résumer.
-        </p>
-
-      </div>
-
-      <div class="fiche-pied">
-        DOCUMENT DE SERVICE · ÉTAT DES FONCTIONS
-      </div>
-
-    </article>
+    </a>
 
   </section>
 
 
   <!-- ======================================
        COLLABORATEURS EXTÉRIEURS
-       ====================================== -->
+  ====================================== -->
 
   <section
     class="exterieurs"
@@ -1505,7 +1567,9 @@ h1 {
   </section>
 
 
-  <!-- NOTE FINALE -->
+  <!-- ======================================
+       NOTE DU SERVICE
+  ====================================== -->
 
   <section aria-label="Note du service">
 
@@ -1543,7 +1607,35 @@ h1 {
   </section>
 
 
-  <!-- NAVIGATION -->
+  <!-- ======================================
+       DEUX TAMPONS ADMINISTRATIFS
+  ====================================== -->
+
+  <div
+    class="tampons"
+    aria-label="Tampons administratifs"
+  >
+
+    <img
+      class="tampon-meld"
+      src="images/images/images/tampon_meld.png"
+      alt="Tampon officiel M.E.L.D."
+      loading="lazy"
+    >
+
+    <img
+      class="tampon-classement"
+      src="images/images/images/a-classer.png"
+      alt="Tampon À classer"
+      loading="lazy"
+    >
+
+  </div>
+
+
+  <!-- ======================================
+       NAVIGATION
+  ====================================== -->
 
   <nav
     class="navigation"
@@ -1568,7 +1660,9 @@ h1 {
   </a>
 
 
-  <!-- PIED DE PAGE -->
+  <!-- ======================================
+       PIED DE PAGE
+  ====================================== -->
 
   <footer class="footer">
 
@@ -1585,8 +1679,7 @@ h1 {
 
   </footer>
 
-
 </main>
 
 </body>
-  </html>
+</html>
