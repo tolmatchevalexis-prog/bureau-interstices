@@ -1,6 +1,9 @@
+
 <!doctype html>
 <html lang="fr">
+
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
@@ -9,6 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
+
 :root {
   --papier:#ded3b8;
   --feuille:#f3e9cf;
@@ -17,9 +21,12 @@
   --rouge:#ad5346;
   --trait:#b3a88e;
   --violet:#48338a;
+  --vert:#4c5546;
 }
 
-* { box-sizing:border-box; }
+* {
+  box-sizing:border-box;
+}
 
 body {
   margin:0;
@@ -54,11 +61,20 @@ h2 {
   font-weight:normal;
 }
 
-small,h2,label,button,.ref,footer,.notice {
+small,
+h2,
+label,
+button,
+.ref,
+footer,
+.notice,
+.matricule,
+.titre-registre {
   font-family:"Special Elite","Courier New",monospace;
 }
 
-small,.ref {
+small,
+.ref {
   font-size:11px;
 }
 
@@ -80,6 +96,57 @@ small,.ref {
   background:var(--rouge);
 }
 
+/* REGISTRE DES ENQUÊTEURS */
+
+.titre-registre {
+  font-size:13px;
+  color:var(--vert);
+  margin:42px 0 20px;
+  font-weight:normal;
+}
+
+.registre {
+  display:grid;
+  gap:14px;
+}
+
+.enqueteur {
+  position:relative;
+  background:var(--blanc);
+  border:1px solid #97856959;
+  padding:22px 25px 22px 45px;
+}
+
+.enqueteur::before {
+  content:"";
+  position:absolute;
+  top:16px;
+  bottom:16px;
+  left:24px;
+  width:2px;
+  background:var(--rouge);
+}
+
+.enqueteur h3 {
+  margin:0 0 7px;
+  font-size:27px;
+  font-weight:500;
+  line-height:1.2;
+}
+
+.matricule {
+  font-size:12px;
+  color:var(--violet);
+  margin:0 0 10px;
+  line-height:1.8;
+  overflow-wrap:anywhere;
+}
+
+.profession {
+  margin:0;
+  font-size:19px;
+}
+
 label {
   display:block;
   font-size:13px;
@@ -92,7 +159,8 @@ label input {
   margin-right:12px;
 }
 
-button,.btn {
+button,
+.btn {
   display:inline-block;
   background:var(--encre);
   color:#fffaf0;
@@ -103,7 +171,8 @@ button,.btn {
   text-decoration:none;
 }
 
-button:hover,.btn:hover {
+button:hover,
+.btn:hover {
   background:var(--violet);
 }
 
@@ -122,15 +191,57 @@ footer {
   font-size:12px;
 }
 
-a { color:inherit; }
+a {
+  color:inherit;
+}
 
-[hidden] { display:none!important; }
+[hidden] {
+  display:none!important;
+}
+
+@media(max-width:600px) {
+
+  body {
+    padding:12px;
+    font-size:19px;
+  }
+
+  main {
+    margin:10px auto;
+    padding:25px 20px;
+  }
+
+  .document {
+    padding:23px 18px 23px 35px;
+  }
+
+  .document::before {
+    left:17px;
+  }
+
+  .enqueteur {
+    padding:20px 15px 20px 35px;
+  }
+
+  .enqueteur::before {
+    left:17px;
+  }
+
+  .enqueteur h3 {
+    font-size:24px;
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <main>
+
+<!-- EN-TÊTE -->
 
 <header>
 
@@ -153,6 +264,12 @@ CONSULTATION RESTREINTE
 <em>Collaborateurs extérieurs et accréditations</em>
 </p>
 
+
+<!-- ======================================
+     PREMIER BLOC EXISTANT
+     NOTE DU SERVICE
+====================================== -->
+
 <div class="document">
 
 <h2>NOTE DU SERVICE</h2>
@@ -163,7 +280,7 @@ Certains sont accrédités ; d'autres peuvent être sollicités ponctuellement.
 </p>
 
 <p>
-Le registre nominatif n'est pas encore communicable.
+Le registre nominatif peut être consulté ci-dessous.
 </p>
 
 <p>
@@ -176,6 +293,198 @@ Une première déclaration peut néanmoins être déposée :
 </p>
 
 </div>
+
+
+<!-- ======================================
+     NOUVEAU REGISTRE
+====================================== -->
+
+<h2 class="titre-registre">
+REGISTRE NOMINATIF — COLLABORATEURS EXTÉRIEURS
+</h2>
+
+<section class="registre" aria-label="Liste des enquêteurs">
+
+
+<!-- VIOLETTE DUMAS -->
+
+<article class="enqueteur">
+
+<h3>Violette Dumas</h3>
+
+<p class="matricule">
+DUM - 10121964 - 439
+</p>
+
+<p class="profession">
+Géomètre
+</p>
+
+</article>
+
+
+<!-- BASILE LE GOFF -->
+
+<article class="enqueteur">
+
+<h3>Basile Le Goff</h3>
+
+<p class="matricule">
+LEG - 17031962 - 218
+</p>
+
+<p class="profession">
+Scaphandrier civil
+</p>
+
+</article>
+
+
+<!-- NADIA BENSAÏD -->
+
+<article class="enqueteur">
+
+<h3>Nadia Bensaïd</h3>
+
+<p class="matricule">
+BEN - 24091965 - 607
+</p>
+
+<p class="profession">
+Preneuse de son pour la radio
+</p>
+
+</article>
+
+
+<!-- GASTON MÉRAND -->
+
+<article class="enqueteur">
+
+<h3>Gaston Mérand</h3>
+
+<p class="matricule">
+MER - 08061961 - 351
+</p>
+
+<p class="profession">
+Serrurier, ancien perceur de coffres
+</p>
+
+</article>
+
+
+<!-- ODETTE VIAL -->
+
+<article class="enqueteur">
+
+<h3>Odette Vial</h3>
+
+<p class="matricule">
+VIA - 12021963 - 482
+</p>
+
+<p class="profession">
+Ancienne illusionniste de cabaret
+</p>
+
+</article>
+
+
+<!-- LÉON KESSLER -->
+
+<article class="enqueteur">
+
+<h3>Léon Kessler</h3>
+
+<p class="matricule">
+KES - 04111960 - 173
+</p>
+
+<p class="profession">
+Médecin légiste retraité
+</p>
+
+</article>
+
+
+<!-- ARMAND DELMAS -->
+
+<article class="enqueteur">
+
+<h3>Armand Delmas</h3>
+
+<p class="matricule">
+DEL - 29041964 - 526
+</p>
+
+<p class="profession">
+Reporter indépendant
+</p>
+
+</article>
+
+
+<!-- RAOUL VERNIER -->
+
+<article class="enqueteur">
+
+<h3>Raoul Vernier</h3>
+
+<p class="matricule">
+VER - 15011962 - 394
+</p>
+
+<p class="profession">
+Ancien barbouze
+</p>
+
+</article>
+
+
+<!-- SAMUEL KAMAU -->
+
+<article class="enqueteur">
+
+<h3>Samuel Kamau</h3>
+
+<p class="matricule">
+KAM - 21071965 - 735
+</p>
+
+<p class="profession">
+Guide de safari kényan
+</p>
+
+</article>
+
+
+<!-- VIKTOR BELOV -->
+
+<article class="enqueteur">
+
+<h3>
+Viktor Belov
+</h3>
+
+<p class="matricule">
+BEL - 05051966 - 864
+</p>
+
+<p class="profession">
+Ancien opérationnel soviétique,
+spécialiste des transmissions
+</p>
+
+</article>
+
+</section>
+
+
+<!-- ======================================
+     SECOND BLOC EXISTANT
+     FORMULAIRE E-04
+====================================== -->
 
 <form id="demande">
 
@@ -206,6 +515,9 @@ DÉPOSER LA DÉCLARATION
 
 </form>
 
+
+<!-- RÉPONSE AU FORMULAIRE -->
+
 <div class="reponse" id="reponse" hidden>
 
 <p>
@@ -229,6 +541,9 @@ de votre coopération provisoire.
 
 </div>
 
+
+<!-- PIED DE PAGE -->
+
 <footer>
 
 <p>
@@ -245,19 +560,30 @@ M.E.L.D. · DOCUMENT E-04
 
 </main>
 
+
 <script>
-const formulaire = document.getElementById("demande");
-const reponse = document.getElementById("reponse");
 
-formulaire.addEventListener("submit",function(event){
-  event.preventDefault();
+const formulaire =
+  document.getElementById("demande");
 
-  if(!formulaire.reportValidity()) return;
+const reponse =
+  document.getElementById("reponse");
 
-  formulaire.hidden = true;
-  reponse.hidden = false;
-});
+formulaire.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    if(!formulaire.reportValidity()) return;
+
+    formulaire.hidden = true;
+    reponse.hidden = false;
+
+  }
+);
+
 </script>
 
 </body>
-  </html>
+</html>
