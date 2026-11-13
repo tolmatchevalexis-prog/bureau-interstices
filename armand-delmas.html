@@ -1,1 +1,382 @@
-rmand-delmas.html, 
+
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Les fruits d’or — Une lettre d’Armand Delmas à Paul de Vauclerc. Dakar, 1er avril 1966. Bureau des Interstices.">
+
+<title>Les fruits d’or — Armand Delmas</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet">
+
+<style>
+
+/* PAPIER ET TYPOGRAPHIE */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* GRAIN IRRÉGULIER DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* FEUILLE PRINCIPALE */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* TITRE */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.dedicace {
+  margin: 0;
+  font-size: 22px;
+  font-style: italic;
+}
+
+/* CORRESPONDANCE */
+
+.lettre {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+.date {
+  margin: 0 0 42px;
+  text-align: right;
+  font-size: 20px;
+}
+
+.appel {
+  margin: 0 0 32px;
+}
+
+.lettre p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* LETTRINE DU PREMIER PARAGRAPHE */
+
+.corps-lettre > p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+/* PHRASE RETROUVÉE SUR LE FEUILLET */
+
+.inscription {
+  margin: 25px 0;
+  text-align: center !important;
+  font-style: italic;
+}
+
+/* SIGNATURE */
+
+.salutation {
+  margin-top: 38px !important;
+}
+
+.signature {
+  margin-top: 8px !important;
+  padding-left: 45%;
+  font-size: 24px;
+  font-style: italic;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 630px;
+  margin: 62px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:focus-visible {
+  outline: 2px solid #24374f;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .date {
+    margin-bottom: 34px;
+  }
+
+  .lettre p {
+    text-align: left;
+  }
+
+  .signature {
+    padding-left: 25%;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+    border: 0;
+    box-shadow: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>LES FRUITS D’OR</h1>
+
+<p class="dedicace">
+À Paul de Vauclerc
+</p>
+
+</header>
+
+<article class="lettre" aria-label="Les fruits d’or">
+
+<p class="date">
+Dakar, le 1er avril 1966
+</p>
+
+<p class="appel">
+Monsieur le Directeur,
+</p>
+
+<div class="corps-lettre">
+
+<p>
+J’ai prêté mon carnet à un confrère pour l’ouverture du Festival mondial des arts nègres. Il y a noté, sous le nom du médecin que je venais de voir, trois phrases de M. Malraux. À l’entrée de l’Assemblée, les gardes rouges attendaient à cheval. Mon confrère les a très bien décrits. Dans une heure, j’aurai mon article.
+</p>
+
+<p>
+Je vous écris pour le médecin. Il a soigné Lucien Garel et m’a dit ce matin que Garel était mort d’un empoisonnement.
+</p>
+
+<p>
+Vous avez peut-être reçu sa brochure sur l’or du Manding. Il l’avait fait imprimer à ses frais et m’avait demandé, en me donnant mon exemplaire, de la citer avec le numéro de la page, au cas où quelqu’un voudrait vérifier. Je l’ai revu mardi. Il avait sur lui une plaque de métal brun de la taille d’une carte de visite. Il l’a posée sur la table entre nos deux tasses. Il y avait sept trous, assez petits pour qu’il ait fallu l’essuyer avec sa serviette avant de les voir tous.
+</p>
+
+<p>
+Garel disait avoir découvert cette plaque et s’en être servi pour localiser les arbres aux fruits d’or de l’ancien empire mandingue. Il suffisait, paraît-il, de la poser sur la bonne carte. Il m’a montré quel bord il fallait tourner vers le fleuve. Je lui ai demandé de quel fleuve il s’agissait. Il a remis la plaque dans sa boîte.
+</p>
+
+<p>
+Une documentaliste du Festival, Mme Diagne, m’a retrouvé le passage d’al-‘Umari que Garel citait dans sa brochure. On y parle de plantes dont les racines donnent de l’or. Elle est restée penchée sur le livre pendant que je lui répétais l’histoire des fruits. Puis elle m’a demandé si Garel était de ceux qui avaient besoin que l’or se voie de loin. Je lui ai répondu que je le croyais capable de faire tout le chemin pour vérifier.
+</p>
+
+<p>
+Jeudi à l’aube, une femme qui ouvrait sa boutique l’a trouvé dans la rue. Il avait ses souliers à la main et changeait de trottoir chaque fois qu’une porte s’ouvrait. Elle lui a offert une chaise. Il lui a demandé de rentrer la chaise, de peur qu’on la voie. Quand elle lui a demandé qui, il lui a répondu « les hommes-léopards ». Il les disait à ses trousses depuis la veille. C’est elle qui m’a raconté cela, en prenant soin de distinguer les paroles qu’elle avait entendues de celles que les voisins lui avaient répétées.
+</p>
+
+<p>
+On l’a conduit à l’hôpital. Quand je suis arrivé, il dormait. J’ai attendu dans le couloir jusqu’à ce qu’on me prie de rentrer chez moi. Il est mort le soir même.
+</p>
+
+<p>
+Mme Sarr, qui tient la pension, m’a dit qu’un homme était venu lui rendre la clef de la chambre de Garel ce soir-là. Elle l’avait déjà vu monter avec lui deux fois. Il tenait sous le bras une petite boîte vert pâle dont un angle était maintenu par du sparadrap. C’est dans cette boîte que Garel avait rangé sa plaque devant moi. Mme Sarr lui a demandé s’il fallait conserver la chambre. Il lui a répondu qu’il avait un avion à prendre.
+</p>
+
+<p>
+Elle avait inscrit son nom sur la note, car c’est lui qui l’a réglée. André Lestang. Une employée de l’agence m’a confirmé qu’un voyageur de ce nom avait quitté Dakar hier soir avec un billet pour Cotonou, au Dahomey. Je pense qu’il a repris la plaque. Je sais qu’il a emporté la boîte.
+</p>
+
+<p>
+Je joins à cette lettre un dessin que Garel a laissé dans le tiroir de sa table de nuit. Il a tracé les sept trous et indiqué le bord du fleuve d’un trait de crayon. Au bas de la feuille, il y a un endroit où le papier est très mince. En tournant la feuille vers la fenêtre, j’y ai lu cinq mots.
+</p>
+
+<p class="inscription">
+Le premier tombe sans bruit.
+</p>
+
+<p>
+J’ai demandé à Mme Sarr de tenir le dessin comme je l’avais tenu. Elle voyait les doigts qu’elle avait derrière le papier. J’ai replié le feuillet. Je vous serais reconnaissant de le faire regarder par Pinson avant de lui montrer ma lettre.
+</p>
+
+<p>
+Si vous pouvez me donner un nom à l’ambassade à Cotonou, faites-le télégraphier à la pension. Je voudrais y aller tant que quelqu’un se souvient de Lestang à l’arrivée.
+</p>
+
+<p>
+Mme Sarr m’a aussi confié l’adresse de la sœur de Garel. Elle lui avait envoyé une cravate pour l’ouverture du Festival. Il la portait mardi, quand il m’a montré la plaque. Je lui écrirai ce soir. Je me souviens de la couleur.
+</p>
+
+<p class="salutation">
+Votre dévoué,
+</p>
+
+<p class="signature">
+Armand Delmas
+</p>
+
+</div>
+
+</article>
+
+<footer>
+
+<a href="enqueteurs.html">
+← Retour aux enquêteurs
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
+
