@@ -1,1 +1,425 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Fermeture comprise — Une enquête de Gaston Mérand. Paris, novembre 1966. Bureau des Interstices.">
+
+<title>Fermeture comprise — Gaston Mérand</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet">
+
+<style>
+
+/* PAPIER ET TYPOGRAPHIE */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* GRAIN IRRÉGULIER DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* FEUILLE PRINCIPALE */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* TITRE */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.sous-titre {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.date {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  color: #5e594d;
+}
+
+/* TEXTE LITTÉRAIRE */
+
+article {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+article p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* LETTRINE */
+
+article p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+/* DIALOGUES */
+
+.dialogue {
+  text-align: left;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 630px;
+  margin: 62px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:focus-visible {
+  outline: 2px solid #24374f;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .sous-titre {
+    font-size: 20px;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+    border: 0;
+    box-shadow: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>FERMETURE COMPRISE</h1>
+
+<p class="sous-titre">
+Une enquête de Gaston Mérand, serrurier
+</p>
+
+<p class="date">
+Paris, novembre 1966. Le bureau d’Henri Martin.
+</p>
+
+</header>
+
+<article aria-label="Fermeture comprise">
+
+<p>
+Henri Martin posa le rapport sous la facture. Son parapluie était appuyé contre le radiateur. Il suivit les lignes du doigt.
+</p>
+
+<p class="dialogue">
+— Déplacement, ouverture, fermeture. La fermeture aussi ?<br>
+— L’ouverture, c’était le travail. Pour la fermeture, j’ai pris sur moi.<br>
+— À en juger par la facture, vous avez pris sur nous.
+</p>
+
+<p>
+Gaston Mérand tira une chaise.
+</p>
+
+<p class="dialogue">
+— Asseyez-vous, dit Martin.<br>
+— Je vous en prie.<br>
+— Je vous ai à l’œil, mon vieux.
+</p>
+
+<p>
+Martin dégagea le rapport.
+</p>
+
+<p class="dialogue">
+— Vous arrivez rue du Bac à trois heures. À trois heures dix, le gardien vous raccompagne. Entre les deux, vous avez passé la nuit dans le coffre.<br>
+— Je me souviens d’y avoir passé la nuit.<br>
+— Dix minutes pour une nuit. Vous dormez vite.<br>
+— J’étais réveillé tout du long.
+</p>
+
+<p>
+Martin tourna la feuille.
+</p>
+
+<p class="dialogue">
+— Qu’est-ce qu’il y avait dans le coffre ?<br>
+— Rien. Le registre qu’on m’avait demandé de chercher, le gardien l’a trouvé sur le bureau.<br>
+— Voilà déjà une excellente raison de nous facturer une ouverture.<br>
+— Faudra lui apprendre à chercher avant de nous téléphoner.
+</p>
+
+<p>
+Martin leva les yeux. Gaston avait posé ses mains à plat sur ses cuisses.
+</p>
+
+<p class="dialogue">
+— Racontez-moi votre nuit, Mérand.<br>
+— Ça m’est revenu au moment où j’ai ouvert. J’avais les genoux sous le menton, la joue contre le métal. Quelqu’un descendait l’escalier. Il s’arrêtait à chaque palier pour se moucher. J’attendais qu’il me trouve. Il a continué à descendre.
+</p>
+
+<p>
+Gaston prit le temps de remettre son pantalon en place sur un genou.
+</p>
+
+<p class="dialogue">
+— Au matin, j’avais très soif. Je me rappelle surtout ça.<br>
+— Vous aviez bu avant d’y aller ?<br>
+— Un café. Il était mauvais. Ça s’arrête là.
+</p>
+
+<p>
+Martin tapota la marge du rapport.
+</p>
+
+<p class="dialogue">
+— Trente-sept centimètres de profondeur. C’est vous qui avez pris la mesure.<br>
+— Oui.<br>
+— Vous avez une idée de la place que vous prenez quand vous vous asseyez ?<br>
+— À peu près. Vous me faites toujours attendre debout, j’ai eu le temps d’y réfléchir.
+</p>
+
+<p>
+Martin retira sa main de la feuille.
+</p>
+
+<p class="dialogue">
+— Vous déraillez, Mérand. Dix minutes dans un bureau, une nuit dans un coffre. Il y a une page de trop dans votre rapport.<br>
+— Laquelle ?<br>
+— Celle qui vient après le coffre vide.<br>
+— Gardez-la quand même. C’est là que je parle de la porte.
+</p>
+
+<p>
+Martin baissa les yeux.
+</p>
+
+<p class="dialogue">
+— Vous avez refermé le coffre.<br>
+— Il est resté ouvert. J’ai fermé la porte du bureau.<br>
+— Pour quelle raison ?<br>
+— J’ai entendu trois pas derrière moi. Le gardien m’attendait dans l’escalier. Je l’avais en face de moi.
+</p>
+
+<p>
+Henri attendit la suite.
+</p>
+
+<p class="dialogue">
+— J’ai fermé à clé. Les pas se sont arrêtés.<br>
+— Le plancher travaille. C’est courant dans les vieux immeubles.<br>
+— Possible. Lui aussi avait l’air de faire des heures supplémentaires.
+</p>
+
+<p>
+Martin rapprocha la facture.
+</p>
+
+<p class="dialogue">
+— Je vous paie le déplacement et l’ouverture.<br>
+— Vous pouvez me régler la fermeture. Les pas, je vous les raconte pour rien.
+</p>
+
+<p>
+Gaston sortit une clé de sa poche et la posa sur le papier. Henri la regarda.
+</p>
+
+<p class="dialogue">
+— Le gardien a un double ?<br>
+— Oui.<br>
+— Son numéro.<br>
+— En bas de la deuxième page.
+</p>
+
+<p>
+Martin retourna le rapport et tira le téléphone vers lui.
+</p>
+
+<p class="dialogue">
+— Vous croyez aux pas, maintenant ? demanda Gaston.<br>
+— Je crois qu’il a un double.
+</p>
+
+<p>
+Il signa la facture et décrocha.
+</p>
+
+</article>
+
+<footer>
+
+<a href="enqueteurs.html">
+← Retour aux enquêteurs
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
 
