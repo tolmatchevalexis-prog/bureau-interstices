@@ -1,1 +1,707 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
 
+<title>Gabrielle — Bureau des Interstices</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap"
+      rel="stylesheet">
+
+<style>
+
+/* IDENTITÉ DU BUREAU */
+
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --blanc:#fffaf0;
+  --encre:#292920;
+  --bleu:#24374f;
+  --rouge:#ad5346;
+  --trait:#b3a88e;
+
+  --serif:"EB Garamond",Garamond,Georgia,serif;
+  --machine:"Special Elite","Courier New",monospace;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  color:var(--encre);
+  font:20px/1.55 var(--serif);
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff9df88,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 75%,
+      #74552816,
+      transparent 52%
+    ),
+    var(--papier);
+}
+
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:20;
+  pointer-events:none;
+  opacity:.11;
+
+  background-image:url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+}
+
+a {
+  color:inherit;
+}
+
+a:focus-visible,
+summary:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+/* DOCUMENT PRINCIPAL */
+
+.page {
+  position:relative;
+  width:min(850px,calc(100% - 32px));
+  margin:34px auto 60px;
+  padding:clamp(25px,6vw,68px);
+
+  background:
+    radial-gradient(
+      ellipse at 10% 9%,
+      #fffff799,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border:1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content:"";
+  position:absolute;
+  inset:8px;
+  border:1px solid #5f4b2d17;
+  pointer-events:none;
+}
+
+/* EN-TÊTE */
+
+.entete {
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+
+  padding-bottom:20px;
+  border-bottom:2px solid var(--encre);
+
+  font:11px/1.8 var(--machine);
+  letter-spacing:.04em;
+}
+
+.entete .droite {
+  text-align:right;
+}
+
+h1 {
+  margin:55px 0 45px;
+  text-align:center;
+
+  font:500 clamp(45px,8vw,73px)/1.1 var(--serif);
+  letter-spacing:.025em;
+}
+
+/* PHOTOGRAPHIE */
+
+.photographie {
+  position:relative;
+  max-width:560px;
+  margin:0 auto 80px;
+}
+
+.photographie img {
+  display:block;
+  width:100%;
+  height:auto;
+
+  border:9px solid var(--blanc);
+
+  filter:grayscale(1) contrast(1.07);
+
+  box-shadow:
+    2px 5px 16px #352b2036;
+}
+
+/* AUCUNE LÉGENDE VISIBLE */
+
+/* PREMIÈRE PIÈCE */
+
+.piece-pinson {
+  position:relative;
+
+  min-height:430px;
+  padding:40px 44px;
+
+  background:var(--blanc);
+
+  border:1px solid #b7a98f;
+
+  box-shadow:
+    3px 6px 12px #352b2025;
+
+  transform:rotate(-.4deg);
+}
+
+.piece-pinson .administration {
+  font:11px/1.9 var(--machine);
+  color:#55574d;
+}
+
+.piece-pinson .feuille-blanche {
+  min-height:180px;
+}
+
+.annotation {
+  max-width:370px;
+  margin:12px 0 0 18px;
+
+  font:italic 25px/1.6 var(--serif);
+
+  transform:rotate(-2deg);
+}
+
+.signature-pinson {
+  margin:30px 0 0;
+  text-align:right;
+}
+
+.signature-pinson strong {
+  display:block;
+
+  font:italic 26px var(--serif);
+  font-weight:500;
+}
+
+.signature-pinson small {
+  display:block;
+
+  font:11px/1.7 var(--machine);
+  color:#656052;
+}
+
+/* TAMPON CONFIDENTIEL */
+
+.tampon-confidentiel {
+  position:absolute;
+  width:clamp(190px,48%,330px);
+  height:auto;
+
+  right:-13px;
+  top:-35px;
+
+  transform:rotate(11deg);
+
+  pointer-events:none;
+  user-select:none;
+
+  opacity:.88;
+  mix-blend-mode:multiply;
+}
+
+/* SÉPARATION ENTRE LES DOCUMENTS */
+
+.separation {
+  width:25%;
+  height:1px;
+  margin:82px auto;
+  background:#9b917d;
+}
+
+/* NOTE DE DIRECTION */
+
+.note-direction {
+  position:relative;
+
+  padding:36px 42px 45px;
+
+  background:#fffaf0;
+
+  border:1px solid #b7a98f;
+
+  box-shadow:
+    3px 6px 12px #352b2025;
+}
+
+.note-direction::before {
+  content:"";
+  position:absolute;
+  left:23px;
+  top:24px;
+  bottom:24px;
+  width:2px;
+  background:var(--rouge);
+  opacity:.75;
+}
+
+.note-entete {
+  margin:0 0 36px;
+
+  font:11px/1.8 var(--machine);
+  color:#55574d;
+}
+
+.note-titre {
+  margin:0 0 32px;
+
+  font:500 28px/1.3 var(--serif);
+  text-align:center;
+}
+
+.note-sous-titre {
+  margin:-20px 0 34px;
+  text-align:center;
+
+  font:italic 16px var(--serif);
+  color:#676052;
+}
+
+.note-corps p {
+  margin:0 0 23px;
+  font-size:20px;
+  line-height:1.7;
+}
+
+.note-corps p:last-child {
+  margin-bottom:0;
+}
+
+.signature-direction {
+  margin:42px 0 0;
+  text-align:right;
+}
+
+.signature-direction strong {
+  display:block;
+
+  font:italic 28px var(--serif);
+  font-weight:500;
+}
+
+.signature-direction small {
+  display:block;
+
+  font:11px/1.7 var(--machine);
+  color:#656052;
+}
+
+/* CRÉDITS DOCUMENTAIRES DISCRETS */
+
+.credits {
+  margin-top:70px;
+  padding-top:14px;
+
+  border-top:1px solid #b8ad97;
+
+  color:#666156;
+
+  font:10px/1.8 var(--machine);
+}
+
+.credits summary {
+  display:inline-block;
+  cursor:pointer;
+}
+
+.credits p {
+  max-width:620px;
+}
+
+.credits a {
+  color:var(--bleu);
+}
+
+/* NAVIGATION */
+
+.navigation {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:20px;
+
+  margin-top:35px;
+  padding-top:20px;
+
+  border-top:2px solid var(--encre);
+
+  font:11px/1.7 var(--machine);
+}
+
+.navigation a {
+  text-decoration:none;
+}
+
+.navigation a:hover {
+  text-decoration:underline;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size:18px;
+  }
+
+  .page {
+    margin:15px auto 35px;
+    box-shadow:4px 6px 0 #c6b99c;
+  }
+
+  .entete {
+    font-size:9px;
+  }
+
+  h1 {
+    margin:42px 0 35px;
+  }
+
+  .photographie {
+    margin-bottom:65px;
+  }
+
+  .photographie img {
+    border-width:5px;
+  }
+
+  .piece-pinson {
+    padding:30px 23px;
+    min-height:390px;
+  }
+
+  .tampon-confidentiel {
+    width:min(70%,280px);
+    top:-28px;
+    right:-9px;
+  }
+
+  .annotation {
+    margin-left:7px;
+    font-size:22px;
+  }
+
+  .separation {
+    margin:60px auto;
+  }
+
+  .note-direction {
+    padding:30px 25px 35px 34px;
+  }
+
+  .note-direction::before {
+    left:17px;
+  }
+
+  .note-corps p {
+    font-size:18px;
+  }
+
+  .note-titre {
+    font-size:25px;
+  }
+
+  .navigation {
+    font-size:10px;
+  }
+}
+
+@media print {
+
+  body {
+    background:white;
+  }
+
+  body::before {
+    display:none;
+  }
+
+  .page {
+    margin:0;
+    padding:20mm;
+    width:100%;
+    border:0;
+    box-shadow:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <!-- EN-TÊTE ADMINISTRATIF -->
+
+  <header class="entete">
+
+    <div>
+      RÉPUBLIQUE FRANÇAISE<br>
+      AFFAIRES CULTURELLES<br>
+      BUREAU DES INTERSTICES
+    </div>
+
+    <div class="droite">
+      M.E.L.D.<br>
+      PARIS — 1966<br>
+      DOCUMENT NON RÉFÉRENCÉ
+    </div>
+
+  </header>
+
+  <!-- IDENTITÉ DU DOSSIER -->
+
+  <h1>Gabrielle</h1>
+
+  <!--
+    PHOTOGRAPHIE HISTORIQUE
+    PARIS, 1965
+    WILLEM VAN DE POLL
+
+    AUCUNE LÉGENDE APPARENTE.
+  -->
+
+  <figure class="photographie">
+
+    <img
+      src="https://commons.wikimedia.org/wiki/Special:FilePath/Vrouw%20met%20pakjes%20in%20haar%20hand%2C%20Bestanddeelnr%20254-0417.jpg"
+      alt="Photographie ancienne d'une femme dans une rue de Paris"
+      loading="eager">
+
+  </figure>
+
+  <!--
+    PREMIÈRE PIÈCE
+    NOTE DE CHARLES PINSON
+  -->
+
+  <section class="piece-pinson"
+           aria-label="Note de Charles Pinson">
+
+    <div class="administration">
+      BUREAU DES INTERSTICES<br>
+      SERVICE DES ARCHIVES<br>
+      NOTE MANUSCRITE
+    </div>
+
+    <img
+      class="tampon-confidentiel"
+      src="images/images/images/tampon_meld_confidentiel.png"
+      alt="M.E.L.D. — CONFIDENTIEL">
+
+    <div class="feuille-blanche"></div>
+
+    <p class="annotation">
+      Elle était là avant l’ouverture du dossier.
+    </p>
+
+    <div class="signature-pinson">
+      <strong>Charles Pinson</strong>
+      <small>Archiviste</small>
+    </div>
+
+  </section>
+
+  <div class="separation"
+       aria-hidden="true"></div>
+
+  <!--
+    DEUXIÈME PIÈCE
+    NOTE DE PAUL DE VAUCLERC
+
+    TEXTE VALIDÉ.
+  -->
+
+  <section class="note-direction"
+           aria-labelledby="note-titre">
+
+    <div class="note-entete">
+      M.E.L.D. — DIRECTION<br>
+      DOCUMENT NON RÉFÉRENCÉ
+    </div>
+
+    <h2 class="note-titre"
+        id="note-titre">
+      Note personnelle du directeur
+    </h2>
+
+    <p class="note-sous-titre">
+      À conserver hors du registre ordinaire
+    </p>
+
+    <div class="note-corps">
+
+      <p>
+        Je me suis demandé, à plusieurs reprises,
+        qui avait autorisé Gabrielle à intervenir
+        dans les affaires de ce service.
+      </p>
+
+      <p>
+        La question suppose qu'une autorisation
+        ait été nécessaire. Elle suppose également
+        que Gabrielle soit intervenue.
+        Or je ne trouve aucun document permettant
+        de confirmer ni l'une ni l'autre
+        de ces propositions.
+      </p>
+
+      <p>
+        Il serait plus simple de lui demander
+        des explications.
+      </p>
+
+      <p>
+        Mais où la convoquer ?
+      </p>
+
+      <p>
+        À quelle adresse lui écrire ?
+      </p>
+
+      <p>
+        Et comment expliquer que certaines personnes
+        prétendent l'avoir rencontrée, alors que
+        d'autres, présentes au même endroit,
+        assurent n'avoir vu personne ?
+      </p>
+
+      <p>
+        Je pourrais attribuer ces contradictions
+        à des erreurs de témoignage.
+        C'est, dans bien des circonstances,
+        la démarche la plus raisonnable.
+      </p>
+
+      <p>
+        Une difficulté demeure.
+      </p>
+
+      <p>
+        Pourquoi ai-je le sentiment très net
+        de lui avoir déjà parlé ?
+      </p>
+
+      <p>
+        Je ne me souviens ni du lieu, ni du jour,
+        ni même de ce que nous aurions pu nous dire.
+      </p>
+
+      <p>
+        Je me souviens seulement de n'avoir posé
+        aucune question.
+      </p>
+
+      <p>
+        Ce qui, me concernant, est assez inhabituel.
+      </p>
+
+      <p>
+        Je demande que ce document ne soit pas versé
+        aux archives générales.
+      </p>
+
+      <p>
+        Je ne saurais dire pourquoi.
+      </p>
+
+    </div>
+
+    <div class="signature-direction">
+      <strong>Paul de Vauclerc</strong>
+      <small>Directeur</small>
+    </div>
+
+  </section>
+
+  <!-- CRÉDITS PHOTOGRAPHIQUES -->
+
+  <details class="credits">
+
+    <summary>
+      Crédits documentaires
+    </summary>
+
+    <p>
+      Photographie : Willem van de Poll,
+      Paris, 1965.
+      Collection Nationaal Archief,
+      référence 254-0417.
+      Licence CC0 1.0.
+    </p>
+
+    <p>
+      <a
+        href="https://commons.wikimedia.org/wiki/File:Vrouw_met_pakjes_in_haar_hand,_Bestanddeelnr_254-0417.jpg"
+        target="_blank"
+        rel="noopener noreferrer">
+        Consulter la photographie originale
+      </a>
+    </p>
+
+    <p>
+      Les notes de Charles Pinson
+      et de Paul de Vauclerc
+      appartiennent à l'univers fictionnel
+      du Bureau des Interstices.
+    </p>
+
+  </details>
+
+  <!-- RETOUR -->
+
+  <footer class="navigation">
+
+    <a href="enqueteurs.html">
+      ← RETOUR
+    </a>
+
+    <span>
+      M.E.L.D. — PARIS
+    </span>
+
+  </footer>
+
+</main>
+
+</body>
+</html>
