@@ -1,1 +1,492 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Un seul corps — Une enquête de Léon Kessler, médecin légiste retraité. Paris, novembre 1966. Bureau des Interstices.">
+
+<title>Un seul corps — Léon Kessler</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet">
+
+<style>
+
+/* ========================================
+   PAPIER ET TYPOGRAPHIE
+======================================== */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* GRAIN IRRÉGULIER DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* ========================================
+   FEUILLE PRINCIPALE
+======================================== */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* ========================================
+   TITRE
+======================================== */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.sous-titre {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.date {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  color: #5e594d;
+}
+
+/* ========================================
+   TEXTE LITTÉRAIRE
+======================================== */
+
+article {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+article p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* LETTRINE */
+
+article > p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+/* DIALOGUES */
+
+.dialogue {
+  text-align: left;
+}
+
+/* RAPPORT INSÉRÉ DANS LE RÉCIT */
+
+.rapport {
+  margin: 28px 0;
+  padding-left: 24px;
+  border-left: 1px solid var(--trait);
+}
+
+.rapport-titre {
+  margin: 0 0 12px;
+  font-size: 21px;
+  font-weight: 600;
+}
+
+.rapport p {
+  text-align: left;
+}
+
+/* ========================================
+   RETOUR
+======================================== */
+
+footer {
+  max-width: 630px;
+  margin: 62px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:focus-visible {
+  outline: 2px solid #24374f;
+  outline-offset: 4px;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .sous-titre {
+    font-size: 20px;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+  .rapport {
+    padding-left: 17px;
+  }
+
+}
+
+/* ========================================
+   IMPRESSION
+======================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+    border: 0;
+    box-shadow: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>Un seul corps</h1>
+
+<p class="sous-titre">
+Une enquête de Léon Kessler, médecin légiste retraité
+</p>
+
+<p class="date">
+Paris, novembre 1966. Un bureau de la morgue.
+</p>
+
+</header>
+
+<article aria-label="Un seul corps">
+
+<p>
+On avait prêté le bureau à Kessler jusqu’à six heures. À six heures, il en était toujours à la première page. Il avait déplacé son verre d’eau trois fois pour dégager le papier et oublié de boire.
+</p>
+
+<p>
+Il repoussa le brouillon et reprit sur une feuille propre.
+</p>
+
+<div class="rapport">
+
+<h2 class="rapport-titre">
+Rapport d’autopsie
+</h2>
+
+<p>
+Homme adulte, d’identité inconnue, repêché dans la Marne à Joinville-le-Pont. Le corps est presque intact à l’examen externe. On relève une éraflure au menton et une autre au poignet gauche.
+</p>
+
+</div>
+
+<p>
+C’était la partie facile. Il avait vérifié le lieu du repêchage sur la fiche d’admission et l’emplacement des éraflures sur son dessin. Il posa le dessin à côté de la feuille. Le trait qui désignait le poignet était de sa main. Il avait du mal à se rappeler l’avoir tracé.
+</p>
+
+<div class="rapport">
+
+<p>
+Dans le thorax, j’ai observé deux cœurs distincts. Chacun est relié à des vaisseaux qui lui sont propres. L’examen de l’abdomen a révélé deux pancréas séparés. Leur emplacement figure sur le croquis joint.
+</p>
+
+</div>
+
+<p>
+Kessler relut « j’ai observé ». Sur le brouillon, il avait écrit « je crois avoir observé ». Il avait retiré deux mots et cela suffisait pour que la phrase puisse entrer dans un rapport.
+</p>
+
+<p>
+Les cœurs étaient de taille voisine. L’un se trouvait un peu plus haut que l’autre. Il se souvenait d’avoir demandé à l’aide de s’approcher. Le garçon s’était penché, avait regardé et lui avait tendu la règle qu’il tenait à la main. Kessler aurait aimé lui demander ce qu’il avait vu. Le garçon était rentré chez lui.
+</p>
+
+<p>
+Il prit le verre. L’eau avait la température du bureau.
+</p>
+
+<p>
+Avant l’examen, il avait posé deux doigts sur le poignet gauche du noyé. Il s’était excusé de le déranger. Il se rappelait le froid qu’il avait senti derrière ses dents et une pression sourde dans les oreilles. Cela avait duré le temps de retirer sa main.
+</p>
+
+<p>
+Le mort lui avait alors parlé.
+</p>
+
+<p class="dialogue">
+— Mon frère ne sait pas nager.
+</p>
+
+<p>
+Il avait dit cela doucement. Kessler s’était entendu répondre « Pardon ? » comme il l’aurait fait si quelqu’un lui avait parlé depuis le couloir.
+</p>
+
+<p>
+Il finit par boire. Puis il reposa le verre et se remit à écrire.
+</p>
+
+<div class="rapport">
+
+<p>
+Les constatations sont compatibles avec un décès par noyade. Un second examen est demandé pour confirmer les observations anatomiques.
+</p>
+
+</div>
+
+<p>
+Il s’arrêta au bout de la phrase. Il avait laissé assez de place sous le dernier paragraphe pour ajouter une remarque. La plume resta un moment au-dessus du papier. Dans le couloir, on poussa une chaise. Kessler attendit que le bruit cesse, puis signa.
+</p>
+
+<p>
+En remettant les pièces dans la chemise, il retrouva la fiche d’admission. Le lieu du repêchage avait été écrit d’une main serrée, peu lisible. Plus bas, dans la case du nombre de corps remis, la même main avait écrit « un », en toutes lettres.
+</p>
+
+<p>
+Kessler glissa la fiche au-dessus du rapport.
+</p>
+
+<p>
+Au secrétariat, il laissa l’original et demanda un double. Il dut revenir sur ses pas pour donner les croquis. La femme qui prenait la chemise se leva pour les agrafer. Le temps qu’elle se rassît, Kessler avait oublié ce qu’il voulait encore lui demander.
+</p>
+
+<p>
+Le lendemain, rue de Babylone, Suzanne referma son livre sur une enveloppe et rapprocha une chaise. Kessler posa le double sur son bureau. Les croquis s’étaient courbés dans sa serviette. Elle les maintint à plat avec le sous-main.
+</p>
+
+<p class="dialogue">
+— Vous avez pu revoir le garçon qui vous assistait ?
+</p>
+
+<p class="dialogue">
+— Il est de service cet après-midi.
+</p>
+
+<p class="dialogue">
+— Vous comptez lui demander ce qu’il a vu ?
+</p>
+
+<p class="dialogue">
+— Oui. Je le laisserai parler d’abord.
+</p>
+
+<p>
+Elle reprit le rapport au début. Dans la pièce de correspondance, on dictait une adresse. La voix s’arrêta pour épeler le nom de la rue.
+</p>
+
+<p class="dialogue">
+— Vous avez signé le rapport, dit-elle. Il me faudrait aussi votre signature sur les dessins.
+</p>
+
+<p>
+Il dégagea le premier croquis. Suzanne lui tendit son stylo. Avant de signer, il chercha une dernière fois à voir les deux cœurs tels qu’ils s’étaient présentés à lui. La main de l’aide lui revenait très nettement, avec la règle entre les doigts. Pour le reste, il se surprenait à regarder son propre dessin.
+</p>
+
+<p class="dialogue">
+— Je voudrais qu’un autre médecin voie le corps.
+</p>
+
+<p class="dialogue">
+— Vous l’avez écrit.
+</p>
+
+<p class="dialogue">
+— Aujourd’hui, si c’est possible.
+</p>
+
+<p>
+Suzanne tira une feuille et nota la demande. Elle laissait d’ordinaire assez de place au-dessous pour que Paul de Vauclerc y porte sa décision. Cette fois, Kessler posa un doigt sur la marge, le temps de trouver comment reprendre.
+</p>
+
+<p class="dialogue">
+— Il y a autre chose ?
+</p>
+
+<p class="dialogue">
+— Est-ce qu’on a signalé des disparitions à Joinville depuis deux ou trois jours ?
+</p>
+
+<p class="dialogue">
+— Vous pensez que cet homme était accompagné ?
+</p>
+
+<p>
+Kessler retira sa main. Il avait entendu le mot frère très distinctement. Il avait eu l’impression que le mort attendait une réponse. À présent, il se demandait s’il avait déjà trop attendu.
+</p>
+
+<p class="dialogue">
+— Je voudrais simplement savoir si quelqu’un manque.
+</p>
+
+<p>
+Suzanne ajouta quelques mots sur la feuille. Elle reprit le rapport et le glissa dans une chemise pour le directeur. Puis elle se mit à chercher un numéro dans son carnet.
+</p>
+
+<p>
+Kessler attendit dans le couloir. Il posa son chapeau sur la chaise voisine. Derrière la porte, Suzanne obtint quelqu’un à Joinville. Elle demanda si, depuis deux ou trois jours, on avait signalé une personne qui ne serait pas rentrée chez elle.
+</p>
+
+<p>
+Il reprit son chapeau et le garda sur ses genoux. La chaise à côté de lui était libre.
+</p>
+
+</article>
+
+<footer>
+
+<a href="enqueteurs.html">
+← Retour aux enquêteurs
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
 
