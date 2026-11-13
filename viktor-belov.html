@@ -1,1 +1,1360 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Le téléphone qui ne sonnait pas — Une enquête de Viktor Pavlovitch Belov, dit Monsieur Roussel. Paris, novembre 1966.">
+
+<title>Le téléphone qui ne sonnait pas — Viktor Belov</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72 "EB Garamond",
+    Garamond, Georgia, serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* GRAIN IRRÉGULIER DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* FEUILLE PRINCIPALE */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* TITRE */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.sous-titre {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.date {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  color: #5e594d;
+}
+
+/* TEXTE LITTÉRAIRE */
+
+article {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+article p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+article p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+.dialogue {
+  text-align: left;
+}
+
+/* SÉPARATIONS DES SCÈNES */
+
+.separation {
+  margin: 38px auto;
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+}
+
+.inscription {
+  text-align: center;
+  font-style: italic;
+}
+
+.lettre {
+  margin: 24px 0 30px;
+  padding-left: 25px;
+  border-left: 1px solid var(--trait);
+  font-style: italic;
+}
+
+.lettre p {
+  text-align: left;
+}
+
+.fin {
+  margin-top: 48px;
+  text-align: center;
+  font-size: 17px;
+  letter-spacing: .13em;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 630px;
+  margin: 62px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:focus-visible {
+  outline: 2px solid #24374f;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .sous-titre {
+    font-size: 20px;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+  .separation {
+    margin: 32px auto;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    border: 0;
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>Le téléphone qui ne sonnait pas</h1>
+
+<p class="sous-titre">
+Une enquête de Viktor Pavlovitch Belov, dit « Monsieur Roussel »
+</p>
+
+<p class="date">
+Paris, novembre 1966.
+</p>
+
+</header>
+
+<article aria-label="Le téléphone qui ne sonnait pas">
+
+<p>
+Il pleuvait depuis le matin. Une pluie parisienne, sans enthousiasme, qui descendait le long des façades et transformait les trottoirs en une collection de petits miroirs gris. Rien d'exceptionnel. Les Parisiens avaient l'habitude.
+</p>
+
+<p>
+Dans le bureau de Paul de Vauclerc, une pendule indiquait onze heures dix-sept.
+</p>
+
+<p class="dialogue">
+— Vous voyez, Roussel, le problème avec cet appareil, c'est qu'il n'est pas branché.
+</p>
+
+<p>
+Le directeur souleva le combiné d'un téléphone noir posé sur son bureau. Un modèle administratif, en bakélite, parfaitement ordinaire. Son fil avait été sectionné.
+</p>
+
+<p class="dialogue">
+— Nous l'avons trouvé ce matin dans le placard des archives. Suzanne affirme qu'il n'y était pas hier. À neuf heures quarante-deux, il a sonné.
+</p>
+
+<p>
+De Vauclerc alluma une cigarette.
+</p>
+
+<p class="dialogue">
+— Trois fois. Suzanne a décroché. Un homme lui a demandé de vous transmettre un message. Il parlait russe.
+</p>
+
+<p>
+Il fit glisser un papier vers Viktor.<br>
+Ne réponds pas à la troisième sonnerie.
+</p>
+
+<p>
+Viktor Pavlovitch Belov, connu du Bureau sous le nom de monsieur Roussel, contempla le téléphone avec une certaine contrariété. Ancien officier soviétique, spécialiste des transmissions, il avait connu des dispositifs plus élaborés. Mais les téléphones qui sonnaient sans être raccordés au réseau n'étaient pas une spécialité de son ancien service.
+</p>
+
+<p class="dialogue">
+— Monsieur le directeur, je pense qu'on se moque de nous. Ou que nous sommes en présence d'un appareil étrange. Permettez-vous que je l'inspecte ?
+</p>
+
+<p>
+Il fouilla sa sacoche.
+</p>
+
+<p>
+Au même instant, le téléphone sonna.
+</p>
+
+<p>
+Une fois.
+</p>
+
+<p>
+Viktor trouva son tournevis.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+L'appareil était ancien. Un type 43, fabriqué par la Société Industrielle des Téléphones. Les vis du boîtier avaient été manipulées récemment.
+</p>
+
+<p class="dialogue">
+— Je vous en prie, Roussel, dit de Vauclerc. Essayez seulement de ne pas abîmer le bureau. C'est du Second Empire et l'administration refuse de le remplacer.
+</p>
+
+<p>
+Suzanne Charrenson apporta une petite coupelle de porcelaine.
+</p>
+
+<p class="dialogue">
+— Pour les vis. Elles ont une fâcheuse tendance à disparaître dans les tapis.
+</p>
+
+<p>
+Viktor ouvrit l'appareil.
+</p>
+
+<p>
+À l'intérieur, la sonnerie avait disparu. À sa place, quelqu'un avait installé un montage électronique, deux transistors, un transformateur, une bobine blindée. Certaines pièces étaient soviétiques.
+</p>
+
+<p>
+Une pile plate de quatre volts et demi alimentait le dispositif. Un fil rouge maintenait ouverte une petite lamelle métallique. Si le fil se rompait, le contact risquait de se fermer.
+</p>
+
+<p>
+Sous la plaque de bakélite, trois lettres cyrilliques avaient été gravées.
+</p>
+
+<p class="inscription" lang="ru">
+ЖДИ.
+</p>
+
+<p class="inscription">
+Attends.
+</p>
+
+<p>
+Viktor regarda l'horloge.
+</p>
+
+<p>
+Onze heures dix-sept.
+</p>
+
+<p>
+Elle indiquait déjà onze heures dix-sept à son arrivée. Son balancier oscillait pourtant régulièrement.<br>
+Une aiguille avança d'un cran.
+</p>
+
+<p>
+Puis s'immobilisa.
+</p>
+
+<p>
+Viktor n'aimait pas cela.
+</p>
+
+<p class="dialogue">
+— Suzanne, monsieur le directeur, pourriez-vous quitter le bureau ? Juste le temps que je débranche ce petit fil rouge. On ne sait jamais jusqu'où peut aller la plaisanterie.
+</p>
+
+<p class="dialogue">
+— C'est généralement mauvais signe, observa Suzanne.
+</p>
+
+<p class="dialogue">
+— C'est aussi mon sentiment, répondit de Vauclerc.
+</p>
+
+<p>
+Ils sortirent.
+</p>
+
+<p>
+Viktor reprit son examen.
+</p>
+
+<p>
+Le circuit était plus compliqué qu'il ne paraissait. Une seconde connexion, presque invisible, passait sous le mécanisme. Une troisième languette métallique était dissimulée sous la pile. Retirer celle-ci pouvait déclencher autre chose.
+</p>
+
+<p>
+Il considéra le téléphone, puis l'horloge.
+</p>
+
+<p>
+Trois sonneries. Trois secondes affichées.
+</p>
+
+<p>
+Trop de coïncidences.
+</p>
+
+<p>
+Il se leva et ouvrit la petite porte vitrée de la pendule. Le balancier allait et venait avec une tranquillité insupportable.
+</p>
+
+<p>
+Il l'immobilisa entre deux doigts.
+</p>
+
+<p>
+Le téléphone émit un claquement.
+</p>
+
+<p>
+Puis une voix sortit du boîtier ouvert.
+</p>
+
+<p>
+Elle parlait russe.
+</p>
+
+<p class="dialogue">
+— Camarade Belov. Ne relâchez pas le balancier.
+</p>
+
+<p>
+Un souffle.
+</p>
+
+<p class="dialogue">
+— Ils sont déjà ici.
+</p>
+
+<p>
+On frappa à la porte.<br>
+Trois coups.
+</p>
+
+<p class="dialogue">
+— Monsieur de Vauclerc ? C'est l'administration des Postes. Nous venons pour votre ligne téléphonique.
+</p>
+
+<p>
+Viktor considéra sa position. Un ancien officier du renseignement soviétique, tenant une pendule entre deux doigts, dans un bureau ministériel français, tandis qu'un téléphone démonté lui prodiguait des conseils en russe.
+</p>
+
+<p>
+Un joli bourbier.
+</p>
+
+<p>
+Il répondit en allemand.
+</p>
+
+<p class="dialogue">
+— Désolé, je ne comprends pas le français. Parlez-vous allemand ?
+</p>
+
+<p>
+L'homme répondit immédiatement dans cette langue. Un allemand impeccable, presque trop appliqué. Il prétendait devoir vérifier la ligne.
+</p>
+
+<p>
+Dans le couloir, Suzanne protestait.
+</p>
+
+<p class="dialogue">
+— Messieurs, je vous ai déjà expliqué que monsieur de Vauclerc était occupé.
+</p>
+
+<p class="dialogue">
+— Madame, veuillez vous éloigner de cette porte.
+</p>
+
+<p>
+Le ton avait changé.
+</p>
+
+<p>
+Le téléphone grésilla.
+</p>
+
+<p class="dialogue">
+— Belov. N'ouvre pas. Interroge-le sur Minsk.
+</p>
+
+<p>
+Viktor soupira.
+</p>
+
+<p class="dialogue">
+— Eh, camarade ! Tu te souviens des beaux hivers de Minsk ?
+</p>
+
+<p>
+Le silence fut immédiat.
+</p>
+
+<p>
+Puis l'homme répondit, toujours en allemand :
+</p>
+
+<p class="dialogue">
+— À Minsk, il n'y a pas de beaux hivers.
+</p>
+
+<p>
+Un bruit métallique parvint du couloir.
+</p>
+
+<p>
+Viktor connaissait ce genre de bruit.
+</p>
+
+<p>
+Le téléphone se mit à émettre du morse.<br>
+DULAC.
+</p>
+
+<p>
+Cinq lettres.
+</p>
+
+<p>
+Viktor prit sa décision.
+</p>
+
+<p>
+Il souleva la pendule, la dégagea de ses crochets et traversa le bureau en maintenant tant bien que mal le balancier immobile.
+</p>
+
+<p>
+La fenêtre donnait sur une cour intérieure, trois étages plus bas.
+</p>
+
+<p>
+Il lança la pendule à travers la vitre.
+</p>
+
+<p>
+Le fracas fut considérable.
+</p>
+
+<p>
+Quelques secondes plus tard, un choc monta de la cour. Quelque chose changea dans la pièce. Une sensation brève, comme lorsqu'un ascenseur s'arrête.
+</p>
+
+<p>
+Le téléphone sonna une fois.
+</p>
+
+<p>
+Viktor courut vers la porte.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+Le couloir était devenu un champ de bataille administratif.
+</p>
+
+<p>
+Suzanne se trouvait assise par terre. De Vauclerc avait perdu ses lunettes. Deux hommes occupaient le passage, dont l'un tenait un pistolet.
+</p>
+
+<p>
+Il aperçut Viktor.
+</p>
+
+<p>
+Trop tard.
+</p>
+
+<p>
+Le direct du droit lui fracassa la mâchoire. Le coup partit au moment où il levait son arme. Une détonation éclata. Le plâtre vola au-dessus de la porte.
+</p>
+
+<p>
+Viktor enchaîna avec l'épaule.
+</p>
+
+<p>
+L'homme recula, heurta son camarade et tous deux s'effondrèrent contre une petite table. Un vase se brisa. Le pistolet glissa sous une armoire.
+</p>
+
+<p class="dialogue">
+— Suzanne ! Le pistolet !
+</p>
+
+<p>
+Elle se mit à quatre pattes pour le récupérer.
+</p>
+
+<p>
+Viktor décocha un coup de pied à l'homme en imperméable. L'autre lui agrippa la jambe.
+</p>
+
+<p class="dialogue">
+— Tu vas me lâcher, connard !
+</p>
+
+<p>
+Suzanne retrouva l'arme.
+</p>
+
+<p class="dialogue">
+— Monsieur Roussel !
+</p>
+
+<p class="dialogue">
+— Jetez-la-moi ! Par pitié, visez juste !
+</p>
+
+<p>
+Elle lança le pistolet.
+</p>
+
+<p>
+Viktor, retenu par la jambe, le manqua.
+</p>
+
+<p>
+L'arme termina sa course dans le ventre de Paul de Vauclerc, qui la réceptionna avec un grognement.
+</p>
+
+<p class="dialogue">
+— Suzanne ! On ne lance pas un pistolet !
+</p>
+
+<p class="dialogue">
+— Vous préfériez que je le garde, monsieur le directeur ?
+</p>
+
+<p>
+À cet instant, le téléphone sonna une troisième fois.
+</p>
+
+<p>
+Les deux agresseurs s'immobilisèrent.
+</p>
+
+<p class="dialogue">
+— Il a répondu, murmura l'un d'eux en russe.
+</p>
+
+<p>
+Son camarade le regarda.
+</p>
+
+<p class="dialogue">
+— Qui ?
+</p>
+
+<p>
+Personne ne répondit.
+</p>
+
+<p>
+Des pas résonnèrent dans le bureau.
+</p>
+
+<p>
+L'homme qui tenait la jambe de Viktor le lâcha brusquement. Il se releva et s'enfuit. L'autre le suivit dans l'escalier.
+</p>
+
+<p>
+Un silence relatif revint.
+</p>
+
+<p>
+Dans l'encadrement de la porte se tenait maintenant un homme d'une cinquantaine d'années, vêtu d'un costume gris dont la coupe semblait démodée. Il portait un chapeau à la main.
+</p>
+
+<p>
+Ses chaussures étaient mouillées.
+</p>
+
+<p class="dialogue">
+— Pardonnez cette entrée peu conventionnelle.
+</p>
+
+<p>
+De Vauclerc, qui tenait toujours le pistolet contre son ventre, demanda :
+</p>
+
+<p class="dialogue">
+— Qui êtes-vous ?
+</p>
+
+<p class="dialogue">
+— Henri Dulac.
+</p>
+
+<p>
+Viktor reconnut le nom.
+</p>
+
+<p class="dialogue">
+— Monsieur Belov, reprit l'homme, nous avons très peu de temps.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+Dulac apportait une enveloppe.
+</p>
+
+<p>
+Sur celle-ci figuraient le véritable nom de Viktor, la date du jour et une heure.
+</p>
+
+<p>
+Onze heures vingt-trois.
+</p>
+
+<p>
+À l'intérieur, une feuille couverte d'une écriture russe et une petite plaque d'aluminium.
+</p>
+
+<p class="inscription" lang="ru">
+Б-1742.
+</p>
+
+<p>
+Sur l'autre face était gravé un mot.
+</p>
+
+<p class="inscription">
+RETOUR.
+</p>
+
+<p>
+Viktor déplia la lettre.
+</p>
+
+<div class="lettre">
+
+<p>
+Vous ne me connaissez pas.
+</p>
+
+<p>
+Nous nous sommes rencontrés trois fois.
+</p>
+
+<p>
+La première fois, vous m'avez arrêté.
+</p>
+
+<p>
+La deuxième fois, vous m'avez laissé partir.
+</p>
+
+<p>
+La troisième fois, vous m'avez tué.
+</p>
+
+<p>
+Je vous demande de ne pas recommencer.
+</p>
+
+<p>
+Je viendrai à onze heures vingt-trois.<br>
+Ne laissez personne me toucher.
+</p>
+
+<p>
+P. S. : Demandez à Dulac pourquoi il a vieilli.
+</p>
+
+</div>
+
+<p>
+Viktor leva les yeux.
+</p>
+
+<p class="dialogue">
+— Pourquoi avez-vous vieilli ?
+</p>
+
+<p>
+Dulac s'assit.
+</p>
+
+<p class="dialogue">
+— Parce que je n'ai pas su partir.
+</p>
+
+<p>
+Il affirma avoir trente-quatre ans.
+</p>
+
+<p>
+De Vauclerc le considéra attentivement.
+</p>
+
+<p class="dialogue">
+— Vous les portez assez mal.
+</p>
+
+<p>
+En 1959, expliqua Dulac, il travaillait à Saclay sur des dispositifs de mesure. Son équipe avait observé des phénomènes inexplicables : certains instruments semblaient enregistrer des événements avant qu'ils ne se produisent.
+</p>
+
+<p>
+Une expérience avait duré onze minutes selon les horloges extérieures.
+</p>
+
+<p>
+Dulac affirma en avoir vécu dix-neuf années.
+</p>
+
+<p class="dialogue">
+— Je ne vous demande pas de me croire, précisa-t-il. Je ne peux pas le démontrer.
+</p>
+
+<p>
+Viktor regarda la plaque.
+</p>
+
+<p>
+Quelque chose remuait dans sa mémoire.
+</p>
+
+<p>
+Minsk. Février 1959.
+</p>
+
+<p>
+Une installation industrielle. Des câbles. Des équipements de transmission. Une porte portant le numéro 1742.
+</p>
+
+<p>
+Puis le vide.
+</p>
+
+<p>
+On frappa.
+</p>
+
+<p>
+Trois coups.
+</p>
+
+<p>
+Un jeune homme apparut, une valise à la main. Il semblait avoir vingt-cinq ans. Ses chaussures étaient couvertes d'une poussière blanche.
+</p>
+
+<p>
+Il reconnut immédiatement Viktor.
+</p>
+
+<p class="dialogue">
+— Viktor Pavlovitch !
+</p>
+
+<p>
+Puis il aperçut Dulac.
+</p>
+
+<p>
+Son sourire disparut.
+</p>
+
+<p class="dialogue">
+— Vous ne devriez pas être ici.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+Le jeune homme prétendait avoir été arrêté à Minsk par Viktor.
+</p>
+
+<p>
+Puis relâché.
+</p>
+
+<p>
+Puis abattu.
+</p>
+
+<p>
+Il possédait une plaque identique à celle de l'enveloppe, portant le même numéro, mais gravée de la date du jour.
+</p>
+
+<p>
+Il disait avoir envoyé un signal électromagnétique depuis l'installation soviétique en février 1959. Le signal avait reçu une réponse sept minutes avant son émission.
+</p>
+
+<p>
+Viktor écoutait.
+</p>
+
+<p>
+La situation possédait désormais toutes les qualités d'un mauvais rêve. Des horloges détraquées, des hommes qu'il aurait tués, des lettres qui arrivaient avant leurs auteurs. Et des Soviétiques qui se présentaient dans un ministère français avec une remarquable absence de discrétion.
+</p>
+
+<p>
+Il récupéra le Walther.
+</p>
+
+<p class="dialogue">
+— Soyons clairs. Je ne me souviens pas de vous. Je ne me souviens pas de vous avoir abattu. En revanche, si vous tentez d'être hostile, je vous abats sur-le-champ.
+</p>
+
+<p>
+Le jeune homme leva les mains.
+</p>
+
+<p class="dialogue">
+— Je vous crois, monsieur Belov.
+</p>
+
+<p>
+Il désigna la valise.
+</p>
+
+<p class="dialogue">
+— Elle contient un appareil de mesure. Vous pouvez l'examiner vous-même.
+</p>
+
+<p>
+Viktor s'approcha.
+</p>
+
+<p>
+Il posa simplement sa main sur le cuir.
+</p>
+
+<p>
+Un petit claquement se produisit sous sa paume.
+</p>
+
+<p>
+Puis un second.
+</p>
+
+<p>
+Il sentit une vibration, un moteur, peut-être. La valise était chaude. Une pression étrange souleva légèrement le cuir sous ses doigts.
+</p>
+
+<p>
+Les bruits cessèrent.
+</p>
+
+<p>
+Le jeune homme semblait surpris.
+</p>
+
+<p class="dialogue">
+— Depuis que vous avez posé la main dessus.
+</p>
+
+<p>
+Viktor ne répondit pas.
+</p>
+
+<p class="dialogue">
+— Monsieur Belov, reprit l'homme, à Minsk, lorsque vous avez entendu votre propre voix à la radio, qu'avez-vous fait ?
+</p>
+
+<p>
+Cette fois, quelque chose revint.
+</p>
+
+<p>
+Un casque d'écoute.
+</p>
+
+<p>
+Une pièce froide.
+</p>
+
+<p>
+Un récepteur couvert de parasites.
+</p>
+
+<p>
+Sa voix, reconnaissable entre toutes.
+</p>
+
+<p>
+Ne l'ouvre pas...
+</p>
+
+<p>
+Puis :
+</p>
+
+<p>
+...avant que je revienne.
+</p>
+
+<p>
+Il se souvenait maintenant d'un capitaine nommé Sokolov. D'une installation industrielle, d'une porte métallique.
+</p>
+
+<p>
+Après cela, plus rien.
+</p>
+
+<p>
+Le lendemain, il s'était réveillé dans une chambre d'hôtel avec une migraine terrible. Un ordre venu de Moscou exigeait son retour immédiat.
+</p>
+
+<p>
+L'opération avait disparu des dossiers.
+</p>
+
+<p>
+Dulac l'observait.
+</p>
+
+<p class="dialogue">
+— En 1959, dit-il, nous avons reçu deux rapports de votre intervention. Ils étaient authentiques. Même signature, même date, mêmes références administratives. Mais ils divergeaient après votre entrée dans la salle 1742.
+</p>
+
+<p>
+Il hésita.
+</p>
+
+<p class="dialogue">
+— Dans le premier, Sokolov était mort et vous étiez vivant.
+</p>
+
+<p class="dialogue">
+— Et dans le second ? demanda de Vauclerc.
+</p>
+
+<p class="dialogue">
+— Sokolov était vivant. Vous étiez mort.
+</p>
+
+<p>
+Le directeur posa son stylo.
+</p>
+
+<p class="dialogue">
+— Magnifique.
+</p>
+
+<p>
+Dulac poursuivit. Trois jours après l'incident, un homme portant l'uniforme soviétique était venu le trouver à Saclay. Cet homme ressemblait exactement à Viktor, mais présentait une cicatrice au-dessus du sourcil gauche.
+</p>
+
+<p>
+Il lui avait demandé de détruire les recherches françaises.
+</p>
+
+<p>
+Dulac avait refusé.
+</p>
+
+<p>
+Trois jours plus tard, il avait vieilli de dix-neuf ans.
+</p>
+
+<p>
+Le jeune homme intervint.
+</p>
+
+<p class="dialogue">
+— À six heures quarante ce matin, un employé du métro a signalé un homme descendu sur les voies à Arts et Métiers. Les agents ne l'ont pas retrouvé. Plus tard, il a été aperçu sur le quai opposé.
+</p>
+
+<p class="dialogue">
+— Et ? demanda Viktor.
+</p>
+
+<p class="dialogue">
+— Il portait un uniforme soviétique. Et une cicatrice au-dessus du sourcil gauche.
+</p>
+
+<p>
+Viktor n'avait aucune cicatrice à cet endroit.
+</p>
+
+<p>
+Il regarda Dulac.
+</p>
+
+<p class="dialogue">
+— Si vous avez quelque chose à dire, c'est maintenant. Et je peux vous assurer qu'avoir un double ne m'amuse pas du tout.
+</p>
+
+<p>
+Dulac baissa les yeux.
+</p>
+
+<p class="dialogue">
+— Je ne sais pas si vous avez un double, monsieur Roussel. Je ne sais même pas si cette question a un sens.
+</p>
+
+<p>
+La réponse était raisonnable.
+</p>
+
+<p>
+Pour une fois.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+Viktor rangea le pistolet dans sa poche et récupéra les deux plaques d'aluminium.
+</p>
+
+<p>
+Il attrapa son manteau.
+</p>
+
+<p class="dialogue">
+— Monsieur le directeur, je vais aller à Arts et Métiers. Ce n'est pas tous les jours que l'on a l'occasion de se rencontrer. Avec votre permission.
+</p>
+
+<p>
+De Vauclerc contempla son bureau dévasté.
+</p>
+
+<p class="dialogue">
+— Vous avez ma permission, Roussel. Et même mes encouragements. Il me semble préférable que cette affaire poursuive son développement ailleurs.
+</p>
+
+<p>
+Suzanne lui tendit deux sandwiches enveloppés de papier blanc.
+</p>
+
+<p class="dialogue">
+— Pour la route, monsieur Roussel. Jambon-beurre.
+</p>
+
+<p class="dialogue">
+— Merci, Suzanne. Et désolé pour ce désordre. Votre café était excellent.
+</p>
+
+<p class="dialogue">
+— Ne vous excusez pas. Ce n'est pas entièrement votre faute.
+</p>
+
+<p>
+Elle regarda la fenêtre brisée.
+</p>
+
+<p class="dialogue">
+— Enfin, presque.
+</p>
+
+<p>
+De Vauclerc accompagna Viktor jusqu'à la porte.
+</p>
+
+<p class="dialogue">
+— Roussel. Si vous rencontrez votre double, essayez de déterminer lequel de vous deux est mon collaborateur avant de lui tirer dessus.
+</p>
+
+<p>
+Il ajouta, plus bas :
+</p>
+
+<p class="dialogue">
+— Soyez prudent.
+</p>
+
+<div class="separation" aria-hidden="true">*</div>
+
+<p>
+La pluie avait cessé.
+</p>
+
+<p>
+Une Citroën DS noire attendait devant le ministère. À son volant, un homme d'une cinquantaine d'années lisait France-Soir.
+</p>
+
+<p>
+Le jeune visiteur s'arrêta devant la voiture.
+</p>
+
+<p class="dialogue">
+— Nous pouvons prendre celle-ci.
+</p>
+
+<p>
+Dulac fronça les sourcils.
+</p>
+
+<p class="dialogue">
+— Elle est à vous ?
+</p>
+
+<p class="dialogue">
+— Disons qu'elle est disponible.
+</p>
+
+<p>
+Le chauffeur replia son journal.
+</p>
+
+<p class="dialogue">
+— Bonjour, monsieur Roussel.
+</p>
+
+<p>
+Dulac se raidit.
+</p>
+
+<p class="dialogue">
+— Comment connaissez-vous ce nom ?
+</p>
+
+<p class="dialogue">
+— Quel nom ?
+</p>
+
+<p class="dialogue">
+— Roussel.
+</p>
+
+<p>
+Le chauffeur parut surpris.
+</p>
+
+<p class="dialogue">
+— C'est vous qui me l'avez donné, monsieur. Ce matin, quand vous avez réservé la voiture.
+</p>
+
+<p class="dialogue">
+— À quelle heure ?
+</p>
+
+<p class="dialogue">
+— Six heures et demie, environ. Vous m'avez demandé de vous attendre ici jusqu'à onze heures trente.
+</p>
+
+<p>
+Dulac pâlit.
+</p>
+
+<p class="dialogue">
+— Je ne vous ai jamais rencontré.
+</p>
+
+<p>
+Le chauffeur haussa les épaules.
+</p>
+
+<p class="dialogue">
+— Pourtant, moi, je vous reconnais très bien.
+</p>
+
+<p>
+Il ouvrit la portière.
+</p>
+
+<p class="dialogue">
+— Vous portiez simplement un autre costume.
+</p>
+
+<p>
+Viktor contempla la voiture.
+</p>
+
+<p>
+Dans sa poche, les deux plaques d'aluminium s'entrechoquèrent doucement.
+</p>
+
+<p>
+À quelques mètres, un taxi libre ralentit.
+</p>
+
+<p>
+Paris continuait de fonctionner normalement. Les voitures circulaient, les passants traversaient les rues, les cafés servaient leurs derniers petits déjeuners. Rien ne laissait penser que deux hommes pouvaient porter le même nom, qu'une pendule pouvait commander un téléphone ou que les morts avaient pris l'habitude de revenir à heure fixe.
+</p>
+
+<p>
+Viktor pensa à ses sandwiches.
+</p>
+
+<p>
+Il avait faim.
+</p>
+
+<p>
+Et quelque part sous Paris, un homme portant son visage l'attendait peut-être.
+</p>
+
+<p>
+Il lui restait encore à savoir lequel des deux avait le plus de raisons de s'inquiéter.
+</p>
+
+<p class="fin">FIN</p>
+
+</article>
+
+<footer>
+  <a href="enqueteurs.html">
+    ← Retour aux enquêteurs
+  </a>
+</footer>
+
+</main>
+
+</body>
+</html>
+o7
