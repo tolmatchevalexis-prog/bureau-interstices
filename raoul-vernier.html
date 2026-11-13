@@ -1,7 +1,9 @@
+
 <!doctype html>
 <html lang="fr">
 
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ded3b8">
@@ -11,30 +13,45 @@ content="Raoul Vernier — Ordre de mission et pièces photographiques. Bureau d
 
 <title>Raoul Vernier — Bureau des Interstices</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+href="https://fonts.gstatic.com"
+crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap"
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap"
 rel="stylesheet">
 
 <style>
 
 /* ========================================
-   IDENTITÉ
+   IDENTITÉ GRAPHIQUE
 ======================================== */
 
 :root {
+
   --papier: #ded3b8;
   --feuille: #f3e9cf;
   --blanc: #fffaf0;
+
   --encre: #292920;
   --bleu: #24374f;
   --vert: #4c5546;
   --trait: #b4a58b;
 
-  --serif: "EB Garamond", Garamond, Georgia, serif;
-  --machine: "Special Elite", "Courier New", monospace;
+  --serif:
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  --machine:
+    "Special Elite",
+    "Courier New",
+    monospace;
+
 }
 
 * {
@@ -46,8 +63,10 @@ html {
 }
 
 body {
+
   margin: 0;
   color: var(--encre);
+
   font: 20px/1.62 var(--serif);
 
   background:
@@ -62,12 +81,17 @@ body {
       transparent 52%
     ),
     var(--papier);
+
 }
 
+/* TRAME DU PAPIER */
+
 body::before {
+
   content: "";
   position: fixed;
   inset: 0;
+
   pointer-events: none;
   z-index: 10;
   opacity: .10;
@@ -75,6 +99,7 @@ body::before {
   background-image: url(
     "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
   );
+
 }
 
 a {
@@ -91,9 +116,12 @@ a:focus-visible {
 ======================================== */
 
 .page {
+
   position: relative;
+
   width: min(940px, calc(100% - 32px));
   margin: 30px auto 60px;
+
   padding: clamp(26px, 6vw, 72px);
 
   background:
@@ -114,14 +142,19 @@ a:focus-visible {
   box-shadow:
     8px 10px 0 #c6b99c,
     0 14px 35px #40311924;
+
 }
 
 .page::before {
+
   content: "";
   position: absolute;
   inset: 8px;
+
   border: 1px solid #5f4b2d17;
+
   pointer-events: none;
+
 }
 
 /* ========================================
@@ -129,16 +162,21 @@ a:focus-visible {
 ======================================== */
 
 .top {
+
   display: flex;
   justify-content: space-between;
   gap: 20px;
+
   padding-bottom: 24px;
   border-bottom: 2px solid var(--encre);
+
 }
 
 .top-left,
 .top-right {
+
   font: 11px/1.8 var(--machine);
+
 }
 
 .top-right {
@@ -146,28 +184,40 @@ a:focus-visible {
 }
 
 .entete {
+
   text-align: center;
   padding: 48px 0 28px;
+
 }
 
 .entete h1 {
+
   margin: 0 0 14px;
+
   font: 500 clamp(42px, 7vw, 68px)/1.04 var(--serif);
+
   letter-spacing: -.03em;
+
 }
 
 .entete p {
+
   margin: 0;
   font-size: 22px;
   font-style: italic;
+
 }
 
 .reference {
+
   margin-top: 16px;
+
   font: 11px/1.7 var(--machine);
+
   letter-spacing: .05em;
   text-transform: uppercase;
   color: var(--vert);
+
 }
 
 /* ========================================
@@ -175,41 +225,61 @@ a:focus-visible {
 ======================================== */
 
 .section-title {
+
   margin: 50px 0 20px;
+
   font: 13px/1.7 var(--machine);
+
   letter-spacing: .08em;
   text-transform: uppercase;
+
   color: var(--vert);
+
 }
 
 /* ========================================
-   BLOC DOCUMENT
+   DOCUMENT
 ======================================== */
 
 .document {
+
   position: relative;
+
   margin: 24px 0;
   padding: 28px 30px 28px 42px;
+
   background: var(--blanc);
+
   border: 1px solid #97856959;
-  box-shadow: 2px 4px 8px #41321e17;
+
+  box-shadow:
+    2px 4px 8px #41321e17;
+
 }
 
 .document::before {
+
   content: "";
   position: absolute;
+
   top: 18px;
   bottom: 18px;
   left: 22px;
+
   width: 2px;
+
   background: #ad5346;
   opacity: .85;
+
 }
 
 .document h3 {
+
   margin: 0 0 16px;
+
   font: 13px/1.7 var(--machine);
   text-transform: uppercase;
+
 }
 
 .document p {
@@ -222,50 +292,138 @@ a:focus-visible {
 
 /* ========================================
    ORDRE DE MISSION
+   COMPOSITION MACHINE À ÉCRIRE
 ======================================== */
 
 .ordre-mission {
+
   position: relative;
   overflow: hidden;
-  min-height: 330px;
+  isolation: isolate;
+
+  padding: 42px 40px 48px 48px;
+
+  min-height: 580px;
+
+  font-family: var(--machine);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  letter-spacing: .015em;
+
 }
+
+.ordre-mission::before {
+  z-index: 0;
+}
+
+/* FILIGRANE CONFIDENTIEL */
 
 .tampon-confidentiel {
+
   position: absolute;
-  width: min(420px, 70%);
-  right: 18px;
-  top: 34px;
+
+  z-index: 1;
+
+  top: 50%;
+  left: 50%;
+
+  width: min(480px, 85%);
+  height: auto;
+
   opacity: .40;
-  transform: rotate(-10deg);
-  pointer-events: none;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-13deg);
+
+  transform-origin: center;
+
   mix-blend-mode: multiply;
+
+  pointer-events: none;
+  user-select: none;
+
 }
 
+/* TEXTE AU-DESSUS DU FILIGRANE */
+
 .ordre-contenu {
+
   position: relative;
   z-index: 2;
+
+}
+
+.ordre-contenu h3 {
+
+  font-family: var(--machine);
+
+  font-size: 15px;
+  line-height: 1.8;
+
+  letter-spacing: .04em;
+
+  margin-bottom: 30px;
+
+}
+
+.ordre-contenu p {
+
+  font-family: var(--machine);
+
+  font-size: 14px;
+  line-height: 1.9;
+
+  margin-bottom: 22px;
+
 }
 
 .meta-ligne {
-  margin-bottom: 16px;
-  font: 12px/1.8 var(--machine);
-  color: #4e5046;
+
+  font-family: var(--machine);
+
+  font-size: 12px !important;
+  line-height: 2 !important;
+
+  color: #42463f;
+
+  margin-bottom: 35px !important;
+
 }
 
 .ordre-contenu ul {
-  margin: 12px 0 14px 22px;
+
+  margin: 22px 0 26px 20px;
   padding: 0;
+
+  list-style-type: decimal;
+
 }
 
 .ordre-contenu li {
-  margin-bottom: 8px;
+
+  margin-bottom: 19px;
+  padding-left: 8px;
+
+  font-family: var(--machine);
+  font-size: 14px;
+  line-height: 1.9;
+
 }
 
 .signature {
-  margin-top: 24px;
+
+  margin-top: 45px !important;
+  margin-bottom: 0 !important;
+
   text-align: right;
+
+  font-family: var(--serif) !important;
+  font-size: 26px !important;
   font-style: italic;
-  font-size: 24px;
+
 }
 
 /* ========================================
@@ -273,44 +431,71 @@ a:focus-visible {
 ======================================== */
 
 .galerie {
+
   display: grid;
   grid-template-columns: 1fr;
   gap: 28px;
+
 }
 
 .photo-archive {
+
   margin: 0;
   padding: 18px;
+
   background: #f6eedb;
+
   border: 1px solid var(--trait);
-  box-shadow: 2px 4px 8px #41321e17;
+
+  box-shadow:
+    2px 4px 8px #41321e17;
+
 }
 
 .photo-archive img {
+
   display: block;
+
   width: 100%;
   height: auto;
+
   border: 1px solid #b8aa8c;
   background: #ece4d1;
+
 }
 
 .photo-num {
+
   margin: 14px 0 8px;
+
   font: 12px/1.7 var(--machine);
+
   color: var(--bleu);
   letter-spacing: .04em;
+
 }
 
 .photo-caption {
+
   margin: 0;
+
   font-size: 18px;
   line-height: 1.5;
+
 }
 
 .photo-source {
+
   margin-top: 8px;
+
   font: 11px/1.7 var(--machine);
+
   color: #5d5a52;
+
+}
+
+.photo-source a {
+  text-underline-offset: 3px;
 }
 
 /* ========================================
@@ -318,16 +503,21 @@ a:focus-visible {
 ======================================== */
 
 .note {
-  font: 11px/1.8 var(--machine);
+
+  font: 12px/1.85 var(--machine);
+
   color: #625e53;
+
 }
 
 /* ========================================
-   RETOUR
+   PIED DE PAGE
 ======================================== */
 
 .footer {
+
   border-top: 2px solid var(--encre);
+
   margin-top: 55px;
   padding-top: 20px;
 
@@ -336,6 +526,7 @@ a:focus-visible {
   gap: 20px;
 
   font: 11px/1.8 var(--machine);
+
 }
 
 .footer p {
@@ -361,8 +552,13 @@ a:focus-visible {
   }
 
   .page {
+
     margin: 14px auto 32px;
-    box-shadow: 4px 6px 0 #c6b99c;
+    padding: 26px 19px;
+
+    box-shadow:
+      4px 6px 0 #c6b99c;
+
   }
 
   .top {
@@ -370,8 +566,10 @@ a:focus-visible {
   }
 
   .top-right {
+
     text-align: left;
     margin-top: 14px;
+
   }
 
   .entete {
@@ -386,10 +584,40 @@ a:focus-visible {
     left: 16px;
   }
 
+  .ordre-mission {
+
+    padding: 30px 17px 36px 32px;
+
+    font-size: 12px;
+    line-height: 1.85;
+
+  }
+
+  .ordre-contenu p,
+  .ordre-contenu li {
+
+    font-size: 12px;
+    line-height: 1.85;
+
+  }
+
+  .ordre-contenu h3 {
+    font-size: 13px;
+  }
+
+  .meta-ligne {
+    font-size: 11px !important;
+  }
+
   .tampon-confidentiel {
-    width: 78%;
-    right: 4px;
-    top: 56px;
+
+    width: 94%;
+    opacity: .40;
+
+  }
+
+  .photo-archive {
+    padding: 12px;
   }
 
   .footer {
@@ -417,238 +645,384 @@ a:focus-visible {
   }
 
   .page {
+
     width: 100%;
     margin: 0;
     padding: 20mm;
+
     border: 0;
     box-shadow: none;
+
+  }
+
+  .photo-archive {
+    break-inside: avoid;
   }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <main class="page">
 
-  <header class="top">
+<!-- ======================================
+     EN-TÊTE
+====================================== -->
 
-    <div class="top-left">
-      RÉPUBLIQUE FRANÇAISE<br>
-      AFFAIRES CULTURELLES<br>
-      BUREAU DES INTERSTICES
-    </div>
+<header class="top">
 
-    <div class="top-right">
-      CHEMISE 04 · DOSSIER R.V.<br>
-      CONSULTATION INTERNE<br>
-      DIFFUSION LIMITÉE
-    </div>
+  <div class="top-left">
 
-  </header>
+    RÉPUBLIQUE FRANÇAISE<br>
+    AFFAIRES CULTURELLES<br>
+    BUREAU DES INTERSTICES
 
-  <section class="entete">
+  </div>
 
-    <h1>Raoul Vernier</h1>
+  <div class="top-right">
 
-    <p>
-      Ancien barbouze
-    </p>
+    CHEMISE 04 · DOSSIER R.V.<br>
+    CONSULTATION INTERNE<br>
+    DIFFUSION LIMITÉE
 
-    <div class="reference">
-      DOCUMENT INDIVIDUEL — V/07 — ANNEXES DE MISSION
-    </div>
+  </div>
 
-  </section>
+</header>
 
 
-  <section aria-labelledby="mission-titre">
+<!-- ======================================
+     IDENTITÉ
+====================================== -->
 
-    <h2 class="section-title" id="mission-titre">
-      01 / Ordre de mission
-    </h2>
+<section class="entete">
 
-    <div class="document ordre-mission">
+  <h1>Raoul Vernier</h1>
 
-      <img
-        class="tampon-confidentiel"
-        src="images/images/images/tampon_rouge_brun_m.e.l.d._confidentiel.png"
-        alt=""
-        aria-hidden="true"
-      >
+  <p>Ancien barbouze</p>
 
-      <div class="ordre-contenu">
+  <div class="reference">
+    DOCUMENT INDIVIDUEL — V/07 —
+    ANNEXES DE MISSION
+  </div>
 
-        <h3>
-          BUREAU DES INTERSTICES<br>
-          ORDRE DE MISSION
-        </h3>
-
-        <p class="meta-ligne">
-          RÉFÉRENCE : O.M. 27/66 — VERNIER R.<br>
-          DATE : 14 NOVEMBRE 1966<br>
-          DESTINATAIRE : M. RAOUL VERNIER
-        </p>
-
-        <p>
-          Le destinataire est prié d’effectuer, dans les meilleurs délais,
-          une mission de vérification discrète concernant :
-        </p>
-
-        <ul>
-          <li>
-            la circulation d’informations relatives à certaines installations
-            industrielles et scientifiques situées hors du territoire national ;
-          </li>
-          <li>
-            la provenance de documents photographiques d’intérêt incertain ;
-          </li>
-          <li>
-            l’identité des personnes ayant manifesté un intérêt persistant
-            pour lesdits documents.
-          </li>
-        </ul>
-
-        <p>
-          Aucun contact officiel ne devra être pris sans nécessité.
-          Les observations utiles seront consignées par écrit, avec indication
-          des lieux, dates, circonstances et noms éventuellement relevés.
-        </p>
-
-        <p>
-          Les documents annexés sont remis à titre indicatif.
-          Ils ne valent ni preuve ni conclusion.
-        </p>
-
-        <p>
-          En cas d’incident, s’adresser au Bureau par les voies ordinaires,
-          à l’exclusion de toute initiative spectaculaire.
-        </p>
-
-        <p class="signature">
-          P. de Vauclerc
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
+</section>
 
 
-  <section aria-labelledby="archives-titre">
+<!-- ======================================
+     ORDRE DE MISSION
+====================================== -->
 
-    <h2 class="section-title" id="archives-titre">
-      02 / Pièces photographiques jointes
-    </h2>
+<section aria-labelledby="mission-titre">
 
-    <div class="galerie">
+  <h2 class="section-title"
+      id="mission-titre">
 
-      <!-- PHOTO 1 -->
+    01 / Ordre de mission
 
-      <figure class="photo-archive">
+  </h2>
 
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Saxon_NPP_1961.jpg"
-          alt="Photographie en noir et blanc d'une installation nucléaire expérimentale à Saxton, Pennsylvanie, en 1961."
-          loading="lazy"
-        >
+  <div class="document ordre-mission">
 
-        <figcaption>
+    <!--
+      FILIGRANE OFFICIEL
+      M.E.L.D. CONFIDENTIEL
 
-          <p class="photo-num">
-            ARCHIVE PHOTOGRAPHIQUE — 1961 — R/0049
-          </p>
+      OPACITÉ : 40 %
 
-          <p class="photo-caption">
-            Réacteur nucléaire expérimental de Saxton,
-            Pennsylvanie, États-Unis.
-          </p>
+      Même fichier que sur
+      la page gabrielle.html
+    -->
 
-          <p class="photo-source">
-            Source : Atomic Energy Commission.
-          </p>
+    <img
+      class="tampon-confidentiel"
+      src="images/images/images/tampon_meld_confidentiel.png"
+      alt=""
+      aria-hidden="true"
+    >
 
-        </figcaption>
-
-      </figure>
-
-
-      <!-- PHOTO 2 -->
-
-      <figure class="photo-archive">
-
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/6/69/San_Jos%C3%A9_de_Valderas_5.jpg"
-          alt="Photographie en noir et blanc d'un supposé objet volant non identifié au-dessus de San José de Valderas."
-          loading="lazy"
-        >
-
-        <figcaption>
-
-          <p class="photo-num">
-            ARCHIVE PHOTOGRAPHIQUE — 1967 — S/0050
-          </p>
-
-          <p class="photo-caption">
-            San José de Valderas, Espagne.
-            Photographie présentée comme représentant
-            un objet volant non identifié.
-          </p>
-
-          <p class="photo-source">
-            Origine du phénomène contestée.
-          </p>
-
-        </figcaption>
-
-      </figure>
-
-    </div>
-
-  </section>
-
-
-  <section aria-labelledby="note-titre">
-
-    <h2 class="section-title" id="note-titre">
-      03 / Note
-    </h2>
-
-    <div class="document">
+    <div class="ordre-contenu">
 
       <h3>
-        OBSERVATION
+
+        BUREAU DES INTERSTICES<br>
+        ORDRE DE MISSION
+
       </h3>
 
-      <p class="note">
-        Les pièces photographiques ont été classées ensemble
-        à la suite d’un rapprochement jugé utile par le service,
-        sans que ce rapprochement préjuge de leur nature
-        ni de leur portée effective.
+      <p class="meta-ligne">
+
+        RÉFÉRENCE : O.M. 27/66 — VERNIER R.<br>
+        DATE : 14 NOVEMBRE 1966<br>
+        DESTINATAIRE : M. RAOUL VERNIER
+
+      </p>
+
+      <p>
+
+        Le destinataire est prié d’effectuer,
+        dans les meilleurs délais,
+        une mission de vérification discrète
+        concernant :
+
+      </p>
+
+      <ul>
+
+        <li>
+
+          La circulation d’informations
+          relatives à certaines installations
+          industrielles et scientifiques
+          situées hors du territoire national.
+
+        </li>
+
+        <li>
+
+          La provenance de documents
+          photographiques d’intérêt incertain.
+
+        </li>
+
+        <li>
+
+          L’identité des personnes ayant
+          manifesté un intérêt persistant
+          pour lesdits documents.
+
+        </li>
+
+      </ul>
+
+      <p>
+
+        Aucun contact officiel ne devra
+        être pris sans nécessité.
+
+        Les observations utiles seront
+        consignées par écrit, avec indication
+        des lieux, dates, circonstances et noms
+        éventuellement relevés.
+
+      </p>
+
+      <p>
+
+        Les documents annexés sont remis
+        à titre indicatif.
+
+        Ils ne valent ni preuve ni conclusion.
+
+      </p>
+
+      <p>
+
+        En cas d’incident, s’adresser au Bureau
+        par les voies ordinaires, à l’exclusion
+        de toute initiative spectaculaire.
+
+      </p>
+
+      <p class="signature">
+
+        P. de Vauclerc
+
       </p>
 
     </div>
 
-  </section>
+  </div>
+
+</section>
 
 
-  <footer class="footer">
+<!-- ======================================
+     PIÈCES PHOTOGRAPHIQUES
+====================================== -->
 
-    <p>
-      <a href="enqueteurs.html">← Retour aux enquêteurs</a>
+<section aria-labelledby="archives-titre">
+
+  <h2 class="section-title"
+      id="archives-titre">
+
+    02 / Pièces photographiques jointes
+
+  </h2>
+
+  <div class="galerie">
+
+    <!-- ==================================
+         PHOTO 1 — SAXTON, 1961
+    ================================== -->
+
+    <figure class="photo-archive">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/Saxon_NPP_1961.jpg"
+        alt="Installation nucléaire expérimentale de Saxton en Pennsylvanie, photographiée en 1961."
+        loading="lazy"
+      >
+
+      <figcaption>
+
+        <p class="photo-num">
+
+          ARCHIVE PHOTOGRAPHIQUE —
+          1961 — R/0049
+
+        </p>
+
+        <p class="photo-caption">
+
+          Réacteur nucléaire expérimental
+          de Saxton, Pennsylvanie,
+          États-Unis.
+
+        </p>
+
+        <p class="photo-source">
+
+          Source : Atomic Energy Commission.<br>
+
+          <a
+            href="https://commons.wikimedia.org/wiki/File:Saxon_NPP_1961.jpg"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Consulter la source documentaire
+
+          </a>
+
+        </p>
+
+      </figcaption>
+
+    </figure>
+
+
+    <!-- ==================================
+         PHOTO 2 — SAN JOSÉ DE VALDERAS
+    ================================== -->
+
+    <figure class="photo-archive">
+
+      <img
+        src="https://commons.wikimedia.org/wiki/Special:FilePath/San_Jos%C3%A9_de_Valderas_5.jpg"
+        alt="Photographie présentée comme montrant une soucoupe volante à San José de Valderas en 1967."
+        loading="lazy"
+      >
+
+      <figcaption>
+
+        <p class="photo-num">
+
+          ARCHIVE PHOTOGRAPHIQUE —
+          1967 — S/0050
+
+        </p>
+
+        <p class="photo-caption">
+
+          San José de Valderas, Espagne.
+          Photographie présentée comme
+          représentant un objet volant
+          non identifié.
+
+        </p>
+
+        <p class="photo-source">
+
+          Photographie associée
+          à l’affaire Ummo.<br>
+
+          Document postérieur à l’ordre
+          de mission de novembre 1966.<br>
+
+          <a
+            href="https://commons.wikimedia.org/wiki/File:San_Jos%C3%A9_de_Valderas_5.jpg"
+            target="_blank"
+            rel="noopener noreferrer">
+
+            Consulter la source documentaire
+
+          </a>
+
+        </p>
+
+      </figcaption>
+
+    </figure>
+
+  </div>
+
+</section>
+
+
+<!-- ======================================
+     NOTE
+====================================== -->
+
+<section aria-labelledby="note-titre">
+
+  <h2 class="section-title"
+      id="note-titre">
+
+    03 / Note
+
+  </h2>
+
+  <div class="document">
+
+    <h3>
+      OBSERVATION
+    </h3>
+
+    <p class="note">
+
+      Les pièces photographiques ont été
+      classées ensemble à la suite
+      d’un rapprochement jugé utile
+      par le service, sans que ce
+      rapprochement préjuge de leur
+      nature ni de leur portée effective.
+
     </p>
 
-    <p>
-      BUREAU DES INTERSTICES<br>
-      CHEMISE 04 · COLLABORATEURS EXTÉRIEURS
-    </p>
+  </div>
 
-  </footer>
+</section>
+
+
+<!-- ======================================
+     PIED DE PAGE
+====================================== -->
+
+<footer class="footer">
+
+  <p>
+
+    <a href="enqueteurs.html">
+
+      ← Retour aux enquêteurs
+
+    </a>
+
+  </p>
+
+  <p>
+
+    BUREAU DES INTERSTICES<br>
+    CHEMISE 04 · COLLABORATEURS EXTÉRIEURS
+
+  </p>
+
+</footer>
 
 </main>
 
 </body>
-  </html>
+</html>
