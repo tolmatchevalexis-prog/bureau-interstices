@@ -1,1 +1,417 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Les soutes du ministère — Une enquête de Basile Le Goff, scaphandrier civil. Bureau des Interstices, Paris, novembre 1966.">
+
+<title>Les soutes du ministère — Basile Le Goff</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+rel="stylesheet">
+
+<style>
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72 "EB Garamond",
+    Garamond, Georgia, serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* GRAIN ALÉATOIRE DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* FEUILLE PRINCIPALE */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* TITRE */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.sous-titre {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.date {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  color: #5e594d;
+}
+
+/* TEXTE LITTÉRAIRE */
+
+article {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+article p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* LETTRINE */
+
+article p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+.dialogue {
+  text-align: left;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 630px;
+  margin: 62px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+footer a:focus-visible {
+  outline: 2px solid #24374f;
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .sous-titre {
+    font-size: 20px;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    border: 0;
+    box-shadow: none;
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>Les soutes du ministère</h1>
+
+<p class="sous-titre">
+Une enquête de Basile Le Goff, scaphandrier civil
+</p>
+
+<p class="date">
+Paris, novembre 1966.
+</p>
+
+</header>
+
+<article aria-label="Les soutes du ministère">
+
+<p>
+L'objet posé sur le linoléum du bureau de la direction n'avait pas grand-chose à faire à cet endroit. Une vieille sacoche en cuir bouilli, tachée de rouille et alourdie par les années.
+</p>
+
+<p>
+Personne, dans le service, ne songeait à regarder sous les planchers. Au-dessus, les dossiers s'empilaient, les machines à écrire claquaient, les notes circulaient de main en main. En bas, dans les galeries oubliées du XVIIIe siècle, l'air n'appartenait plus à Paris. Le béton des caves laissait place à de la brique rouge suintante, posée sous le Second Empire pour consolider des carrières vides. Sur des parois étroites où l'on marchait à pas prudents, les canalisations de plomb s'enroulaient en boucles régulières.
+</p>
+
+<p>
+Une odeur de vase séchée, de vieux papier mâché et d'iode y stagnait, entrecoupée par un courant d'air froid venu de nulle part.
+</p>
+
+<p>
+La sacoche de Basile dégageait cette même humidité dense, comme un morceau de haute mer échoué au cœur du VIe arrondissement.
+</p>
+
+<p>Il était onze heures.</p>
+
+<p>
+À cette heure précisément, Paul de Vauclerc signait ses bordereaux. Droit dans son fauteuil. Tout trouvait matière à confirmer ce que l'administration pensait déjà — que le monde, décidément, se laissait aller aux pires approximations.
+</p>
+
+<p>
+Basile Le Goff était assis face à lui. Il portait son habituel gros pull de marin en laine brute, celui qu'on sentait à dix pas, imprégné d'une odeur de sel et de varech. À ses pieds, la sacoche ne bougeait pas.
+</p>
+
+<p class="dialogue">
+— Le problème avec vous, Le Goff, c'est que vous descendez toujours trop bas.
+</p>
+
+<p>
+Il ne répondit pas tout de suite. Il ajusta le col de son pull, prit le temps.
+</p>
+
+<p class="dialogue">
+— Je ne descends pas trop bas, monsieur le directeur. Je vais là où les tuyaux s'arrêtent. Et sous le troisième sous-sol, au niveau des anciennes caves voûtées, le caniveau ne s'écoule plus vers la Seine. Il stagne.
+</p>
+
+<p>De Vauclerc leva les yeux.</p>
+
+<p class="dialogue">
+— La Seine est à deux cents mètres d'ici, et son niveau est parfaitement réglementaire pour la saison. Le service de la voirie ne nous a signalé aucune anomalie.
+</p>
+
+<p class="dialogue">
+— La voirie mesure l'eau qui coule, monsieur de Vauclerc. Pas l'eau qui oublie de s'en aller.
+</p>
+
+<p>
+Depuis trois jours, la pression change dans les conduites de l'aile nord. Mes tympans le savent avant le baromètre. Il y a de l'eau là-bas qui n'a rien à faire à Paris. Une eau plus dense. Plus froide.
+</p>
+
+<p>
+La porte s'entrouvrit sans bruit. Mireille entra, un carnet à spirale sous le bras et un crayon taillé entre les doigts. Elle ne dit rien, prit une chaise à droite de Le Goff, face au directeur. La mine de son crayon effleurait la feuille blanche dans l'attente du premier mot. Ses cheveux roux cuivrés encadraient un visage attentif et immobile.
+</p>
+
+<p class="dialogue">
+— Vous avez trouvé quelque chose ? demanda-t-elle de sa voix un peu grave, le regard fixé sur la sacoche en cuir.
+</p>
+
+<p class="dialogue">
+— Une porte, répondit Basile.
+</p>
+
+<p>Puis il raconta.</p>
+
+<p>
+La descente s'était faite par l'escalier de service, celui que les fonctionnaires n'empruntaient jamais. Au-dessous du rez-de-chaussée, le silence changeait. Le grondement lointain de la circulation parisienne se transformait en un bourdonnement sourd, semblable au battement d'une hélice dans l'eau trouble. L'humidité des parois, le salpêtre, les traînées de rouille le long des canalisations qui suivaient les galeries.
+</p>
+
+<p>C'est là qu'il l'avait trouvée.</p>
+
+<p>
+Une porte de service, peinte en vert institutionnel, sans poignée extérieure, juste une plaque rectangulaire en émail vissée à hauteur d'homme :
+</p>
+
+<p>
+MINISTÈRE DES AFFAIRES CULTURELLES — DIRECTION DES EAUX ET FORÊTS (ANNEXE).
+</p>
+
+<p>
+En s'approchant, Basile avait posé sa main gantée de cuir contre le bois. Le panneau vibrait. Non pas d'un choc mécanique, mais d'une pulsation lente, comme un pouls endormi. Il avait sorti son tournevis, dévissé la plaque d'émail. Derrière la vis du bas, pas de mur, mais un interstice. Une fente étroite, pas plus large qu'une lame de couteau, d'où s'échappait un filet d'air glacé, sentant l'iode, les algues et le vieux papier.
+</p>
+
+<p>Il s'arrêta.</p>
+
+<p>
+Mireille attendit, le crayon suspendu au-dessus du papier.
+</p>
+
+<p class="dialogue">
+— Je n'ai pas ouvert la porte, monsieur le directeur. Il aurait fallu un pied-de-biche, et les concierges n'aiment pas qu'on abîme les boiseries. Mais j'ai glissé une sonde à l'intérieur, par le trou de la vis.
+</p>
+
+<p>
+De Vauclerc le regardait fixement.
+</p>
+
+<p class="dialogue">
+— Qu'est-ce qu'elle a enregistré ?
+</p>
+
+<p class="dialogue">
+— Rien sur le plan acoustique. Pas un son. Par contre, le thermomètre est descendu à quatre degrés en moins de trois secondes. Et la sonde est ressortie couverte d'un sel fin, cristallin. Un sel qu'on ne trouve que dans les grands fonds.
+</p>
+
+<p>
+Mireille leva un sourcil, esquissa un sourire rapide avant de reporter son attention sur son carnet.
+</p>
+
+<p class="dialogue">
+— Vous pensez vraiment qu'il y a la mer sous le boulevard Saint-Germain ? demanda-t-elle.
+</p>
+
+<p class="dialogue">
+— Je pense que Paris est une ville construite sur ses propres sédiments, Mireille, répondit Basile en se levant. Et que certaines années, quand les sous-sols sont trop pleins de paperasses et de fantômes, l'eau finit par reprendre ce qui lui appartient.
+</p>
+
+<p>
+De Vauclerc soupira longuement, ramassa son stylo, traça un trait net sur une feuille blanche et nota la date et quelques mots.
+</p>
+
+<p class="dialogue">
+— Bien. Consignez cela sous le libellé suivant : Phénomène hydraulique non répertorié. Sans suite pour l'administration. Et ayez l'amabilité de sécher vos bottes avant de repasser par le secrétariat, Le Goff.
+</p>
+
+<p>
+Basile hocha la tête, attrapa sa sacoche et quitta la pièce après avoir serré la main du directeur.
+</p>
+
+<p>
+Dans le couloir, l'air sentait la marée descendante.
+</p>
+
+<p>
+Mireille retourna vers son bureau. Elle referma son carnet d'un geste sec.
+</p>
+
+<p>
+Cette affaire lui rappelait quelque chose. Le cas du commandant de frégate Meunier.
+</p>
+
+<p>Elle le signalerait.</p>
+
+</article>
+
+<footer>
+  <a href="enqueteurs.html">
+    ← Retour aux enquêteurs
+  </a>
+</footer>
+
+</main>
+
+</body>
+</html>
+
