@@ -1,1 +1,654 @@
+<!doctype html>
+<html lang="fr">
 
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Raoul Vernier — Ordre de mission et pièces photographiques. Bureau des Interstices.">
+
+<title>Raoul Vernier — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ========================================
+   IDENTITÉ
+======================================== */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+  --encre: #292920;
+  --bleu: #24374f;
+  --vert: #4c5546;
+  --trait: #b4a58b;
+
+  --serif: "EB Garamond", Garamond, Georgia, serif;
+  --machine: "Special Elite", "Courier New", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+  font: 20px/1.62 var(--serif);
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff9df88,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #74552816,
+      transparent 52%
+    ),
+    var(--papier);
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: .10;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.45'/%3E%3C/svg%3E"
+  );
+}
+
+a {
+  color: inherit;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--bleu);
+  outline-offset: 3px;
+}
+
+/* ========================================
+   PAGE
+======================================== */
+
+.page {
+  position: relative;
+  width: min(940px, calc(100% - 32px));
+  margin: 30px auto 60px;
+  padding: clamp(26px, 6vw, 72px);
+
+  background:
+    radial-gradient(
+      ellipse at 10% 9%,
+      #fffff799,
+      transparent 52%
+    ),
+    radial-gradient(
+      ellipse at 92% 86%,
+      #845d3219,
+      transparent 55%
+    ),
+    var(--feuille);
+
+  border: 1px solid #b8aa8c;
+
+  box-shadow:
+    8px 10px 0 #c6b99c,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* ========================================
+   EN-TÊTE
+======================================== */
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding-bottom: 24px;
+  border-bottom: 2px solid var(--encre);
+}
+
+.top-left,
+.top-right {
+  font: 11px/1.8 var(--machine);
+}
+
+.top-right {
+  text-align: right;
+}
+
+.entete {
+  text-align: center;
+  padding: 48px 0 28px;
+}
+
+.entete h1 {
+  margin: 0 0 14px;
+  font: 500 clamp(42px, 7vw, 68px)/1.04 var(--serif);
+  letter-spacing: -.03em;
+}
+
+.entete p {
+  margin: 0;
+  font-size: 22px;
+  font-style: italic;
+}
+
+.reference {
+  margin-top: 16px;
+  font: 11px/1.7 var(--machine);
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--vert);
+}
+
+/* ========================================
+   TITRES DE SECTION
+======================================== */
+
+.section-title {
+  margin: 50px 0 20px;
+  font: 13px/1.7 var(--machine);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--vert);
+}
+
+/* ========================================
+   BLOC DOCUMENT
+======================================== */
+
+.document {
+  position: relative;
+  margin: 24px 0;
+  padding: 28px 30px 28px 42px;
+  background: var(--blanc);
+  border: 1px solid #97856959;
+  box-shadow: 2px 4px 8px #41321e17;
+}
+
+.document::before {
+  content: "";
+  position: absolute;
+  top: 18px;
+  bottom: 18px;
+  left: 22px;
+  width: 2px;
+  background: #ad5346;
+  opacity: .85;
+}
+
+.document h3 {
+  margin: 0 0 16px;
+  font: 13px/1.7 var(--machine);
+  text-transform: uppercase;
+}
+
+.document p {
+  margin: 0 0 14px;
+}
+
+.document p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========================================
+   ORDRE DE MISSION
+======================================== */
+
+.ordre-mission {
+  position: relative;
+  overflow: hidden;
+  min-height: 330px;
+}
+
+.tampon-confidentiel {
+  position: absolute;
+  width: min(420px, 70%);
+  right: 18px;
+  top: 34px;
+  opacity: .40;
+  transform: rotate(-10deg);
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+.ordre-contenu {
+  position: relative;
+  z-index: 2;
+}
+
+.meta-ligne {
+  margin-bottom: 16px;
+  font: 12px/1.8 var(--machine);
+  color: #4e5046;
+}
+
+.ordre-contenu ul {
+  margin: 12px 0 14px 22px;
+  padding: 0;
+}
+
+.ordre-contenu li {
+  margin-bottom: 8px;
+}
+
+.signature {
+  margin-top: 24px;
+  text-align: right;
+  font-style: italic;
+  font-size: 24px;
+}
+
+/* ========================================
+   PHOTOGRAPHIES
+======================================== */
+
+.galerie {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
+
+.photo-archive {
+  margin: 0;
+  padding: 18px;
+  background: #f6eedb;
+  border: 1px solid var(--trait);
+  box-shadow: 2px 4px 8px #41321e17;
+}
+
+.photo-archive img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #b8aa8c;
+  background: #ece4d1;
+}
+
+.photo-num {
+  margin: 14px 0 8px;
+  font: 12px/1.7 var(--machine);
+  color: var(--bleu);
+  letter-spacing: .04em;
+}
+
+.photo-caption {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.photo-source {
+  margin-top: 8px;
+  font: 11px/1.7 var(--machine);
+  color: #5d5a52;
+}
+
+/* ========================================
+   NOTE FINALE
+======================================== */
+
+.note {
+  font: 11px/1.8 var(--machine);
+  color: #625e53;
+}
+
+/* ========================================
+   RETOUR
+======================================== */
+
+.footer {
+  border-top: 2px solid var(--encre);
+  margin-top: 55px;
+  padding-top: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+
+  font: 11px/1.8 var(--machine);
+}
+
+.footer p {
+  margin: 0;
+}
+
+.footer a {
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media(max-width:650px) {
+
+  body {
+    font-size: 19px;
+  }
+
+  .page {
+    margin: 14px auto 32px;
+    box-shadow: 4px 6px 0 #c6b99c;
+  }
+
+  .top {
+    display: block;
+  }
+
+  .top-right {
+    text-align: left;
+    margin-top: 14px;
+  }
+
+  .entete {
+    padding: 38px 0 24px;
+  }
+
+  .document {
+    padding: 22px 18px 22px 34px;
+  }
+
+  .document::before {
+    left: 16px;
+  }
+
+  .tampon-confidentiel {
+    width: 78%;
+    right: 4px;
+    top: 56px;
+  }
+
+  .footer {
+    display: block;
+  }
+
+  .footer p + p {
+    margin-top: 15px;
+  }
+
+}
+
+/* ========================================
+   IMPRESSION
+======================================== */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 20mm;
+    border: 0;
+    box-shadow: none;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+  <header class="top">
+
+    <div class="top-left">
+      RÉPUBLIQUE FRANÇAISE<br>
+      AFFAIRES CULTURELLES<br>
+      BUREAU DES INTERSTICES
+    </div>
+
+    <div class="top-right">
+      CHEMISE 04 · DOSSIER R.V.<br>
+      CONSULTATION INTERNE<br>
+      DIFFUSION LIMITÉE
+    </div>
+
+  </header>
+
+  <section class="entete">
+
+    <h1>Raoul Vernier</h1>
+
+    <p>
+      Ancien barbouze
+    </p>
+
+    <div class="reference">
+      DOCUMENT INDIVIDUEL — V/07 — ANNEXES DE MISSION
+    </div>
+
+  </section>
+
+
+  <section aria-labelledby="mission-titre">
+
+    <h2 class="section-title" id="mission-titre">
+      01 / Ordre de mission
+    </h2>
+
+    <div class="document ordre-mission">
+
+      <img
+        class="tampon-confidentiel"
+        src="images/images/images/tampon_rouge_brun_m.e.l.d._confidentiel.png"
+        alt=""
+        aria-hidden="true"
+      >
+
+      <div class="ordre-contenu">
+
+        <h3>
+          BUREAU DES INTERSTICES<br>
+          ORDRE DE MISSION
+        </h3>
+
+        <p class="meta-ligne">
+          RÉFÉRENCE : O.M. 27/66 — VERNIER R.<br>
+          DATE : 14 NOVEMBRE 1966<br>
+          DESTINATAIRE : M. RAOUL VERNIER
+        </p>
+
+        <p>
+          Le destinataire est prié d’effectuer, dans les meilleurs délais,
+          une mission de vérification discrète concernant :
+        </p>
+
+        <ul>
+          <li>
+            la circulation d’informations relatives à certaines installations
+            industrielles et scientifiques situées hors du territoire national ;
+          </li>
+          <li>
+            la provenance de documents photographiques d’intérêt incertain ;
+          </li>
+          <li>
+            l’identité des personnes ayant manifesté un intérêt persistant
+            pour lesdits documents.
+          </li>
+        </ul>
+
+        <p>
+          Aucun contact officiel ne devra être pris sans nécessité.
+          Les observations utiles seront consignées par écrit, avec indication
+          des lieux, dates, circonstances et noms éventuellement relevés.
+        </p>
+
+        <p>
+          Les documents annexés sont remis à titre indicatif.
+          Ils ne valent ni preuve ni conclusion.
+        </p>
+
+        <p>
+          En cas d’incident, s’adresser au Bureau par les voies ordinaires,
+          à l’exclusion de toute initiative spectaculaire.
+        </p>
+
+        <p class="signature">
+          P. de Vauclerc
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <section aria-labelledby="archives-titre">
+
+    <h2 class="section-title" id="archives-titre">
+      02 / Pièces photographiques jointes
+    </h2>
+
+    <div class="galerie">
+
+      <!-- PHOTO 1 -->
+
+      <figure class="photo-archive">
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Saxon_NPP_1961.jpg"
+          alt="Photographie en noir et blanc d'une installation nucléaire expérimentale à Saxton, Pennsylvanie, en 1961."
+          loading="lazy"
+        >
+
+        <figcaption>
+
+          <p class="photo-num">
+            ARCHIVE PHOTOGRAPHIQUE — 1961 — R/0049
+          </p>
+
+          <p class="photo-caption">
+            Réacteur nucléaire expérimental de Saxton,
+            Pennsylvanie, États-Unis.
+          </p>
+
+          <p class="photo-source">
+            Source : Atomic Energy Commission.
+          </p>
+
+        </figcaption>
+
+      </figure>
+
+
+      <!-- PHOTO 2 -->
+
+      <figure class="photo-archive">
+
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/6/69/San_Jos%C3%A9_de_Valderas_5.jpg"
+          alt="Photographie en noir et blanc d'un supposé objet volant non identifié au-dessus de San José de Valderas."
+          loading="lazy"
+        >
+
+        <figcaption>
+
+          <p class="photo-num">
+            ARCHIVE PHOTOGRAPHIQUE — 1967 — S/0050
+          </p>
+
+          <p class="photo-caption">
+            San José de Valderas, Espagne.
+            Photographie présentée comme représentant
+            un objet volant non identifié.
+          </p>
+
+          <p class="photo-source">
+            Origine du phénomène contestée.
+          </p>
+
+        </figcaption>
+
+      </figure>
+
+    </div>
+
+  </section>
+
+
+  <section aria-labelledby="note-titre">
+
+    <h2 class="section-title" id="note-titre">
+      03 / Note
+    </h2>
+
+    <div class="document">
+
+      <h3>
+        OBSERVATION
+      </h3>
+
+      <p class="note">
+        Les pièces photographiques ont été classées ensemble
+        à la suite d’un rapprochement jugé utile par le service,
+        sans que ce rapprochement préjuge de leur nature
+        ni de leur portée effective.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer class="footer">
+
+    <p>
+      <a href="enqueteurs.html">← Retour aux enquêteurs</a>
+    </p>
+
+    <p>
+      BUREAU DES INTERSTICES<br>
+      CHEMISE 04 · COLLABORATEURS EXTÉRIEURS
+    </p>
+
+  </footer>
+
+</main>
+
+</body>
+  </html>
