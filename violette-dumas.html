@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="fr">
 
@@ -8,18 +9,22 @@
 <meta name="theme-color" content="#ded3b8">
 
 <meta name="description"
-content="Le téléphone qui ne sonnait pas — Une enquête de Viktor Pavlovitch Belov, dit Monsieur Roussel. Paris, novembre 1966.">
+content="Une adresse — Une enquête de Violette Dumas, géomètre. Paris, août 1966. Bureau des Interstices.">
 
-<title>Le téléphone qui ne sonnait pas — Viktor Belov</title>
+<title>Une adresse — Violette Dumas</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link
-href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
-rel="stylesheet">
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet">
 
 <style>
+
+/* ========================================
+   PAPIER ET TYPOGRAPHIE
+======================================== */
 
 :root {
   --papier: #ded3b8;
@@ -40,8 +45,11 @@ body {
   margin: 0;
   color: var(--encre);
 
-  font: 21px/1.72 "EB Garamond",
-    Garamond, Georgia, serif;
+  font: 21px/1.72
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
 
   background:
     radial-gradient(
@@ -57,7 +65,7 @@ body {
     var(--papier);
 }
 
-/* GRAIN IRRÉGULIER DU PAPIER */
+/* TRAME ALÉATOIRE DU PAPIER */
 
 body::before {
   content: "";
@@ -72,7 +80,9 @@ body::before {
   );
 }
 
-/* FEUILLE PRINCIPALE */
+/* ========================================
+   FEUILLE PRINCIPALE
+======================================== */
 
 .page {
   position: relative;
@@ -104,7 +114,9 @@ body::before {
   pointer-events: none;
 }
 
-/* TITRE */
+/* ========================================
+   TITRE
+======================================== */
 
 header {
   max-width: 630px;
@@ -133,7 +145,9 @@ h1 {
   color: #5e594d;
 }
 
-/* TEXTE LITTÉRAIRE */
+/* ========================================
+   TEXTE LITTÉRAIRE
+======================================== */
 
 article {
   max-width: 630px;
@@ -144,7 +158,10 @@ article p {
   margin: 0 0 1.15em;
   text-align: justify;
   hyphens: auto;
+  text-wrap: pretty;
 }
+
+/* LETTRINE */
 
 article p:first-child::first-letter {
   float: left;
@@ -153,43 +170,21 @@ article p:first-child::first-letter {
   padding: .12em .12em 0 0;
 }
 
+/* DIALOGUES */
+
 .dialogue {
   text-align: left;
 }
 
-/* SÉPARATIONS DES SCÈNES */
-
-.separation {
-  margin: 38px auto;
-  text-align: center;
-  font-size: 24px;
-  line-height: 1;
-}
+/* INSCRIPTION OU NOTE */
 
 .inscription {
-  text-align: center;
   font-style: italic;
 }
 
-.lettre {
-  margin: 24px 0 30px;
-  padding-left: 25px;
-  border-left: 1px solid var(--trait);
-  font-style: italic;
-}
-
-.lettre p {
-  text-align: left;
-}
-
-.fin {
-  margin-top: 48px;
-  text-align: center;
-  font-size: 17px;
-  letter-spacing: .13em;
-}
-
-/* RETOUR */
+/* ========================================
+   RETOUR
+======================================== */
 
 footer {
   max-width: 630px;
@@ -213,7 +208,9 @@ footer a:focus-visible {
   outline-offset: 4px;
 }
 
-/* MOBILE */
+/* ========================================
+   MOBILE
+======================================== */
 
 @media(max-width:600px) {
 
@@ -240,13 +237,11 @@ footer a:focus-visible {
     text-align: left;
   }
 
-  .separation {
-    margin: 32px auto;
-  }
-
 }
 
-/* IMPRESSION */
+/* ========================================
+   IMPRESSION
+======================================== */
 
 @media print {
 
@@ -260,11 +255,11 @@ footer a:focus-visible {
   }
 
   .page {
-    border: 0;
-    box-shadow: none;
     width: 100%;
     margin: 0;
     padding: 18mm;
+    border: 0;
+    box-shadow: none;
   }
 
   footer {
@@ -283,1073 +278,680 @@ footer a:focus-visible {
 
 <header>
 
-<h1>Le téléphone qui ne sonnait pas</h1>
+<h1>Une adresse</h1>
 
 <p class="sous-titre">
-Une enquête de Viktor Pavlovitch Belov, dit « Monsieur Roussel »
+Une enquête de Violette Dumas, géomètre
 </p>
 
 <p class="date">
-Paris, novembre 1966.
+Paris, août 1966.
 </p>
 
 </header>
 
-<article aria-label="Le téléphone qui ne sonnait pas">
+<article aria-label="Une adresse">
 
 <p>
-Il pleuvait depuis le matin. Une pluie parisienne, sans enthousiasme, qui descendait le long des façades et transformait les trottoirs en une collection de petits miroirs gris. Rien d'exceptionnel. Les Parisiens avaient l'habitude.
+Sur le plan de Violette Dumas, la pièce mesurait onze mètres carrés vingt-six.
 </p>
 
 <p>
-Dans le bureau de Paul de Vauclerc, une pendule indiquait onze heures dix-sept.
+Elle n’avait pas de porte.
 </p>
 
-<p class="dialogue">
-— Vous voyez, Roussel, le problème avec cet appareil, c'est qu'il n'est pas branché.
-</p>
-
-<p>
-Le directeur souleva le combiné d'un téléphone noir posé sur son bureau. Un modèle administratif, en bakélite, parfaitement ordinaire. Son fil avait été sectionné.
-</p>
-
-<p class="dialogue">
-— Nous l'avons trouvé ce matin dans le placard des archives. Suzanne affirme qu'il n'y était pas hier. À neuf heures quarante-deux, il a sonné.
-</p>
-
 <p>
-De Vauclerc alluma une cigarette.
-</p>
-
-<p class="dialogue">
-— Trois fois. Suzanne a décroché. Un homme lui a demandé de vous transmettre un message. Il parlait russe.
+Violette avait d’abord pensé à une erreur de report. Elle avait repris ses notes, changé de crayon, recommencé sur une feuille neuve. Puis elle était retournée dans l’appartement avec son théodolite Wild T2, son trépied et cette mauvaise humeur particulière que lui donnaient les travaux à refaire gratuitement. Elle avait voulu contrôler jusqu’aux angles.
 </p>
 
 <p>
-Il fit glisser un papier vers Viktor.<br>
-Ne réponds pas à la troisième sonnerie.
+La propriétaire lui avait ouvert en combinaison, un peigne dans les cheveux.
 </p>
 
 <p>
-Viktor Pavlovitch Belov, connu du Bureau sous le nom de monsieur Roussel, contempla le téléphone avec une certaine contrariété. Ancien officier soviétique, spécialiste des transmissions, il avait connu des dispositifs plus élaborés. Mais les téléphones qui sonnaient sans être raccordés au réseau n'étaient pas une spécialité de son ancien service.
-</p>
-
-<p class="dialogue">
-— Monsieur le directeur, je pense qu'on se moque de nous. Ou que nous sommes en présence d'un appareil étrange. Permettez-vous que je l'inspecte ?
+Elles avaient déplacé une armoire.
 </p>
 
 <p>
-Il fouilla sa sacoche.
+Derrière, il y avait un mur.
 </p>
 
 <p>
-Au même instant, le téléphone sonna.
+Au café, rue de Sèvres, Violette posa le doigt sur le petit rectangle. Elle avait beau déplacer les cloisons, rogner sur le couloir, épaissir les murs, quelque chose finissait toujours par dépasser ailleurs.
 </p>
 
 <p>
-Une fois.
+L’architecte avait écrit : « Veuillez vérifier vos relevés. »
 </p>
 
 <p>
-Viktor trouva son tournevis.
+Il avait souligné « vos ».
 </p>
 
-<div class="separation" aria-hidden="true">*</div>
-
 <p>
-L'appareil était ancien. Un type 43, fabriqué par la Société Industrielle des Téléphones. Les vis du boîtier avaient été manipulées récemment.
-</p>
-
-<p class="dialogue">
-— Je vous en prie, Roussel, dit de Vauclerc. Essayez seulement de ne pas abîmer le bureau. C'est du Second Empire et l'administration refuse de le remplacer.
+Elle repoussa sa tasse. Un transistor grésillait derrière le comptoir.
 </p>
 
 <p>
-Suzanne Charrenson apporta une petite coupelle de porcelaine.
+Dehors, une averse venait de finir. Les voitures passaient avec un bruit de linge qu’on déchire. Sur la boutique d’en face, une feuille annonçait une réouverture en septembre. Quelqu’un avait ajouté au crayon : « Si tout va bien. »
 </p>
 
 <p class="dialogue">
-— Pour les vis. Elles ont une fâcheuse tendance à disparaître dans les tapis.
-</p>
-
-<p>
-Viktor ouvrit l'appareil.
-</p>
-
-<p>
-À l'intérieur, la sonnerie avait disparu. À sa place, quelqu'un avait installé un montage électronique, deux transistors, un transformateur, une bobine blindée. Certaines pièces étaient soviétiques.
-</p>
-
-<p>
-Une pile plate de quatre volts et demi alimentait le dispositif. Un fil rouge maintenait ouverte une petite lamelle métallique. Si le fil se rompait, le contact risquait de se fermer.
-</p>
-
-<p>
-Sous la plaque de bakélite, trois lettres cyrilliques avaient été gravées.
-</p>
-
-<p class="inscription" lang="ru">
-ЖДИ.
-</p>
-
-<p class="inscription">
-Attends.
+— Vous allez trouer le papier.
 </p>
 
 <p>
-Viktor regarda l'horloge.
+Violette leva les yeux.
 </p>
 
 <p>
-Onze heures dix-sept.
+Une femme se tenait près de sa table. Elle désignait la gomme que Violette avait encore entre les doigts.
 </p>
 
-<p>
-Elle indiquait déjà onze heures dix-sept à son arrivée. Son balancier oscillait pourtant régulièrement.<br>
-Une aiguille avança d'un cran.
-</p>
-
-<p>
-Puis s'immobilisa.
+<p class="dialogue">
+— C’est déjà fait, dit Violette.
 </p>
 
 <p>
-Viktor n'aimait pas cela.
+La femme regarda la chaise.
 </p>
 
 <p class="dialogue">
-— Suzanne, monsieur le directeur, pourriez-vous quitter le bureau ? Juste le temps que je débranche ce petit fil rouge. On ne sait jamais jusqu'où peut aller la plaisanterie.
+— Vous attendez quelqu’un ?
 </p>
 
 <p class="dialogue">
-— C'est généralement mauvais signe, observa Suzanne.
+— Non.
 </p>
 
 <p class="dialogue">
-— C'est aussi mon sentiment, répondit de Vauclerc.
+— Je peux ?
 </p>
 
 <p>
-Ils sortirent.
+Violette rassembla ses affaires. La femme s’assit, posa son sac sur ses genoux et attendit que le garçon tourne la tête.
 </p>
 
-<p>
-Viktor reprit son examen.
-</p>
-
-<p>
-Le circuit était plus compliqué qu'il ne paraissait. Une seconde connexion, presque invisible, passait sous le mécanisme. Une troisième languette métallique était dissimulée sous la pile. Retirer celle-ci pouvait déclencher autre chose.
-</p>
-
-<p>
-Il considéra le téléphone, puis l'horloge.
-</p>
-
-<p>
-Trois sonneries. Trois secondes affichées.
-</p>
-
-<p>
-Trop de coïncidences.
-</p>
-
-<p>
-Il se leva et ouvrit la petite porte vitrée de la pendule. Le balancier allait et venait avec une tranquillité insupportable.
-</p>
-
-<p>
-Il l'immobilisa entre deux doigts.
-</p>
-
-<p>
-Le téléphone émit un claquement.
+<p class="dialogue">
+— Un café, s’il vous plaît.
 </p>
 
 <p>
-Puis une voix sortit du boîtier ouvert.
+Elle avait parlé sans élever la voix. Le garçon l’avait entendue.
 </p>
 
 <p>
-Elle parlait russe.
+Violette voulut rouler le plan.
 </p>
 
 <p class="dialogue">
-— Camarade Belov. Ne relâchez pas le balancier.
-</p>
-
-<p>
-Un souffle.
+— Ne vous dérangez pas pour moi.
 </p>
 
 <p class="dialogue">
-— Ils sont déjà ici.
-</p>
-
-<p>
-On frappa à la porte.<br>
-Trois coups.
+— Vous êtes architecte ?
 </p>
 
 <p class="dialogue">
-— Monsieur de Vauclerc ? C'est l'administration des Postes. Nous venons pour votre ligne téléphonique.
+— Non.
 </p>
 
-<p>
-Viktor considéra sa position. Un ancien officier du renseignement soviétique, tenant une pendule entre deux doigts, dans un bureau ministériel français, tandis qu'un téléphone démonté lui prodiguait des conseils en russe.
+<p class="dialogue">
+— Alors ça ne vous intéressera pas.
 </p>
 
 <p>
-Un joli bourbier.
+La femme sourit.
 </p>
 
 <p>
-Il répondit en allemand.
+Violette conserva longtemps le souvenir de ce sourire, mais elle fut ensuite incapable de dire ce qu’il avait de particulier.
 </p>
 
 <p class="dialogue">
-— Désolé, je ne comprends pas le français. Parlez-vous allemand ?
-</p>
-
-<p>
-L'homme répondit immédiatement dans cette langue. Un allemand impeccable, presque trop appliqué. Il prétendait devoir vérifier la ligne.
-</p>
-
-<p>
-Dans le couloir, Suzanne protestait.
+— C’est chez vous ? demanda la femme.
 </p>
 
 <p class="dialogue">
-— Messieurs, je vous ai déjà expliqué que monsieur de Vauclerc était occupé.
+— Heureusement non.
 </p>
 
 <p class="dialogue">
-— Madame, veuillez vous éloigner de cette porte.
+— Qu’est-ce qui ne va pas ?
 </p>
 
 <p>
-Le ton avait changé.
+Violette regarda le rectangle.
 </p>
 
 <p>
-Le téléphone grésilla.
+Elle aurait pu parler d’un problème de cote, d’une difficulté avec un client. Au lieu de cela, elle entendit sa propre voix répondre :
 </p>
 
 <p class="dialogue">
-— Belov. N'ouvre pas. Interroge-le sur Minsk.
+— Il y a une pièce de trop.
 </p>
 
 <p>
-Viktor soupira.
+La femme se pencha sur la feuille.
 </p>
 
 <p class="dialogue">
-— Eh, camarade ! Tu te souviens des beaux hivers de Minsk ?
-</p>
-
-<p>
-Le silence fut immédiat.
+— Ici ?
 </p>
 
-<p>
-Puis l'homme répondit, toujours en allemand :
-</p>
-
 <p class="dialogue">
-— À Minsk, il n'y a pas de beaux hivers.
-</p>
-
-<p>
-Un bruit métallique parvint du couloir.
-</p>
-
-<p>
-Viktor connaissait ce genre de bruit.
-</p>
-
-<p>
-Le téléphone se mit à émettre du morse.<br>
-DULAC.
-</p>
-
-<p>
-Cinq lettres.
-</p>
-
-<p>
-Viktor prit sa décision.
-</p>
-
-<p>
-Il souleva la pendule, la dégagea de ses crochets et traversa le bureau en maintenant tant bien que mal le balancier immobile.
-</p>
-
-<p>
-La fenêtre donnait sur une cour intérieure, trois étages plus bas.
-</p>
-
-<p>
-Il lança la pendule à travers la vitre.
-</p>
-
-<p>
-Le fracas fut considérable.
-</p>
-
-<p>
-Quelques secondes plus tard, un choc monta de la cour. Quelque chose changea dans la pièce. Une sensation brève, comme lorsqu'un ascenseur s'arrête.
-</p>
-
-<p>
-Le téléphone sonna une fois.
-</p>
-
-<p>
-Viktor courut vers la porte.
-</p>
-
-<div class="separation" aria-hidden="true">*</div>
-
-<p>
-Le couloir était devenu un champ de bataille administratif.
+— Oui.
 </p>
 
-<p>
-Suzanne se trouvait assise par terre. De Vauclerc avait perdu ses lunettes. Deux hommes occupaient le passage, dont l'un tenait un pistolet.
+<p class="dialogue">
+— Et dans l’appartement ?
 </p>
 
-<p>
-Il aperçut Viktor.
+<p class="dialogue">
+— Dans l’appartement, il y a un mur. De l’autre côté aussi. J’ai mesuré le palier, la cage d’escalier et le logement voisin. J’ai même fait ouvrir un placard chez les gens du dessous.
 </p>
 
 <p>
-Trop tard.
+Elle attendit.
 </p>
 
 <p>
-Le direct du droit lui fracassa la mâchoire. Le coup partit au moment où il levait son arme. Une détonation éclata. Le plâtre vola au-dessus de la porte.
+La femme ne dit rien.
 </p>
 
-<p>
-Viktor enchaîna avec l'épaule.
+<p class="dialogue">
+— Je sais faire mon métier, ajouta Violette.
 </p>
 
 <p>
-L'homme recula, heurta son camarade et tous deux s'effondrèrent contre une petite table. Un vase se brisa. Le pistolet glissa sous une armoire.
+Le garçon revint avec le café et attendit, le plateau levé.
 </p>
 
 <p class="dialogue">
-— Suzanne ! Le pistolet !
+— Un peu de place, madame.
 </p>
 
 <p>
-Elle se mit à quatre pattes pour le récupérer.
+Violette rabattit un angle du plan. La soucoupe accrocha le bord de la feuille ; elle la retint avant que la tasse se renverse.
 </p>
 
 <p>
-Viktor décocha un coup de pied à l'homme en imperméable. L'autre lui agrippa la jambe.
+Le garçon posa la note sur le dessin.
 </p>
 
 <p class="dialogue">
-— Tu vas me lâcher, connard !
+— Merci bien.
 </p>
 
 <p>
-Suzanne retrouva l'arme.
+Il repartit avec son plateau.
 </p>
 
 <p class="dialogue">
-— Monsieur Roussel !
+— Je peux vous donner une adresse, dit la femme.
 </p>
 
 <p class="dialogue">
-— Jetez-la-moi ! Par pitié, visez juste !
-</p>
-
-<p>
-Elle lança le pistolet.
+— Pour faire vérifier mon travail ?
 </p>
 
-<p>
-Viktor, retenu par la jambe, le manqua.
+<p class="dialogue">
+— Pour le montrer.
 </p>
 
 <p>
-L'arme termina sa course dans le ventre de Paul de Vauclerc, qui la réceptionna avec un grognement.
+Violette la regarda.
 </p>
 
 <p class="dialogue">
-— Suzanne ! On ne lance pas un pistolet !
+— À qui ?
 </p>
 
 <p class="dialogue">
-— Vous préfériez que je le garde, monsieur le directeur ?
-</p>
-
-<p>
-À cet instant, le téléphone sonna une troisième fois.
+— Demandez monsieur de Vauclerc.
 </p>
 
-<p>
-Les deux agresseurs s'immobilisèrent.
+<p class="dialogue">
+— C’est un architecte ?
 </p>
 
 <p class="dialogue">
-— Il a répondu, murmura l'un d'eux en russe.
+— Il dirige un petit service.
 </p>
 
 <p>
-Son camarade le regarda.
+Violette eut un rire bref.
 </p>
 
 <p class="dialogue">
-— Qui ?
-</p>
-
-<p>
-Personne ne répondit.
+— Un service de quoi ?
 </p>
 
 <p>
-Des pas résonnèrent dans le bureau.
+La femme remua son café. La cuillère toucha deux fois la porcelaine.
 </p>
 
-<p>
-L'homme qui tenait la jambe de Viktor le lâcha brusquement. Il se releva et s'enfuit. L'autre le suivit dans l'escalier.
+<p class="dialogue">
+— Vous lui expliquerez ce que vous venez de m’expliquer.
 </p>
 
 <p>
-Un silence relatif revint.
+Il y avait quelque chose d’irritant dans cette assurance. Violette s’en aperçut. Elle aurait dû demander d’où cette femme connaissait ce monsieur, pourquoi elle pensait qu’il accepterait de la recevoir, et ce qu’un service administratif ferait d’un appartement mal mesuré.
 </p>
 
 <p>
-Dans l'encadrement de la porte se tenait maintenant un homme d'une cinquantaine d'années, vêtu d'un costume gris dont la coupe semblait démodée. Il portait un chapeau à la main.
+Elle chercha plutôt un bout de papier.
 </p>
 
 <p>
-Ses chaussures étaient mouillées.
-</p>
-
-<p class="dialogue">
-— Pardonnez cette entrée peu conventionnelle.
+La femme lui tendit la note.
 </p>
 
 <p>
-De Vauclerc, qui tenait toujours le pistolet contre son ventre, demanda :
-</p>
-
-<p class="dialogue">
-— Qui êtes-vous ?
+Violette écrivit au dos un numéro, puis « rue de Babylone », puis le nom. Elle demanda comment il s’épelait.
 </p>
 
 <p class="dialogue">
-— Henri Dulac.
+— Et je viens de la part de qui ?
 </p>
 
-<p>
-Viktor reconnut le nom.
-</p>
-
 <p class="dialogue">
-— Monsieur Belov, reprit l'homme, nous avons très peu de temps.
+— Gabrielle.
 </p>
 
-<div class="separation" aria-hidden="true">*</div>
-
 <p>
-Dulac apportait une enveloppe.
+Elle inscrivit le prénom sous l’adresse.
 </p>
 
 <p>
-Sur celle-ci figuraient le véritable nom de Viktor, la date du jour et une heure.
+Elles parlèrent encore un moment. Violette se souviendrait qu’elles avaient parlé. Elle se rappellerait aussi avoir ri, une fois, et s’être sentie un peu moins fatiguée.
 </p>
 
 <p>
-Onze heures vingt-trois.
+Le reste lui échapperait.
 </p>
 
 <p>
-À l'intérieur, une feuille couverte d'une écriture russe et une petite plaque d'aluminium.
-</p>
-
-<p class="inscription" lang="ru">
-Б-1742.
+Elles se séparèrent devant le café.
 </p>
 
 <p>
-Sur l'autre face était gravé un mot.
-</p>
-
-<p class="inscription">
-RETOUR.
+Au coin de la rue, Violette s’arrêta pour laisser passer une camionnette. Elle chercha des yeux la femme dont elle venait de prendre congé.
 </p>
 
 <p>
-Viktor déplia la lettre.
+Il y avait une dame avec un filet à provisions, un garçon en chemise blanche qui transportait des cageots, une autre femme qui refermait son parapluie.
 </p>
 
-<div class="lettre">
-
 <p>
-Vous ne me connaissez pas.
+Violette aurait dû pouvoir la reconnaître.
 </p>
 
 <p>
-Nous nous sommes rencontrés trois fois.
+Elle consulta la note.
 </p>
 
 <p>
-La première fois, vous m'avez arrêté.
+C’était bien son écriture.
 </p>
 
 <p>
-La deuxième fois, vous m'avez laissé partir.
+La porte cochère était entrouverte.
 </p>
 
 <p>
-La troisième fois, vous m'avez tué.
+Violette vérifia le numéro, puis entra dans une cour où une bicyclette avait été appuyée contre un mur. Une pince à pantalon pendait au guidon. Au fond, une fenêtre ouverte laissait entendre les frappes irrégulières d’une machine à écrire.
 </p>
 
 <p>
-Je vous demande de ne pas recommencer.
+Elle trouva l’escalier, monta un étage et frappa.
 </p>
 
-<p>
-Je viendrai à onze heures vingt-trois.<br>
-Ne laissez personne me toucher.
+<p class="dialogue">
+— Entrez.
 </p>
 
 <p>
-P. S. : Demandez à Dulac pourquoi il a vieilli.
+La femme assise derrière le bureau avait un crayon retenu dans les cheveux. Un livre d’Agatha Christie reposait près du téléphone, entre un sous-main et une pile de courrier.
 </p>
-
-</div>
 
 <p>
-Viktor leva les yeux.
+Violette s’arrêta sur le seuil.
 </p>
 
 <p class="dialogue">
-— Pourquoi avez-vous vieilli ?
-</p>
-
-<p>
-Dulac s'assit.
+— Bonjour. Je voudrais voir monsieur de Vauclerc.
 </p>
 
 <p class="dialogue">
-— Parce que je n'ai pas su partir.
-</p>
-
-<p>
-Il affirma avoir trente-quatre ans.
-</p>
-
-<p>
-De Vauclerc le considéra attentivement.
+— Vous avez rendez-vous ?
 </p>
 
 <p class="dialogue">
-— Vous les portez assez mal.
-</p>
-
-<p>
-En 1959, expliqua Dulac, il travaillait à Saclay sur des dispositifs de mesure. Son équipe avait observé des phénomènes inexplicables : certains instruments semblaient enregistrer des événements avant qu'ils ne se produisent.
-</p>
-
-<p>
-Une expérience avait duré onze minutes selon les horloges extérieures.
-</p>
-
-<p>
-Dulac affirma en avoir vécu dix-neuf années.
+— Non. On m’a donné son nom.
 </p>
 
 <p class="dialogue">
-— Je ne vous demande pas de me croire, précisa-t-il. Je ne peux pas le démontrer.
-</p>
-
-<p>
-Viktor regarda la plaque.
-</p>
-
-<p>
-Quelque chose remuait dans sa mémoire.
-</p>
-
-<p>
-Minsk. Février 1959.
-</p>
-
-<p>
-Une installation industrielle. Des câbles. Des équipements de transmission. Une porte portant le numéro 1742.
-</p>
-
-<p>
-Puis le vide.
-</p>
-
-<p>
-On frappa.
-</p>
-
-<p>
-Trois coups.
-</p>
-
-<p>
-Un jeune homme apparut, une valise à la main. Il semblait avoir vingt-cinq ans. Ses chaussures étaient couvertes d'une poussière blanche.
+— À quel sujet ?
 </p>
 
 <p>
-Il reconnut immédiatement Viktor.
+Violette regarda son rouleau de papier.
 </p>
 
 <p class="dialogue">
-— Viktor Pavlovitch !
-</p>
-
-<p>
-Puis il aperçut Dulac.
+— Un relevé.
 </p>
 
 <p>
-Son sourire disparut.
+La femme attendit la suite.
 </p>
 
 <p class="dialogue">
-— Vous ne devriez pas être ici.
-</p>
-
-<div class="separation" aria-hidden="true">*</div>
-
-<p>
-Le jeune homme prétendait avoir été arrêté à Minsk par Viktor.
-</p>
-
-<p>
-Puis relâché.
-</p>
-
-<p>
-Puis abattu.
-</p>
-
-<p>
-Il possédait une plaque identique à celle de l'enveloppe, portant le même numéro, mais gravée de la date du jour.
+— Je suis géomètre.
 </p>
 
-<p>
-Il disait avoir envoyé un signal électromagnétique depuis l'installation soviétique en février 1959. Le signal avait reçu une réponse sept minutes avant son émission.
-</p>
-
-<p>
-Viktor écoutait.
+<p class="dialogue">
+— Asseyez-vous.
 </p>
 
 <p>
-La situation possédait désormais toutes les qualités d'un mauvais rêve. Des horloges détraquées, des hommes qu'il aurait tués, des lettres qui arrivaient avant leurs auteurs. Et des Soviétiques qui se présentaient dans un ministère français avec une remarquable absence de discrétion.
+Elle tira une feuille vers elle.
 </p>
 
-<p>
-Il récupéra le Walther.
+<p class="dialogue">
+— Votre nom ?
 </p>
 
 <p class="dialogue">
-— Soyons clairs. Je ne me souviens pas de vous. Je ne me souviens pas de vous avoir abattu. En revanche, si vous tentez d'être hostile, je vous abats sur-le-champ.
+— Violette Dumas.
 </p>
 
 <p>
-Le jeune homme leva les mains.
+Elle le nota.
 </p>
 
 <p class="dialogue">
-— Je vous crois, monsieur Belov.
-</p>
-
-<p>
-Il désigna la valise.
+— Et qui vous adresse à nous ?
 </p>
 
 <p class="dialogue">
-— Elle contient un appareil de mesure. Vous pouvez l'examiner vous-même.
+— Gabrielle.
 </p>
 
 <p>
-Viktor s'approcha.
+La pointe du crayon resta un instant au-dessus du papier.
 </p>
 
-<p>
-Il posa simplement sa main sur le cuir.
+<p class="dialogue">
+— Vous avez son nom de famille ?
 </p>
 
-<p>
-Un petit claquement se produisit sous sa paume.
+<p class="dialogue">
+— Non.
 </p>
 
 <p>
-Puis un second.
+Violette fouilla dans son sac.
 </p>
 
-<p>
-Il sentit une vibration, un moteur, peut-être. La valise était chaude. Une pression étrange souleva légèrement le cuir sous ses doigts.
+<p class="dialogue">
+— Je l’ai rencontrée tout à l’heure. Dans un café. Elle m’a dit…
 </p>
 
 <p>
-Les bruits cessèrent.
+Elle tendit la note.
 </p>
 
 <p>
-Le jeune homme semblait surpris.
+La femme la lut, puis la lui rendit.
 </p>
 
 <p class="dialogue">
-— Depuis que vous avez posé la main dessus.
+— Je vais voir si monsieur de Vauclerc peut vous recevoir.
 </p>
 
 <p>
-Viktor ne répondit pas.
+Elle se leva.
 </p>
 
 <p class="dialogue">
-— Monsieur Belov, reprit l'homme, à Minsk, lorsque vous avez entendu votre propre voix à la radio, qu'avez-vous fait ?
-</p>
-
-<p>
-Cette fois, quelque chose revint.
-</p>
-
-<p>
-Un casque d'écoute.
-</p>
-
-<p>
-Une pièce froide.
+— Charrenson, ajouta-t-elle. Suzanne Charrenson.
 </p>
 
 <p>
-Un récepteur couvert de parasites.
+Quand elle eut quitté la pièce, Violette posa son sac sur ses genoux.
 </p>
 
 <p>
-Sa voix, reconnaissable entre toutes.
+Le bureau avait probablement été un salon. Une moulure disparaissait dans une cloison récente. Au-dessus d’une armoire métallique, deux silhouettes plus claires indiquaient l’emplacement de tableaux retirés. Un parapluie séchait dans une corbeille à papier.
 </p>
 
 <p>
-Ne l'ouvre pas...
+Violette regarda le livre près du téléphone.
 </p>
 
 <p>
-Puis :
+Elle avait lu celui-là.
 </p>
 
 <p>
-...avant que je revienne.
+Elle essaya ensuite de se rappeler le visage de Gabrielle. Les traits se présentaient séparément, sans parvenir à tenir ensemble. Dès qu’elle croyait les retrouver, elle avait l’impression de penser à quelqu’un d’autre.
 </p>
 
 <p>
-Il se souvenait maintenant d'un capitaine nommé Sokolov. D'une installation industrielle, d'une porte métallique.
+La porte se rouvrit.
 </p>
 
-<p>
-Après cela, plus rien.
-</p>
-
-<p>
-Le lendemain, il s'était réveillé dans une chambre d'hôtel avec une migraine terrible. Un ordre venu de Moscou exigeait son retour immédiat.
+<p class="dialogue">
+— Il vous reçoit.
 </p>
 
 <p>
-L'opération avait disparu des dossiers.
+Monsieur de Vauclerc portait une veste malgré la douceur de l’après-midi.
 </p>
 
 <p>
-Dulac l'observait.
+Une mèche blanche, juste au-dessus de la tempe gauche, coupait sa chevelure sombre.
 </p>
 
-<p class="dialogue">
-— En 1959, dit-il, nous avons reçu deux rapports de votre intervention. Ils étaient authentiques. Même signature, même date, mêmes références administratives. Mais ils divergeaient après votre entrée dans la salle 1742.
-</p>
-
 <p>
-Il hésita.
-</p>
-
-<p class="dialogue">
-— Dans le premier, Sokolov était mort et vous étiez vivant.
-</p>
-
-<p class="dialogue">
-— Et dans le second ? demanda de Vauclerc.
+Il se leva à son entrée, lui indiqua une chaise et attendit qu’elle soit assise avant de reprendre sa place.
 </p>
 
 <p class="dialogue">
-— Sokolov était vivant. Vous étiez mort.
+— Madame Dumas. Suzanne m’a dit que vous aviez un problème avec un relevé. Je vous en prie, reprenons les choses depuis le commencement.
 </p>
 
 <p>
-Le directeur posa son stylo.
+La voix était ample, posée, faite pour une salle plus vaste.
 </p>
 
 <p class="dialogue">
-— Magnifique.
-</p>
-
-<p>
-Dulac poursuivit. Trois jours après l'incident, un homme portant l'uniforme soviétique était venu le trouver à Saclay. Cet homme ressemblait exactement à Viktor, mais présentait une cicatrice au-dessus du sourcil gauche.
+— Plusieurs, maintenant.
 </p>
 
 <p>
-Il lui avait demandé de détruire les recherches françaises.
+Il lui adressa un regard attentif.
 </p>
 
 <p>
-Dulac avait refusé.
+Violette posa le plan sur le bureau. Il écarta lui-même les chemises qui gênaient, déplaça un cendrier, puis maintint un angle du papier avec sa main.
 </p>
 
 <p>
-Trois jours plus tard, il avait vieilli de dix-neuf ans.
+Elle expliqua.
 </p>
 
 <p>
-Le jeune homme intervint.
-</p>
-
-<p class="dialogue">
-— À six heures quarante ce matin, un employé du métro a signalé un homme descendu sur les voies à Arts et Métiers. Les agents ne l'ont pas retrouvé. Plus tard, il a été aperçu sur le quai opposé.
+Au début, elle choisit ses mots avec soin. Elle parla des mesures, de leur report, des vérifications effectuées. Puis elle en vint aux visites supplémentaires, à l’armoire, aux voisins qu’elle avait dérangés pendant leur déjeuner.
 </p>
 
 <p class="dialogue">
-— Et ? demanda Viktor.
+— Vous avez conservé vos notes prises sur place ?
 </p>
 
 <p class="dialogue">
-— Il portait un uniforme soviétique. Et une cicatrice au-dessus du sourcil gauche.
-</p>
-
-<p>
-Viktor n'avait aucune cicatrice à cet endroit.
-</p>
-
-<p>
-Il regarda Dulac.
+— Oui.
 </p>
 
 <p class="dialogue">
-— Si vous avez quelque chose à dire, c'est maintenant. Et je peux vous assurer qu'avoir un double ne m'amuse pas du tout.
-</p>
-
-<p>
-Dulac baissa les yeux.
+— Les premières également ?
 </p>
 
 <p class="dialogue">
-— Je ne sais pas si vous avez un double, monsieur Roussel. Je ne sais même pas si cette question a un sens.
-</p>
-
-<p>
-La réponse était raisonnable.
-</p>
-
-<p>
-Pour une fois.
+— Toutes.
 </p>
 
-<div class="separation" aria-hidden="true">*</div>
-
-<p>
-Viktor rangea le pistolet dans sa poche et récupéra les deux plaques d'aluminium.
-</p>
-
-<p>
-Il attrapa son manteau.
-</p>
-
 <p class="dialogue">
-— Monsieur le directeur, je vais aller à Arts et Métiers. Ce n'est pas tous les jours que l'on a l'occasion de se rencontrer. Avec votre permission.
+— Bien.
 </p>
 
 <p>
-De Vauclerc contempla son bureau dévasté.
+Il suivit du doigt le couloir dessiné.
 </p>
 
 <p class="dialogue">
-— Vous avez ma permission, Roussel. Et même mes encouragements. Il me semble préférable que cette affaire poursuive son développement ailleurs.
+— Et qu’est-ce qui vous permet d’affirmer qu’il s’agit d’une pièce ?
 </p>
 
 <p>
-Suzanne lui tendit deux sandwiches enveloppés de papier blanc.
-</p>
-
-<p class="dialogue">
-— Pour la route, monsieur Roussel. Jambon-beurre.
+Violette ouvrit la bouche.
 </p>
 
-<p class="dialogue">
-— Merci, Suzanne. Et désolé pour ce désordre. Votre café était excellent.
-</p>
-
-<p class="dialogue">
-— Ne vous excusez pas. Ce n'est pas entièrement votre faute.
-</p>
-
 <p>
-Elle regarda la fenêtre brisée.
+Elle regarda le rectangle.
 </p>
 
 <p class="dialogue">
-— Enfin, presque.
+— Rien, dit-elle enfin. Je l’ai dessinée comme une pièce. Les dimensions me donnaient ça.
 </p>
 
 <p>
-De Vauclerc accompagna Viktor jusqu'à la porte.
+Il hocha la tête.
 </p>
 
 <p class="dialogue">
-— Roussel. Si vous rencontrez votre double, essayez de déterminer lequel de vous deux est mon collaborateur avant de lui tirer dessus.
+— Nous conserverons cette distinction, madame Dumas. Elle est essentielle. Les mesures d’abord ; ce que nous en pensons viendra ensuite.
 </p>
 
 <p>
-Il ajouta, plus bas :
-</p>
-
-<p class="dialogue">
-— Soyez prudent.
+Il avait dit « nous ».
 </p>
-
-<div class="separation" aria-hidden="true">*</div>
 
 <p>
-La pluie avait cessé.
+Violette tira son carnet de son sac et l’ouvrit à la première page des relevés. Pour la première fois depuis qu’elle avait reçu la lettre de l’architecte, elle n’eut pas envie d’expliquer à l’avance qu’elle pouvait s’être trompée.
 </p>
 
 <p>
-Une Citroën DS noire attendait devant le ministère. À son volant, un homme d'une cinquantaine d'années lisait France-Soir.
+Monsieur de Vauclerc rapprocha le carnet.
 </p>
 
 <p>
-Le jeune visiteur s'arrêta devant la voiture.
+Une voiture démarra dans la rue. De l’autre côté de la cloison, le téléphone sonna.
 </p>
 
 <p class="dialogue">
-— Nous pouvons prendre celle-ci.
+— Je ne sais pas ce que vous faites ici, dit Violette.
 </p>
 
-<p>
-Dulac fronça les sourcils.
-</p>
-
 <p class="dialogue">
-— Elle est à vous ?
+— Nous avons pour mission d’examiner certaines affaires que les autres services ne savent où classer.
 </p>
 
 <p class="dialogue">
-— Disons qu'elle est disponible.
+— Quel genre de choses ?
 </p>
 
 <p>
-Le chauffeur replia son journal.
+Il prit le temps de considérer la question.
 </p>
 
 <p class="dialogue">
-— Bonjour, monsieur Roussel.
+— Votre plan, par exemple. L’État ne peut tout de même pas répondre à une question en priant celui qui la pose de l’oublier.
 </p>
 
 <p>
-Dulac se raidit.
-</p>
-
-<p class="dialogue">
-— Comment connaissez-vous ce nom ?
+Suzanne frappa légèrement et passa la tête.
 </p>
 
 <p class="dialogue">
-— Quel nom ?
+— Je vais chercher le courrier. Vous avez besoin de moi ?
 </p>
 
 <p class="dialogue">
-— Roussel.
+— Dans quelques minutes, si vous voulez bien. Madame Dumas va nous laisser ses coordonnées.
 </p>
 
 <p>
-Le chauffeur parut surpris.
+Violette regarda le directeur.
 </p>
 
-<p class="dialogue">
-— C'est vous qui me l'avez donné, monsieur. Ce matin, quand vous avez réservé la voiture.
+<p>
+Il revint vers elle.
 </p>
 
 <p class="dialogue">
-— À quelle heure ?
+— Avec votre accord, naturellement. Il faudra reprendre ces mesures. Nous pourrions également avoir l’occasion de faire appel à vous pour d’autres travaux.
 </p>
 
 <p class="dialogue">
-— Six heures et demie, environ. Vous m'avez demandé de vous attendre ici jusqu'à onze heures trente.
-</p>
-
-<p>
-Dulac pâlit.
+— Des travaux de géomètre ?
 </p>
 
 <p class="dialogue">
-— Je ne vous ai jamais rencontré.
-</p>
-
-<p>
-Le chauffeur haussa les épaules.
+— C’est pour cela que je vous le propose.
 </p>
 
 <p class="dialogue">
-— Pourtant, moi, je vous reconnais très bien.
-</p>
-
-<p>
-Il ouvrit la portière.
+— Et les déplacements ?
 </p>
 
 <p class="dialogue">
-— Vous portiez simplement un autre costume.
+— Sur justificatifs, précisa Suzanne depuis la porte.
 </p>
 
 <p>
-Viktor contempla la voiture.
+Puis elle disparut.
 </p>
 
 <p>
-Dans sa poche, les deux plaques d'aluminium s'entrechoquèrent doucement.
+Monsieur de Vauclerc lui tendit un stylo et une feuille.
 </p>
 
 <p>
-À quelques mètres, un taxi libre ralentit.
+Violette posa la note du café à côté du plan. Elle relut le prénom, dans sa petite écriture penchée.
 </p>
 
 <p>
-Paris continuait de fonctionner normalement. Les voitures circulaient, les passants traversaient les rues, les cafés servaient leurs derniers petits déjeuners. Rien ne laissait penser que deux hommes pouvaient porter le même nom, qu'une pendule pouvait commander un téléphone ou que les morts avaient pris l'habitude de revenir à heure fixe.
+Gabrielle.
 </p>
 
 <p>
-Viktor pensa à ses sandwiches.
+Elle leva les yeux vers le directeur, sur le point de demander s’il la connaissait.
 </p>
 
-<p>
-Il avait faim.
+<p class="dialogue">
+— Votre adresse actuelle, s’il vous plaît, dit-il.
 </p>
 
 <p>
-Et quelque part sous Paris, un homme portant son visage l'attendait peut-être.
+Violette baissa les yeux sur la feuille.
 </p>
 
 <p>
-Il lui restait encore à savoir lequel des deux avait le plus de raisons de s'inquiéter.
+Elle commença par écrire son nom.
 </p>
-
-<p class="fin">FIN</p>
 
 </article>
 
 <footer>
-  <a href="enqueteurs.html">
-    ← Retour aux enquêteurs
-  </a>
+
+<a href="enqueteurs.html">
+← Retour aux enquêteurs
+</a>
+
 </footer>
 
 </main>
