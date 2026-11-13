@@ -1,1 +1,509 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<meta name="description"
+content="Le passage du nuage — Une rencontre de Nadia Bensaïd avec Knud Viktor. Petit Luberon, été 1966.">
+
+<title>Le passage du nuage — Nadia Bensaïd</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+  rel="stylesheet">
+
+<style>
+
+/* PAPIER ET TYPOGRAPHIE */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #2a2923;
+  --trait: #b4a58b;
+  --bleu: #24374f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--encre);
+
+  font: 21px/1.72
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    radial-gradient(
+      ellipse at 85% 80%,
+      #78562a1b,
+      transparent 54%
+    ),
+    var(--papier);
+}
+
+/* TRAME IRRÉGULIÈRE DU PAPIER */
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 5;
+  opacity: .10;
+  pointer-events: none;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* FEUILLE PRINCIPALE */
+
+.page {
+  position: relative;
+
+  width: min(830px, calc(100% - 32px));
+  margin: 34px auto 60px;
+  padding: clamp(28px, 7vw, 82px);
+
+  background:
+    radial-gradient(
+      ellipse at 12% 8%,
+      #fffff780,
+      transparent 52%
+    ),
+    var(--feuille);
+
+  border: 1px solid var(--trait);
+
+  box-shadow:
+    8px 10px 0 #c7ba9e,
+    0 14px 35px #40311924;
+}
+
+.page::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px solid #5f4b2d17;
+  pointer-events: none;
+}
+
+/* TITRE */
+
+header {
+  max-width: 630px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+h1 {
+  margin: 0 0 18px;
+  font-weight: 500;
+  font-size: clamp(40px, 7vw, 60px);
+  line-height: 1.08;
+}
+
+.dedicace {
+  margin: 0 0 24px;
+  font-size: 21px;
+  font-style: italic;
+}
+
+.sous-titre {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.date {
+  margin: 20px 0 0;
+  font-size: 17px;
+  font-style: italic;
+  color: #5e594d;
+}
+
+/* TEXTE LITTÉRAIRE */
+
+article {
+  max-width: 630px;
+  margin: 0 auto;
+}
+
+article p {
+  margin: 0 0 1.15em;
+  text-align: justify;
+  hyphens: auto;
+  text-wrap: pretty;
+}
+
+/* LETTRINE */
+
+article > p:first-child::first-letter {
+  float: left;
+  font-size: 3.7em;
+  line-height: .78;
+  padding: .12em .12em 0 0;
+}
+
+.dialogue {
+  text-align: left;
+}
+
+/* DERNIÈRE LIGNE DU CARNET */
+
+.note-montage {
+  margin-top: 12px;
+  font-style: italic;
+}
+
+/* ANNEXE SONORE */
+
+.annexe-sonore {
+  max-width: 630px;
+  margin: 76px auto 0;
+  padding: 27px 0 0;
+
+  border-top: 1px solid var(--trait);
+}
+
+.annexe-sonore h2 {
+  margin: 0 0 17px;
+
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.annexe-sonore p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 0 17px;
+}
+
+.annexe-sonore a {
+  color: var(--bleu);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.annexe-sonore .precision {
+  font-size: 15px;
+  font-style: italic;
+  color: #666052;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 630px;
+  margin: 54px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--trait);
+  font-size: 15px;
+}
+
+footer a {
+  color: inherit;
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body {
+    font-size: 19px;
+    line-height: 1.65;
+  }
+
+  .page {
+    margin: 15px auto 35px;
+    padding: 32px 22px 40px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  header {
+    margin-bottom: 42px;
+  }
+
+  .sous-titre {
+    font-size: 20px;
+  }
+
+  article p {
+    text-align: left;
+  }
+
+  .annexe-sonore {
+    margin-top: 58px;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background: white;
+  }
+
+  body::before,
+  .page::before {
+    display: none;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+    border: 0;
+    box-shadow: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<h1>Le passage du nuage</h1>
+
+<p class="dedicace">
+À Knud Viktor
+</p>
+
+<p class="sous-titre">
+Une rencontre de Nadia Bensaïd
+</p>
+
+<p class="date">
+Petit Luberon, été 1966.
+</p>
+
+</header>
+
+<article aria-label="Le passage du nuage">
+
+<p>
+Les trois premières questions de Nadia Bensaïd concernaient la peinture. Elle les avait écrites au dos de son billet de car et répétées en chemin, à mi-voix, chaque fois qu’elle s’arrêtait pour changer sa valise de main.
+</p>
+
+<p>
+La maison était au bout d’un chemin de pierres blanches. Un fil sortait de la fenêtre et longeait le mur. Par endroits, Knud Viktor l’avait retenu avec des bouts de tuile.
+</p>
+
+<p class="dialogue">
+— Attention au fil, dit-il du pas de la porte.
+</p>
+
+<p>
+Nadia resta un instant le pied en l’air. Il lui prit la valise pendant qu’elle enjambait le câble.
+</p>
+
+<p>
+Ils s’installèrent dehors, de part et d’autre d’une petite table. Nadia approcha le micro. Elle entendit le frottement d’une manche dans son casque et remonta machinalement la sienne. Viktor se mit à rire. C’était sa manche à lui. Il ôta sa veste et la plia sur le dossier de sa chaise.
+</p>
+
+<p class="dialogue">
+— Vous étiez venu pour la lumière ? demanda-t-elle.
+</p>
+
+<p>
+Il allait répondre quand son regard se porta au-delà du mur. Nadia attendit. Elle avait l’habitude des gens qui cherchaient leurs mots. Au bout de quelques secondes, elle baissa les yeux pour vérifier que la bobine tournait toujours.
+</p>
+
+<p class="dialogue">
+— Laissez, dit Viktor.
+</p>
+
+<p>
+Du côté du chemin, le chant des cigales se mit à boiter. Une cigale du talus s’interrompit et reprit par petits coups, assez espacés pour qu’on puisse les compter. Tout près de la table, une autre gardait son rythme. Nadia leva les yeux. L’ombre d’un nuage venait d’atteindre le pied du mur. Elle inclina lentement le micro vers la pente.
+</p>
+
+<p>
+Viktor attendit que les pierres blanchissent de nouveau.
+</p>
+
+<p class="dialogue">
+— Oui, dit-il. Pour la lumière.
+</p>
+
+<p>
+Elle avait oublié la question. Elle la retrouva sur le billet et posa celui-ci à plat, sans passer à la suivante.
+</p>
+
+<p>
+Viktor lui montra ensuite l’endroit où aboutissait son fil, à hauteur des herbes, dans un creux du mur. De là, dit-il, il pouvait suivre plusieurs cigales à la fois. Il en avait écouté une le matin même et s’était levé pour aller voir où elle se tenait. Une fois dehors, il avait découvert qu’elle était beaucoup plus loin qu’il ne l’avait cru.
+</p>
+
+<p class="dialogue">
+— Ça vous arrive aussi ? demanda-t-il.
+</p>
+
+<p class="dialogue">
+— Avec les gens, tout le temps.
+</p>
+
+<p>
+Ils parlèrent encore un peu. Quand il y avait un silence, Nadia laissait tourner.
+</p>
+
+<p>
+Avant de repartir, elle rembobina jusqu’au passage du nuage. Elle voulait s’assurer qu’à la radio on entendrait aussi les cigales du chemin. Elle les retrouva. Elle entendit celle du talus reprendre, puis deux petits coups de bois très près du micro, avec une vibration qui se prolongeait après le second. Une voix d’homme demanda tout bas :
+</p>
+
+<p class="dialogue">
+— Encore un peu ?
+</p>
+
+<p>
+Nadia reprit le passage. Derrière la voix, on entendait encore les cigales. Elle ôta son casque. Au pied du mur, Viktor tenait son micro à quelques centimètres d’une pierre. Elle nota le passage et attendit qu’il se redresse pour lui dire au revoir.
+</p>
+
+<p>
+À Paris, elle fit un double de la prise entière. Elle inscrivit le lieu, la date et le nom de Viktor sur la boîte, puis l’apporta rue de Babylone.
+</p>
+
+<p>
+Charles Pinson fit de la place entre deux piles de chemises.
+</p>
+
+<p class="dialogue">
+— Vous me laissez toute la bobine ?
+</p>
+
+<p class="dialogue">
+— Oui. Je vais vous montrer un endroit. Ça dure quatre ou cinq secondes.
+</p>
+
+<p class="dialogue">
+— Alors je commencerai un peu avant.
+</p>
+
+<p>
+Nadia plissa les yeux. Le soleil arrivait en plein sur la table. Charles repoussa sa chaise et tira sur le cordon du store. Une lame de bois frappa contre le montant. Nadia attendit le second coup. Il vint, suivi d’un bref tremblement. L’ombre s’arrêta sur le dos de sa main.
+</p>
+
+<p class="dialogue">
+— Encore un peu ? demanda Charles.
+</p>
+
+<p>
+Il tenait le cordon et attendait sa réponse.
+</p>
+
+<p class="dialogue">
+— Comme ça, c’est bien.
+</p>
+
+<p>
+Nadia regarda la boîte. Elle l’avait posée du côté du soleil. Elle la ramena vers elle, dans l’ombre.
+</p>
+
+<p class="dialogue">
+— Charles, je crois que c’est votre voix. Vous allez l’entendre.
+</p>
+
+<p>
+Elle enfila la bande. Il reprit sa place et mit le casque. Au début de la prise, on entendait le froissement de la manche de Viktor et le petit rire qui avait suivi. Nadia le laissa écouter depuis cet endroit.
+</p>
+
+<p>
+À la radio, il lui restait une ligne libre sur la fiche de montage. Elle y nota au crayon :
+</p>
+
+<p class="note-montage">
+Garder le passage du nuage.
+</p>
+
+</article>
+
+<!-- ANNEXE SONORE HORS DU RÉCIT -->
+
+<aside class="annexe-sonore"
+       aria-labelledby="annexe-titre">
+
+<h2 id="annexe-titre">
+Pour prolonger l’écoute
+</h2>
+
+<p>
+<a
+  href="https://knudviktor.bandcamp.com/music"
+  target="_blank"
+  rel="noopener noreferrer">
+  Écouter les œuvres de Knud Viktor
+</a>
+</p>
+
+<p>
+Images sonores, enregistrements du vivant,
+peintures réalisées avec les sons.
+</p>
+
+<p class="precision">
+Lien documentaire vers les œuvres réelles de
+Knud Viktor (1924–2013).
+Les enregistrements proposés ne constituent
+pas la bande fictive décrite dans ce texte.
+</p>
+
+</aside>
+
+<footer>
+
+<a href="enqueteurs.html">
+← Retour aux enquêteurs
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
+
