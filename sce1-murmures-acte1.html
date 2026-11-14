@@ -1,1 +1,508 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>Les Murmures de l'Alma — Acte I</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --encre:#292920;
+  --trait:#b4a58b;
+  --brun:#68352d;
+  --fond-notes:#f1e4d6;
+  --bleu:#24374f;
+}
+
+* {box-sizing:border-box}
+
+html {scroll-behavior:smooth}
+
+body {
+  margin:0;
+  padding:18px;
+  background:var(--papier);
+  color:var(--encre);
+  font:21px/1.7 "EB Garamond",Garamond,Georgia,serif;
+}
+
+.page {
+  width:min(880px,100%);
+  margin:25px auto 60px;
+  padding:clamp(26px,7vw,78px);
+  background:var(--feuille);
+  border:1px solid var(--trait);
+  box-shadow:7px 10px 0 #c7ba9e;
+}
+
+header {
+  text-align:center;
+  padding-bottom:36px;
+  border-bottom:1px solid var(--trait);
+  margin-bottom:38px;
+}
+
+.kicker {
+  font:12px/1.7 "Special Elite",monospace;
+  color:#60594d;
+}
+
+h1 {
+  margin:14px 0;
+  font-size:clamp(40px,7vw,63px);
+  font-weight:500;
+  line-height:1.1;
+}
+
+.subtitle {
+  font-size:23px;
+  font-style:italic;
+}
+
+nav {
+  max-width:670px;
+  margin:0 auto 55px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+nav a {
+  padding:6px 10px;
+  border:1px solid var(--trait);
+  font:12px/1.6 "Special Elite",monospace;
+  text-decoration:none;
+  color:var(--bleu);
+}
+
+nav a:hover {
+  background:#fffaf0;
+}
+
+.scene {
+  max-width:670px;
+  margin:0 auto 75px;
+  scroll-margin-top:20px;
+}
+
+.scene h2 {
+  margin:0 0 24px;
+  font-size:clamp(30px,5vw,42px);
+  line-height:1.2;
+  font-weight:500;
+}
+
+.scene h3 {
+  font-size:23px;
+  font-weight:500;
+  margin:35px 0 17px;
+}
+
+.scene p {
+  margin:0 0 1.08em;
+  hyphens:auto;
+}
+
+/* Dialogues */
+
+.dialogue {
+  margin-left:20px !important;
+  font-style:italic;
+}
+
+/* Lieu et date */
+
+.lieu {
+  font-size:18px;
+  font-style:italic;
+  color:#665c50;
+  margin-bottom:30px !important;
+}
+
+/* Notes du Narrateur */
+
+.narrateur {
+  margin:45px 0;
+  padding:25px 30px 30px;
+  border-left:3px solid var(--brun);
+  background:var(--fond-notes);
+  color:var(--brun);
+}
+
+.narrateur h3 {
+  margin-top:0;
+  font:15px/1.6 "Special Elite",monospace;
+  color:var(--brun);
+}
+
+.narrateur h4 {
+  margin:30px 0 14px;
+  font-size:23px;
+  font-weight:600;
+}
+
+.narrateur p {
+  font-size:19px;
+  line-height:1.62;
+}
+
+.narrateur .dialogue {
+  font-style:italic;
+}
+
+.item {
+  margin-left:16px !important;
+  text-indent:-16px;
+}
+
+footer {
+  max-width:670px;
+  margin:70px auto 0;
+  border-top:1px solid var(--trait);
+  padding-top:22px;
+  font-size:17px;
+}
+
+footer a {
+  color:var(--bleu);
+  text-decoration:none;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+a:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+.erreur {
+  color:var(--brun);
+  font-style:italic;
+}
+
+@media(max-width:600px) {
+  body {
+    padding:10px;
+    font-size:19px;
+    line-height:1.62;
+  }
+
+  .page {
+    padding:30px 20px;
+    margin:10px auto 35px;
+    box-shadow:4px 6px 0 #c7ba9e;
+  }
+
+  .dialogue {
+    margin-left:12px !important;
+  }
+
+  .narrateur {
+    padding:20px 17px;
+    margin:35px 0;
+  }
+
+  .narrateur p {
+    font-size:18px;
+  }
+}
+
+@media print {
+  body {
+    background:white;
+    padding:0;
+  }
+
+  .page {
+    width:100%;
+    margin:0;
+    padding:15mm;
+    border:0;
+    box-shadow:none;
+  }
+
+  nav, footer {
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+  <p class="kicker">
+    BUREAU DES INTERSTICES · AFFAIRE I
+  </p>
+
+  <h1>Les Murmures de l'Alma</h1>
+
+  <p class="subtitle">
+    Acte I · Paris, automne 1966
+  </p>
+</header>
+
+<nav id="sommaire"
+     aria-label="Sommaire de l'acte">
+</nav>
+
+<article id="manuscrit">
+  <p>Ouverture du manuscrit…</p>
+</article>
+
+<footer>
+  <a href="sce1-murmures.html">
+    ← Retour aux trois actes
+  </a>
+</footer>
+
+</main>
+
+<script>
+(async function() {
+
+  const NOM_FICHIER =
+    "Les_Murmures_de_l_Alma_Acte_I_integral.txt";
+
+  const manuscrit =
+    document.getElementById("manuscrit");
+
+  const sommaire =
+    document.getElementById("sommaire");
+
+  function element(tag, texte, classe) {
+    const el = document.createElement(tag);
+    if (classe) el.className = classe;
+    if (texte !== undefined) el.textContent = texte;
+    return el;
+  }
+
+  function estTitreScene(texte) {
+    return /^SCÈNE\s+\d+\s+—/.test(texte);
+  }
+
+  function estTitreReserve(texte) {
+    return texte === "RÉSERVÉ AU NARRATEUR";
+  }
+
+  function estSeparateur(texte) {
+    return /^={10,}$/.test(texte);
+  }
+
+  function estDialogue(texte) {
+    return texte.startsWith("—");
+  }
+
+  function ajouterLien(texte, id) {
+    const lien = element("a", texte);
+    lien.href = "#" + id;
+    sommaire.appendChild(lien);
+  }
+
+  try {
+
+    const reponse = await fetch(
+      NOM_FICHIER,
+      {cache:"no-cache"}
+    );
+
+    if (!reponse.ok) {
+      throw new Error("Fichier introuvable");
+    }
+
+    const texte = await reponse.text();
+
+    const lignes = texte
+      .replace(/\r\n/g, "\n")
+      .replace(/^\uFEFF/, "")
+      .split("\n");
+
+    manuscrit.replaceChildren();
+
+    let scene = null;
+    let notes = null;
+    let dansNotes = false;
+    let attenteLieu = false;
+    let compteur = 0;
+
+    function ajouterParagraphe(texte) {
+
+      const cible = dansNotes ? notes : scene;
+
+      if (!cible) return;
+
+      if (texte.startsWith("- ")) {
+        cible.appendChild(
+          element("p", texte, "item")
+        );
+      }
+      else if (estDialogue(texte)) {
+        cible.appendChild(
+          element("p", texte, "dialogue")
+        );
+      }
+      else if (attenteLieu && !dansNotes) {
+        cible.appendChild(
+          element("p", texte, "lieu")
+        );
+        attenteLieu = false;
+      }
+      else {
+        cible.appendChild(
+          element("p", texte)
+        );
+      }
+
+    }
+
+    function nouvelleScene(titre, id, libelle) {
+
+      scene = element("section", undefined, "scene");
+      scene.id = id;
+
+      manuscrit.appendChild(scene);
+      scene.appendChild(element("h2", titre));
+
+      ajouterLien(libelle, id);
+
+      notes = null;
+      dansNotes = false;
+      attenteLieu = true;
+
+    }
+
+    function commencerNotes() {
+
+      notes = element("section", undefined, "narrateur");
+
+      notes.appendChild(
+        element("h3", "RÉSERVÉ AU NARRATEUR")
+      );
+
+      scene.appendChild(notes);
+      dansNotes = true;
+
+    }
+
+    for (const ligne of lignes) {
+
+      const s = ligne.trim();
+
+      if (!s || estSeparateur(s)) {
+        continue;
+      }
+
+      if (
+        s === "LES MURMURES DE L'ALMA" ||
+        s === "Affaire I — Acte I"
+      ) {
+        continue;
+      }
+
+      if (s.startsWith("PRÉLUDE —")) {
+
+        nouvelleScene(
+          s,
+          "prelude",
+          "Prélude"
+        );
+
+        continue;
+      }
+
+      if (estTitreScene(s)) {
+
+        compteur++;
+
+        nouvelleScene(
+          s,
+          "scene-" + compteur,
+          "Scène " + compteur
+        );
+
+        continue;
+      }
+
+      if (estTitreReserve(s)) {
+
+        commencerNotes();
+        continue;
+      }
+
+      if (!scene) {
+        continue;
+      }
+
+      if (
+        s === "INTRODUCTION" ||
+        s === "INTRODUCTION AUX PERSONNAGES JOUEURS"
+      ) {
+        scene.appendChild(element("h3", s));
+        attenteLieu = false;
+        continue;
+      }
+
+      if (dansNotes) {
+
+        const titreMajuscules =
+          s.length > 5 &&
+          s.length < 85 &&
+          s === s.toUpperCase() &&
+          /[A-ZÀ-ÖØ-Ý]/.test(s) &&
+          !estDialogue(s);
+
+        const titreNumerote =
+          /^\d+\.\s+[A-ZÀ-ÖØ-Ý]/.test(s);
+
+        if (titreMajuscules || titreNumerote) {
+
+          notes.appendChild(element("h4", s));
+          continue;
+        }
+
+      }
+
+      ajouterParagraphe(s);
+
+    }
+
+    if (!compteur) {
+      throw new Error(
+        "Aucune scène reconnue dans le manuscrit"
+      );
+    }
+
+  }
+  catch (erreur) {
+
+    manuscrit.replaceChildren();
+
+    manuscrit.appendChild(
+      element(
+        "p",
+        "Le manuscrit n'a pas pu être ouvert. Vérifiez que le fichier TXT se trouve dans le même dossier que cette page HTML.",
+        "erreur"
+      )
+    );
+
+  }
+
+})();
+</script>
+
+</body>
+</html>
+
