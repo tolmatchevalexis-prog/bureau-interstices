@@ -1,134 +1,340 @@
+
 <!doctype html>
 <html lang="fr">
+
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
 
 <title>Les enquêtes en cours — Bureau des Interstices</title>
 
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* =========================================
+   IDENTITÉ GRAPHIQUE
+========================================= */
+
 :root {
-  --papier:#ded3b8;
-  --feuille:#f3e9cf;
-  --blanc:#fffaf0;
-  --encre:#292920;
-  --rouge:#ad5346;
-  --trait:#b3a88e;
-  --violet:#48338a;
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+  --encre: #292920;
+  --rouge: #ad5346;
+  --trait: #b3a88e;
+  --violet: #48338a;
+  --bleu: #24374f;
 }
 
-* { box-sizing:border-box; }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin:0;
-  padding:20px;
-  background:var(--papier);
-  color:var(--encre);
-  font:20px/1.55 "EB Garamond",Georgia,serif;
+  margin: 0;
+  padding: 20px;
+  background: var(--papier);
+  color: var(--encre);
+  font: 20px/1.55 "EB Garamond", Georgia, serif;
 }
 
 main {
-  width:min(740px,100%);
-  margin:25px auto;
-  padding:clamp(25px,6vw,60px);
-  background:var(--feuille);
-  box-shadow:6px 8px 0 #c6b99c;
-  border:1px solid var(--trait);
+  width: min(740px, 100%);
+  margin: 25px auto;
+  padding: clamp(25px, 6vw, 60px);
+  background: var(--feuille);
+  box-shadow: 6px 8px 0 #c6b99c;
+  border: 1px solid var(--trait);
 }
 
 header {
-  border-bottom:2px solid var(--encre);
-  padding-bottom:20px;
+  border-bottom: 2px solid var(--encre);
+  padding-bottom: 20px;
 }
 
 h1 {
-  font-size:clamp(38px,7vw,60px);
-  font-weight:500;
-  line-height:1.1;
+  font-size: clamp(38px, 7vw, 60px);
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 h2 {
-  font-size:14px;
-  font-weight:normal;
+  font-size: 14px;
+  font-weight: normal;
 }
 
-small,h2,label,button,.ref,footer,.reponse {
-  font-family:"Special Elite","Courier New",monospace;
+small,
+h2,
+label,
+button,
+.ref,
+footer,
+.reponse,
+.numero,
+.etat,
+.acte {
+  font-family: "Special Elite", "Courier New", monospace;
 }
 
-small,.ref {
-  font-size:11px;
+small,
+.ref {
+  font-size: 11px;
 }
+
+/* =========================================
+   DOCUMENTS ADMINISTRATIFS
+========================================= */
 
 .document {
-  position:relative;
-  background:var(--blanc);
-  padding:28px 28px 28px 45px;
-  border:1px solid #97856959;
-  margin:30px 0;
+  position: relative;
+  background: var(--blanc);
+  padding: 28px 28px 28px 45px;
+  border: 1px solid #97856959;
+  margin: 30px 0;
 }
 
 .document::before {
-  content:"";
-  position:absolute;
-  left:24px;
-  top:18px;
-  bottom:18px;
-  width:2px;
-  background:var(--rouge);
+  content: "";
+  position: absolute;
+  left: 24px;
+  top: 18px;
+  bottom: 18px;
+  width: 2px;
+  background: var(--rouge);
 }
 
+.document h2 {
+  margin-top: 0;
+  line-height: 1.7;
+}
+
+/* =========================================
+   FORMULAIRE M-06
+========================================= */
+
 label {
-  display:block;
-  font-size:13px;
-  margin:18px 0;
-  cursor:pointer;
+  display: block;
+  font-size: 13px;
+  margin: 18px 0;
+  cursor: pointer;
+  line-height: 1.7;
 }
 
 label input {
-  accent-color:var(--violet);
-  margin-right:12px;
+  accent-color: var(--violet);
+  margin-right: 12px;
 }
 
 button {
-  background:var(--encre);
-  color:#fffaf0;
-  padding:13px 18px;
-  border:0;
-  font:12px "Special Elite",monospace;
-  cursor:pointer;
+  background: var(--encre);
+  color: #fffaf0;
+  padding: 13px 18px;
+  border: 0;
+  font: 12px "Special Elite", monospace;
+  cursor: pointer;
 }
 
 button:hover {
-  background:var(--violet);
+  background: var(--violet);
 }
+
+button:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--violet);
+  outline-offset: 3px;
+}
+
+/* =========================================
+   VALIDATION
+========================================= */
 
 .reponse {
-  margin-top:25px;
-  padding:20px;
-  border:1px dashed var(--violet);
-  font-size:13px;
-  line-height:1.8;
+  margin-top: 25px;
+  padding: 20px;
+  border: 1px dashed var(--violet);
+  font-size: 13px;
+  line-height: 1.8;
 }
+
+/* =========================================
+   REGISTRE DES ENQUÊTES
+========================================= */
+
+.registre {
+  margin-top: 55px;
+  padding-top: 25px;
+  border-top: 2px solid var(--encre);
+}
+
+.registre > h2 {
+  margin: 0 0 12px;
+  font-size: 15px;
+}
+
+.registre-intro {
+  margin: 0 0 28px;
+  font-size: 19px;
+}
+
+.scenario {
+  display: block;
+  position: relative;
+
+  margin-bottom: 20px;
+  padding: 25px 28px;
+
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+
+  color: inherit;
+  text-decoration: none;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.scenario:hover,
+.scenario:focus-visible {
+  background: #eee3cb;
+  border-color: var(--violet);
+}
+
+.numero {
+  margin: 0 0 12px;
+  color: var(--bleu);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.scenario h3 {
+  margin: 0 0 11px;
+  font-size: 33px;
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+.scenario p {
+  margin: 0 0 12px;
+}
+
+.scenario .etat {
+  display: block;
+  margin-top: 20px;
+  font-size: 11px;
+  color: var(--violet);
+  line-height: 1.6;
+}
+
+.scenario .etat::after {
+  content: " →";
+}
+
+.note-registre {
+  font-size: 16px;
+  font-style: italic;
+  color: #686052;
+  margin-top: 28px;
+}
+
+/* =========================================
+   PIED DE PAGE
+========================================= */
 
 footer {
-  margin-top:45px;
-  border-top:1px solid var(--trait);
-  padding-top:20px;
-  font:12px "Special Elite",monospace;
+  margin-top: 45px;
+  border-top: 1px solid var(--trait);
+  padding-top: 20px;
+  font: 12px/1.8 "Special Elite", monospace;
 }
 
-a { color:inherit; }
+a {
+  color: inherit;
+}
 
-[hidden] { display:none!important; }
+[hidden] {
+  display: none !important;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 12px;
+    font-size: 19px;
+  }
+
+  main {
+    margin: 12px auto;
+    padding: 27px 22px;
+    box-shadow: 4px 6px 0 #c6b99c;
+  }
+
+  .document {
+    padding: 23px 18px 23px 32px;
+  }
+
+  .document::before {
+    left: 16px;
+  }
+
+  .scenario {
+    padding: 22px 19px;
+  }
+
+  .scenario h3 {
+    font-size: 29px;
+  }
+
+}
+
+/* =========================================
+   IMPRESSION
+========================================= */
+
+@media print {
+
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 18mm;
+    box-shadow: none;
+    border: none;
+  }
+
+}
+
 </style>
+
 </head>
 
 <body>
 
 <main>
+
+<!-- =====================================
+     EN-TÊTE ORIGINAL
+===================================== -->
 
 <header>
 
@@ -150,6 +356,11 @@ DOCUMENTS DE MISSION
 <p>
 <em>Situations à explorer et missions éventuelles</em>
 </p>
+
+
+<!-- =====================================
+     AVIS ADMINISTRATIF
+===================================== -->
 
 <div class="document">
 
@@ -173,6 +384,11 @@ peut compléter la déclaration suivante.
 
 </div>
 
+
+<!-- =====================================
+     FORMULAIRE ORIGINAL M-06
+===================================== -->
+
 <form id="demande">
 
 <div class="document">
@@ -183,14 +399,20 @@ AVIS DE DISPONIBILITÉ
 </h2>
 
 <label>
+
 <input type="checkbox" required>
+
 Je déclare pouvoir être convoqué,
 sans que cette déclaration m'y oblige.
+
 </label>
 
 <label>
+
 <input type="checkbox" required>
+
 Je souhaite savoir si la convocation me concerne.
+
 </label>
 
 <button type="submit">
@@ -201,7 +423,15 @@ ENREGISTRER MA DISPONIBILITÉ
 
 </form>
 
-<div class="reponse" id="reponse" hidden>
+
+<!-- =====================================
+     AVIS DE VALIDATION ORIGINAL
+===================================== -->
+
+<div class="reponse"
+     id="reponse"
+     hidden
+     aria-live="polite">
 
 <p>
 AVIS DE DISPONIBILITÉ — REÇU
@@ -228,12 +458,122 @@ de ne pas vous déranger.
 
 </div>
 
+
+<!-- =====================================
+     NOUVEAU REGISTRE DES SCÉNARIOS
+===================================== -->
+
+<section class="registre"
+         id="registre"
+         hidden
+         aria-labelledby="registre-titre">
+
+<h2 id="registre-titre">
+REGISTRE DES ENQUÊTES
+</h2>
+
+<p class="registre-intro">
+Les dossiers suivants sont inscrits
+au registre des affaires du Bureau.
+</p>
+
+
+<!-- SCÉNARIO 1 -->
+
+<a class="scenario"
+   href="sce1-murmures.html">
+
+<p class="numero">
+SCÉNARIO 01 — AFFAIRE I
+</p>
+
+<h3>Les Murmures de l’Alma</h3>
+
+<p>
+Enquête en trois actes.
+</p>
+
+<span class="etat">
+CONSULTER LE DOSSIER
+</span>
+
+</a>
+
+
+<!-- SCÉNARIO 2 -->
+
+<a class="scenario"
+   href="sce2-cordes.html">
+
+<p class="numero">
+SCÉNARIO 02 — AFFAIRE II
+</p>
+
+<h3>La Cordée</h3>
+
+<span class="etat">
+CONSULTER LE DOSSIER
+</span>
+
+</a>
+
+
+<!-- SCÉNARIO 3 -->
+
+<a class="scenario"
+   href="sce3-fontaine.html">
+
+<p class="numero">
+SCÉNARIO 03 — AFFAIRE III
+</p>
+
+<h3>À la claire fontaine</h3>
+
+<span class="etat">
+CONSULTER LE DOSSIER
+</span>
+
+</a>
+
+
+<!-- SCÉNARIO 4 -->
+
+<a class="scenario"
+   href="sce4-phrares.html">
+
+<p class="numero">
+SCÉNARIO 04 — AFFAIRE IV
+</p>
+
+<h3>Phares de nuit</h3>
+
+<span class="etat">
+CONSULTER LE DOSSIER
+</span>
+
+</a>
+
+
+<p class="note-registre">
+La présence d'un dossier dans ce registre
+ne préjuge ni de sa gravité ni de son intérêt.
+</p>
+
+</section>
+
+
+<!-- =====================================
+     RETOUR
+===================================== -->
+
 <footer>
 
 <p>
+
 <a href="index.html#archives">
 ← Retour au répertoire général des archives
 </a>
+
 </p>
 
 <p>
@@ -244,19 +584,47 @@ M.E.L.D. · DOCUMENT M-06
 
 </main>
 
+
+<!-- =====================================
+     VALIDATION LOCALE
+===================================== -->
+
 <script>
-const formulaire = document.getElementById("demande");
-const reponse = document.getElementById("reponse");
 
-formulaire.addEventListener("submit",function(event){
-  event.preventDefault();
+const formulaire =
+  document.getElementById("demande");
 
-  if(!formulaire.reportValidity()) return;
+const reponse =
+  document.getElementById("reponse");
 
-  formulaire.hidden = true;
-  reponse.hidden = false;
-});
+const registre =
+  document.getElementById("registre");
+
+formulaire.addEventListener(
+  "submit",
+  function(event) {
+
+    event.preventDefault();
+
+    if (!formulaire.reportValidity()) {
+      return;
+    }
+
+    formulaire.hidden = true;
+
+    reponse.hidden = false;
+
+    registre.hidden = false;
+
+    reponse.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  }
+);
+
 </script>
 
 </body>
-  </html>
+</html>
