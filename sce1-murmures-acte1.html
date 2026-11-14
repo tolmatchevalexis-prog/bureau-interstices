@@ -1,7 +1,9 @@
 
 <!doctype html>
 <html lang="fr">
+
 <head>
+
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#ded3b8">
@@ -10,232 +12,418 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Special+Elite&display=swap" rel="stylesheet">
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap"
+rel="stylesheet">
 
 <style>
+
+/* =====================================
+   PAPIER ET TYPOGRAPHIE
+===================================== */
+
 :root {
-  --papier:#ded3b8;
-  --feuille:#f3e9cf;
-  --encre:#292920;
-  --trait:#b4a58b;
-  --brun:#68352d;
-  --fond-notes:#f1e4d6;
-  --bleu:#24374f;
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #292920;
+  --trait: #b4a58b;
+  --brun: #68352d;
+  --bleu: #24374f;
 }
 
-* {box-sizing:border-box}
+* {
+  box-sizing: border-box;
+}
 
-html {scroll-behavior:smooth}
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  margin:0;
-  padding:18px;
-  background:var(--papier);
-  color:var(--encre);
-  font:21px/1.7 "EB Garamond",Garamond,Georgia,serif;
+  margin: 0;
+  padding: 18px;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    var(--papier);
+
+  color: var(--encre);
+
+  font:
+    21px/1.7
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: .09;
+
+  background-image: url(
+    "data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.68' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.42'/%3E%3C/svg%3E"
+  );
+}
+
+/* =====================================
+   PAGE DE LIVRE
+===================================== */
+
 .page {
-  width:min(880px,100%);
-  margin:25px auto 60px;
-  padding:clamp(26px,7vw,78px);
-  background:var(--feuille);
-  border:1px solid var(--trait);
-  box-shadow:7px 10px 0 #c7ba9e;
+  width: min(880px, 100%);
+  margin: 25px auto 60px;
+
+  padding: clamp(26px, 7vw, 78px);
+
+  background: var(--feuille);
+  border: 1px solid var(--trait);
+
+  box-shadow: 7px 10px 0 #c7ba9e;
 }
 
 header {
-  text-align:center;
-  padding-bottom:36px;
-  border-bottom:1px solid var(--trait);
-  margin-bottom:38px;
+  text-align: center;
+  padding-bottom: 36px;
+
+  border-bottom: 1px solid var(--trait);
+  margin-bottom: 38px;
 }
 
 .kicker {
-  font:12px/1.7 "Special Elite",monospace;
-  color:#60594d;
+  font: 12px/1.7 "Special Elite", monospace;
+  color: #60594d;
 }
 
 h1 {
-  margin:14px 0;
-  font-size:clamp(40px,7vw,63px);
-  font-weight:500;
-  line-height:1.1;
+  margin: 14px 0;
+  font-size: clamp(40px, 7vw, 63px);
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 .subtitle {
-  font-size:23px;
-  font-style:italic;
+  font-size: 23px;
+  font-style: italic;
 }
 
+/* =====================================
+   SOMMAIRE
+===================================== */
+
 nav {
-  max-width:670px;
-  margin:0 auto 55px;
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
+  max-width: 670px;
+  margin: 0 auto 58px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
 }
 
 nav a {
-  padding:6px 10px;
-  border:1px solid var(--trait);
-  font:12px/1.6 "Special Elite",monospace;
-  text-decoration:none;
-  color:var(--bleu);
+  padding: 7px 11px;
+
+  border: 1px solid var(--trait);
+
+  font: 12px/1.6 "Special Elite", monospace;
+
+  text-decoration: none;
+  color: var(--bleu);
 }
 
 nav a:hover {
-  background:#fffaf0;
+  background: #fffaf0;
 }
 
+/* =====================================
+   SCÈNES ET INTRODUCTIONS
+===================================== */
+
 .scene {
-  max-width:670px;
-  margin:0 auto 75px;
-  scroll-margin-top:20px;
+  max-width: 670px;
+  margin: 0 auto 85px;
+
+  scroll-margin-top: 25px;
 }
 
 .scene h2 {
-  margin:0 0 24px;
-  font-size:clamp(30px,5vw,42px);
-  line-height:1.2;
-  font-weight:500;
+  margin: 0 0 22px;
+
+  font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.2;
+  font-weight: 500;
 }
 
-.scene h3 {
-  font-size:23px;
-  font-weight:500;
-  margin:35px 0 17px;
+.scene h3.introduction {
+  margin: 38px 0 22px;
+
+  font: 13px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  letter-spacing: .02em;
+  color: #60594d;
 }
 
 .scene p {
-  margin:0 0 1.08em;
-  hyphens:auto;
+  margin: 0 0 1.08em;
+  hyphens: auto;
 }
-
-/* Dialogues */
-
-.dialogue {
-  margin-left:20px !important;
-  font-style:italic;
-}
-
-/* Lieu et date */
 
 .lieu {
-  font-size:18px;
-  font-style:italic;
-  color:#665c50;
-  margin-bottom:30px !important;
+  margin: 0 0 30px !important;
+
+  font-size: 18px;
+  font-style: italic;
+  color: #665c50;
 }
 
-/* Notes du Narrateur */
+/* =====================================
+   DIALOGUES
+===================================== */
+
+.dialogue {
+  margin-left: 20px !important;
+  margin-right: 8px !important;
+
+  font-style: italic;
+  text-align: left;
+}
+
+/* =====================================
+   PASSAGES RÉSERVÉS AU NARRATEUR
+
+   Pas d'encadré massif.
+   Une marge, un filet, une couleur.
+===================================== */
 
 .narrateur {
-  margin:45px 0;
-  padding:25px 30px 30px;
-  border-left:3px solid var(--brun);
-  background:var(--fond-notes);
-  color:var(--brun);
+  margin: 48px 0 0 13px;
+  padding: 8px 0 10px 27px;
+
+  border-left: 2px solid var(--brun);
+
+  color: var(--brun);
 }
 
-.narrateur h3 {
-  margin-top:0;
-  font:15px/1.6 "Special Elite",monospace;
-  color:var(--brun);
-}
+.narrateur .titre-narrateur {
+  margin: 0 0 29px;
 
-.narrateur h4 {
-  margin:30px 0 14px;
-  font-size:23px;
-  font-weight:600;
+  font:
+    14px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  letter-spacing: .035em;
+  color: var(--brun);
 }
 
 .narrateur p {
-  font-size:19px;
-  line-height:1.62;
+  font-size: 19px;
+  line-height: 1.63;
+  margin-bottom: 1.05em;
 }
+
+/* Sous-sections du Narrateur */
+
+.narrateur h4 {
+  margin: 36px 0 15px;
+
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.25;
+
+  color: var(--brun);
+}
+
+/* Sections principales de travail */
+
+.narrateur h4.rubrique {
+  margin: 47px 0 19px;
+  padding-top: 19px;
+
+  border-top: 1px solid #68352d35;
+
+  font-size: 23px;
+  font-weight: 600;
+  letter-spacing: .015em;
+}
+
+/* Petits intertitres : Le courrier,
+   Ce qu'il sait, Premier murmure... */
+
+.narrateur h5 {
+  margin: 28px 0 12px;
+
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--brun);
+}
+
+/* Mention locale réservée au Narrateur */
+
+.narrateur .mention-reservee {
+  margin: 30px 0 15px;
+  padding-left: 13px;
+
+  border-left: 2px solid var(--brun);
+
+  font-size: 16px;
+  font-style: italic;
+  font-weight: 600;
+}
+
+/* Une liste reste une liste */
+
+.narrateur .liste {
+  margin: 17px 0 24px;
+  padding-left: 23px;
+}
+
+.narrateur .liste li {
+  margin-bottom: 9px;
+
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+/* Citations et formulations à lire */
+
+.narrateur .citation {
+  margin: 14px 0 22px 19px;
+
+  font-style: italic;
+}
+
+/* Dialogues inclus dans les notes */
 
 .narrateur .dialogue {
-  font-style:italic;
+  color: var(--brun);
+  font-style: italic;
 }
 
-.item {
-  margin-left:16px !important;
-  text-indent:-16px;
-}
+/* =====================================
+   PIED DE PAGE
+===================================== */
 
 footer {
-  max-width:670px;
-  margin:70px auto 0;
-  border-top:1px solid var(--trait);
-  padding-top:22px;
-  font-size:17px;
+  max-width: 670px;
+  margin: 65px auto 0;
+
+  border-top: 1px solid var(--trait);
+  padding-top: 22px;
+
+  font-size: 17px;
 }
 
 footer a {
-  color:var(--bleu);
-  text-decoration:none;
+  color: var(--bleu);
+  text-decoration: none;
 }
 
 footer a:hover {
-  text-decoration:underline;
+  text-decoration: underline;
 }
 
 a:focus-visible {
-  outline:2px solid var(--bleu);
-  outline-offset:4px;
+  outline: 2px solid var(--bleu);
+  outline-offset: 4px;
 }
 
 .erreur {
-  color:var(--brun);
-  font-style:italic;
+  color: var(--brun);
+  font-style: italic;
 }
 
+/* =====================================
+   MOBILE
+===================================== */
+
 @media(max-width:600px) {
+
   body {
-    padding:10px;
-    font-size:19px;
-    line-height:1.62;
+    padding: 10px;
+    font-size: 19px;
+    line-height: 1.62;
   }
 
   .page {
-    padding:30px 20px;
-    margin:10px auto 35px;
-    box-shadow:4px 6px 0 #c7ba9e;
+    padding: 30px 20px;
+
+    margin: 10px auto 35px;
+    box-shadow: 4px 6px 0 #c7ba9e;
   }
 
   .dialogue {
-    margin-left:12px !important;
+    margin-left: 12px !important;
   }
 
   .narrateur {
-    padding:20px 17px;
-    margin:35px 0;
+    margin: 36px 0 0 4px;
+    padding-left: 17px;
   }
 
-  .narrateur p {
-    font-size:18px;
+  .narrateur p,
+  .narrateur .liste li {
+    font-size: 18px;
   }
+
+  .narrateur h4 {
+    font-size: 22px;
+  }
+
+  .narrateur h5 {
+    font-size: 19px;
+  }
+
 }
 
+/* =====================================
+   IMPRESSION
+===================================== */
+
 @media print {
+
   body {
-    background:white;
-    padding:0;
+    background: white;
+    padding: 0;
+  }
+
+  body::before {
+    display: none;
   }
 
   .page {
-    width:100%;
-    margin:0;
-    padding:15mm;
-    border:0;
-    box-shadow:none;
+    width: 100%;
+    margin: 0;
+    padding: 15mm;
+
+    border: 0;
+    box-shadow: none;
   }
 
-  nav, footer {
-    display:none;
+  nav,
+  footer {
+    display: none;
   }
+
+  .scene {
+    break-before: page;
+  }
+
 }
+
 </style>
 </head>
 
@@ -244,15 +432,17 @@ a:focus-visible {
 <main class="page">
 
 <header>
-  <p class="kicker">
-    BUREAU DES INTERSTICES · AFFAIRE I
-  </p>
 
-  <h1>Les Murmures de l'Alma</h1>
+<p class="kicker">
+BUREAU DES INTERSTICES · AFFAIRE I
+</p>
 
-  <p class="subtitle">
-    Acte I · Paris, automne 1966
-  </p>
+<h1>Les Murmures de l'Alma</h1>
+
+<p class="subtitle">
+Acte I · Paris, automne 1966
+</p>
+
 </header>
 
 <nav id="sommaire"
@@ -260,19 +450,22 @@ a:focus-visible {
 </nav>
 
 <article id="manuscrit">
-  <p>Ouverture du manuscrit…</p>
+<p>Ouverture du manuscrit…</p>
 </article>
 
 <footer>
-  <a href="sce1-murmures.html">
-    ← Retour aux trois actes
-  </a>
+
+<a href="sce1-murmures.html">
+← Retour aux trois actes
+</a>
+
 </footer>
 
 </main>
 
 <script>
-(async function() {
+
+(async function () {
 
   const NOM_FICHIER =
     "Les_Murmures_de_l_Alma_Acte_I_integral.txt";
@@ -283,19 +476,30 @@ a:focus-visible {
   const sommaire =
     document.getElementById("sommaire");
 
-  function element(tag, texte, classe) {
-    const el = document.createElement(tag);
-    if (classe) el.className = classe;
-    if (texte !== undefined) el.textContent = texte;
-    return el;
+  /* Création d'éléments sans interpréter
+     le texte original comme du HTML. */
+
+  function creer(tag, texte, classe) {
+
+    const element = document.createElement(tag);
+
+    if (classe) {
+      element.className = classe;
+    }
+
+    if (texte !== undefined) {
+      element.textContent = texte;
+    }
+
+    return element;
   }
 
-  function estTitreScene(texte) {
+  function estScene(texte) {
     return /^SCÈNE\s+\d+\s+—/.test(texte);
   }
 
-  function estTitreReserve(texte) {
-    return texte === "RÉSERVÉ AU NARRATEUR";
+  function estPrelude(texte) {
+    return texte.startsWith("PRÉLUDE —");
   }
 
   function estSeparateur(texte) {
@@ -303,82 +507,136 @@ a:focus-visible {
   }
 
   function estDialogue(texte) {
-    return texte.startsWith("—");
+    return /^—/.test(texte);
   }
 
-  function ajouterLien(texte, id) {
-    const lien = element("a", texte);
+  function estDebutNotes(texte) {
+    return texte === "RÉSERVÉ AU NARRATEUR";
+  }
+
+  function estMentionLocale(texte) {
+    return /^Réservé au Narrateur\s*:?\s*$/.test(texte);
+  }
+
+  function estIntroduction(texte) {
+
+    return (
+      texte === "INTRODUCTION" ||
+      texte === "INTRODUCTION AUX PERSONNAGES JOUEURS"
+    );
+
+  }
+
+  /* Rubriques explicites présentes
+     dans le manuscrit. */
+
+  function estRubrique(texte) {
+
+    return /^(?:M\.I\.S\.E\.|SORTIE DE SCÈNE|ÉVOLUTIONS POSSIBLES DE LA SCÈNE|LES LIEUX ET LES INVESTIGATIONS|UNE PRÉSENCE SUR L'AUTRE RIVE|LE RENARD)/.test(texte);
+
+  }
+
+  function estSousSectionNumerotee(texte) {
+
+    return /^\d+\.\s+/.test(texte) &&
+           texte.length < 105;
+
+  }
+
+  /* Titres courts non terminés par une
+     ponctuation de phrase.
+
+     La ponctuation et les formulations
+     du manuscrit restent inchangées. */
+
+  function estPetitIntertitre(texte) {
+
+    if (texte.length > 72) return false;
+
+    if (estDialogue(texte)) return false;
+
+    if (texte.startsWith("- ")) return false;
+
+    if (/^[«"]/.test(texte)) return false;
+
+    if (/[.!?;»]$/.test(texte)) return false;
+
+    /* Exclure les lignes qui portent
+       simplement une phrase entière. */
+
+    if (texte.split(/\s+/).length > 9) {
+      return false;
+    }
+
+    return true;
+  }
+
+  function estCitation(texte) {
+
+    return /^[«"]/.test(texte) &&
+           /[»"]$/.test(texte);
+
+  }
+
+  function lienSommaire(titre, id) {
+
+    const lien = creer("a", titre);
+
     lien.href = "#" + id;
+
     sommaire.appendChild(lien);
+
   }
 
   try {
 
     const reponse = await fetch(
       NOM_FICHIER,
-      {cache:"no-cache"}
+      { cache: "no-cache" }
     );
 
     if (!reponse.ok) {
-      throw new Error("Fichier introuvable");
+      throw new Error("Manuscrit introuvable");
     }
 
-    const texte = await reponse.text();
+    const contenu = await reponse.text();
 
-    const lignes = texte
-      .replace(/\r\n/g, "\n")
+    const lignes = contenu
       .replace(/^\uFEFF/, "")
+      .replace(/\r\n?/g, "\n")
       .split("\n");
 
     manuscrit.replaceChildren();
 
     let scene = null;
     let notes = null;
+    let liste = null;
+
     let dansNotes = false;
     let attenteLieu = false;
     let compteur = 0;
 
-    function ajouterParagraphe(texte) {
+    /* =====================================
+       STRUCTURE DES SCÈNES
+    ===================================== */
 
-      const cible = dansNotes ? notes : scene;
+    function nouvelleScene(titre, id, etiquette) {
 
-      if (!cible) return;
+      scene = creer("section", undefined, "scene");
 
-      if (texte.startsWith("- ")) {
-        cible.appendChild(
-          element("p", texte, "item")
-        );
-      }
-      else if (estDialogue(texte)) {
-        cible.appendChild(
-          element("p", texte, "dialogue")
-        );
-      }
-      else if (attenteLieu && !dansNotes) {
-        cible.appendChild(
-          element("p", texte, "lieu")
-        );
-        attenteLieu = false;
-      }
-      else {
-        cible.appendChild(
-          element("p", texte)
-        );
-      }
-
-    }
-
-    function nouvelleScene(titre, id, libelle) {
-
-      scene = element("section", undefined, "scene");
       scene.id = id;
 
       manuscrit.appendChild(scene);
-      scene.appendChild(element("h2", titre));
 
-      ajouterLien(libelle, id);
+      scene.appendChild(
+        creer("h2", titre)
+      );
+
+      lienSommaire(etiquette, id);
 
       notes = null;
+      liste = null;
+
       dansNotes = false;
       attenteLieu = true;
 
@@ -386,36 +644,96 @@ a:focus-visible {
 
     function commencerNotes() {
 
-      notes = element("section", undefined, "narrateur");
+      if (!scene) return;
+
+      notes = creer("section", undefined, "narrateur");
 
       notes.appendChild(
-        element("h3", "RÉSERVÉ AU NARRATEUR")
+        creer(
+          "h3",
+          "RÉSERVÉ AU NARRATEUR",
+          "titre-narrateur"
+        )
       );
 
       scene.appendChild(notes);
+
       dansNotes = true;
+      liste = null;
 
     }
 
+    function ajouterTitre(texte, niveau, classe) {
+
+      const cible = dansNotes ? notes : scene;
+
+      cible.appendChild(
+        creer(niveau, texte, classe)
+      );
+
+      liste = null;
+
+    }
+
+    function ajouterParagraphe(texte, classe) {
+
+      const cible = dansNotes ? notes : scene;
+
+      cible.appendChild(
+        creer("p", texte, classe)
+      );
+
+      liste = null;
+
+    }
+
+    function ajouterElementListe(texte) {
+
+      if (!liste) {
+
+        liste = creer("ul", undefined, "liste");
+
+        notes.appendChild(liste);
+      }
+
+      liste.appendChild(
+        creer("li", texte.slice(2))
+      );
+
+    }
+
+    /* =====================================
+       LECTURE ET MISE EN FORME
+    ===================================== */
+
     for (const ligne of lignes) {
 
-      const s = ligne.trim();
+      const texte = ligne.trim();
 
-      if (!s || estSeparateur(s)) {
+      /* Les lignes vides séparent les
+         paragraphes du manuscrit. */
+
+      if (!texte || estSeparateur(texte)) {
+
+        liste = null;
         continue;
       }
 
+      /* En-tête déjà affiché par la page */
+
       if (
-        s === "LES MURMURES DE L'ALMA" ||
-        s === "Affaire I — Acte I"
+        texte === "LES MURMURES DE L'ALMA" ||
+        texte === "Affaire I — Acte I"
       ) {
         continue;
       }
 
-      if (s.startsWith("PRÉLUDE —")) {
+      /* Prélude */
+
+      if (estPrelude(texte)) {
 
         nouvelleScene(
-          s,
+          texte,
           "prelude",
           "Prélude"
         );
@@ -423,12 +741,14 @@ a:focus-visible {
         continue;
       }
 
-      if (estTitreScene(s)) {
+      /* Scènes */
+
+      if (estScene(texte)) {
 
         compteur++;
 
         nouvelleScene(
-          s,
+          texte,
           "scene-" + compteur,
           "Scène " + compteur
         );
@@ -436,53 +756,155 @@ a:focus-visible {
         continue;
       }
 
-      if (estTitreReserve(s)) {
+      if (!scene) {
+        continue;
+      }
+
+      /* Bloc réservé au Narrateur */
+
+      if (estDebutNotes(texte)) {
 
         commencerNotes();
         continue;
       }
 
-      if (!scene) {
-        continue;
-      }
+      /* Lieu et moment : immédiatement
+         après le titre de scène. */
 
-      if (
-        s === "INTRODUCTION" ||
-        s === "INTRODUCTION AUX PERSONNAGES JOUEURS"
-      ) {
-        scene.appendChild(element("h3", s));
+      if (attenteLieu && !dansNotes) {
+
+        ajouterParagraphe(texte, "lieu");
+
         attenteLieu = false;
         continue;
       }
 
-      if (dansNotes) {
+      /* Introduction aux joueurs */
 
-        const titreMajuscules =
-          s.length > 5 &&
-          s.length < 85 &&
-          s === s.toUpperCase() &&
-          /[A-ZÀ-ÖØ-Ý]/.test(s) &&
-          !estDialogue(s);
+      if (estIntroduction(texte) && !dansNotes) {
 
-        const titreNumerote =
-          /^\d+\.\s+[A-ZÀ-ÖØ-Ý]/.test(s);
+        ajouterTitre(
+          texte,
+          "h3",
+          "introduction"
+        );
 
-        if (titreMajuscules || titreNumerote) {
-
-          notes.appendChild(element("h4", s));
-          continue;
-        }
-
+        continue;
       }
 
-      ajouterParagraphe(s);
+      /* Texte narratif ordinaire */
+
+      if (!dansNotes) {
+
+        ajouterParagraphe(
+          texte,
+          estDialogue(texte) ? "dialogue" : ""
+        );
+
+        continue;
+      }
+
+      /* =================================
+         INTÉRIEUR DES NOTES
+      ================================= */
+
+      /* Mentions locales */
+
+      if (estMentionLocale(texte)) {
+
+        ajouterParagraphe(
+          texte,
+          "mention-reservee"
+        );
+
+        continue;
+      }
+
+      /* Rubriques de jeu */
+
+      if (estRubrique(texte)) {
+
+        ajouterTitre(
+          texte,
+          "h4",
+          "rubrique"
+        );
+
+        continue;
+      }
+
+      /* Sous-sections numérotées */
+
+      if (estSousSectionNumerotee(texte)) {
+
+        ajouterTitre(
+          texte,
+          "h4",
+          ""
+        );
+
+        continue;
+      }
+
+      /* Listes */
+
+      if (texte.startsWith("- ")) {
+
+        ajouterElementListe(texte);
+        continue;
+      }
+
+      /* Dialogues */
+
+      if (estDialogue(texte)) {
+
+        ajouterParagraphe(
+          texte,
+          "dialogue"
+        );
+
+        continue;
+      }
+
+      /* Citations */
+
+      if (estCitation(texte)) {
+
+        ajouterParagraphe(
+          texte,
+          "citation"
+        );
+
+        continue;
+      }
+
+      /* Petits intertitres */
+
+      if (estPetitIntertitre(texte)) {
+
+        ajouterTitre(
+          texte,
+          "h5",
+          ""
+        );
+
+        continue;
+      }
+
+      /* Paragraphes explicatifs */
+
+      ajouterParagraphe(texte);
 
     }
 
-    if (!compteur) {
-      throw new Error(
-        "Aucune scène reconnue dans le manuscrit"
+    if (compteur !== 6) {
+
+      console.warn(
+        "Nombre de scènes reconnu :",
+        compteur,
+        "— 6 scènes attendues."
       );
+
     }
 
   }
@@ -491,9 +913,9 @@ a:focus-visible {
     manuscrit.replaceChildren();
 
     manuscrit.appendChild(
-      element(
+      creer(
         "p",
-        "Le manuscrit n'a pas pu être ouvert. Vérifiez que le fichier TXT se trouve dans le même dossier que cette page HTML.",
+        "Le manuscrit n'a pas pu être ouvert. Vérifiez que le fichier TXT est présent à la racine du dépôt et porte exactement le nom indiqué dans le code.",
         "erreur"
       )
     );
@@ -501,8 +923,8 @@ a:focus-visible {
   }
 
 })();
+
 </script>
 
 </body>
 </html>
-
