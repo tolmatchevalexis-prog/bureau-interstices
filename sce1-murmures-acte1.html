@@ -1,27 +1,23 @@
-
 <!doctype html>
 <html lang="fr">
 
 <head>
-
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#ded3b8">
 
-<title>Les Murmures de l'Alma — Acte I</title>
+<title>Les Murmures de l’Alma — Acte I</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap"
-rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
 
-/* =====================================
+/* ========================================
    PAPIER ET TYPOGRAPHIE
-===================================== */
+======================================== */
 
 :root {
   --papier: #ded3b8;
@@ -44,6 +40,14 @@ body {
   margin: 0;
   padding: 18px;
 
+  color: var(--encre);
+
+  font: 21px/1.7
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+
   background:
     radial-gradient(
       ellipse at 15% 12%,
@@ -51,16 +55,9 @@ body {
       transparent 48%
     ),
     var(--papier);
-
-  color: var(--encre);
-
-  font:
-    21px/1.7
-    "EB Garamond",
-    Garamond,
-    Georgia,
-    serif;
 }
+
+/* Grain discret */
 
 body::before {
   content: "";
@@ -74,32 +71,37 @@ body::before {
   );
 }
 
-/* =====================================
-   PAGE DE LIVRE
-===================================== */
+/* ========================================
+   FEUILLE
+======================================== */
 
 .page {
   width: min(880px, 100%);
   margin: 25px auto 60px;
-
   padding: clamp(26px, 7vw, 78px);
 
   background: var(--feuille);
   border: 1px solid var(--trait);
-
   box-shadow: 7px 10px 0 #c7ba9e;
 }
+
+/* ========================================
+   EN-TÊTE
+======================================== */
 
 header {
   text-align: center;
   padding-bottom: 36px;
-
-  border-bottom: 1px solid var(--trait);
   margin-bottom: 38px;
+  border-bottom: 1px solid var(--trait);
 }
 
 .kicker {
-  font: 12px/1.7 "Special Elite", monospace;
+  font: 12px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
   color: #60594d;
 }
 
@@ -115,9 +117,9 @@ h1 {
   font-style: italic;
 }
 
-/* =====================================
+/* ========================================
    SOMMAIRE
-===================================== */
+======================================== */
 
 nav {
   max-width: 670px;
@@ -130,27 +132,28 @@ nav {
 
 nav a {
   padding: 7px 11px;
-
   border: 1px solid var(--trait);
 
-  font: 12px/1.6 "Special Elite", monospace;
+  font: 12px/1.6
+    "Special Elite",
+    "Courier New",
+    monospace;
 
-  text-decoration: none;
   color: var(--bleu);
+  text-decoration: none;
 }
 
 nav a:hover {
   background: #fffaf0;
 }
 
-/* =====================================
-   SCÈNES ET INTRODUCTIONS
-===================================== */
+/* ========================================
+   SCÈNES
+======================================== */
 
 .scene {
   max-width: 670px;
   margin: 0 auto 85px;
-
   scroll-margin-top: 25px;
 }
 
@@ -162,168 +165,172 @@ nav a:hover {
   font-weight: 500;
 }
 
-.scene h3.introduction {
-  margin: 38px 0 22px;
-
-  font: 13px/1.7
-    "Special Elite",
-    "Courier New",
-    monospace;
-
-  letter-spacing: .02em;
-  color: #60594d;
-}
-
-.scene p {
-  margin: 0 0 1.08em;
-  hyphens: auto;
-}
-
 .lieu {
-  margin: 0 0 30px !important;
-
+  margin: 0 0 32px;
   font-size: 18px;
   font-style: italic;
   color: #665c50;
 }
 
-/* =====================================
-   DIALOGUES
-===================================== */
+/* ========================================
+   LES QUATRE REGISTRES
+======================================== */
 
-.dialogue {
-  margin-left: 20px !important;
-  margin-right: 8px !important;
+.registre {
+  margin: 0 0 24px;
+}
+
+/* AMBIANCE — prose littéraire */
+
+.ambiance {
+  color: var(--encre);
+  font-size: 21px;
+  line-height: 1.72;
+}
+
+/* INFORMATION — indications de jeu */
+
+.information {
+  margin-left: 12px;
+  color: var(--encre);
+  font-size: 20px;
+  line-height: 1.62;
+}
+
+/* NARRATEUR — informations confidentielles */
+
+.narrateur {
+  margin: 34px 0 38px 16px;
+  padding: 5px 0 7px 25px;
+
+  border-left: 2px solid var(--brun);
+
+  color: var(--brun);
+  font-size: 19px;
+  line-height: 1.63;
+}
+
+/* MISE — système M.I.S.E. */
+
+.mise {
+  margin: 32px 0 38px 16px;
+  padding: 8px 0 8px 25px;
+
+  border-left: 2px solid var(--bleu);
+
+  color: var(--bleu);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ========================================
+   PARAGRAPHES
+======================================== */
+
+.registre p {
+  margin: 0 0 1.08em;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+/* ========================================
+   TOUS LES DIALOGUES EN ITALIQUE
+======================================== */
+
+.registre .dialogue {
+  margin-left: 20px;
+  margin-right: 8px;
 
   font-style: italic;
   text-align: left;
 }
 
-/* =====================================
-   PASSAGES RÉSERVÉS AU NARRATEUR
+/* Les dialogues conservent la couleur
+   de leur registre. */
 
-   Pas d'encadré massif.
-   Une marge, un filet, une couleur.
-===================================== */
-
-.narrateur {
-  margin: 48px 0 0 13px;
-  padding: 8px 0 10px 27px;
-
-  border-left: 2px solid var(--brun);
-
-  color: var(--brun);
+.ambiance .dialogue,
+.information .dialogue {
+  color: var(--encre);
 }
-
-.narrateur .titre-narrateur {
-  margin: 0 0 29px;
-
-  font:
-    14px/1.7
-    "Special Elite",
-    "Courier New",
-    monospace;
-
-  letter-spacing: .035em;
-  color: var(--brun);
-}
-
-.narrateur p {
-  font-size: 19px;
-  line-height: 1.63;
-  margin-bottom: 1.05em;
-}
-
-/* Sous-sections du Narrateur */
-
-.narrateur h4 {
-  margin: 36px 0 15px;
-
-  font-size: 24px;
-  font-weight: 600;
-  line-height: 1.25;
-
-  color: var(--brun);
-}
-
-/* Sections principales de travail */
-
-.narrateur h4.rubrique {
-  margin: 47px 0 19px;
-  padding-top: 19px;
-
-  border-top: 1px solid #68352d35;
-
-  font-size: 23px;
-  font-weight: 600;
-  letter-spacing: .015em;
-}
-
-/* Petits intertitres : Le courrier,
-   Ce qu'il sait, Premier murmure... */
-
-.narrateur h5 {
-  margin: 28px 0 12px;
-
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1.3;
-  color: var(--brun);
-}
-
-/* Mention locale réservée au Narrateur */
-
-.narrateur .mention-reservee {
-  margin: 30px 0 15px;
-  padding-left: 13px;
-
-  border-left: 2px solid var(--brun);
-
-  font-size: 16px;
-  font-style: italic;
-  font-weight: 600;
-}
-
-/* Une liste reste une liste */
-
-.narrateur .liste {
-  margin: 17px 0 24px;
-  padding-left: 23px;
-}
-
-.narrateur .liste li {
-  margin-bottom: 9px;
-
-  font-size: 19px;
-  line-height: 1.55;
-}
-
-/* Citations et formulations à lire */
-
-.narrateur .citation {
-  margin: 14px 0 22px 19px;
-
-  font-style: italic;
-}
-
-/* Dialogues inclus dans les notes */
 
 .narrateur .dialogue {
   color: var(--brun);
-  font-style: italic;
 }
 
-/* =====================================
-   PIED DE PAGE
-===================================== */
+.mise .dialogue {
+  color: var(--bleu);
+}
+
+/* ========================================
+   TITRES INTERNES
+======================================== */
+
+.registre h3 {
+  margin: 34px 0 18px;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.registre h4 {
+  margin: 28px 0 14px;
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.registre h3:first-child,
+.registre h4:first-child {
+  margin-top: 0;
+}
+
+.narrateur h3,
+.narrateur h4 {
+  color: var(--brun);
+}
+
+.mise h3,
+.mise h4 {
+  color: var(--bleu);
+}
+
+/* ========================================
+   LISTES
+======================================== */
+
+.registre ul {
+  margin: 16px 0 26px;
+  padding-left: 24px;
+}
+
+.registre li {
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+/* ========================================
+   ÉPILOGUE
+======================================== */
+
+.epilogue {
+  margin-top: 90px;
+  padding-top: 32px;
+  border-top: 1px solid var(--trait);
+}
+
+.epilogue h2 {
+  color: var(--brun);
+}
+
+/* ========================================
+   NAVIGATION
+======================================== */
 
 footer {
   max-width: 670px;
   margin: 65px auto 0;
-
-  border-top: 1px solid var(--trait);
   padding-top: 22px;
-
+  border-top: 1px solid var(--trait);
   font-size: 17px;
 }
 
@@ -342,15 +349,18 @@ a:focus-visible {
 }
 
 .erreur {
+  max-width: 670px;
+  margin: 0 auto;
+
   color: var(--brun);
   font-style: italic;
 }
 
-/* =====================================
-   MOBILE
-===================================== */
+/* ========================================
+   VERSION MOBILE
+======================================== */
 
-@media(max-width:600px) {
+@media (max-width: 600px) {
 
   body {
     padding: 10px;
@@ -360,44 +370,54 @@ a:focus-visible {
 
   .page {
     padding: 30px 20px;
-
     margin: 10px auto 35px;
     box-shadow: 4px 6px 0 #c7ba9e;
   }
 
-  .dialogue {
-    margin-left: 12px !important;
+  .ambiance {
+    font-size: 19px;
   }
 
-  .narrateur {
-    margin: 36px 0 0 4px;
-    padding-left: 17px;
-  }
-
-  .narrateur p,
-  .narrateur .liste li {
+  .information {
+    margin-left: 5px;
     font-size: 18px;
   }
 
-  .narrateur h4 {
-    font-size: 22px;
+  .narrateur {
+    margin-left: 3px;
+    padding-left: 16px;
+    font-size: 18px;
   }
 
-  .narrateur h5 {
-    font-size: 19px;
+  .mise {
+    margin-left: 3px;
+    padding-left: 16px;
+    font-size: 17px;
+  }
+
+  .registre .dialogue {
+    margin-left: 12px;
+  }
+
+  .registre h3 {
+    font-size: 23px;
+  }
+
+  .registre h4 {
+    font-size: 20px;
   }
 
 }
 
-/* =====================================
+/* ========================================
    IMPRESSION
-===================================== */
+======================================== */
 
 @media print {
 
   body {
-    background: white;
     padding: 0;
+    background: white;
   }
 
   body::before {
@@ -408,7 +428,6 @@ a:focus-visible {
     width: 100%;
     margin: 0;
     padding: 15mm;
-
     border: 0;
     box-shadow: none;
   }
@@ -425,6 +444,7 @@ a:focus-visible {
 }
 
 </style>
+
 </head>
 
 <body>
@@ -437,7 +457,7 @@ a:focus-visible {
 BUREAU DES INTERSTICES · AFFAIRE I
 </p>
 
-<h1>Les Murmures de l'Alma</h1>
+<h1>Les Murmures de l’Alma</h1>
 
 <p class="subtitle">
 Acte I · Paris, automne 1966
@@ -445,13 +465,24 @@ Acte I · Paris, automne 1966
 
 </header>
 
-<nav id="sommaire"
-     aria-label="Sommaire de l'acte">
+<!-- SOMMAIRE -->
+
+<nav
+  id="sommaire"
+  aria-label="Sommaire de l'acte">
 </nav>
 
-<article id="manuscrit">
+<!-- TEXTE DU SCÉNARIO -->
+
+<article
+  id="manuscrit"
+  aria-label="Texte intégral de l'acte I">
+
 <p>Ouverture du manuscrit…</p>
+
 </article>
+
+<!-- RETOUR -->
 
 <footer>
 
@@ -467,8 +498,12 @@ Acte I · Paris, automne 1966
 
 (async function () {
 
-  const NOM_FICHIER =
-    "Les_Murmures_de_l_Alma_Acte_I_integral.txt";
+  /* =====================================
+     FICHIER SOURCE
+  ===================================== */
+
+  const FICHIER =
+    "Murmures_Alma_Acte_1_site.txt";
 
   const manuscrit =
     document.getElementById("manuscrit");
@@ -476,30 +511,46 @@ Acte I · Paris, automne 1966
   const sommaire =
     document.getElementById("sommaire");
 
-  /* Création d'éléments sans interpréter
-     le texte original comme du HTML. */
+  const REGISTRES = {
+    AMBIANCE: "ambiance",
+    INFORMATION: "information",
+    NARRATEUR: "narrateur",
+    MISE: "mise"
+  };
+
+  /* =====================================
+     CRÉATION SÉCURISÉE DES ÉLÉMENTS
+  ===================================== */
 
   function creer(tag, texte, classe) {
 
-    const element = document.createElement(tag);
+    const el = document.createElement(tag);
 
     if (classe) {
-      element.className = classe;
+      el.className = classe;
     }
 
     if (texte !== undefined) {
-      element.textContent = texte;
+      el.textContent = texte;
     }
 
-    return element;
+    return el;
   }
+
+  /* =====================================
+     RECONNAISSANCE DES STRUCTURES
+  ===================================== */
 
   function estScene(texte) {
     return /^SCÈNE\s+\d+\s+—/.test(texte);
   }
 
   function estPrelude(texte) {
-    return texte.startsWith("PRÉLUDE —");
+    return /^PRÉLUDE\s+—/.test(texte);
+  }
+
+  function estEpilogue(texte) {
+    return /^ÉPILOGUE\s+—/.test(texte);
   }
 
   function estSeparateur(texte) {
@@ -507,62 +558,52 @@ Acte I · Paris, automne 1966
   }
 
   function estDialogue(texte) {
-    return /^—/.test(texte);
+    return /^[—–]\s*/.test(texte);
   }
 
-  function estDebutNotes(texte) {
-    return texte === "RÉSERVÉ AU NARRATEUR";
-  }
-
-  function estMentionLocale(texte) {
-    return /^Réservé au Narrateur\s*:?\s*$/.test(texte);
-  }
-
-  function estIntroduction(texte) {
+  function estTitrePrincipal(texte) {
 
     return (
       texte === "INTRODUCTION" ||
-      texte === "INTRODUCTION AUX PERSONNAGES JOUEURS"
+      texte === "INTRODUCTION AUX PERSONNAGES JOUEURS" ||
+      texte === "RÉSERVÉ AU NARRATEUR" ||
+      texte === "LES LIEUX ET LES INVESTIGATIONS" ||
+      texte === "ÉVOLUTIONS POSSIBLES DE LA SCÈNE" ||
+      texte === "SORTIE DE SCÈNE" ||
+      texte.startsWith("M.I.S.E. —") ||
+      texte === "UNE PRÉSENCE SUR L'AUTRE RIVE" ||
+      texte === "LE RENARD"
     );
-
   }
 
-  /* Rubriques explicites présentes
-     dans le manuscrit. */
+  function estTitreNumerote(texte) {
 
-  function estRubrique(texte) {
-
-    return /^(?:M\.I\.S\.E\.|SORTIE DE SCÈNE|ÉVOLUTIONS POSSIBLES DE LA SCÈNE|LES LIEUX ET LES INVESTIGATIONS|UNE PRÉSENCE SUR L'AUTRE RIVE|LE RENARD)/.test(texte);
-
+    return (
+      /^\d+\.\s+/.test(texte) &&
+      texte.length < 110
+    );
   }
 
-  function estSousSectionNumerotee(texte) {
+  function estTitreMajuscules(texte) {
 
-    return /^\d+\.\s+/.test(texte) &&
-           texte.length < 105;
-
+    return (
+      texte.length > 4 &&
+      texte.length < 110 &&
+      texte === texte.toUpperCase() &&
+      /[A-ZÀ-ÖØ-Ý]/.test(texte) &&
+      !estDialogue(texte) &&
+      !texte.startsWith("- ") &&
+      !texte.startsWith("«")
+    );
   }
 
-  /* Titres courts non terminés par une
-     ponctuation de phrase.
+  function estPetitTitre(texte) {
 
-     La ponctuation et les formulations
-     du manuscrit restent inchangées. */
-
-  function estPetitIntertitre(texte) {
-
-    if (texte.length > 72) return false;
-
+    if (texte.length > 75) return false;
     if (estDialogue(texte)) return false;
-
     if (texte.startsWith("- ")) return false;
-
-    if (/^[«"]/.test(texte)) return false;
-
+    if (texte.startsWith("«")) return false;
     if (/[.!?;»]$/.test(texte)) return false;
-
-    /* Exclure les lignes qui portent
-       simplement une phrase entière. */
 
     if (texte.split(/\s+/).length > 9) {
       return false;
@@ -571,27 +612,14 @@ Acte I · Paris, automne 1966
     return true;
   }
 
-  function estCitation(texte) {
-
-    return /^[«"]/.test(texte) &&
-           /[»"]$/.test(texte);
-
-  }
-
-  function lienSommaire(titre, id) {
-
-    const lien = creer("a", titre);
-
-    lien.href = "#" + id;
-
-    sommaire.appendChild(lien);
-
-  }
+  /* =====================================
+     CHARGEMENT DU MANUSCRIT
+  ===================================== */
 
   try {
 
     const reponse = await fetch(
-      NOM_FICHIER,
+      FICHIER,
       { cache: "no-cache" }
     );
 
@@ -608,124 +636,197 @@ Acte I · Paris, automne 1966
 
     manuscrit.replaceChildren();
 
+    /* État de lecture */
+
     let scene = null;
-    let notes = null;
+    let section = null;
     let liste = null;
 
-    let dansNotes = false;
+    let registreActuel = "AMBIANCE";
     let attenteLieu = false;
-    let compteur = 0;
 
-    /* =====================================
-       STRUCTURE DES SCÈNES
-    ===================================== */
+    let compteurScenes = 0;
 
-    function nouvelleScene(titre, id, etiquette) {
+    /* ===================================
+       SOMMAIRE
+    =================================== */
 
-      scene = creer("section", undefined, "scene");
+    function ajouterSommaire(
+      texte,
+      identifiant
+    ) {
 
-      scene.id = id;
+      const lien = creer("a", texte);
 
-      manuscrit.appendChild(scene);
+      lien.href = "#" + identifiant;
+
+      sommaire.appendChild(lien);
+    }
+
+    /* ===================================
+       NOUVELLE SCÈNE
+    =================================== */
+
+    function nouvelleScene(
+      titre,
+      identifiant,
+      etiquette,
+      epilogue = false
+    ) {
+
+      scene = creer(
+        "section",
+        undefined,
+        epilogue ? "scene epilogue" : "scene"
+      );
+
+      scene.id = identifiant;
 
       scene.appendChild(
         creer("h2", titre)
       );
 
-      lienSommaire(etiquette, id);
+      manuscrit.appendChild(scene);
 
-      notes = null;
-      liste = null;
-
-      dansNotes = false;
-      attenteLieu = true;
-
-    }
-
-    function commencerNotes() {
-
-      if (!scene) return;
-
-      notes = creer("section", undefined, "narrateur");
-
-      notes.appendChild(
-        creer(
-          "h3",
-          "RÉSERVÉ AU NARRATEUR",
-          "titre-narrateur"
-        )
+      ajouterSommaire(
+        etiquette,
+        identifiant
       );
 
-      scene.appendChild(notes);
-
-      dansNotes = true;
+      section = null;
       liste = null;
 
+      registreActuel =
+        epilogue ? "NARRATEUR" : "AMBIANCE";
+
+      attenteLieu = !epilogue;
     }
 
-    function ajouterTitre(texte, niveau, classe) {
+    /* ===================================
+       CHANGEMENT DE REGISTRE
+    =================================== */
 
-      const cible = dansNotes ? notes : scene;
+    function changerRegistre(nom) {
 
-      cible.appendChild(
-        creer(niveau, texte, classe)
+      registreActuel = nom;
+      liste = null;
+
+      if (!scene) {
+        section = null;
+        return;
+      }
+
+      section = creer(
+        "div",
+        undefined,
+        "registre " + REGISTRES[nom]
       );
 
-      liste = null;
-
+      scene.appendChild(section);
     }
 
-    function ajouterParagraphe(texte, classe) {
+    /* ===================================
+       AJOUT DE PARAGRAPHE
+    =================================== */
 
-      const cible = dansNotes ? notes : scene;
+    function ajouterParagraphe(
+      texte,
+      classe = ""
+    ) {
 
-      cible.appendChild(
+      if (!section) {
+        changerRegistre(registreActuel);
+      }
+
+      section.appendChild(
         creer("p", texte, classe)
       );
 
       liste = null;
-
     }
 
-    function ajouterElementListe(texte) {
+    /* ===================================
+       TITRES
+    =================================== */
+
+    function ajouterTitre(
+      texte,
+      niveau
+    ) {
+
+      if (!section) {
+        changerRegistre(registreActuel);
+      }
+
+      section.appendChild(
+        creer(niveau, texte)
+      );
+
+      liste = null;
+    }
+
+    /* ===================================
+       LISTES
+    =================================== */
+
+    function ajouterListe(texte) {
+
+      if (!section) {
+        changerRegistre(registreActuel);
+      }
 
       if (!liste) {
-
-        liste = creer("ul", undefined, "liste");
-
-        notes.appendChild(liste);
+        liste = creer("ul");
+        section.appendChild(liste);
       }
 
       liste.appendChild(
         creer("li", texte.slice(2))
       );
-
     }
 
-    /* =====================================
-       LECTURE ET MISE EN FORME
-    ===================================== */
+    /* ===================================
+       LIEU ET DATE
+    =================================== */
 
-    for (const ligne of lignes) {
+    function ajouterLieu(texte) {
 
-      const texte = ligne.trim();
+      scene.appendChild(
+        creer("p", texte, "lieu")
+      );
 
-      /* Les lignes vides séparent les
-         paragraphes du manuscrit. */
+      attenteLieu = false;
+    }
 
-      if (!texte || estSeparateur(texte)) {
+    /* ===================================
+       TRAITEMENT DU TEXTE
+    =================================== */
 
+    function traiterTexte(texteBrut) {
+
+      const texte = texteBrut.trim();
+
+      if (!texte) {
         liste = null;
-        continue;
+        return;
       }
 
-      /* En-tête déjà affiché par la page */
+      /* Séparateurs */
+
+      if (estSeparateur(texte)) {
+        liste = null;
+        return;
+      }
+
+      /* En-tête déjà affiché */
 
       if (
         texte === "LES MURMURES DE L'ALMA" ||
+        texte === "LES MURMURES DE L’ALMA" ||
+        texte === "AFFAIRE I — ACTE I" ||
         texte === "Affaire I — Acte I"
       ) {
-        continue;
+        return;
       }
 
       /* Prélude */
@@ -738,123 +839,99 @@ Acte I · Paris, automne 1966
           "Prélude"
         );
 
-        continue;
+        return;
       }
 
-      /* Scènes */
+      /* Scènes numérotées */
 
       if (estScene(texte)) {
 
-        compteur++;
+        compteurScenes++;
 
         nouvelleScene(
           texte,
-          "scene-" + compteur,
-          "Scène " + compteur
+          "scene-" + compteurScenes,
+          "Scène " + compteurScenes
         );
 
-        continue;
+        return;
+      }
+
+      /* Épilogue */
+
+      if (estEpilogue(texte)) {
+
+        nouvelleScene(
+          texte,
+          "epilogue",
+          "Épilogue",
+          true
+        );
+
+        return;
       }
 
       if (!scene) {
-        continue;
+        return;
       }
 
-      /* Bloc réservé au Narrateur */
+      /* Lieu et date */
 
-      if (estDebutNotes(texte)) {
+      if (attenteLieu) {
 
-        commencerNotes();
-        continue;
+        ajouterLieu(texte);
+
+        return;
       }
 
-      /* Lieu et moment : immédiatement
-         après le titre de scène. */
+      /* Ouverture d'un registre par défaut */
 
-      if (attenteLieu && !dansNotes) {
-
-        ajouterParagraphe(texte, "lieu");
-
-        attenteLieu = false;
-        continue;
+      if (!section) {
+        changerRegistre(registreActuel);
       }
 
-      /* Introduction aux joueurs */
+      /* Titres principaux */
 
-      if (estIntroduction(texte) && !dansNotes) {
+      if (estTitrePrincipal(texte)) {
 
-        ajouterTitre(
-          texte,
-          "h3",
-          "introduction"
-        );
+        ajouterTitre(texte, "h3");
 
-        continue;
+        return;
       }
 
-      /* Texte narratif ordinaire */
+      /* Rubriques numérotées */
 
-      if (!dansNotes) {
+      if (estTitreNumerote(texte)) {
 
-        ajouterParagraphe(
-          texte,
-          estDialogue(texte) ? "dialogue" : ""
-        );
+        ajouterTitre(texte, "h3");
 
-        continue;
+        return;
       }
 
-      /* =================================
-         INTÉRIEUR DES NOTES
-      ================================= */
+      /* Titres en capitales */
 
-      /* Mentions locales */
+      if (estTitreMajuscules(texte)) {
 
-      if (estMentionLocale(texte)) {
+        ajouterTitre(texte, "h3");
 
-        ajouterParagraphe(
-          texte,
-          "mention-reservee"
-        );
-
-        continue;
-      }
-
-      /* Rubriques de jeu */
-
-      if (estRubrique(texte)) {
-
-        ajouterTitre(
-          texte,
-          "h4",
-          "rubrique"
-        );
-
-        continue;
-      }
-
-      /* Sous-sections numérotées */
-
-      if (estSousSectionNumerotee(texte)) {
-
-        ajouterTitre(
-          texte,
-          "h4",
-          ""
-        );
-
-        continue;
+        return;
       }
 
       /* Listes */
 
       if (texte.startsWith("- ")) {
 
-        ajouterElementListe(texte);
-        continue;
+        ajouterListe(texte);
+
+        return;
       }
 
-      /* Dialogues */
+      /* =================================
+         DIALOGUES : ITALIQUES
+
+         Fonctionne dans les quatre
+         registres du manuscrit.
+      ================================= */
 
       if (estDialogue(texte)) {
 
@@ -863,51 +940,90 @@ Acte I · Paris, automne 1966
           "dialogue"
         );
 
-        continue;
+        return;
       }
 
-      /* Citations */
+      /* Intertitres courts des sections
+         non littéraires */
 
-      if (estCitation(texte)) {
+      if (
+        registreActuel !== "AMBIANCE" &&
+        estPetitTitre(texte)
+      ) {
 
-        ajouterParagraphe(
-          texte,
-          "citation"
-        );
+        ajouterTitre(texte, "h4");
 
-        continue;
+        return;
       }
 
-      /* Petits intertitres */
-
-      if (estPetitIntertitre(texte)) {
-
-        ajouterTitre(
-          texte,
-          "h5",
-          ""
-        );
-
-        continue;
-      }
-
-      /* Paragraphes explicatifs */
+      /* Paragraphes ordinaires */
 
       ajouterParagraphe(texte);
-
     }
 
-    if (compteur !== 6) {
+    /* ===================================
+       LECTURE DES BALISES
+
+       [AMBIANCE]
+       [INFORMATION]
+       [NARRATEUR]
+       [MISE]
+
+       Elles servent à la composition
+       mais ne sont jamais affichées.
+    =================================== */
+
+    const expressionBalises =
+      /\[(AMBIANCE|INFORMATION|NARRATEUR|MISE)\]/g;
+
+    for (const ligne of lignes) {
+
+      expressionBalises.lastIndex = 0;
+
+      let debut = 0;
+      let resultat;
+
+      while (
+        (resultat =
+          expressionBalises.exec(ligne)) !== null
+      ) {
+
+        /* Texte avant la balise */
+
+        const avant = ligne.slice(
+          debut,
+          resultat.index
+        );
+
+        traiterTexte(avant);
+
+        /* Nouveau registre */
+
+        changerRegistre(resultat[1]);
+
+        debut = expressionBalises.lastIndex;
+      }
+
+      /* Texte après la dernière balise */
+
+      traiterTexte(
+        ligne.slice(debut)
+      );
+    }
+
+    /* Contrôle indicatif */
+
+    if (compteurScenes !== 6) {
 
       console.warn(
-        "Nombre de scènes reconnu :",
-        compteur,
-        "— 6 scènes attendues."
+        "Scènes reconnues :",
+        compteurScenes,
+        "— six attendues."
       );
-
     }
 
   }
+
   catch (erreur) {
 
     manuscrit.replaceChildren();
@@ -915,11 +1031,10 @@ Acte I · Paris, automne 1966
     manuscrit.appendChild(
       creer(
         "p",
-        "Le manuscrit n'a pas pu être ouvert. Vérifiez que le fichier TXT est présent à la racine du dépôt et porte exactement le nom indiqué dans le code.",
+        "Le manuscrit n'a pas pu être ouvert. Vérifiez que Murmures_Alma_Acte_1_site.txt se trouve à la racine du dépôt GitHub.",
         "erreur"
       )
     );
-
   }
 
 })();
