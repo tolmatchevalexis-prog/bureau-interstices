@@ -1,1 +1,1031 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>Les Murmures de l'Alma — Acte II</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap"
+  rel="stylesheet">
+
+<style>
+
+/* ======================================
+   IDENTITÉ TYPOGRAPHIQUE
+====================================== */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --encre: #292920;
+  --trait: #b4a58b;
+  --brun: #68352d;
+  --bleu: #24374f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+
+  background:
+    radial-gradient(
+      ellipse at 15% 12%,
+      #fff7df80,
+      transparent 48%
+    ),
+    var(--papier);
+
+  color: var(--encre);
+
+  font:
+    21px/1.7
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+}
+
+/* ======================================
+   PAGE DE LIVRE
+====================================== */
+
+.page {
+  width: min(880px, 100%);
+  margin: 25px auto 60px;
+
+  padding: clamp(26px, 7vw, 78px);
+
+  background: var(--feuille);
+
+  border: 1px solid var(--trait);
+  box-shadow: 7px 10px 0 #c7ba9e;
+}
+
+/* ======================================
+   EN-TÊTE
+====================================== */
+
+header {
+  text-align: center;
+  padding-bottom: 36px;
+  margin-bottom: 38px;
+  border-bottom: 1px solid var(--trait);
+}
+
+.kicker {
+  font:
+    12px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color: #60594d;
+}
+
+h1 {
+  margin: 14px 0;
+  font-size: clamp(40px, 7vw, 63px);
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.subtitle {
+  margin: 0;
+  font-size: 23px;
+  font-style: italic;
+}
+
+/* ======================================
+   SOMMAIRE
+====================================== */
+
+.sommaire {
+  max-width: 670px;
+  margin: 0 auto 55px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.sommaire a {
+  padding: 8px 11px;
+
+  border: 1px solid var(--trait);
+
+  font:
+    12px/1.6
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color: var(--bleu);
+  text-decoration: none;
+}
+
+.sommaire a:hover {
+  background: #fffaf0;
+}
+
+/* ======================================
+   SCÈNES
+====================================== */
+
+.scene {
+  max-width: 670px;
+  margin: 0 auto 85px;
+  scroll-margin-top: 20px;
+}
+
+.scene h2 {
+  margin: 0 0 28px;
+
+  font-size: clamp(30px, 5vw, 42px);
+  line-height: 1.18;
+  font-weight: 500;
+}
+
+/* ======================================
+   QUATRE REGISTRES
+====================================== */
+
+.registre {
+  margin: 0 0 25px;
+}
+
+/* AMBIANCE — texte littéraire */
+
+.ambiance {
+  color: var(--encre);
+  font-size: 21px;
+  line-height: 1.72;
+}
+
+/* INFORMATION — conduite du jeu */
+
+.information {
+  margin-left: 12px;
+
+  color: var(--encre);
+  font-size: 20px;
+  line-height: 1.62;
+}
+
+/* NARRATEUR — informations réservées */
+
+.narrateur {
+  margin: 34px 0 38px 16px;
+  padding: 5px 0 7px 25px;
+
+  border-left: 2px solid var(--brun);
+
+  color: var(--brun);
+  font-size: 19px;
+  line-height: 1.63;
+}
+
+/* MISE — mécanique M.I.S.E. */
+
+.mise {
+  margin: 32px 0 38px 16px;
+  padding: 8px 0 8px 25px;
+
+  border-left: 2px solid var(--bleu);
+
+  color: var(--bleu);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ======================================
+   PARAGRAPHES
+====================================== */
+
+.registre p {
+  margin: 0 0 1.08em;
+
+  hyphens: auto;
+  overflow-wrap: break-word;
+
+  white-space: pre-line;
+}
+
+/* ======================================
+   DIALOGUES EN ITALIQUE
+====================================== */
+
+.registre p.dialogue {
+  margin-left: 20px;
+  margin-right: 8px;
+
+  font-style: italic;
+}
+
+.ambiance .dialogue,
+.information .dialogue {
+  color: var(--encre);
+}
+
+.narrateur .dialogue {
+  color: var(--brun);
+}
+
+.mise .dialogue {
+  color: var(--bleu);
+}
+
+/* ======================================
+   TITRES ET SOUS-TITRES
+====================================== */
+
+.registre h3 {
+  margin: 34px 0 18px;
+
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.25;
+}
+
+.registre h4 {
+  margin: 28px 0 14px;
+
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.registre h3:first-child,
+.registre h4:first-child {
+  margin-top: 0;
+}
+
+.narrateur h3,
+.narrateur h4 {
+  color: var(--brun);
+}
+
+.mise h3,
+.mise h4 {
+  color: var(--bleu);
+}
+
+/* ======================================
+   LISTES
+====================================== */
+
+.registre ul {
+  margin: 15px 0 25px;
+  padding-left: 24px;
+}
+
+.registre li {
+  margin-bottom: 9px;
+  line-height: 1.55;
+}
+
+/* ======================================
+   ÉPILOGUE ET FIN D'ACTE
+====================================== */
+
+.epilogue {
+  padding-top: 24px;
+  margin-top: 36px;
+  border-top: 1px solid var(--trait);
+}
+
+.fin-acte {
+  margin: 70px 0 0;
+  padding-top: 28px;
+
+  border-top: 1px solid var(--trait);
+
+  text-align: center;
+
+  font:
+    14px/1.7
+    "Special Elite",
+    monospace;
+
+  color: var(--brun);
+}
+
+/* ======================================
+   NAVIGATION
+====================================== */
+
+footer {
+  max-width: 670px;
+  margin: 65px auto 0;
+  padding-top: 22px;
+
+  border-top: 1px solid var(--trait);
+
+  font-size: 17px;
+}
+
+footer a {
+  color: var(--bleu);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 4px;
+}
+
+.erreur {
+  color: var(--brun);
+  font-style: italic;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+    font-size: 19px;
+    line-height: 1.62;
+  }
+
+  .page {
+    margin: 10px auto 35px;
+    padding: 30px 20px;
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  .ambiance {
+    font-size: 19px;
+  }
+
+  .information {
+    margin-left: 5px;
+    font-size: 18px;
+  }
+
+  .narrateur {
+    margin-left: 3px;
+    padding-left: 16px;
+    font-size: 18px;
+  }
+
+  .mise {
+    margin-left: 3px;
+    padding-left: 16px;
+    font-size: 17px;
+  }
+
+  .registre p.dialogue {
+    margin-left: 12px;
+  }
+
+  .registre h3 {
+    font-size: 23px;
+  }
+
+  .registre h4 {
+    font-size: 20px;
+  }
+}
+
+/* ======================================
+   IMPRESSION
+====================================== */
+
+@media print {
+
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  .page {
+    width: 100%;
+    margin: 0;
+    padding: 15mm;
+
+    border: none;
+    box-shadow: none;
+  }
+
+  .sommaire,
+  footer {
+    display: none;
+  }
+
+  .scene {
+    break-before: page;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<p class="kicker">
+BUREAU DES INTERSTICES · AFFAIRE I
+</p>
+
+<h1>Les Murmures de l'Alma</h1>
+
+<p class="subtitle">
+Acte II · Paris, automne 1966
+</p>
+
+</header>
+
+<!-- SOMMAIRE -->
+
+<nav
+  id="sommaire"
+  class="sommaire"
+  aria-label="Sommaire de l'acte II">
+</nav>
+
+<!-- TEXTE INTÉGRAL -->
+
+<article
+  id="manuscrit"
+  aria-label="Texte intégral de l'acte II">
+
+<p>Ouverture du manuscrit…</p>
+
+</article>
+
+<!-- NAVIGATION -->
+
+<footer>
+
+<p>
+<a href="sce1-murmures.html">
+← Retour aux trois actes
+</a>
+</p>
+
+<p>
+<a href="sce1-murmures-acte1.html">
+← Revenir à l'acte I
+</a>
+</p>
+
+</footer>
+
+</main>
+
+<script>
+
+(async function () {
+
+  /* =====================================
+     FICHIER SOURCE EXACT
+  ===================================== */
+
+  const FICHIER =
+    "Murmures_Alma_Acte_2_site.txt";
+
+  const manuscrit =
+    document.getElementById("manuscrit");
+
+  const sommaire =
+    document.getElementById("sommaire");
+
+  const REGISTRES = {
+    AMBIANCE: "ambiance",
+    INFORMATION: "information",
+    NARRATEUR: "narrateur",
+    MISE: "mise"
+  };
+
+  /* =====================================
+     OUTILS DE COMPOSITION
+  ===================================== */
+
+  function creer(tag, texte, classe) {
+
+    const el = document.createElement(tag);
+
+    if (classe) {
+      el.className = classe;
+    }
+
+    if (texte !== undefined) {
+      el.textContent = texte;
+    }
+
+    return el;
+  }
+
+  function estScene(texte) {
+    return /^ACTE II\s+—\s+SCÈNE\s+\d+\s*:/.test(texte);
+  }
+
+  function numeroScene(texte) {
+    const resultat = texte.match(
+      /SCÈNE\s+(\d+)/
+    );
+
+    return resultat
+      ? Number(resultat[1])
+      : null;
+  }
+
+  function estSeparateur(texte) {
+    return /^={10,}$/.test(texte);
+  }
+
+  function estDialogue(texte) {
+    return /^\s*[—–]\s*/.test(texte);
+  }
+
+  function estTitreNumerote(texte) {
+    return /^\d+\.\s+/.test(texte) &&
+           texte.length < 110;
+  }
+
+  function estTitreCapitales(texte) {
+    return (
+      texte.length > 4 &&
+      texte.length < 110 &&
+      texte === texte.toUpperCase() &&
+      /[A-ZÀ-ÖØ-Ý]/.test(texte) &&
+      !estDialogue(texte) &&
+      !texte.startsWith("- ") &&
+      !texte.startsWith("«")
+    );
+  }
+
+  function estPetitTitre(texte) {
+
+    if (texte.length > 75) return false;
+
+    if (estDialogue(texte)) return false;
+
+    if (texte.startsWith("- ")) return false;
+
+    if (texte.startsWith("«")) return false;
+
+    if (/[.!?;»]$/.test(texte)) return false;
+
+    if (texte.split(/\s+/).length > 9) {
+      return false;
+    }
+
+    return true;
+  }
+
+  /* =====================================
+     CHARGEMENT DU TEXTE
+  ===================================== */
+
+  try {
+
+    const reponse = await fetch(
+      FICHIER,
+      { cache: "no-cache" }
+    );
+
+    if (!reponse.ok) {
+      throw new Error(
+        "Fichier source indisponible"
+      );
+    }
+
+    const contenu = await reponse.text();
+
+    const lignes = contenu
+      .replace(/^\uFEFF/, "")
+      .replace(/\r\n?/g, "\n")
+      .split("\n");
+
+    manuscrit.replaceChildren();
+
+    let scene = null;
+    let section = null;
+    let liste = null;
+
+    let registreActuel = "INFORMATION";
+
+    let paragraphe = [];
+
+    let compteurScenes = 0;
+    let nombresScenes = [];
+
+    /* ===================================
+       SOMMAIRE
+    =================================== */
+
+    function ajouterSommaire(titre, id) {
+
+      const lien = creer("a", titre);
+
+      lien.href = "#" + id;
+
+      sommaire.appendChild(lien);
+    }
+
+    /* ===================================
+       REGISTRES
+    =================================== */
+
+    function changerRegistre(nom) {
+
+      viderParagraphe();
+
+      registreActuel = nom;
+      liste = null;
+
+      if (!scene) {
+        section = null;
+        return;
+      }
+
+      section = creer(
+        "div",
+        undefined,
+        "registre " + REGISTRES[nom]
+      );
+
+      scene.appendChild(section);
+    }
+
+    function assurerSection() {
+
+      if (!section) {
+        changerRegistre(registreActuel);
+      }
+    }
+
+    /* ===================================
+       NOUVELLE SCÈNE
+    =================================== */
+
+    function nouvelleScene(titre) {
+
+      viderParagraphe();
+
+      const numero = numeroScene(titre);
+
+      compteurScenes++;
+      nombresScenes.push(numero);
+
+      const id = "scene-" + numero;
+
+      scene = creer(
+        "section",
+        undefined,
+        "scene"
+      );
+
+      scene.id = id;
+
+      manuscrit.appendChild(scene);
+
+      scene.appendChild(
+        creer("h2", titre)
+      );
+
+      ajouterSommaire(
+        "Scène " + numero,
+        id
+      );
+
+      section = null;
+      liste = null;
+      paragraphe = [];
+
+      registreActuel = "INFORMATION";
+    }
+
+    /* ===================================
+       PARAGRAPHES ET DIALOGUES
+    =================================== */
+
+    function viderParagraphe() {
+
+      if (!paragraphe.length) {
+        return;
+      }
+
+      if (!scene) {
+        paragraphe = [];
+        return;
+      }
+
+      assurerSection();
+
+      const texte = paragraphe.join("\n");
+
+      /* On n'italique pas tout un
+         paragraphe narratif contenant
+         seulement une citation.
+
+         Les répliques autonomes,
+         introduites par un tiret,
+         reçoivent leur style propre. */
+
+      const classe =
+        estDialogue(paragraphe[0])
+          ? "dialogue"
+          : "";
+
+      section.appendChild(
+        creer("p", texte, classe)
+      );
+
+      paragraphe = [];
+      liste = null;
+    }
+
+    function ajouterDialogue(texte) {
+
+      viderParagraphe();
+      assurerSection();
+
+      section.appendChild(
+        creer("p", texte, "dialogue")
+      );
+
+      liste = null;
+    }
+
+    /* ===================================
+       TITRES
+    =================================== */
+
+    function ajouterTitre(texte, niveau) {
+
+      viderParagraphe();
+      assurerSection();
+
+      const titre = creer(
+        niveau,
+        texte
+      );
+
+      /* L'épilogue appartient au
+         registre Narrateur, sans
+         interrompre les parties suivantes
+         du manuscrit. */
+
+      if (
+        /^ÉPILOGUE\s+—/.test(texte)
+      ) {
+        titre.classList.add("epilogue");
+
+        ajouterSommaire(
+          "Épilogue",
+          "epilogue"
+        );
+
+        titre.id = "epilogue";
+      }
+
+      section.appendChild(titre);
+
+      liste = null;
+    }
+
+    /* ===================================
+       LISTES
+    =================================== */
+
+    function ajouterListe(texte) {
+
+      viderParagraphe();
+      assurerSection();
+
+      if (!liste) {
+
+        liste = creer("ul");
+        section.appendChild(liste);
+      }
+
+      liste.appendChild(
+        creer("li", texte.slice(2))
+      );
+    }
+
+    /* ===================================
+       UNE LIGNE DU MANUSCRIT
+    =================================== */
+
+    function traiterLigne(ligne) {
+
+      const texte = ligne.trim();
+
+      if (!texte) {
+        viderParagraphe();
+        liste = null;
+        return;
+      }
+
+      /* Séparateurs éditoriaux */
+
+      if (estSeparateur(texte)) {
+        viderParagraphe();
+        liste = null;
+        return;
+      }
+
+      /* En-têtes déjà affichés */
+
+      if (
+        texte === "LES MURMURES DE L'ALMA" ||
+        texte === "LES MURMURES DE L’ALMA" ||
+        texte === "AFFAIRE I — ACTE II"
+      ) {
+        viderParagraphe();
+        return;
+      }
+
+      /* Les cinq scènes : 7 à 11 */
+
+      if (estScene(texte)) {
+        nouvelleScene(texte);
+        return;
+      }
+
+      if (!scene) return;
+
+      /* Conclusion */
+
+      if (texte === "FIN DE L'ACTE II") {
+
+        viderParagraphe();
+
+        scene.appendChild(
+          creer(
+            "p",
+            texte,
+            "fin-acte"
+          )
+        );
+
+        return;
+      }
+
+      /* Titres structurants */
+
+      if (
+        estTitreNumerote(texte) ||
+        estTitreCapitales(texte)
+      ) {
+        ajouterTitre(texte, "h3");
+        return;
+      }
+
+      /* Titres secondaires hors ambiance */
+
+      if (
+        registreActuel !== "AMBIANCE" &&
+        estPetitTitre(texte)
+      ) {
+        ajouterTitre(texte, "h4");
+        return;
+      }
+
+      /* Dialogues : toujours italiques */
+
+      if (estDialogue(texte)) {
+        ajouterDialogue(texte);
+        return;
+      }
+
+      /* Listes à tirets simples */
+
+      if (texte.startsWith("- ")) {
+        ajouterListe(texte);
+        return;
+      }
+
+      /* Texte courant :
+         aucune réécriture des mots */
+
+      viderListeSiNecessaire();
+
+      paragraphe.push(ligne);
+    }
+
+    function viderListeSiNecessaire() {
+      liste = null;
+    }
+
+    /* ===================================
+       LECTURE DES BALISES
+
+       [AMBIANCE]
+       [INFORMATION]
+       [NARRATEUR]
+       [MISE]
+
+       Ne jamais les afficher.
+    =================================== */
+
+    const balises =
+      /\[(AMBIANCE|INFORMATION|NARRATEUR|MISE)\]/g;
+
+    for (const ligne of lignes) {
+
+      balises.lastIndex = 0;
+
+      let debut = 0;
+      let resultat;
+
+      while (
+        (resultat = balises.exec(ligne)) !== null
+      ) {
+
+        traiterLigne(
+          ligne.slice(
+            debut,
+            resultat.index
+          )
+        );
+
+        changerRegistre(resultat[1]);
+
+        debut = balises.lastIndex;
+      }
+
+      traiterLigne(
+        ligne.slice(debut)
+      );
+    }
+
+    viderParagraphe();
+
+    /* ===================================
+       CONTRÔLE
+    =================================== */
+
+    const attendues = [7, 8, 9, 10, 11];
+
+    const conforme =
+      compteurScenes === 5 &&
+      attendues.every(
+        (n, i) => nombresScenes[i] === n
+      );
+
+    if (!conforme) {
+
+      console.warn(
+        "Structure des scènes inattendue :",
+        nombresScenes
+      );
+    }
+
+  }
+
+  catch (erreur) {
+
+    manuscrit.replaceChildren();
+
+    manuscrit.appendChild(
+      creer(
+        "p",
+        "Le manuscrit de l'acte II n'a pas pu être ouvert. Vérifiez la présence de Murmures_Alma_Acte_2_site.txt à la racine du dépôt GitHub.",
+        "erreur"
+      )
+    );
+  }
+
+})();
+
+</script>
+
+</body>
+</html>
+
