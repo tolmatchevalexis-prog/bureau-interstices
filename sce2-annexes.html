@@ -1,1 +1,943 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>La Cordée — Annexes — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+
+/* PAPIER ET TYPOGRAPHIE */
+
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --encre:#292920;
+  --trait:#b4a58b;
+  --brun:#68352d;
+  --bleu:#24374f;
+}
+
+* { box-sizing:border-box; }
+
+html { scroll-behavior:smooth; }
+
+body {
+  margin:0;
+  padding:18px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.65 "EB Garamond",Georgia,serif;
+}
+
+.page {
+  width:min(900px,100%);
+  margin:25px auto 60px;
+  padding:clamp(22px,6vw,65px);
+  background:var(--feuille);
+  border:1px solid var(--trait);
+  box-shadow:7px 10px 0 #c7ba9e;
+}
+
+/* EN-TÊTE */
+
+header {
+  text-align:center;
+  padding-bottom:30px;
+  margin-bottom:35px;
+  border-bottom:1px solid var(--trait);
+}
+
+.reference {
+  font:12px/1.7 "Special Elite",monospace;
+  color:#665c50;
+}
+
+h1 {
+  margin:14px 0 6px;
+  font-size:clamp(42px,7vw,62px);
+  font-weight:500;
+  line-height:1.15;
+}
+
+.sous-titre {
+  margin:0;
+  font-size:24px;
+  font-style:italic;
+}
+
+/* CARTE EN OUVERTURE */
+
+.carte {
+  margin:0 auto 50px;
+  max-width:780px;
+  text-align:center;
+}
+
+.carte a {
+  display:block;
+  cursor:zoom-in;
+}
+
+.carte img {
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid #a99b83;
+  background:#eee3c9;
+}
+
+.carte figcaption {
+  margin-top:13px;
+  color:var(--bleu);
+  font:12px/1.7 "Special Elite",monospace;
+}
+
+.carte .precision {
+  display:block;
+  margin-top:7px;
+  color:#665c50;
+  font-size:11px;
+}
+
+/* SOMMAIRE */
+
+.sommaire {
+  max-width:700px;
+  margin:0 auto 55px;
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:10px;
+}
+
+.sommaire a {
+  padding:13px;
+  border:1px solid var(--trait);
+  color:var(--bleu);
+  text-decoration:none;
+  font:12px/1.55 "Special Elite",monospace;
+}
+
+.sommaire a:hover {
+  background:#fffaf0;
+}
+
+/* STRUCTURE DES ANNEXES */
+
+.annexe {
+  max-width:700px;
+  margin:0 auto 75px;
+  scroll-margin-top:24px;
+}
+
+.annexe h2 {
+  margin:0 0 24px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--trait);
+  font-size:clamp(26px,4vw,35px);
+  font-weight:500;
+  line-height:1.25;
+}
+
+.annexe h3 {
+  margin:28px 0 12px;
+  font-size:24px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.annexe h4 {
+  margin:21px 0 9px;
+  font-size:20px;
+  font-weight:600;
+  line-height:1.3;
+}
+
+.registre {
+  margin:0 0 20px;
+}
+
+.registre p {
+  margin:0 0 9px;
+  overflow-wrap:break-word;
+}
+
+/* REGISTRES */
+
+.narrateur {
+  color:var(--brun);
+  border-left:2px solid var(--brun);
+  padding-left:20px;
+  font-size:19px;
+}
+
+.information {
+  color:var(--encre);
+  font-size:19px;
+}
+
+.ambiance {
+  color:var(--encre);
+  padding:20px 24px;
+  border:1px solid var(--trait);
+  background:#fffaf0;
+  font-size:20px;
+  line-height:1.75;
+}
+
+.mise {
+  color:var(--bleu);
+  border-left:2px solid var(--bleu);
+  padding-left:20px;
+  font-size:18px;
+}
+
+/* LIGNES DES FICHES ET RELEVÉS */
+
+.registre p.ligne-compacte {
+  margin-bottom:2px;
+}
+
+.registre p.ligne-puce {
+  margin:2px 0 2px 15px;
+  padding-left:3px;
+}
+
+.registre p.caracteristiques {
+  font-family:"Special Elite",monospace;
+  font-size:13px;
+  line-height:1.8;
+  margin:4px 0 10px;
+}
+
+.registre p.note {
+  font-style:italic;
+}
+
+.registre p.dialogue {
+  font-style:italic;
+  margin-left:14px;
+}
+
+/* TABLEAUX REPRODUITS DU TXT */
+
+.tableau-source {
+  margin:16px 0 22px;
+  overflow-x:auto;
+}
+
+.tableau-source table {
+  width:100%;
+  border-collapse:collapse;
+  font-size:17px;
+  line-height:1.35;
+}
+
+.tableau-source th,
+.tableau-source td {
+  padding:9px 8px;
+  border-bottom:1px solid var(--trait);
+  text-align:left;
+  vertical-align:top;
+}
+
+.tableau-source th {
+  color:var(--bleu);
+  font-weight:600;
+}
+
+/* LIENS */
+
+a {
+  color:var(--bleu);
+  overflow-wrap:anywhere;
+}
+
+a:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+/* RETOUR */
+
+footer {
+  max-width:700px;
+  margin:70px auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--trait);
+  font-size:17px;
+}
+
+footer a {
+  display:block;
+  margin-bottom:12px;
+  text-decoration:none;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+.etat {
+  max-width:700px;
+  margin:0 auto;
+  font-style:italic;
+  color:#665c50;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+  body { padding:10px; }
+
+  .page {
+    margin:10px auto 35px;
+    padding:26px 16px;
+    box-shadow:4px 6px 0 #c7ba9e;
+  }
+
+  .sommaire {
+    grid-template-columns:1fr;
+  }
+
+  .narrateur {
+    padding-left:12px;
+  }
+
+  .ambiance {
+    padding:16px 14px;
+  }
+
+  .registre {
+    font-size:18px;
+  }
+
+  .tableau-source table {
+    font-size:15px;
+  }
+
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    background:white;
+    padding:0;
+  }
+
+  .page {
+    width:100%;
+    border:0;
+    box-shadow:none;
+    margin:0;
+    padding:12mm;
+  }
+
+  .sommaire,
+  footer {
+    display:none;
+  }
+
+  .carte {
+    break-after:page;
+  }
+
+  .annexe {
+    break-before:page;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<main class="page">
+
+<!-- EN-TÊTE -->
+
+<header id="haut">
+
+<p class="reference">
+BUREAU DES INTERSTICES · SCÉNARIO 02
+</p>
+
+<h1>La Cordée</h1>
+
+<p class="sous-titre">
+Annexes et pièces documentaires
+</p>
+
+</header>
+
+
+<!-- CARTE DU KHUMBU -->
+
+<figure class="carte">
+
+<a href="Cordee_carte.png"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Ouvrir la carte du Khumbu en grand">
+
+<img
+  src="Cordee_carte.png"
+  alt="Carte narrative du Khumbu, du Népal et du Tibet, avec les étapes de Katmandou au Nangpa La."
+  loading="eager">
+
+</a>
+
+<figcaption>
+
+DOCUMENT CARTOGRAPHIQUE — LA CORDÉE
+
+<span class="precision">
+Népal / Tibet — Octobre 1967<br>
+Toucher l'image pour consulter la carte en grand.<br>
+Carte narrative de repérage, non destinée à la navigation.
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- SOMMAIRE -->
+
+<nav class="sommaire" aria-label="Sommaire des annexes">
+
+<a href="#annexe-1">
+ANNEXE I<br>
+Personnages non joueurs
+</a>
+
+<a href="#annexe-2">
+ANNEXE II<br>
+Géographie du Khumbu
+</a>
+
+<a href="#annexe-3">
+ANNEXE III<br>
+Documents aux enquêteurs
+</a>
+
+<a href="#annexe-4">
+ANNEXE IV<br>
+Le concert des trois dames
+</a>
+
+</nav>
+
+
+<!-- TEXTE INTÉGRAL DES ANNEXES -->
+
+<article id="manuscrit">
+
+<p class="etat">
+Ouverture des pièces documentaires…
+</p>
+
+</article>
+
+
+<!-- NAVIGATION -->
+
+<footer>
+
+<a href="sce2-cordes.html">
+← Retour au dossier La Cordée
+</a>
+
+<a href="sce2-acte2.html">
+← Retour à l'Acte II
+</a>
+
+<a href="#haut">
+↑ Retour au début des annexes
+</a>
+
+</footer>
+
+</main>
+
+
+<script>
+
+(async function () {
+
+  const FICHIER = "Cordee_annexes_site.txt";
+
+  const manuscrit =
+    document.getElementById("manuscrit");
+
+  const classes = {
+    NARRATEUR:"narrateur",
+    INFORMATION:"information",
+    AMBIANCE:"ambiance",
+    MISE:"mise"
+  };
+
+  function creer(type,texte,classe) {
+    const el = document.createElement(type);
+    if(classe) el.className = classe;
+    if(texte !== undefined) el.textContent = texte;
+    return el;
+  }
+
+  function estSeparateur(texte) {
+    return /^[─=]{3,}$/.test(texte);
+  }
+
+  function estAnnexe(texte) {
+    return /^ANNEXE\s+(I|II|III|IV)\s+—/.test(texte);
+  }
+
+  function numeroAnnexe(texte) {
+    return texte.match(/^ANNEXE\s+(I|II|III|IV)/)[1];
+  }
+
+  function estGroupe(texte) {
+    return /^(I|II|III)\s+—\s+/.test(texte);
+  }
+
+  function estDocument(texte) {
+    return /^DOCUMENT\s+\d+\s+—/.test(texte);
+  }
+
+  function estPersonnage(texte) {
+
+    return (
+      /^[A-ZÀ-ÖØ-Ý][A-ZÀ-ÖØ-Ý '\-]+ — /.test(texte) ||
+      [
+        "LA PRINCESSE",
+        "LE DRAGON",
+        "LES ESPRITS DOMESTIQUES"
+      ].includes(texte)
+    );
+
+  }
+
+  function estDialogue(texte) {
+    return /^[—–]\s/.test(texte);
+  }
+
+  function estCaracteristique(texte) {
+    return /^(?:P\s*\d|M\s*\d|S\s*\d)/.test(texte);
+  }
+
+  function estPuces(texte) {
+    return /^•/.test(texte);
+  }
+
+  function estNote(texte) {
+    return /^(Narrateur :|Particularité :|Physique :|Tournoi :|Note commune :)/.test(texte);
+  }
+
+  /* Titres particuliers de la géographie
+     et de la partie audiovisuelle. */
+
+  const intertitres = new Set([
+    "Mode d'emploi",
+    "L'itinéraire de référence",
+    "Principaux lieux",
+    "Les grandes étapes du scénario",
+    "Repères pour improviser",
+    "Note historique",
+    "Note au Narrateur",
+    "Indication au Narrateur"
+  ]);
+
+  /* Tableaux conservant exactement
+     les valeurs inscrites dans le TXT. */
+
+  const tables = [
+    {
+      enTete:"Lieu",
+      colonnes:[
+        "Lieu",
+        "Altitude indicative",
+        "Fonction dans le scénario"
+      ],
+      fin:"Les altitudes sont arrondies."
+    },
+    {
+      enTete:"Date",
+      colonnes:[
+        "Date",
+        "Voyageur ou caravane",
+        "Mouvement",
+        "Marchandises"
+      ],
+      fin:"Extrait établi pour vérification des comptes de transport."
+    }
+  ];
+
+  try {
+
+    const reponse = await fetch(
+      FICHIER,
+      {cache:"no-cache"}
+    );
+
+    if(!reponse.ok) {
+      throw new Error("TXT introuvable");
+    }
+
+    const contenu = await reponse.text();
+
+    const lignes = contenu
+      .replace(/^\uFEFF/,"")
+      .replace(/\r\n?/g,"\n")
+      .split("\n");
+
+    manuscrit.replaceChildren();
+
+    let annexe = null;
+    let conteneur = manuscrit;
+    let section = null;
+    let registre = "INFORMATION";
+
+    let tableau = null;
+    let cellulesTableau = [];
+    let attenteTableau = false;
+
+    function changerRegistre(nom) {
+
+      registre = nom;
+      section = creer(
+        "div",
+        undefined,
+        "registre " + classes[nom]
+      );
+
+      conteneur.appendChild(section);
+
+    }
+
+    function assurerSection() {
+
+      if(!section) {
+        changerRegistre(registre);
+      }
+
+    }
+
+    function nouvelleAnnexe(titre) {
+
+      terminerTableau();
+
+      const numero = numeroAnnexe(titre);
+
+      annexe = creer(
+        "section",
+        undefined,
+        "annexe"
+      );
+
+      annexe.id = "annexe-" + (
+        {I:1,II:2,III:3,IV:4}[numero]
+      );
+
+      annexe.appendChild(
+        creer("h2",titre)
+      );
+
+      manuscrit.appendChild(annexe);
+
+      conteneur = annexe;
+      section = null;
+
+    }
+
+    function ajouterTexte(texte) {
+
+      assurerSection();
+
+      /* Chaque entrée du TXT est conservée
+         et présentée sans reformulation. */
+
+      if(estGroupe(texte)) {
+        section.appendChild(creer("h3",texte));
+        return;
+      }
+
+      if(estDocument(texte)) {
+        section.appendChild(creer("h3",texte));
+        return;
+      }
+
+      if(estPersonnage(texte)) {
+        section.appendChild(creer("h4",texte));
+        return;
+      }
+
+      if(intertitres.has(texte)) {
+        section.appendChild(creer("h3",texte));
+        return;
+      }
+
+      /* Lien vers Mandala Collections */
+
+      if(/^Écouter : https?:\/\//.test(texte)) {
+
+        const p = creer("p");
+
+        const debut = creer("span","Écouter : ");
+        const url = texte.replace(/^Écouter : /,"");
+
+        const a = creer("a",url);
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener noreferrer";
+
+        p.append(debut,a);
+        section.appendChild(p);
+        return;
+      }
+
+      let classe = "";
+
+      if(estDialogue(texte)) {
+        classe = "dialogue";
+      }
+      else if(estCaracteristique(texte)) {
+        classe = "caracteristiques";
+      }
+      else if(estPuces(texte)) {
+        classe = "ligne-puce";
+      }
+      else if(estNote(texte)) {
+        classe = "note";
+      }
+      else if(
+        annexe &&
+        annexe.id === "annexe-1"
+      ) {
+        classe = "ligne-compacte";
+      }
+
+      section.appendChild(
+        creer("p",texte,classe)
+      );
+
+    }
+
+    /* TABLEAUX : les cellules proviennent
+       exclusivement du TXT. */
+
+    function commencerTableau(definition) {
+
+      tableau = definition;
+      cellulesTableau = [];
+      attenteTableau = true;
+
+    }
+
+    function terminerTableau() {
+
+      if(!tableau) return;
+
+      assurerSection();
+
+      const bloc = creer(
+        "div",undefined,"tableau-source"
+      );
+
+      const table = creer("table");
+      const thead = creer("thead");
+      const tr = creer("tr");
+
+      for(const titre of tableau.colonnes) {
+        tr.appendChild(creer("th",titre));
+      }
+
+      thead.appendChild(tr);
+      table.appendChild(thead);
+
+      const tbody = creer("tbody");
+      const largeur = tableau.colonnes.length;
+
+      for(
+        let i=0;
+        i<cellulesTableau.length;
+        i+=largeur
+      ) {
+
+        const ligne = creer("tr");
+
+        for(let j=0;j<largeur;j++) {
+
+          ligne.appendChild(
+            creer(
+              "td",
+              cellulesTableau[i+j] || ""
+            )
+          );
+
+        }
+
+        tbody.appendChild(ligne);
+
+      }
+
+      table.appendChild(tbody);
+      bloc.appendChild(table);
+      section.appendChild(bloc);
+
+      tableau = null;
+      cellulesTableau = [];
+      attenteTableau = false;
+
+    }
+
+    function traiterLigne(ligne) {
+
+      const texte = ligne.trim();
+
+      if(!texte || estSeparateur(texte)) {
+        return;
+      }
+
+      if(texte === "LA CORDÉE") {
+        return;
+      }
+
+      /* Fin d'un tableau */
+
+      if(
+        tableau &&
+        texte.startsWith(tableau.fin)
+      ) {
+        terminerTableau();
+      }
+
+      /* En-tête d'un tableau */
+
+      if(!tableau) {
+
+        const definition =
+          tables.find(t => t.enTete === texte);
+
+        if(
+          definition &&
+          annexe &&
+          (
+            annexe.id === "annexe-2" ||
+            annexe.id === "annexe-3"
+          )
+        ) {
+
+          commencerTableau(definition);
+          return;
+
+        }
+      }
+
+      if(tableau) {
+
+        /* Ignorer les noms des colonnes,
+           déjà repris dans le tableau HTML. */
+
+        if(attenteTableau) {
+
+          /* L'en-tête a 3 ou 4 lignes,
+             dans le fichier source. */
+
+          tableau.colonnesRestantes =
+            tableau.colonnesRestantes ??
+            tableau.colonnes.length-1;
+
+          tableau.colonnesRestantes--;
+
+          if(tableau.colonnesRestantes===0) {
+            attenteTableau=false;
+          }
+
+          return;
+        }
+
+        cellulesTableau.push(texte);
+        return;
+
+      }
+
+      /* Début d'une nouvelle annexe */
+
+      if(estAnnexe(texte)) {
+        nouvelleAnnexe(texte);
+        return;
+      }
+
+      ajouterTexte(texte);
+
+    }
+
+    /* INTERPRÉTATION DES SEPT BALISES */
+
+    const balises =
+      /\[(AMBIANCE|INFORMATION|NARRATEUR|MISE)\]/g;
+
+    for(const ligne of lignes) {
+
+      balises.lastIndex = 0;
+
+      let debut = 0;
+      let resultat;
+
+      while(
+        (resultat = balises.exec(ligne))
+        !== null
+      ) {
+
+        traiterLigne(
+          ligne.slice(debut,resultat.index)
+        );
+
+        changerRegistre(resultat[1]);
+
+        debut = balises.lastIndex;
+
+      }
+
+      traiterLigne(ligne.slice(debut));
+
+    }
+
+    terminerTableau();
+
+  }
+
+  catch(erreur) {
+
+    manuscrit.replaceChildren();
+
+    manuscrit.appendChild(
+      creer(
+        "p",
+        "Impossible de lire Cordee_annexes_site.txt. Vérifiez qu'il est placé à la racine du dépôt, à côté de cette page.",
+        "etat"
+      )
+    );
+
+    console.error(erreur);
+
+  }
+
+})();
+
+</script>
+
+</body>
+</html>
+
