@@ -1,1 +1,905 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>La Cordée — Acte I — Bureau des Interstices</title>
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Special+Elite&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ======================================
+   COULEURS ET PAPIER
+====================================== */
+
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --encre:#292920;
+  --trait:#b4a58b;
+  --brun:#68352d;
+  --bleu:#24374f;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+html {
+  scroll-behavior:smooth;
+}
+
+body {
+  margin:0;
+  padding:18px;
+
+  background:var(--papier);
+  color:var(--encre);
+
+  font:
+    21px/1.7
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+}
+
+/* ======================================
+   PAGE LITTÉRAIRE
+====================================== */
+
+.page {
+  width:min(880px,100%);
+  margin:25px auto 60px;
+  padding:clamp(26px,7vw,78px);
+
+  background:var(--feuille);
+  border:1px solid var(--trait);
+
+  box-shadow:7px 10px 0 #c7ba9e;
+}
+
+/* ======================================
+   EN-TÊTE
+====================================== */
+
+header {
+  text-align:center;
+
+  padding-bottom:35px;
+  margin-bottom:38px;
+
+  border-bottom:1px solid var(--trait);
+}
+
+.reference {
+  font:
+    12px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color:#665c50;
+}
+
+h1 {
+  margin:15px 0;
+  font-size:clamp(43px,7vw,64px);
+  line-height:1.1;
+  font-weight:500;
+}
+
+.sous-titre {
+  margin:0 0 12px;
+  font-size:24px;
+  font-style:italic;
+}
+
+.date {
+  margin:0;
+
+  font-size:17px;
+  color:#665c50;
+}
+
+/* ======================================
+   SOMMAIRE
+====================================== */
+
+.sommaire {
+  max-width:670px;
+  margin:0 auto 55px;
+
+  display:flex;
+  flex-wrap:wrap;
+  gap:9px;
+}
+
+.sommaire a {
+  padding:8px 11px;
+  border:1px solid var(--trait);
+
+  color:var(--bleu);
+  text-decoration:none;
+
+  font:
+    12px/1.6
+    "Special Elite",
+    "Courier New",
+    monospace;
+}
+
+.sommaire a:hover {
+  background:#fffaf0;
+}
+
+/* ======================================
+   STRUCTURE DES SCÈNES
+====================================== */
+
+.scene,
+.presentation-narrateur {
+  max-width:670px;
+  margin:0 auto 80px;
+}
+
+.scene {
+  scroll-margin-top:25px;
+}
+
+.scene h2 {
+  margin:0 0 20px;
+
+  font-size:clamp(30px,5vw,42px);
+  line-height:1.2;
+  font-weight:500;
+}
+
+.localisation {
+  margin:0 0 30px;
+
+  font-size:18px;
+  font-style:italic;
+  color:#665c50;
+}
+
+/* ======================================
+   QUATRE REGISTRES TYPOGRAPHIQUES
+====================================== */
+
+.registre {
+  margin:0 0 25px;
+}
+
+/* AMBIANCE */
+
+.ambiance {
+  color:var(--encre);
+
+  font-size:21px;
+  line-height:1.72;
+}
+
+/* INFORMATION */
+
+.information {
+  margin-left:12px;
+
+  color:var(--encre);
+
+  font-size:20px;
+  line-height:1.62;
+}
+
+/* NARRATEUR */
+
+.narrateur {
+  margin:32px 0 36px 16px;
+  padding:5px 0 7px 25px;
+
+  border-left:2px solid var(--brun);
+
+  color:var(--brun);
+
+  font-size:19px;
+  line-height:1.63;
+}
+
+/* M.I.S.E. */
+
+.mise {
+  margin:32px 0 36px 16px;
+  padding:8px 0 8px 25px;
+
+  border-left:2px solid var(--bleu);
+
+  color:var(--bleu);
+
+  font-size:18px;
+  line-height:1.6;
+}
+
+/* ======================================
+   PARAGRAPHES ET DIALOGUES
+====================================== */
+
+.registre p {
+  margin:0 0 1.05em;
+
+  hyphens:auto;
+  overflow-wrap:break-word;
+}
+
+/* Tous les dialogues sont en italique. */
+
+.registre p.dialogue {
+  margin-left:20px;
+  margin-right:8px;
+
+  font-style:italic;
+}
+
+/* Les dialogues conservent la couleur
+   de leur registre. */
+
+.ambiance .dialogue,
+.information .dialogue {
+  color:var(--encre);
+}
+
+.narrateur .dialogue {
+  color:var(--brun);
+}
+
+.mise .dialogue {
+  color:var(--bleu);
+}
+
+/* ======================================
+   INTERTITRES
+====================================== */
+
+.registre h3 {
+  margin:34px 0 18px;
+
+  font-size:25px;
+  line-height:1.3;
+  font-weight:600;
+}
+
+.registre h3:first-child {
+  margin-top:0;
+}
+
+.narrateur h3 {
+  color:var(--brun);
+}
+
+.mise h3 {
+  color:var(--bleu);
+}
+
+/* ======================================
+   FIN D'ACTE
+====================================== */
+
+.fin-acte {
+  margin:65px 0 0;
+  padding-top:25px;
+
+  border-top:1px solid var(--trait);
+
+  text-align:center;
+
+  font:
+    14px/1.7
+    "Special Elite",
+    monospace;
+
+  color:var(--brun);
+}
+
+/* ======================================
+   NAVIGATION
+====================================== */
+
+footer {
+  max-width:670px;
+  margin:65px auto 0;
+  padding-top:22px;
+
+  border-top:1px solid var(--trait);
+
+  font-size:17px;
+}
+
+footer a {
+  display:inline-block;
+  margin:0 0 13px;
+
+  color:var(--bleu);
+  text-decoration:none;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+a:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+.erreur {
+  max-width:670px;
+  margin:0 auto;
+
+  color:var(--brun);
+  font-style:italic;
+}
+
+/* ======================================
+   VERSION MOBILE
+====================================== */
+
+@media(max-width:600px) {
+
+  body {
+    padding:10px;
+    font-size:19px;
+  }
+
+  .page {
+    margin:10px auto 35px;
+    padding:30px 20px;
+
+    box-shadow:4px 6px 0 #c7ba9e;
+  }
+
+  .ambiance {
+    font-size:19px;
+  }
+
+  .information {
+    margin-left:5px;
+    font-size:18px;
+  }
+
+  .narrateur {
+    margin-left:3px;
+    padding-left:16px;
+    font-size:18px;
+  }
+
+  .mise {
+    margin-left:3px;
+    padding-left:16px;
+    font-size:17px;
+  }
+
+  .registre p.dialogue {
+    margin-left:12px;
+  }
+
+  .registre h3 {
+    font-size:22px;
+  }
+
+}
+
+/* ======================================
+   IMPRESSION
+====================================== */
+
+@media print {
+
+  body {
+    padding:0;
+    background:white;
+  }
+
+  .page {
+    width:100%;
+    margin:0;
+    padding:15mm;
+
+    border:0;
+    box-shadow:none;
+  }
+
+  .sommaire,
+  footer {
+    display:none;
+  }
+
+  .scene {
+    break-before:page;
+  }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main class="page">
+
+<header>
+
+<p class="reference">
+BUREAU DES INTERSTICES · SCÉNARIO 02
+</p>
+
+<h1>La Cordée</h1>
+
+<p class="sous-titre">
+Acte I — Les Hommes de la montagne
+</p>
+
+<p class="date">
+Népal, haut Khumbu — Du mardi 24 au mardi 31 octobre 1967.
+</p>
+
+</header>
+
+
+<!-- =====================================
+     SOMMAIRE
+===================================== -->
+
+<nav
+  id="sommaire"
+  class="sommaire"
+  aria-label="Sommaire de l'acte I">
+</nav>
+
+
+<!-- =====================================
+     MANUSCRIT
+===================================== -->
+
+<article
+  id="manuscrit"
+  aria-label="La Cordée, acte I">
+
+<p>
+Ouverture du manuscrit…
+</p>
+
+</article>
+
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<footer>
+
+<a href="sce2-cordes.html">
+← Retour au dossier La Cordée
+</a>
+
+</footer>
+
+</main>
+
+
+<script>
+
+(async function () {
+
+  /* =====================================
+     FICHIER SOURCE
+
+     Le manuscrit reste extérieur
+     au code HTML.
+
+     Aucun texte du scénario
+     n'est réécrit ici.
+  ===================================== */
+
+  const FICHIER =
+    "Cordee_Acte_1_site.txt";
+
+  const manuscrit =
+    document.getElementById("manuscrit");
+
+  const sommaire =
+    document.getElementById("sommaire");
+
+  const REGISTRES = {
+    AMBIANCE:"ambiance",
+    INFORMATION:"information",
+    NARRATEUR:"narrateur",
+    MISE:"mise"
+  };
+
+  /* =====================================
+     CONSTRUCTION SÉCURISÉE
+  ===================================== */
+
+  function creer(tag, texte, classe) {
+
+    const el =
+      document.createElement(tag);
+
+    if (classe) {
+      el.className = classe;
+    }
+
+    if (texte !== undefined) {
+      el.textContent = texte;
+    }
+
+    return el;
+  }
+
+  /* =====================================
+     IDENTIFICATION DES ÉLÉMENTS
+  ===================================== */
+
+  function estScene(texte) {
+    return /^SCÈNE\s+[1-6]\s+—/.test(texte);
+  }
+
+  function numeroScene(texte) {
+    const m = texte.match(/^SCÈNE\s+(\d+)/);
+    return m ? Number(m[1]) : null;
+  }
+
+  function estSeparateur(texte) {
+    return /^[─=]{3,}$/.test(texte);
+  }
+
+  function estDialogue(texte) {
+    return /^[—–]\s*/.test(texte);
+  }
+
+  function estTitre(texte) {
+
+    /* Un intertitre en capitales.
+       Les dialogues sont exclus.
+       Le texte lui-même ne change pas. */
+
+    return (
+      texte.length > 3 &&
+      texte.length < 125 &&
+      texte === texte.toUpperCase() &&
+      /[A-ZÀ-ÖØ-Ý]/.test(texte) &&
+      !estDialogue(texte) &&
+      !texte.startsWith("•")
+    );
+  }
+
+  /* =====================================
+     LECTURE DU TEXTE
+  ===================================== */
+
+  try {
+
+    const reponse = await fetch(
+      FICHIER,
+      {cache:"no-cache"}
+    );
+
+    if (!reponse.ok) {
+      throw new Error(
+        "Fichier TXT introuvable."
+      );
+    }
+
+    const contenu = await reponse.text();
+
+    const lignes = contenu
+      .replace(/^\uFEFF/, "")
+      .replace(/\r\n?/g,"\n")
+      .split("\n");
+
+    manuscrit.replaceChildren();
+
+    /* ===================================
+       ÉTAT DU DOCUMENT
+    =================================== */
+
+    let scene = null;
+    let section = null;
+
+    let registreActuel = "INFORMATION";
+
+    let attenteLieu = false;
+    let compteurScenes = 0;
+
+    /* ===================================
+       SOMMAIRE
+    =================================== */
+
+    function ajouterSommaire(titre,id) {
+
+      const lien = creer("a",titre);
+
+      lien.href = "#" + id;
+
+      sommaire.appendChild(lien);
+    }
+
+    /* ===================================
+       INTRODUCTION CONFIDENTIELLE
+    =================================== */
+
+    const ouverture = creer(
+      "section",
+      undefined,
+      "presentation-narrateur"
+    );
+
+    manuscrit.appendChild(ouverture);
+
+    let conteneur = ouverture;
+
+    /* ===================================
+       NOUVELLE SCÈNE
+    =================================== */
+
+    function nouvelleScene(titre) {
+
+      const numero = numeroScene(titre);
+
+      compteurScenes++;
+
+      scene = creer(
+        "section",
+        undefined,
+        "scene"
+      );
+
+      scene.id = "scene-" + numero;
+
+      scene.appendChild(
+        creer("h2",titre)
+      );
+
+      manuscrit.appendChild(scene);
+
+      ajouterSommaire(
+        "Scène " + numero,
+        scene.id
+      );
+
+      conteneur = scene;
+      section = null;
+
+      registreActuel = "INFORMATION";
+      attenteLieu = true;
+    }
+
+    /* ===================================
+       CHANGEMENT DE REGISTRE
+    =================================== */
+
+    function changerRegistre(nom) {
+
+      registreActuel = nom;
+
+      section = creer(
+        "div",
+        undefined,
+        "registre " + REGISTRES[nom]
+      );
+
+      conteneur.appendChild(section);
+    }
+
+    /* ===================================
+       TITRES ET PARAGRAPHES
+    =================================== */
+
+    function assurerSection() {
+
+      if (!section) {
+        changerRegistre(registreActuel);
+      }
+    }
+
+    function ajouterTitre(texte) {
+
+      assurerSection();
+
+      section.appendChild(
+        creer("h3",texte)
+      );
+    }
+
+    function ajouterParagraphe(texte,classe="") {
+
+      assurerSection();
+
+      section.appendChild(
+        creer("p",texte,classe)
+      );
+    }
+
+    /* ===================================
+       TRAITEMENT D'UNE LIGNE
+    =================================== */
+
+    function traiterLigne(ligne) {
+
+      const texte = ligne.trim();
+
+      /* Les lignes vides ne contiennent
+         aucun mot du scénario. */
+
+      if (!texte) {
+        return;
+      }
+
+      if (estSeparateur(texte)) {
+        return;
+      }
+
+      /* En-tête déjà reproduit
+         dans la mise en page. */
+
+      if (
+        texte === "LA CORDÉE" ||
+        texte === "ACTE I — LES HOMMES DE LA MONTAGNE" ||
+        texte === "Népal, haut Khumbu — Du mardi 24 au mardi 31 octobre 1967."
+      ) {
+        return;
+      }
+
+      /* Titres de scènes */
+
+      if (estScene(texte)) {
+        nouvelleScene(texte);
+        return;
+      }
+
+      /* Localisation juste après
+         le titre d'une scène. */
+
+      if (attenteLieu && scene) {
+
+        scene.appendChild(
+          creer("p",texte,"localisation")
+        );
+
+        attenteLieu = false;
+        return;
+      }
+
+      /* Fin de l'acte */
+
+      if (
+        /^FIN DE L'ACTE I\s*\.?$/.test(texte)
+      ) {
+
+        conteneur.appendChild(
+          creer("p",texte,"fin-acte")
+        );
+
+        return;
+      }
+
+      /* Dialogues.
+         La règle fonctionne dans
+         tous les registres. */
+
+      if (estDialogue(texte)) {
+
+        ajouterParagraphe(
+          texte,
+          "dialogue"
+        );
+
+        return;
+      }
+
+      /* Intertitres */
+
+      if (estTitre(texte)) {
+
+        ajouterTitre(texte);
+        return;
+      }
+
+      /* Paragraphes ordinaires,
+         conservés mot pour mot. */
+
+      ajouterParagraphe(texte);
+
+    }
+
+    /* ===================================
+       INTERPRÉTATION DES BALISES
+
+       Ces quatre balises déterminent
+       uniquement l'apparence.
+
+       Elles ne sont jamais affichées.
+    =================================== */
+
+    const balises =
+      /\[(AMBIANCE|INFORMATION|NARRATEUR|MISE)\]/g;
+
+    for (const ligne of lignes) {
+
+      balises.lastIndex = 0;
+
+      let debut = 0;
+      let resultat;
+
+      while (
+        (resultat = balises.exec(ligne))
+        !== null
+      ) {
+
+        traiterLigne(
+          ligne.slice(
+            debut,
+            resultat.index
+          )
+        );
+
+        changerRegistre(resultat[1]);
+
+        debut = balises.lastIndex;
+      }
+
+      traiterLigne(
+        ligne.slice(debut)
+      );
+    }
+
+    /* ===================================
+       VÉRIFICATION DES SIX SCÈNES
+    =================================== */
+
+    if (compteurScenes !== 6) {
+
+      console.warn(
+        "Nombre de scènes détectées :",
+        compteurScenes,
+        "— six scènes attendues."
+      );
+    }
+
+  }
+
+  catch(erreur) {
+
+    manuscrit.replaceChildren();
+
+    manuscrit.appendChild(
+      creer(
+        "p",
+        "Le manuscrit n'a pas pu être ouvert. Vérifiez que Cordee_Acte_1_site.txt se trouve dans le même dossier GitHub que cette page.",
+        "erreur"
+      )
+    );
+  }
+
+})();
+
+</script>
+
+</body>
+</html>
+
