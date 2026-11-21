@@ -1,1 +1,664 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>La Cordée — Présentation — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Special+Elite&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* ======================================
+   PAPIER ET COULEURS DU BUREAU
+====================================== */
+
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --lettre:#fffaf0;
+  --encre:#292920;
+  --trait:#b4a58b;
+  --tampon:#893f35;
+  --bleu:#24374f;
+}
+
+* {
+  box-sizing:border-box;
+}
+
+body {
+  margin:0;
+  padding:18px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.6 "EB Garamond",Georgia,serif;
+}
+
+/* ======================================
+   PAGE PRINCIPALE
+====================================== */
+
+main {
+  width:min(850px,100%);
+  margin:25px auto 55px;
+  padding:clamp(22px,5vw,58px);
+  background:var(--feuille);
+  border:1px solid var(--trait);
+  box-shadow:6px 8px 0 #c7ba9e;
+}
+
+/* ======================================
+   EN-TÊTE
+====================================== */
+
+header {
+  text-align:center;
+  margin-bottom:38px;
+}
+
+.reference {
+  font:12px/1.7 "Special Elite",monospace;
+  color:#665c50;
+}
+
+h1 {
+  margin:15px 0;
+  font-size:clamp(44px,8vw,67px);
+  line-height:1.12;
+  font-weight:500;
+}
+
+/* ======================================
+   LETTRE ADMINISTRATIVE
+====================================== */
+
+.courrier {
+  position:relative;
+  max-width:700px;
+  margin:0 auto 70px;
+  padding:clamp(24px,6vw,55px);
+  background:var(--lettre);
+  border:1px solid #b9ab91;
+  box-shadow:3px 5px 0 #d4c8ad;
+}
+
+.entete-courrier {
+  border-bottom:1px solid #ac9d86;
+  padding-bottom:18px;
+  margin-bottom:34px;
+}
+
+.administration {
+  font:12px/1.8 "Special Elite","Courier New",monospace;
+  letter-spacing:.025em;
+}
+
+.identification {
+  margin-top:18px;
+  font:11px/1.8 "Special Elite","Courier New",monospace;
+  color:#655e52;
+}
+
+.texte-courrier {
+  font:
+    clamp(15px,2.2vw,17px)/1.95
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  overflow-wrap:break-word;
+}
+
+.texte-courrier p {
+  margin:0 0 24px;
+}
+
+.texte-courrier p:last-child {
+  margin-bottom:0;
+}
+
+/* ======================================
+   TAMPON ADMINISTRATIF M.E.L.D.
+====================================== */
+
+.zone-tampon {
+  display:flex;
+  justify-content:flex-end;
+  margin-top:50px;
+  padding-right:12px;
+}
+
+.tampon {
+  display:inline-block;
+  transform:rotate(-9deg);
+
+  border:3px double var(--tampon);
+  border-radius:5px;
+
+  padding:10px 18px;
+
+  color:var(--tampon);
+  text-align:center;
+
+  font:
+    21px/1.2
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  letter-spacing:.08em;
+
+  opacity:.84;
+}
+
+.tampon span {
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  letter-spacing:.03em;
+}
+
+/* ======================================
+   SECTION ARCHIVES
+====================================== */
+
+.archives {
+  max-width:700px;
+  margin:0 auto;
+}
+
+.titre-archives {
+  margin:0 0 32px;
+  padding-bottom:13px;
+  border-bottom:1px solid var(--trait);
+
+  font:
+    13px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color:#5d574d;
+}
+
+/* ======================================
+   PHOTOGRAPHIES
+====================================== */
+
+.archive-photo {
+  margin:0 0 58px;
+}
+
+.archive-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+
+  border:1px solid #a99b83;
+  filter:grayscale(100%);
+}
+
+.archive-photo figcaption {
+  margin-top:12px;
+  font:
+    11px/1.8
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color:var(--bleu);
+}
+
+.provenance {
+  display:block;
+  margin-top:6px;
+
+  color:#655e52;
+  font-size:11px;
+}
+
+.provenance a {
+  color:inherit;
+  text-underline-offset:3px;
+}
+
+/* ======================================
+   ARCHIVE AUDIOVISUELLE
+====================================== */
+
+.archive-video {
+  margin:70px 0 40px;
+  padding-top:30px;
+  border-top:1px solid var(--trait);
+}
+
+.video-cadre {
+  width:100%;
+  aspect-ratio:16/9;
+  background:#181818;
+}
+
+.video-cadre iframe {
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+.legende-video {
+  margin-top:15px;
+  font:
+    11px/1.8
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color:var(--bleu);
+}
+
+/* ======================================
+   RETOUR AU SCÉNARIO
+====================================== */
+
+footer {
+  max-width:700px;
+  margin:65px auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--trait);
+
+  font-size:17px;
+}
+
+footer a {
+  color:var(--bleu);
+  text-decoration:none;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+a:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+/* ======================================
+   MOBILE
+====================================== */
+
+@media(max-width:600px) {
+
+  body {
+    padding:10px;
+  }
+
+  main {
+    margin:10px auto 35px;
+    padding:28px 18px;
+    box-shadow:4px 6px 0 #c7ba9e;
+  }
+
+  .courrier {
+    padding:25px 20px;
+    margin-bottom:50px;
+  }
+
+  .texte-courrier {
+    font-size:14px;
+    line-height:1.85;
+  }
+
+  .zone-tampon {
+    margin-top:40px;
+    padding-right:0;
+  }
+
+  .tampon {
+    font-size:18px;
+    padding:9px 14px;
+  }
+
+  .archive-photo {
+    margin-bottom:42px;
+  }
+
+  .archive-video {
+    margin-top:50px;
+  }
+}
+
+/* ======================================
+   IMPRESSION
+====================================== */
+
+@media print {
+
+  body {
+    background:white;
+    padding:0;
+  }
+
+  main {
+    width:100%;
+    margin:0;
+    padding:12mm;
+    border:0;
+    box-shadow:none;
+  }
+
+  .courrier {
+    box-shadow:none;
+  }
+
+  .archive-photo {
+    break-inside:avoid;
+  }
+
+  .archive-video,
+  footer {
+    display:none;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<main>
+
+<!-- =====================================
+     TITRE DE LA PAGE
+===================================== -->
+
+<header>
+
+<p class="reference">
+BUREAU DES INTERSTICES · SCÉNARIO 02
+</p>
+
+<h1>La Cordée</h1>
+
+</header>
+
+
+<!-- =====================================
+     COURRIER DE PRÉSENTATION
+===================================== -->
+
+<article class="courrier">
+
+<div class="entete-courrier">
+
+<div class="administration">
+
+RÉPUBLIQUE FRANÇAISE<br>
+MISSION D'ÉTUDES ET DE LIAISON DOCUMENTAIRE<br>
+BUREAU DES INTERSTICES
+
+</div>
+
+<p class="identification">
+
+PARIS · OCTOBRE 1967<br>
+DOSSIER 02 — LA CORDÉE<br>
+NOTE DE PRÉSENTATION
+
+</p>
+
+</div>
+
+
+<!-- TEXTE ORIGINAL -->
+
+<div class="texte-courrier">
+
+<p>
+Octobre 1967. Dans les hautes vallées du Népal,
+les chemins traversent les montagnes bien avant
+de devenir des frontières. Depuis quelques mois,
+des familles tibétaines disparaissent en tentant
+de franchir le Nangpa La. Quelqu'un semble
+connaître leurs itinéraires.
+</p>
+
+<p>
+Le Bureau des Interstices envoie ses enquêteurs
+dans le Khumbu, parmi les marchands, les moines
+et les guides de haute montagne.
+</p>
+
+<p>
+Mais les hommes ne sont peut-être pas les seuls
+à emprunter ces passages.
+</p>
+
+<p>
+Et la montagne garde des histoires bien plus
+anciennes que leurs querelles.
+</p>
+
+</div>
+
+
+<!-- TAMPON M.E.L.D. -->
+
+<div class="zone-tampon">
+
+<div class="tampon" aria-label="Tampon M.E.L.D.">
+
+M.E.L.D.
+
+<span>
+BUREAU DES INTERSTICES
+</span>
+
+</div>
+
+</div>
+
+</article>
+
+
+<!-- =====================================
+     ARCHIVES PHOTOGRAPHIQUES
+===================================== -->
+
+<section class="archives"
+aria-labelledby="titre-archives">
+
+<h2 class="titre-archives" id="titre-archives">
+PIÈCES DOCUMENTAIRES JOINTES
+</h2>
+
+
+<!-- PHOTOGRAPHIE 01 -->
+
+<figure class="archive-photo">
+
+<img
+src="https://images.squarespace-cdn.com/content/v1/55830fd9e4b0ec758c892f81/1551377203202-1BOO7K536GVYDWCE1ZIX/Namche%2BBazaar.jpg"
+alt="Vue ancienne de Namche Bazaar, village de montagne au Népal."
+loading="lazy">
+
+<figcaption>
+
+ARCHIVE PHOTOGRAPHIQUE — P/006 — NAMCHE BAZAAR
+
+<span class="provenance">
+Document historique d'ambiance.
+Date et auteur non établis dans cette notice.<br>
+<a
+href="https://images.squarespace-cdn.com/content/v1/55830fd9e4b0ec758c892f81/1551377203202-1BOO7K536GVYDWCE1ZIX/Namche%2BBazaar.jpg"
+target="_blank"
+rel="noopener noreferrer">
+Source photographique
+</a>
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- PHOTOGRAPHIE 02 -->
+
+<figure class="archive-photo">
+
+<img
+src="https://www.lamayeshe.com/sites/default/files/images/15045_pr_g.jpg"
+alt="Photographie provenant des archives de Lama Yeshe."
+loading="lazy">
+
+<figcaption>
+
+ARCHIVE PHOTOGRAPHIQUE — P/007 — FONDS LAMA YESHE
+
+<span class="provenance">
+Identification précise et date à confirmer.<br>
+<a
+href="https://www.lamayeshe.com/sites/default/files/images/15045_pr_g.jpg"
+target="_blank"
+rel="noopener noreferrer">
+Source : Lama Yeshe Wisdom Archive
+</a>
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- PHOTOGRAPHIE 03 -->
+
+<figure class="archive-photo">
+
+<img
+src="https://assets-cdn.kathmandupost.com/uploads/source/news/2015/entertainment/21112015085700Photo1-caravan-1-copy.jpg"
+alt="Image d'une caravane de montagne issue d'un article du Kathmandu Post."
+loading="lazy">
+
+<figcaption>
+
+ARCHIVE PHOTOGRAPHIQUE — P/008 — CARAVANE
+
+<span class="provenance">
+Document provenant du Kathmandu Post.
+Date de prise de vue non établie.<br>
+<a
+href="https://assets-cdn.kathmandupost.com/uploads/source/news/2015/entertainment/21112015085700Photo1-caravan-1-copy.jpg"
+target="_blank"
+rel="noopener noreferrer">
+Source photographique
+</a>
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- PHOTOGRAPHIE 04 -->
+
+<figure class="archive-photo">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/a/a3/PLA_marching_into_Lhasa.jpg"
+alt="Entrée des troupes de l'Armée populaire de libération chinoise à Lhassa, en octobre 1951."
+loading="lazy">
+
+<figcaption>
+
+ARCHIVE PHOTOGRAPHIQUE — P/009 — LHASSA, 26.10.1951
+
+<span class="provenance">
+Armée populaire de libération chinoise à Lhassa.
+Photographie attribuée à un journaliste
+du Quotidien de l'Armée populaire de libération.<br>
+<a
+href="https://commons.wikimedia.org/wiki/File:PLA_marching_into_Lhasa.jpg"
+target="_blank"
+rel="noopener noreferrer">
+Source et notice de droits : Wikimedia Commons
+</a>
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- =====================================
+     ARCHIVE AUDIOVISUELLE
+===================================== -->
+
+<section class="archive-video"
+aria-labelledby="titre-video">
+
+<h2 class="titre-archives" id="titre-video">
+ARCHIVE AUDIOVISUELLE — A/0048 — 1953
+</h2>
+
+<div class="video-cadre">
+
+<iframe
+src="https://www.youtube.com/embed/-y8MqZtbj-4"
+title="Everest Heroes Arrive — British Pathé, 1953"
+loading="lazy"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+referrerpolicy="strict-origin-when-cross-origin"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<p class="legende-video">
+
+EVEREST HEROES ARRIVE — 1953
+
+<span class="provenance">
+British Pathé · Actualités filmées.<br>
+Lecture depuis le lecteur YouTube.<br>
+<a
+href="https://www.youtube.com/watch?v=-y8MqZtbj-4"
+target="_blank"
+rel="noopener noreferrer">
+Consulter la vidéo à sa source
+</a>
+</span>
+
+</p>
+
+</section>
+
+</section>
+
+
+<!-- =====================================
+     RETOUR
+===================================== -->
+
+<footer>
+
+<a href="sce2-cordes.html">
+← Retour au dossier La Cordée
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
+
