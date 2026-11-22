@@ -1,1 +1,542 @@
 
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>À la claire fontaine — Présentation — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Special+Elite&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --papier:#ded3b8;
+  --feuille:#f3e9cf;
+  --lettre:#fffaf0;
+  --encre:#292920;
+  --trait:#b4a58b;
+  --tampon:#893f35;
+  --bleu:#24374f;
+}
+
+* { box-sizing:border-box; }
+
+body {
+  margin:0;
+  padding:18px;
+  background:var(--papier);
+  color:var(--encre);
+  font:20px/1.65 "EB Garamond",Georgia,serif;
+}
+
+main {
+  width:min(850px,100%);
+  margin:25px auto 55px;
+  padding:clamp(22px,5vw,58px);
+  background:var(--feuille);
+  border:1px solid var(--trait);
+  box-shadow:6px 8px 0 #c7ba9e;
+}
+
+header {
+  margin-bottom:38px;
+  text-align:center;
+}
+
+.reference {
+  font:12px/1.7 "Special Elite","Courier New",monospace;
+  color:#665c50;
+}
+
+h1 {
+  margin:15px 0;
+  font-size:clamp(40px,7vw,65px);
+  line-height:1.15;
+  font-weight:500;
+}
+
+/* COURRIER M.E.L.D. */
+
+.courrier {
+  max-width:700px;
+  margin:0 auto 65px;
+  padding:clamp(24px,6vw,55px);
+  background:var(--lettre);
+  border:1px solid #b9ab91;
+  box-shadow:3px 5px 0 #d4c8ad;
+}
+
+.entete-courrier {
+  padding-bottom:18px;
+  margin-bottom:34px;
+  border-bottom:1px solid #ac9d86;
+}
+
+.administration {
+  font:12px/1.8 "Special Elite","Courier New",monospace;
+}
+
+.identification {
+  margin-top:18px;
+  font:11px/1.8 "Special Elite","Courier New",monospace;
+  color:#655e52;
+}
+
+.texte-courrier {
+  font:clamp(15px,2.2vw,17px)/1.95
+    "Special Elite","Courier New",monospace;
+  overflow-wrap:break-word;
+}
+
+.texte-courrier p {
+  margin:0 0 24px;
+}
+
+.texte-courrier p:last-child {
+  margin-bottom:0;
+}
+
+.conclusion {
+  margin-top:31px !important;
+}
+
+/* TAMPON */
+
+.zone-tampon {
+  display:flex;
+  justify-content:flex-end;
+  margin-top:48px;
+  padding-right:12px;
+}
+
+.tampon {
+  display:inline-block;
+  transform:rotate(-9deg);
+  padding:10px 18px;
+  border:3px double var(--tampon);
+  border-radius:5px;
+  color:var(--tampon);
+  text-align:center;
+  opacity:.84;
+  font:21px/1.2 "Special Elite",monospace;
+  letter-spacing:.08em;
+}
+
+.tampon span {
+  display:block;
+  margin-top:5px;
+  font-size:10px;
+  letter-spacing:.03em;
+}
+
+/* ARCHIVES */
+
+.archives {
+  max-width:700px;
+  margin:0 auto;
+}
+
+.titre-archives {
+  margin:0 0 28px;
+  padding-bottom:12px;
+  border-bottom:1px solid var(--trait);
+  color:#5d574d;
+  font:13px/1.7 "Special Elite",monospace;
+}
+
+.archive-photo {
+  margin:0 0 54px;
+}
+
+.archive-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+  border:1px solid #a99b83;
+  filter:grayscale(100%);
+}
+
+.archive-photo figcaption {
+  margin-top:12px;
+  color:var(--bleu);
+  font:11px/1.8 "Special Elite",monospace;
+}
+
+.provenance {
+  display:block;
+  margin-top:6px;
+  color:#655e52;
+  font-size:11px;
+}
+
+.provenance a {
+  color:inherit;
+  text-underline-offset:3px;
+}
+
+/* FILM D'ARCHIVE */
+
+.archive-video {
+  margin:65px 0 40px;
+  padding-top:28px;
+  border-top:1px solid var(--trait);
+}
+
+.lien-video {
+  display:block;
+  position:relative;
+  overflow:hidden;
+  width:100%;
+  aspect-ratio:16/9;
+  background:#242424;
+  border:1px solid #a99b83;
+}
+
+.lien-video img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:grayscale(100%);
+  transition:filter .2s ease;
+}
+
+.lien-video:hover img {
+  filter:grayscale(30%);
+}
+
+.lecture {
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  width:70px;
+  height:70px;
+  padding-left:5px;
+  border:2px solid var(--lettre);
+  border-radius:50%;
+  background:#292920bb;
+  color:var(--lettre);
+  font:30px/1 Arial,sans-serif;
+}
+
+.ouvrir-video {
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:0;
+  padding:12px;
+  text-align:center;
+  background:#292920e8;
+  color:var(--lettre);
+  font:12px/1.5 "Special Elite",monospace;
+}
+
+.legende-video {
+  margin-top:15px;
+  color:var(--bleu);
+  font:11px/1.8 "Special Elite",monospace;
+}
+
+/* NAVIGATION */
+
+footer {
+  max-width:700px;
+  margin:65px auto 0;
+  padding-top:22px;
+  border-top:1px solid var(--trait);
+  font-size:17px;
+}
+
+footer a {
+  color:var(--bleu);
+  text-decoration:none;
+}
+
+footer a:hover {
+  text-decoration:underline;
+}
+
+a:focus-visible {
+  outline:2px solid var(--bleu);
+  outline-offset:4px;
+}
+
+@media(max-width:600px) {
+  body { padding:10px; }
+
+  main {
+    margin:10px auto 35px;
+    padding:28px 18px;
+    box-shadow:4px 6px 0 #c7ba9e;
+  }
+
+  .courrier {
+    padding:25px 20px;
+    margin-bottom:50px;
+  }
+
+  .texte-courrier {
+    font-size:14px;
+    line-height:1.85;
+  }
+
+  .zone-tampon {
+    padding-right:0;
+  }
+
+  .tampon {
+    font-size:18px;
+    padding:9px 14px;
+  }
+
+  .lecture {
+    width:58px;
+    height:58px;
+    font-size:25px;
+  }
+
+  .ouvrir-video {
+    padding:9px;
+    font-size:10px;
+  }
+}
+
+@media print {
+  body {
+    background:white;
+    padding:0;
+  }
+
+  main {
+    width:100%;
+    margin:0;
+    padding:12mm;
+    border:0;
+    box-shadow:none;
+  }
+
+  .courrier { box-shadow:none; }
+  .archive-photo { break-inside:avoid; }
+  .archive-video,footer { display:none; }
+}
+</style>
+</head>
+
+<body>
+<main>
+
+<header>
+  <p class="reference">
+    BUREAU DES INTERSTICES · SCÉNARIO 03
+  </p>
+  <h1>À la claire fontaine</h1>
+</header>
+
+<!-- COURRIER DE PRÉSENTATION -->
+
+<article class="courrier">
+
+  <div class="entete-courrier">
+    <div class="administration">
+      RÉPUBLIQUE FRANÇAISE<br>
+      MISSION D'ÉTUDES ET DE LIAISON DOCUMENTAIRE<br>
+      BUREAU DES INTERSTICES
+    </div>
+
+    <p class="identification">
+      PARIS · OCTOBRE 1965<br>
+      DOSSIER 03 — À LA CLAIRE FONTAINE<br>
+      NOTE DE PRÉSENTATION
+    </p>
+  </div>
+
+  <div class="texte-courrier">
+
+    <p>
+      Bretagne, 1965.
+    </p>
+
+    <p>
+      Dans les monts d'Arrée, la vie suit son cours.
+      Les exploitations agricoles se transforment,
+      les routes relient les villages, les conversations
+      animent les cafés. Les habitants travaillent,
+      se disputent, s'entraident et traversent les
+      bouleversements de leur époque.
+    </p>
+
+    <p>
+      À Saint-Rivoal, pourtant, une succession
+      d'accidents vient troubler cet équilibre
+      ordinaire.
+    </p>
+
+    <p>
+      Une jeune femme s'est noyée dans une fontaine.
+      Depuis, les brebis semblent vouloir l'y rejoindre.
+    </p>
+
+    <p class="conclusion">
+      Le Bureau des Interstices est chargé
+      de comprendre pourquoi.
+    </p>
+
+  </div>
+
+  <div class="zone-tampon">
+    <div class="tampon" aria-label="Tampon M.E.L.D.">
+      M.E.L.D.
+      <span>BUREAU DES INTERSTICES</span>
+    </div>
+  </div>
+
+</article>
+
+<!-- PHOTOGRAPHIES -->
+
+<section class="archives" aria-labelledby="titre-archives">
+
+<h2 class="titre-archives" id="titre-archives">
+  PIÈCES DOCUMENTAIRES JOINTES
+</h2>
+
+<!-- ARCHIVE 1 -->
+
+<figure class="archive-photo">
+  <img
+    src="https://archives.finistere.fr/sites/default/files/fonds_gouiffes_frad029_22fi_00273.jpg"
+    alt="Scène de marché ancien, avec commerçants et habitants."
+    loading="lazy">
+
+  <figcaption>
+    ARCHIVE PHOTOGRAPHIQUE — P/010 — MARCHÉ
+
+    <span class="provenance">
+      Archives départementales du Finistère,
+      fonds Gouiffès.<br>
+      Date et droits de reproduction à vérifier.<br>
+      <a
+        href="https://archives.finistere.fr/sites/default/files/fonds_gouiffes_frad029_22fi_00273.jpg"
+        target="_blank"
+        rel="noopener noreferrer">
+        Consulter la source
+      </a>
+    </span>
+  </figcaption>
+</figure>
+
+<!-- ARCHIVE 2 -->
+
+<figure class="archive-photo">
+  <img
+    src="https://wiki-sene.fr/images/Poste-PTT/1960_LE_CLECH_Cadouarn-facteur.jpg"
+    alt="Photographie d'un facteur, associée à Cadouarn, vers 1960."
+    loading="lazy">
+
+  <figcaption>
+    ARCHIVE PHOTOGRAPHIQUE — P/011 — LE FACTEUR
+
+    <span class="provenance">
+      Source : Wiki-Séné.<br>
+      Identification et droits de reproduction
+      à vérifier.<br>
+      <a
+        href="https://wiki-sene.fr/images/Poste-PTT/1960_LE_CLECH_Cadouarn-facteur.jpg"
+        target="_blank"
+        rel="noopener noreferrer">
+        Consulter la source
+      </a>
+    </span>
+  </figcaption>
+</figure>
+
+<!-- ARCHIVE 3 -->
+
+<figure class="archive-photo">
+  <img
+    src="https://www.leschampslibres.fr/media/cache/illustrated_full_regular/gallery/images/le-mag/a-lire/-musee-devoile/2024/metiers-de-femme-patronnes-de-bar-un-matriarcat-de-comptoir/comptoir-d-un-bar-photographie-par-roger-gouriou-1922-2004-licence-cc-by-nc-sa-collection-musee-de-bretagne-rennes.jpg"
+    alt="Une patronne de bar sert des verres à un client, dans un café breton."
+    loading="lazy">
+
+  <figcaption>
+    ARCHIVE PHOTOGRAPHIQUE — P/012 — LE COMPTOIR
+
+    <span class="provenance">
+      Photographie : Roger Gouriou (1922–2004).<br>
+      Collection Musée de Bretagne, Rennes.<br>
+      Licence indiquée : CC BY-NC-SA.<br>
+      <a
+        href="https://www.leschampslibres.fr/media/cache/illustrated_full_regular/gallery/images/le-mag/a-lire/-musee-devoile/2024/metiers-de-femme-patronnes-de-bar-un-matriarcat-de-comptoir/comptoir-d-un-bar-photographie-par-roger-gouriou-1922-2004-licence-cc-by-nc-sa-collection-musee-de-bretagne-rennes.jpg"
+        target="_blank"
+        rel="noopener noreferrer">
+        Consulter la source
+      </a>
+    </span>
+  </figcaption>
+</figure>
+
+<!-- ARCHIVE AUDIOVISUELLE -->
+
+<section class="archive-video" aria-labelledby="titre-video">
+
+  <h2 class="titre-archives" id="titre-video">
+    ARCHIVE AUDIOVISUELLE — DOCUMENT À VISIONNER
+  </h2>
+
+  <a
+    class="lien-video"
+    href="https://www.youtube.com/watch?v=8M2fVTvx8mQ"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Visionner le document vidéo sur YouTube">
+
+    <img
+      src="https://img.youtube.com/vi/8M2fVTvx8mQ/hqdefault.jpg"
+      alt="Vignette du document vidéo sélectionné pour À la claire fontaine."
+      loading="lazy">
+
+    <span class="lecture" aria-hidden="true">▶</span>
+
+    <span class="ouvrir-video">
+      VISIONNER LE DOCUMENT AUDIOVISUEL ↗
+    </span>
+  </a>
+
+  <p class="legende-video">
+    DOCUMENT AUDIOVISUEL — BRETAGNE
+
+    <span class="provenance">
+      Vidéo sélectionnée pour l'ambiance du scénario.<br>
+      Titre, date et auteur à confirmer depuis la notice
+      de la vidéo.<br>
+      <a
+        href="https://www.youtube.com/watch?v=8M2fVTvx8mQ"
+        target="_blank"
+        rel="noopener noreferrer">
+        Consulter la vidéo sur YouTube
+      </a>
+    </span>
+  </p>
+
+</section>
+
+</section>
+
+<footer>
+  <a href="sce3-fontaine.html">
+    ← Retour au dossier À la claire fontaine
+  </a>
+</footer>
+
+</main>
+</body>
+</html>
+
