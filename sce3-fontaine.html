@@ -1,1 +1,354 @@
 
+<!doctype html>
+<html lang="fr">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ded3b8">
+
+<title>À la claire fontaine — Bureau des Interstices</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500;600&family=Special+Elite&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* IDENTITÉ GRAPHIQUE */
+
+:root {
+  --papier: #ded3b8;
+  --feuille: #f3e9cf;
+  --blanc: #fffaf0;
+  --encre: #292920;
+  --trait: #b4a58b;
+  --brun: #68352d;
+  --bleu: #24374f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 18px;
+  background: var(--papier);
+  color: var(--encre);
+
+  font: 21px/1.6
+    "EB Garamond",
+    Garamond,
+    Georgia,
+    serif;
+}
+
+/* PAGE */
+
+main {
+  width: min(820px, 100%);
+  margin: 25px auto 55px;
+  padding: clamp(25px, 6vw, 65px);
+
+  background: var(--feuille);
+  border: 1px solid var(--trait);
+  box-shadow: 6px 8px 0 #c7ba9e;
+}
+
+/* EN-TÊTE */
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.reference {
+  font: 12px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color: #665c50;
+}
+
+h1 {
+  margin: 20px 0 26px;
+
+  font-size: clamp(43px, 8vw, 70px);
+  line-height: 1.1;
+  font-weight: 500;
+}
+
+/* ARCHIVE PHOTOGRAPHIQUE */
+
+figure {
+  max-width: 650px;
+  margin: 0 auto 45px;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  border: 1px solid #a59a87;
+  filter: grayscale(100%);
+}
+
+figcaption {
+  margin-top: 12px;
+  text-align: center;
+
+  font: 11px/1.7
+    "Special Elite",
+    "Courier New",
+    monospace;
+
+  color: var(--bleu);
+}
+
+.source-photo {
+  display: block;
+  margin-top: 5px;
+
+  font-size: 10px;
+  color: #696052;
+}
+
+.source-photo a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+/* CARTOUCHES */
+
+.dossiers {
+  display: grid;
+  gap: 15px;
+
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.cartouche {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  min-height: 80px;
+  padding: 20px 28px;
+
+  background: var(--blanc);
+  border: 1px solid var(--trait);
+
+  color: var(--encre);
+  text-decoration: none;
+
+  transition:
+    background .15s ease,
+    border-color .15s ease;
+}
+
+.cartouche:hover {
+  background: #eee3cb;
+  border-color: var(--brun);
+}
+
+.cartouche strong {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.fleche {
+  flex-shrink: 0;
+  margin-left: 15px;
+
+  color: var(--brun);
+  font-size: 25px;
+}
+
+/* RETOUR */
+
+footer {
+  max-width: 650px;
+  margin: 55px auto 0;
+  padding-top: 20px;
+
+  border-top: 1px solid var(--trait);
+  font-size: 17px;
+}
+
+footer a {
+  color: var(--bleu);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--bleu);
+  outline-offset: 4px;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+  body {
+    padding: 10px;
+  }
+
+  main {
+    margin: 10px auto 35px;
+    padding: 30px 20px;
+
+    box-shadow: 4px 6px 0 #c7ba9e;
+  }
+
+  figure {
+    margin-bottom: 32px;
+  }
+
+  .cartouche {
+    min-height: 72px;
+    padding: 18px 20px;
+  }
+
+  .cartouche strong {
+    font-size: 24px;
+  }
+
+  figcaption {
+    font-size: 10px;
+  }
+}
+
+/* IMPRESSION */
+
+@media print {
+
+  body {
+    padding: 0;
+    background: white;
+  }
+
+  main {
+    width: 100%;
+    margin: 0;
+    padding: 15mm;
+
+    border: 0;
+    box-shadow: none;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+
+<main>
+
+<!-- TITRE -->
+
+<header>
+
+<p class="reference">
+BUREAU DES INTERSTICES · SCÉNARIO 03
+</p>
+
+<h1>À la claire fontaine</h1>
+
+</header>
+
+
+<!-- ARCHIVE PHOTOGRAPHIQUE -->
+
+<figure>
+
+<img
+  src="https://archives.finistere.fr/sites/default/files/fonds_gouiffes_frad029_22fi_00273.jpg"
+  alt="Scène de marché breton, photographie issue des Archives départementales du Finistère."
+  loading="eager">
+
+<figcaption>
+
+ARCHIVE PHOTOGRAPHIQUE — P/010 — FINISTÈRE
+
+<span class="source-photo">
+
+Fonds Gouiffès.<br>
+Archives départementales du Finistère.<br>
+Photographie d'ambiance historique.
+
+<a
+  href="https://archives.finistere.fr/sites/default/files/fonds_gouiffes_frad029_22fi_00273.jpg"
+  target="_blank"
+  rel="noopener noreferrer">
+  Source photographique
+</a>
+
+</span>
+
+</figcaption>
+
+</figure>
+
+
+<!-- TROIS CARTOUCHES -->
+
+<nav class="dossiers"
+     aria-label="Dossiers du scénario À la claire fontaine">
+
+<a class="cartouche"
+   href="sce3-presentation.html">
+
+  <strong>Présentation</strong>
+  <span class="fleche" aria-hidden="true">↗</span>
+
+</a>
+
+
+<a class="cartouche"
+   href="sce3-scenario.html">
+
+  <strong>Scénario</strong>
+  <span class="fleche" aria-hidden="true">↗</span>
+
+</a>
+
+
+<a class="cartouche"
+   href="sce3-annexes.html">
+
+  <strong>Annexes</strong>
+  <span class="fleche" aria-hidden="true">↗</span>
+
+</a>
+
+</nav>
+
+
+<!-- RETOUR -->
+
+<footer>
+
+<a href="enquetes.html">
+← Retour aux enquêtes en cours
+</a>
+
+</footer>
+
+</main>
+
+</body>
+</html>
+
